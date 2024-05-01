@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95456BB62BE2ACA900113B8A /* iRetroAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */; };
+		95456BB82BE2ACA900113B8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* ContentView.swift */; };
+		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
+		95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95456BBB2BE2ACAB00113B8A /* Assets.xcassets */; };
+		95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95456BBF2BE2ACAC00113B8A /* Preview Assets.xcassets */; };
+		95456BCA2BE2ACAC00113B8A /* iRetroAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BC92BE2ACAC00113B8A /* iRetroAppTests.swift */; };
+		95456BD42BE2ACAC00113B8A /* iRetroAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */; };
+		95456BD62BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95456BC62BE2ACAC00113B8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95456BAA2BE2ACA900113B8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95456BB12BE2ACA900113B8A;
+			remoteInfo = iRetroApp;
+		};
+		95456BD02BE2ACAC00113B8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95456BAA2BE2ACA900113B8A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95456BB12BE2ACA900113B8A;
+			remoteInfo = iRetroApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		95456BB22BE2ACA900113B8A /* iRetroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRetroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppApp.swift; sourceTree = "<group>"; };
+		95456BB72BE2ACA900113B8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95456BB92BE2ACA900113B8A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		95456BBB2BE2ACAB00113B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95456BBD2BE2ACAB00113B8A /* iRetroApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iRetroApp.entitlements; sourceTree = "<group>"; };
+		95456BBF2BE2ACAC00113B8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95456BC52BE2ACAC00113B8A /* iRetroAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRetroAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95456BC92BE2ACAC00113B8A /* iRetroAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppTests.swift; sourceTree = "<group>"; };
+		95456BCF2BE2ACAC00113B8A /* iRetroAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRetroAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITests.swift; sourceTree = "<group>"; };
+		95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95456BAF2BE2ACA900113B8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95456BC22BE2ACAC00113B8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95456BCC2BE2ACAC00113B8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95456BA92BE2ACA900113B8A = {
+			isa = PBXGroup;
+			children = (
+				95456BB42BE2ACA900113B8A /* iRetroApp */,
+				95456BC82BE2ACAC00113B8A /* iRetroAppTests */,
+				95456BD22BE2ACAC00113B8A /* iRetroAppUITests */,
+				95456BB32BE2ACA900113B8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95456BB32BE2ACA900113B8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95456BB22BE2ACA900113B8A /* iRetroApp.app */,
+				95456BC52BE2ACAC00113B8A /* iRetroAppTests.xctest */,
+				95456BCF2BE2ACAC00113B8A /* iRetroAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95456BB42BE2ACA900113B8A /* iRetroApp */ = {
+			isa = PBXGroup;
+			children = (
+				95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */,
+				95456BB72BE2ACA900113B8A /* ContentView.swift */,
+				95456BB92BE2ACA900113B8A /* Item.swift */,
+				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
+				95456BBD2BE2ACAB00113B8A /* iRetroApp.entitlements */,
+				95456BBE2BE2ACAC00113B8A /* Preview Content */,
+			);
+			path = iRetroApp;
+			sourceTree = "<group>";
+		};
+		95456BBE2BE2ACAC00113B8A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				95456BBF2BE2ACAC00113B8A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		95456BC82BE2ACAC00113B8A /* iRetroAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				95456BC92BE2ACAC00113B8A /* iRetroAppTests.swift */,
+			);
+			path = iRetroAppTests;
+			sourceTree = "<group>";
+		};
+		95456BD22BE2ACAC00113B8A /* iRetroAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */,
+				95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */,
+			);
+			path = iRetroAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95456BB12BE2ACA900113B8A /* iRetroApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95456BD92BE2ACAC00113B8A /* Build configuration list for PBXNativeTarget "iRetroApp" */;
+			buildPhases = (
+				95456BAE2BE2ACA900113B8A /* Sources */,
+				95456BAF2BE2ACA900113B8A /* Frameworks */,
+				95456BB02BE2ACA900113B8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iRetroApp;
+			productName = iRetroApp;
+			productReference = 95456BB22BE2ACA900113B8A /* iRetroApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95456BC42BE2ACAC00113B8A /* iRetroAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95456BDC2BE2ACAC00113B8A /* Build configuration list for PBXNativeTarget "iRetroAppTests" */;
+			buildPhases = (
+				95456BC12BE2ACAC00113B8A /* Sources */,
+				95456BC22BE2ACAC00113B8A /* Frameworks */,
+				95456BC32BE2ACAC00113B8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95456BC72BE2ACAC00113B8A /* PBXTargetDependency */,
+			);
+			name = iRetroAppTests;
+			productName = iRetroAppTests;
+			productReference = 95456BC52BE2ACAC00113B8A /* iRetroAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		95456BCE2BE2ACAC00113B8A /* iRetroAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95456BDF2BE2ACAC00113B8A /* Build configuration list for PBXNativeTarget "iRetroAppUITests" */;
+			buildPhases = (
+				95456BCB2BE2ACAC00113B8A /* Sources */,
+				95456BCC2BE2ACAC00113B8A /* Frameworks */,
+				95456BCD2BE2ACAC00113B8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95456BD12BE2ACAC00113B8A /* PBXTargetDependency */,
+			);
+			name = iRetroAppUITests;
+			productName = iRetroAppUITests;
+			productReference = 95456BCF2BE2ACAC00113B8A /* iRetroAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95456BAA2BE2ACA900113B8A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					95456BB12BE2ACA900113B8A = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					95456BC42BE2ACAC00113B8A = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 95456BB12BE2ACA900113B8A;
+					};
+					95456BCE2BE2ACAC00113B8A = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 95456BB12BE2ACA900113B8A;
+					};
+				};
+			};
+			buildConfigurationList = 95456BAD2BE2ACA900113B8A /* Build configuration list for PBXProject "iRetroApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95456BA92BE2ACA900113B8A;
+			productRefGroup = 95456BB32BE2ACA900113B8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95456BB12BE2ACA900113B8A /* iRetroApp */,
+				95456BC42BE2ACAC00113B8A /* iRetroAppTests */,
+				95456BCE2BE2ACAC00113B8A /* iRetroAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95456BB02BE2ACA900113B8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
+				95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95456BC32BE2ACAC00113B8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95456BCD2BE2ACAC00113B8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95456BAE2BE2ACA900113B8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95456BB82BE2ACA900113B8A /* ContentView.swift in Sources */,
+				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
+				95456BB62BE2ACA900113B8A /* iRetroAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95456BC12BE2ACAC00113B8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95456BCA2BE2ACAC00113B8A /* iRetroAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95456BCB2BE2ACAC00113B8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95456BD42BE2ACAC00113B8A /* iRetroAppUITests.swift in Sources */,
+				95456BD62BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95456BC72BE2ACAC00113B8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95456BB12BE2ACA900113B8A /* iRetroApp */;
+			targetProxy = 95456BC62BE2ACAC00113B8A /* PBXContainerItemProxy */;
+		};
+		95456BD12BE2ACAC00113B8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95456BB12BE2ACA900113B8A /* iRetroApp */;
+			targetProxy = 95456BD02BE2ACAC00113B8A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		95456BD72BE2ACAC00113B8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95456BD82BE2ACAC00113B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		95456BDA2BE2ACAC00113B8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iRetroApp/iRetroApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iRetroApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 32DR4Q2NF7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.iRetroApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95456BDB2BE2ACAC00113B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iRetroApp/iRetroApp.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iRetroApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 32DR4Q2NF7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.iRetroApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		95456BDD2BE2ACAC00113B8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 32DR4Q2NF7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.iRetroAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRetroApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iRetroApp";
+			};
+			name = Debug;
+		};
+		95456BDE2BE2ACAC00113B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 32DR4Q2NF7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.iRetroAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRetroApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iRetroApp";
+			};
+			name = Release;
+		};
+		95456BE02BE2ACAC00113B8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 32DR4Q2NF7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.iRetroAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iRetroApp;
+			};
+			name = Debug;
+		};
+		95456BE12BE2ACAC00113B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 32DR4Q2NF7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.iRetroAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iRetroApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95456BAD2BE2ACA900113B8A /* Build configuration list for PBXProject "iRetroApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95456BD72BE2ACAC00113B8A /* Debug */,
+				95456BD82BE2ACAC00113B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95456BD92BE2ACAC00113B8A /* Build configuration list for PBXNativeTarget "iRetroApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95456BDA2BE2ACAC00113B8A /* Debug */,
+				95456BDB2BE2ACAC00113B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95456BDC2BE2ACAC00113B8A /* Build configuration list for PBXNativeTarget "iRetroAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95456BDD2BE2ACAC00113B8A /* Debug */,
+				95456BDE2BE2ACAC00113B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95456BDF2BE2ACAC00113B8A /* Build configuration list for PBXNativeTarget "iRetroAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95456BE02BE2ACAC00113B8A /* Debug */,
+				95456BE12BE2ACAC00113B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95456BAA2BE2ACA900113B8A /* Project object */;
+}
