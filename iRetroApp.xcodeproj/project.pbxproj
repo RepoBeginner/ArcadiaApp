@@ -15,6 +15,8 @@
 		95456BCA2BE2ACAC00113B8A /* iRetroAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BC92BE2ACAC00113B8A /* iRetroAppTests.swift */; };
 		95456BD42BE2ACAC00113B8A /* iRetroAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */; };
 		95456BD62BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */; };
+		95456C392BE2B4C800113B8A /* iRetroGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */; };
+		95456C3A2BE2B4C800113B8A /* iRetroGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		95456C3B2BE2B4C800113B8A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				95456C3A2BE2B4C800113B8A /* iRetroGBCCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		95456BB22BE2ACA900113B8A /* iRetroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRetroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppApp.swift; sourceTree = "<group>"; };
@@ -47,6 +63,7 @@
 		95456BCF2BE2ACAC00113B8A /* iRetroAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRetroAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITests.swift; sourceTree = "<group>"; };
 		95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iRetroGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95456C392BE2B4C800113B8A /* iRetroGBCCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,7 @@
 				95456BC82BE2ACAC00113B8A /* iRetroAppTests */,
 				95456BD22BE2ACAC00113B8A /* iRetroAppUITests */,
 				95456BB32BE2ACA900113B8A /* Products */,
+				95456C372BE2B4C800113B8A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +151,14 @@
 			path = iRetroAppUITests;
 			sourceTree = "<group>";
 		};
+		95456C372BE2B4C800113B8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -142,6 +169,7 @@
 				95456BAE2BE2ACA900113B8A /* Sources */,
 				95456BAF2BE2ACA900113B8A /* Frameworks */,
 				95456BB02BE2ACA900113B8A /* Resources */,
+				95456C3B2BE2B4C800113B8A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
