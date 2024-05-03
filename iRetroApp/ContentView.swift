@@ -7,10 +7,12 @@
 
 import SwiftUI
 import SwiftData
+import iRetroGBCCore
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    private var test: iRetroGBC = iRetroGBC()
 
     var body: some View {
         NavigationSplitView {
