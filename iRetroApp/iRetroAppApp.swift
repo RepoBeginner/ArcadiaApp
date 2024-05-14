@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct iRetroAppApp: App {
     var sharedModelContainer: ModelContainer = {
+        UserDefaults.standard.setValue(iRetroInputMapping.returnKey.rawValue, forKey: "Return")
         let schema = Schema([
             Item.self,
         ])
@@ -25,8 +26,9 @@ struct iRetroAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+                GameLibraryView()
         }
         .modelContainer(sharedModelContainer)
+        .environment(iRetroFileManager())
     }
 }

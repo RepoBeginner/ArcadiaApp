@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95456BB62BE2ACA900113B8A /* iRetroAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */; };
-		95456BB82BE2ACA900113B8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* ContentView.swift */; };
+		95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* RunGameView.swift */; };
 		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
 		95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95456BBB2BE2ACAB00113B8A /* Assets.xcassets */; };
 		95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95456BBF2BE2ACAC00113B8A /* Preview Assets.xcassets */; };
@@ -17,6 +17,15 @@
 		95456BD62BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */; };
 		95456C392BE2B4C800113B8A /* iRetroGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */; };
 		95456C3A2BE2B4C800113B8A /* iRetroGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		956F83F62BE535050025FC5F /* Tetris.gbc in Resources */ = {isa = PBXBuildFile; fileRef = 956F83F52BE535050025FC5F /* Tetris.gbc */; };
+		956F83F82BE551C80025FC5F /* Tetris.gb in Resources */ = {isa = PBXBuildFile; fileRef = 956F83F72BE551C80025FC5F /* Tetris.gb */; };
+		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
+		956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */; };
+		956F84002BEA70970025FC5F /* iRetroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* iRetroGame.swift */; };
+		956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84012BEA75280025FC5F /* GameCollectionView.swift */; };
+		956F84082BEA8B9B0025FC5F /* iRetroFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84072BEA8B9B0025FC5F /* iRetroFileManager.swift */; };
+		956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840A2BEBED810025FC5F /* GameIconView.swift */; };
+		956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840C2BEBF59F0025FC5F /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +62,7 @@
 /* Begin PBXFileReference section */
 		95456BB22BE2ACA900113B8A /* iRetroApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRetroApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppApp.swift; sourceTree = "<group>"; };
-		95456BB72BE2ACA900113B8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		95456BB72BE2ACA900113B8A /* RunGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGameView.swift; sourceTree = "<group>"; };
 		95456BB92BE2ACA900113B8A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		95456BBB2BE2ACAB00113B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95456BBD2BE2ACAB00113B8A /* iRetroApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iRetroApp.entitlements; sourceTree = "<group>"; };
@@ -64,6 +73,16 @@
 		95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITests.swift; sourceTree = "<group>"; };
 		95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iRetroGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		956F83F52BE535050025FC5F /* Tetris.gbc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tetris.gbc; sourceTree = "<group>"; };
+		956F83F72BE551C80025FC5F /* Tetris.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tetris.gb; sourceTree = "<group>"; };
+		956F83FA2BEA67370025FC5F /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
+		956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFrameView.swift; sourceTree = "<group>"; };
+		956F83FF2BEA70970025FC5F /* iRetroGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroGame.swift; sourceTree = "<group>"; };
+		956F84012BEA75280025FC5F /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
+		956F84072BEA8B9B0025FC5F /* iRetroFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroFileManager.swift; sourceTree = "<group>"; };
+		956F84092BEBE9740025FC5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		956F840A2BEBED810025FC5F /* GameIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIconView.swift; sourceTree = "<group>"; };
+		956F840C2BEBF59F0025FC5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +114,7 @@
 		95456BA92BE2ACA900113B8A = {
 			isa = PBXGroup;
 			children = (
+				956F84092BEBE9740025FC5F /* README.md */,
 				95456BB42BE2ACA900113B8A /* iRetroApp */,
 				95456BC82BE2ACAC00113B8A /* iRetroAppTests */,
 				95456BD22BE2ACAC00113B8A /* iRetroAppUITests */,
@@ -116,9 +136,17 @@
 		95456BB42BE2ACA900113B8A /* iRetroApp */ = {
 			isa = PBXGroup;
 			children = (
+				956F83FE2BEA70800025FC5F /* Models */,
+				956F83F72BE551C80025FC5F /* Tetris.gb */,
+				956F83F52BE535050025FC5F /* Tetris.gbc */,
+				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
+				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
+				956F840A2BEBED810025FC5F /* GameIconView.swift */,
+				956F84072BEA8B9B0025FC5F /* iRetroFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */,
-				95456BB72BE2ACA900113B8A /* ContentView.swift */,
-				95456BB92BE2ACA900113B8A /* Item.swift */,
+				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
+				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
+				956F840C2BEBF59F0025FC5F /* SettingsView.swift */,
 				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
 				95456BBD2BE2ACAB00113B8A /* iRetroApp.entitlements */,
 				95456BBE2BE2ACAC00113B8A /* Preview Content */,
@@ -157,6 +185,15 @@
 				95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		956F83FE2BEA70800025FC5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95456BB92BE2ACA900113B8A /* Item.swift */,
+				956F83FF2BEA70970025FC5F /* iRetroGame.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,8 +301,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				956F83F62BE535050025FC5F /* Tetris.gbc in Resources */,
 				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
 				95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */,
+				956F83F82BE551C80025FC5F /* Tetris.gb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,9 +329,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95456BB82BE2ACA900113B8A /* ContentView.swift in Sources */,
+				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
+				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
+				956F84082BEA8B9B0025FC5F /* iRetroFileManager.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
+				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
+				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
+				956F84002BEA70970025FC5F /* iRetroGame.swift in Sources */,
+				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* iRetroAppApp.swift in Sources */,
+				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
