@@ -26,6 +26,8 @@
 		956F84082BEA8B9B0025FC5F /* iRetroFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84072BEA8B9B0025FC5F /* iRetroFileManager.swift */; };
 		956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840A2BEBED810025FC5F /* GameIconView.swift */; };
 		956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840C2BEBF59F0025FC5F /* SettingsView.swift */; };
+		956F84272BF4846C0025FC5F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 956F84262BF4846C0025FC5F /* Shaders.metal */; };
+		956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		956F84092BEBE9740025FC5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		956F840A2BEBED810025FC5F /* GameIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIconView.swift; sourceTree = "<group>"; };
 		956F840C2BEBF59F0025FC5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		956F84262BF4846C0025FC5F /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 				956F84072BEA8B9B0025FC5F /* iRetroFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* iRetroAppApp.swift */,
 				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
+				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
+				956F84262BF4846C0025FC5F /* Shaders.metal */,
 				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
 				956F840C2BEBF59F0025FC5F /* SettingsView.swift */,
 				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
@@ -331,12 +337,14 @@
 			files = (
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
+				956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* iRetroFileManager.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
 				956F84002BEA70970025FC5F /* iRetroGame.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
+				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				95456BB62BE2ACA900113B8A /* iRetroAppApp.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
 			);

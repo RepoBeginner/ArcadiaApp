@@ -23,6 +23,7 @@ struct GameCollectionView: View {
             List {
                 ForEach(manager.gbGames, id: \.self) { file in
                     NavigationLink(destination: RunGameView(gameURL: file)
+                        //TODO: Try to work without a shared instance in this case, would pause and unpause be feasible?
                         .environment(iRetroGBC.sharedInstance)
                         .environment(iRetroCoreEmulationState.sharedInstance)
                     ) {
