@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9528F7802BF4B97800E2CEC6 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* MetalView.swift */; };
+		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
+		9528F7892BF4F2D500E2CEC6 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */; };
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
 		95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* RunGameView.swift */; };
 		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
@@ -60,6 +63,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9528F77F2BF4B97800E2CEC6 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
 		95456BB22BE2ACA900113B8A /* Arcadia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcadia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaApp.swift; sourceTree = "<group>"; };
 		95456BB72BE2ACA900113B8A /* RunGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGameView.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 		95456BA92BE2ACA900113B8A = {
 			isa = PBXGroup;
 			children = (
+				9528F7862BF4E52400E2CEC6 /* InputController.swift */,
 				956F84092BEBE9740025FC5F /* README.md */,
 				95456BB42BE2ACA900113B8A /* Arcadia */,
 				95456BC82BE2ACAC00113B8A /* ArcadiaAppTests */,
@@ -144,6 +151,7 @@
 				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */,
 				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
+				9528F77F2BF4B97800E2CEC6 /* MetalView.swift */,
 				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
 				956F84262BF4846C0025FC5F /* Shaders.metal */,
 				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
@@ -151,6 +159,7 @@
 				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
 				95456BBD2BE2ACAB00113B8A /* Arcadia.entitlements */,
 				95456BBE2BE2ACAC00113B8A /* Preview Content */,
+				9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */,
 			);
 			path = Arcadia;
 			sourceTree = "<group>";
@@ -333,14 +342,17 @@
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
 				956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
+				9528F7802BF4B97800E2CEC6 /* MetalView.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
 				956F84002BEA70970025FC5F /* iRetroGame.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
+				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
+				9528F7892BF4F2D500E2CEC6 /* MetalRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

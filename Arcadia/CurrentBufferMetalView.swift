@@ -39,6 +39,8 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
         context.coordinator.update(pixelData: pixelData, width: width, height: height)
         nsView.setNeedsDisplay(nsView.bounds)
     }
+    
+   
 #else
     func makeUIView(context: Context) -> MTKView {
         let metalView = MTKView()
@@ -66,6 +68,10 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
             super.init()
             setupMetal()
         }
+        
+        deinit {
+            cleanup()
+        }
 
         func setupMetal() {
             guard let device = MTLCreateSystemDefaultDevice() else { return }
@@ -79,6 +85,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
             pipelineDescriptor.vertexFunction = vertexFunction
             pipelineDescriptor.fragmentFunction = fragmentFunction
             pipelineDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+
 
             do {
                 pipelineState = try device.makeRenderPipelineState(descriptor: pipelineDescriptor)
@@ -120,8 +127,16 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
             commandBuffer?.present(drawable)
             commandBuffer?.commit()
         }
+        
+        func cleanup() {
+            texture = nil
+            pipelineState = nil
+            commandQueue = nil
+        }
     }
 }
+
+
 
 /*
  #Preview {

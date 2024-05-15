@@ -43,11 +43,11 @@ fragment float4 fragmentShader(VertexOut in [[stage_in]],
 
     // Apply gamma correction
     float gamma = 2.2;
-    color.rgb = pow(color.rgb, float3(1.0 / gamma));
+    //color.rgb = pow(color.rgb, float3(1.0 / gamma));
 
     // Adjust exposure
-    float exposure = 2.5; 
-    color.rgb *= exposure;
+    float exposure = 1; 
+    //color.rgb *= exposure;
 
     return color;
 }

@@ -13,9 +13,6 @@ import AVFoundation
 
 
 
-
-
-
 struct RunGameView: View {
     @State private var gameURL: URL
     @FocusState private var isFocused: Bool
@@ -30,8 +27,9 @@ struct RunGameView: View {
         @Bindable var core = core
         @Bindable var emulationState = emulationState
         VStack{
-            CurrentFrameView(currentFrame: $emulationState.currentFrame)
-            //CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, width: 160, height: 144)
+            //MetalView()
+            //CurrentFrameView(currentFrame: $emulationState.currentFrame)
+            CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
                 .scaledToFit()
                 .focusable()
                 .focused($isFocused)
@@ -71,6 +69,7 @@ struct RunGameView: View {
                 })
                 .onDisappear(perform: {
                     core.pauseGame()
+                    //metalView.coordia
                 })
             HStack {
                 Button("Start") {
