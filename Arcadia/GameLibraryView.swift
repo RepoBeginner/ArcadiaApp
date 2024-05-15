@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct GameLibraryView: View {
-    @State private var system: iRetroGameType = iRetroGameType.gameBoyGame
+    @State private var system: ArcadiaGameType = ArcadiaGameType.gameBoyGame
     
     var body: some View {
         #if os(macOS)
         NavigationSplitView {
-            List(iRetroGameType.allCases, selection: $system) { gameType in
+            List(ArcadiaGameType.allCases, selection: $system) { gameType in
                 NavigationLink(destination: GameCollectionView(gameType: gameType)) {
                     Text(gameType.rawValue)
                 }
@@ -23,7 +23,7 @@ struct GameLibraryView: View {
         }
         #else
         NavigationStack {
-            List(iRetroGameType.allCases) { gameType in
+            List(ArcadiaGameType.allCases) { gameType in
                 NavigationLink(destination: GameCollectionView(gameType: gameType)) {
                     Text(gameType.rawValue)
                 }

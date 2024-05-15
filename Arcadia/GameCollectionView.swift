@@ -7,15 +7,15 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-import iRetroGBCCore
-import iRetroCore
+import ArcadiaGBCCore
+import ArcadiaCore
 
 struct GameCollectionView: View {
-    @State private var gameType: iRetroGameType
+    @State private var gameType: ArcadiaGameType
     @State private var showingAddGameView: Bool = false
-    @Environment(iRetroFileManager.self) var manager: iRetroFileManager
+    @Environment(ArcadiaFileManager.self) var manager: ArcadiaFileManager
     
-    init(gameType: iRetroGameType) {
+    init(gameType: ArcadiaGameType) {
         self.gameType = gameType
     }
     
@@ -24,8 +24,8 @@ struct GameCollectionView: View {
                 ForEach(manager.gbGames, id: \.self) { file in
                     NavigationLink(destination: RunGameView(gameURL: file)
                         //TODO: Try to work without a shared instance in this case, would pause and unpause be feasible?
-                        .environment(iRetroGBC.sharedInstance)
-                        .environment(iRetroCoreEmulationState.sharedInstance)
+                        .environment(ArcadiaGBC.sharedInstance)
+                        .environment(ArcadiaCoreEmulationState.sharedInstance)
                     ) {
                         Text(file.lastPathComponent)
                     }
@@ -66,5 +66,5 @@ struct GameCollectionView: View {
 }
 
 #Preview {
-    GameCollectionView(gameType: iRetroGameType.gameBoyGame)
+    GameCollectionView(gameType: ArcadiaGameType.gameBoyGame)
 }

@@ -7,8 +7,8 @@
 
 import SwiftUI
 import SwiftData
-import iRetroGBCCore
-import iRetroCore
+import ArcadiaGBCCore
+import ArcadiaCore
 import AVFoundation
 
 
@@ -19,8 +19,8 @@ import AVFoundation
 struct RunGameView: View {
     @State private var gameURL: URL
     @FocusState private var isFocused: Bool
-    @Environment(iRetroGBC.self) private var core: iRetroGBC
-    @Environment(iRetroCoreEmulationState.self) private var emulationState: iRetroCoreEmulationState
+    @Environment(ArcadiaGBC.self) private var core: ArcadiaGBC
+    @Environment(ArcadiaCoreEmulationState.self) private var emulationState: ArcadiaCoreEmulationState
     
     init(gameURL: URL) {
         self.gameURL = gameURL
@@ -30,8 +30,8 @@ struct RunGameView: View {
         @Bindable var core = core
         @Bindable var emulationState = emulationState
         VStack{
-            //CurrentFrameView(currentFrame: $emulationState.currentFrame)
-            CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, width: 160, height: 144)
+            CurrentFrameView(currentFrame: $emulationState.currentFrame)
+            //CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, width: 160, height: 144)
                 .scaledToFit()
                 .focusable()
                 .focused($isFocused)

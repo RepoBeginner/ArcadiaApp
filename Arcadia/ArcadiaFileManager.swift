@@ -7,7 +7,7 @@
 
 import Foundation
 
-@Observable class iRetroFileManager {
+@Observable class ArcadiaFileManager {
     
     
     var documentsDirectory: URL

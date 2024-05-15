@@ -10,16 +10,16 @@ import SwiftData
 
 @Model
 final class iRetroGame {
-    var gameType: iRetroGameType
+    var gameType: ArcadiaGameType
     var name: String
     
-    init(name: String, gameType: iRetroGameType) {
+    init(name: String, gameType: ArcadiaGameType) {
         self.gameType = gameType
         self.name = name
     }
 }
 
-enum iRetroGameType: String, Codable, CaseIterable, Identifiable {
+enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable {
     
     var id: Self {
         return self

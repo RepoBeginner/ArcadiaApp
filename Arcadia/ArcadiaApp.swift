@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct iRetroAppApp: App {
+struct ArcadiaApp: App {
     var sharedModelContainer: ModelContainer = {
         UserDefaults.standard.setValue(iRetroInputMapping.returnKey.rawValue, forKey: "Return")
         let schema = Schema([
@@ -29,6 +29,6 @@ struct iRetroAppApp: App {
                 GameLibraryView()
         }
         .modelContainer(sharedModelContainer)
-        .environment(iRetroFileManager())
+        .environment(ArcadiaFileManager())
     }
 }
