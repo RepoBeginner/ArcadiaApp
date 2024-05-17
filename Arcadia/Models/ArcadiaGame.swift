@@ -9,13 +9,18 @@ import Foundation
 import SwiftData
 
 @Model
-final class iRetroGame {
+final class ArcadiaGame {
     var gameType: ArcadiaGameType
     var name: String
+    var id: UUID
+    var internalName: String
     
     init(name: String, gameType: ArcadiaGameType) {
         self.gameType = gameType
         self.name = name
+        let id = UUID()
+        self.id = id
+        self.internalName = id.uuidString
     }
 }
 

@@ -29,7 +29,7 @@ struct RunGameView: View {
         VStack{
             //MetalView()
             //CurrentFrameView(currentFrame: $emulationState.currentFrame)
-            CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
+            CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, audioData: $emulationState.currentAudioFrame, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
                 .scaledToFit()
                 .focusable()
                 .focused($isFocused)

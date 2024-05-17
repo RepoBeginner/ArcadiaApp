@@ -13,7 +13,7 @@ import ArcadiaCore
 struct GameCollectionView: View {
     @State private var gameType: ArcadiaGameType
     @State private var showingAddGameView: Bool = false
-    @Environment(ArcadiaFileManager.self) var manager: ArcadiaFileManager
+    @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     
     init(gameType: ArcadiaGameType) {
         self.gameType = gameType
@@ -21,7 +21,7 @@ struct GameCollectionView: View {
     
     var body: some View {
             List {
-                ForEach(manager.gbGames, id: \.self) { file in
+                ForEach(fileManager.gbGames, id: \.self) { file in
                     NavigationLink(destination: RunGameView(gameURL: file)
                         //TODO: Try to work without a shared instance in this case, would pause and unpause be feasible?
                         .environment(ArcadiaGBC.sharedInstance)
@@ -40,6 +40,7 @@ struct GameCollectionView: View {
                 .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: [UTType(filenameExtension: "gb")!], onCompletion: { result in
                     do {
                         let fileUrl = try result.get()
+                        fileManager.saveGame(gameURL: fileUrl)
                         fileUrl.startAccessingSecurityScopedResource()
                         let romFile = try Data(contentsOf: fileUrl)
                         

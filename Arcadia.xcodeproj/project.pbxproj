@@ -20,7 +20,7 @@
 		95456BD62BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */; };
 		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
 		956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */; };
-		956F84002BEA70970025FC5F /* iRetroGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* iRetroGame.swift */; };
+		956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */; };
 		956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84012BEA75280025FC5F /* GameCollectionView.swift */; };
 		956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */; };
 		956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840A2BEBED810025FC5F /* GameIconView.swift */; };
@@ -81,7 +81,7 @@
 		95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iRetroGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		956F83FA2BEA67370025FC5F /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
 		956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFrameView.swift; sourceTree = "<group>"; };
-		956F83FF2BEA70970025FC5F /* iRetroGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroGame.swift; sourceTree = "<group>"; };
+		956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGame.swift; sourceTree = "<group>"; };
 		956F84012BEA75280025FC5F /* GameCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionView.swift; sourceTree = "<group>"; };
 		956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaFileManager.swift; sourceTree = "<group>"; };
 		956F84092BEBE9740025FC5F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -202,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				95456BB92BE2ACA900113B8A /* Item.swift */,
-				956F83FF2BEA70970025FC5F /* iRetroGame.swift */,
+				956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -346,7 +346,7 @@
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
-				956F84002BEA70970025FC5F /* iRetroGame.swift in Sources */,
+				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,

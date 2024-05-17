@@ -11,9 +11,8 @@ import SwiftData
 @main
 struct ArcadiaApp: App {
     var sharedModelContainer: ModelContainer = {
-        UserDefaults.standard.setValue(iRetroInputMapping.returnKey.rawValue, forKey: "Return")
         let schema = Schema([
-            Item.self,
+            ArcadiaGame.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -29,6 +28,6 @@ struct ArcadiaApp: App {
                 GameLibraryView()
         }
         .modelContainer(sharedModelContainer)
-        .environment(ArcadiaFileManager())
+        .environment(ArcadiaFileManager.shared)
     }
 }
