@@ -153,6 +153,8 @@ class CurrentBufferAudioPlayer {
 
         let sampleRate: Double = 32768.0
         let channels: AVAudioChannelCount = 2 // Two channels for stereo
+
+        // Use Float32 format with interleaved data
         guard let format = AVAudioFormat(standardFormatWithSampleRate: sampleRate, channels: channels) else {
             fatalError("Failed to create audio format")
         }
@@ -180,15 +182,19 @@ class CurrentBufferAudioPlayer {
         }
         buffer.frameLength = frameCount
 
-        guard let channelDataLeft = buffer.int16ChannelData?[0], let channelDataRight = buffer.int16ChannelData?[1] else {
-            print("Failed to get channel data pointers")
+        // Access the audioBufferList directly for interleaved data
+        guard let audioBuffer = buffer.audioBufferList.pointee.mBuffers.mData else {
+            print("Failed to get audio buffer data")
             return
         }
 
-        // Fill the buffer with interleaved stereo audio data
+        // Get a pointer to the interleaved Float32 data
+        let floatBuffer = audioBuffer.bindMemory(to: Float32.self, capacity: Int(buffer.frameLength) * Int(audioFormat.channelCount))
+
+        // Convert Int16 data to Float32 and fill the interleaved buffer
         for i in 0..<Int(buffer.frameLength) {
-            channelDataLeft[i] = audioData[2 * i]
-            channelDataRight[i] = audioData[2 * i + 1]
+            floatBuffer[2 * i] = Float32(audioData[2 * i]) / Float32(Int16.max)
+            floatBuffer[2 * i + 1] = Float32(audioData[2 * i + 1]) / Float32(Int16.max)
         }
 
         playerNode.scheduleBuffer(buffer, completionHandler: nil)
