@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9528F7802BF4B97800E2CEC6 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* MetalView.swift */; };
+		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		9528F7892BF4F2D500E2CEC6 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */; };
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
@@ -18,6 +18,12 @@
 		95456BCA2BE2ACAC00113B8A /* iRetroAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BC92BE2ACAC00113B8A /* iRetroAppTests.swift */; };
 		95456BD42BE2ACAC00113B8A /* iRetroAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */; };
 		95456BD62BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */; };
+		955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */; };
+		955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3742BF7C74E00C930ED /* DPadView.swift */; };
+		955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3782BF7E43400C930ED /* DPadButtonView.swift */; };
+		955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC37B2BF7E47D00C930ED /* Trapezoid.swift */; };
+		955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3812BF7E54E00C930ED /* CircleButtonView.swift */; };
+		955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */; };
 		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
 		956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */; };
 		956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */; };
@@ -63,7 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9528F77F2BF4B97800E2CEC6 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
 		95456BB22BE2ACA900113B8A /* Arcadia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcadia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +85,12 @@
 		95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITests.swift; sourceTree = "<group>"; };
 		95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iRetroGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferAudioPlayer.swift; sourceTree = "<group>"; };
+		955CC3742BF7C74E00C930ED /* DPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPadView.swift; sourceTree = "<group>"; };
+		955CC3782BF7E43400C930ED /* DPadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPadButtonView.swift; sourceTree = "<group>"; };
+		955CC37B2BF7E47D00C930ED /* Trapezoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezoid.swift; sourceTree = "<group>"; };
+		955CC3812BF7E54E00C930ED /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
+		955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		956F83FA2BEA67370025FC5F /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
 		956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFrameView.swift; sourceTree = "<group>"; };
 		956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGame.swift; sourceTree = "<group>"; };
@@ -144,6 +156,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				955CC3762BF7E3FF00C930ED /* Views */,
 				956F83FE2BEA70800025FC5F /* Models */,
 				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
 				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
@@ -151,7 +164,8 @@
 				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */,
 				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
-				9528F77F2BF4B97800E2CEC6 /* MetalView.swift */,
+				9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */,
+				955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */,
 				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
 				956F84262BF4846C0025FC5F /* Shaders.metal */,
 				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
@@ -196,6 +210,34 @@
 				95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		955CC3762BF7E3FF00C930ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				955CC37A2BF7E47100C930ED /* Shapes */,
+				955CC3772BF7E40B00C930ED /* Buttons */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		955CC3772BF7E40B00C930ED /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				955CC3742BF7C74E00C930ED /* DPadView.swift */,
+				955CC3782BF7E43400C930ED /* DPadButtonView.swift */,
+				955CC3812BF7E54E00C930ED /* CircleButtonView.swift */,
+				955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		955CC37A2BF7E47100C930ED /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				955CC37B2BF7E47D00C930ED /* Trapezoid.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 		956F83FE2BEA70800025FC5F /* Models */ = {
@@ -339,19 +381,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
+				955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
 				956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
-				9528F7802BF4B97800E2CEC6 /* MetalView.swift in Sources */,
+				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
+				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,
+				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
 				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
+				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
+				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
+				955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */,
 				9528F7892BF4F2D500E2CEC6 /* MetalRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

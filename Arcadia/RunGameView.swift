@@ -72,73 +72,16 @@ struct RunGameView: View {
                     //metalView.coordia
                 })
             HStack {
-                Button("Start") {
-                    core.pressButton(button: .joypadStart)
-                }
-                Button("Select") {
-                    core.pressButton(button: .joypadSelect)
-                }
+                CapsuleButtonView(core: core, arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
+                CapsuleButtonView(core: core, arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
             }
+
             HStack {
-                VStack {
-                    Button(action: {
-                        core.pressButton(button: .joypadUp)
-                    }) {
-                        Image(systemName: "arrowtriangle.up.fill")
-                            .padding()
-                            .background(Color.gray.opacity(0.5))
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                    HStack {
-                        Button(action: {
-                            core.pressButton(button: .joypadLeft)
-                        }) {
-                            Image(systemName: "arrowtriangle.left.fill")
-                                .padding()
-                                .background(Color.gray.opacity(0.5))
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                        }
-                        Button(action: {
-                            core.pressButton(button: .joypadRight)
-                        }) {
-                            Image(systemName: "arrowtriangle.right.fill")
-                                .padding()
-                                .background(Color.gray.opacity(0.5))
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
-                        }
-                    }
-                    Button(action: {
-                        core.pressButton(button: .joypadDown)
-                    }) {
-                        Image(systemName: "arrowtriangle.down.fill")
-                            .padding()
-                            .background(Color.gray.opacity(0.5))
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                }
+                DPadView(core: core)
+                Spacer()
                 HStack {
-                    Button(action: {
-                        core.pressButton(button: .joypadA)
-                    }) {
-                        Text("A")
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                    Button(action: {
-                        core.pressButton(button: .joypadB)
-                    }) {
-                        Text("B")
-                            .padding()
-                            .background(Color.red)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
+                    CircleButtonView(core: core, arcadiaCoreButton: .joypadA, buttonText: "A", color: Color.red)
+                    CircleButtonView(core: core, arcadiaCoreButton: .joypadB, buttonText: "B", color: Color.red)
                 }
             }
         }
