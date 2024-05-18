@@ -15,13 +15,14 @@ import AVFoundation
 
 struct RunGameView: View {
     @State private var gameURL: URL
+    @State private var gameType: ArcadiaGameType
     @FocusState private var isFocused: Bool
-    @State private var gameCore: any ArcadiaCoreProtocol
     @Environment(ArcadiaCoreEmulationState.self) private var emulationState: ArcadiaCoreEmulationState
+    @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     
-    init(gameURL: URL, gameCore: any ArcadiaCoreProtocol) {
+    init(gameURL: URL, gameType: ArcadiaGameType) {
         self.gameURL = gameURL
-        self.gameCore = gameCore
+        self.gameType = gameType
     }
 
     var body: some View {
@@ -44,7 +45,8 @@ struct RunGameView: View {
                 })
                 .onAppear(perform: {
                     isFocused = true
-                    emulationState.attachCore(core: gameCore)
+                    emulationState.attachCore(core: gameType.associatedCore)
+                    emulationState.currentSaveFolder = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType)
                     emulationState.startEmulation(gameURL: gameURL)
                 })
                 .onDisappear(perform: {

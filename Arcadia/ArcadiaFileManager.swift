@@ -78,8 +78,10 @@ import Foundation
             } catch {
                 print("couldn't save file")
             }
-
-
+    }
+    
+    func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
+        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent).appendingPathExtension("srm")
     }
     
 }

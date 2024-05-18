@@ -25,10 +25,12 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable {
         }
     }
     
-    var associatedCore: any ArcadiaCoreProtocol{
+    var associatedCore: any ArcadiaCoreProtocol {
         switch self {
         case .gameBoyGame:
             return ArcadiaGBC()
         }
     }
+    
+
 }

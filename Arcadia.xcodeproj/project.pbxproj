@@ -83,7 +83,6 @@
 		95456BCF2BE2ACAC00113B8A /* ArcadiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcadiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BD32BE2ACAC00113B8A /* iRetroAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITests.swift; sourceTree = "<group>"; };
 		95456BD52BE2ACAC00113B8A /* iRetroAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRetroAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = iRetroGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferAudioPlayer.swift; sourceTree = "<group>"; };
 		955CC3742BF7C74E00C930ED /* DPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPadView.swift; sourceTree = "<group>"; };
 		955CC3782BF7E43400C930ED /* DPadButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPadButtonView.swift; sourceTree = "<group>"; };
@@ -207,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */,
-				95456C382BE2B4C800113B8A /* iRetroGBCCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

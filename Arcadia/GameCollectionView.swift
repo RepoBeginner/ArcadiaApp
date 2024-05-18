@@ -21,8 +21,9 @@ struct GameCollectionView: View {
     var body: some View {
             List {
                 ForEach(fileManager.getGamesURL(gameSystem: gameType), id: \.self) { file in
-                    NavigationLink(destination: RunGameView(gameURL: file, gameCore: gameType.associatedCore)
+                    NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                         .environment(ArcadiaCoreEmulationState.sharedInstance)
+                        .environment(fileManager)
                     ) {
                         Text(file.lastPathComponent)
                     }
