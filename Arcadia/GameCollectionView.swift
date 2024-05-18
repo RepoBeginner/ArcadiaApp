@@ -7,7 +7,6 @@
 
 import SwiftUI
 import UniformTypeIdentifiers
-import ArcadiaGBCCore
 import ArcadiaCore
 
 struct GameCollectionView: View {
@@ -21,10 +20,8 @@ struct GameCollectionView: View {
     
     var body: some View {
             List {
-                ForEach(fileManager.gbGames, id: \.self) { file in
-                    NavigationLink(destination: RunGameView(gameURL: file)
-                        //TODO: Try to work without a shared instance in this case, would pause and unpause be feasible?
-                        .environment(ArcadiaGBC.sharedInstance)
+                ForEach(fileManager.getGamesURL(gameSystem: gameType), id: \.self) { file in
+                    NavigationLink(destination: RunGameView(gameURL: file, gameCore: gameType.associatedCore)
                         .environment(ArcadiaCoreEmulationState.sharedInstance)
                     ) {
                         Text(file.lastPathComponent)
@@ -37,26 +34,11 @@ struct GameCollectionView: View {
                         Image(systemName: "plus")
                     })
                 }
-                .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: [UTType(filenameExtension: "gb")!], onCompletion: { result in
+                .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: gameType.allowedExtensions, onCompletion: { result in
+                    //TODO: Handle multiple files
                     do {
                         let fileUrl = try result.get()
-                        fileManager.saveGame(gameURL: fileUrl)
-                        fileUrl.startAccessingSecurityScopedResource()
-                        let romFile = try Data(contentsOf: fileUrl)
-                        
-                        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-                        let gameDirectory = documentsDirectory.appendingPathComponent("GB")
-                        
-                        if !FileManager.default.fileExists(atPath: gameDirectory.path) {
-                            try FileManager.default.createDirectory(at: gameDirectory, withIntermediateDirectories: true, attributes: nil)
-                        }
-                        
-                        let savePath = gameDirectory.appendingPathComponent(fileUrl.lastPathComponent)
-                        print(savePath)
-                        try romFile.write(to: savePath, options: .atomic)
-                        fileUrl.stopAccessingSecurityScopedResource()
-
-
+                        fileManager.saveGame(gameURL: fileUrl, gameType: gameType)
                     } catch {
                         print ("error reading: \(error.localizedDescription)")
                     }

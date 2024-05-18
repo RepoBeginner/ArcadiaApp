@@ -10,19 +10,17 @@ import ArcadiaCore
 
 struct DPadButtonView: View {
     
-    @State private var core: any ArcadiaCoreProtocol
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var rotationAngle: Double
     
-    init(core: any ArcadiaCoreProtocol, arcadiaCoreButton: ArcadiaCoreButton, rotationAngle: Double) {
-        self.core = core
+    init(arcadiaCoreButton: ArcadiaCoreButton, rotationAngle: Double) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.rotationAngle = rotationAngle
     }
     
     var body: some View {
         Button(action: {
-            core.pressButton(button: arcadiaCoreButton)
+            ArcadiaCoreEmulationState.sharedInstance.pressButton(button: arcadiaCoreButton)
         }) {
             Trapezoid()
                 .fill(Color.red)

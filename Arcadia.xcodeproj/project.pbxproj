@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
-		9528F7892BF4F2D500E2CEC6 /* MetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */; };
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
 		95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* RunGameView.swift */; };
 		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
@@ -24,6 +23,7 @@
 		955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC37B2BF7E47D00C930ED /* Trapezoid.swift */; };
 		955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3812BF7E54E00C930ED /* CircleButtonView.swift */; };
 		955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */; };
+		955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */; };
 		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
 		956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */; };
 		956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */; };
@@ -71,7 +71,6 @@
 /* Begin PBXFileReference section */
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
-		9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalRenderer.swift; sourceTree = "<group>"; };
 		95456BB22BE2ACA900113B8A /* Arcadia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcadia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaApp.swift; sourceTree = "<group>"; };
 		95456BB72BE2ACA900113B8A /* RunGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGameView.swift; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		955CC37B2BF7E47D00C930ED /* Trapezoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trapezoid.swift; sourceTree = "<group>"; };
 		955CC3812BF7E54E00C930ED /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
+		955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGameType.swift; sourceTree = "<group>"; };
 		956F83FA2BEA67370025FC5F /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
 		956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFrameView.swift; sourceTree = "<group>"; };
 		956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGame.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				955CC3922BF8EE8F00C930ED /* Enums */,
 				955CC3762BF7E3FF00C930ED /* Views */,
 				956F83FE2BEA70800025FC5F /* Models */,
 				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
@@ -173,7 +174,6 @@
 				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
 				95456BBD2BE2ACAB00113B8A /* Arcadia.entitlements */,
 				95456BBE2BE2ACAC00113B8A /* Preview Content */,
-				9528F7882BF4F2D500E2CEC6 /* MetalRenderer.swift */,
 			);
 			path = Arcadia;
 			sourceTree = "<group>";
@@ -238,6 +238,14 @@
 				955CC37B2BF7E47D00C930ED /* Trapezoid.swift */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		955CC3922BF8EE8F00C930ED /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		956F83FE2BEA70800025FC5F /* Models */ = {
@@ -392,6 +400,7 @@
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
 				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
+				955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */,
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
@@ -400,7 +409,6 @@
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
 				955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */,
-				9528F7892BF4F2D500E2CEC6 /* MetalRenderer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

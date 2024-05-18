@@ -16,15 +16,15 @@ import AVFoundation
 struct RunGameView: View {
     @State private var gameURL: URL
     @FocusState private var isFocused: Bool
-    @Environment(ArcadiaGBC.self) private var core: ArcadiaGBC
+    @State private var gameCore: any ArcadiaCoreProtocol
     @Environment(ArcadiaCoreEmulationState.self) private var emulationState: ArcadiaCoreEmulationState
     
-    init(gameURL: URL) {
+    init(gameURL: URL, gameCore: any ArcadiaCoreProtocol) {
         self.gameURL = gameURL
+        self.gameCore = gameCore
     }
 
     var body: some View {
-        @Bindable var core = core
         @Bindable var emulationState = emulationState
         VStack{
             //MetalView()
@@ -36,7 +36,7 @@ struct RunGameView: View {
                 .onKeyPress( action: { keypress in
                     switch keypress.key {
                     case .return:
-                        core.pressButton(button: .joypadStart)
+                        emulationState.pressButton(button: .joypadStart)
                         return .handled
                     default:
                         return .ignored
@@ -44,44 +44,24 @@ struct RunGameView: View {
                 })
                 .onAppear(perform: {
                     isFocused = true
-                    // TODO: Change implementation, the frontend should not worry about all these things
-                    if emulationState.currentGameURL != nil {
-                        if emulationState.currentGameURL == gameURL {
-                            core.resumeGame()
-                        } else {
-                            core.stopGameLoop()
-                            core.unloadGame()
-                            //TODO: Understand if it's really necessary to deinit the core
-                            core.deinitializeCore()
-                            core.initializeCore()
-                            core.loadGame(gameURL: gameURL)
-                            core.setInputOutputCallbacks()
-                            core.startGameLoop()
-                        }
-                    } else {
-                        core.initializeCore()
-                        core.loadGame(gameURL: gameURL)
-                        core.setInputOutputCallbacks()
-                        core.startGameLoop()
-                    }
-
-
+                    emulationState.attachCore(core: gameCore)
+                    emulationState.startEmulation(gameURL: gameURL)
                 })
                 .onDisappear(perform: {
-                    core.pauseGame()
+                    emulationState.pauseEmulation()
                     //metalView.coordia
                 })
             HStack {
-                CapsuleButtonView(core: core, arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
-                CapsuleButtonView(core: core, arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
+                CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
+                CapsuleButtonView(arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
             }
 
             HStack {
-                DPadView(core: core)
+                DPadView()
                 Spacer()
                 HStack {
-                    CircleButtonView(core: core, arcadiaCoreButton: .joypadA, buttonText: "A", color: Color.red)
-                    CircleButtonView(core: core, arcadiaCoreButton: .joypadB, buttonText: "B", color: Color.red)
+                    CircleButtonView(arcadiaCoreButton: .joypadA, buttonText: "A", color: Color.red)
+                    CircleButtonView(arcadiaCoreButton: .joypadB, buttonText: "B", color: Color.red)
                 }
             }
         }
@@ -92,8 +72,9 @@ struct RunGameView: View {
 }
 
 
+/*
 #Preview {
     RunGameView(gameURL: URL(fileURLWithPath: "e"))
 }
-
+*/
 

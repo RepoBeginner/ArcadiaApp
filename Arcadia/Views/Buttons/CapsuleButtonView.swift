@@ -9,13 +9,11 @@ import SwiftUI
 import ArcadiaCore
 
 struct CapsuleButtonView: View {
-    @State private var core: any ArcadiaCoreProtocol
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var buttonText: String
     private var color: Color
     
-    init(core: any ArcadiaCoreProtocol, arcadiaCoreButton: ArcadiaCoreButton, buttonText: String, color: Color) {
-        self.core = core
+    init(arcadiaCoreButton: ArcadiaCoreButton, buttonText: String, color: Color) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.buttonText = buttonText
         self.color = color
@@ -23,7 +21,7 @@ struct CapsuleButtonView: View {
     
     var body: some View {
         Button(action: {
-            core.pressButton(button: arcadiaCoreButton)
+            ArcadiaCoreEmulationState.sharedInstance.pressButton(button: arcadiaCoreButton)
         }) {
             ZStack {
                 Capsule()

@@ -22,13 +22,6 @@ final class ArcadiaGame {
         self.id = id
         self.internalName = id.uuidString
     }
+    
 }
 
-enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable {
-    
-    var id: Self {
-        return self
-    }
-    
-    case gameBoyGame = "GameBoy"
-}

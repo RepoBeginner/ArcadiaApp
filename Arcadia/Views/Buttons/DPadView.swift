@@ -9,23 +9,18 @@ import SwiftUI
 import ArcadiaCore
 
 struct DPadView: View {
-    @State private var core: any ArcadiaCoreProtocol
-    
-    init(core: any ArcadiaCoreProtocol) {
-        self.core = core
-    }
     
     var body: some View {
                 VStack {
-                    DPadButtonView(core: core, arcadiaCoreButton: .joypadUp, rotationAngle: 0)
+                    DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
                     HStack {
-                        DPadButtonView(core: core, arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
+                        DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
                         Spacer()
                             .frame(maxWidth: 50)
-                        DPadButtonView(core: core, arcadiaCoreButton: .joypadRight, rotationAngle: 90)
+                        DPadButtonView(arcadiaCoreButton: .joypadRight, rotationAngle: 90)
                     }
                     .padding(-10)
-                    DPadButtonView(core: core, arcadiaCoreButton: .joypadDown, rotationAngle: 180)
+                    DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
                 }
                 
 
