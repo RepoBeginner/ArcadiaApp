@@ -11,6 +11,13 @@ import ArcadiaGBCCore
 import ArcadiaCore
 import AVFoundation
 
+import GameController
+
+#if os(macOS)
+import AppKit
+#else
+import UIKit
+#endif
 
 
 struct RunGameView: View {
@@ -65,6 +72,7 @@ struct RunGameView: View {
                     CircleButtonView(arcadiaCoreButton: .joypadA, buttonText: "A", color: Color.red)
                     CircleButtonView(arcadiaCoreButton: .joypadB, buttonText: "B", color: Color.red)
                 }
+                .padding(.horizontal)
             }
         }
 

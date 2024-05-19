@@ -25,7 +25,7 @@ struct GameCollectionView: View {
                         .environment(ArcadiaCoreEmulationState.sharedInstance)
                         .environment(fileManager)
                     ) {
-                        Text(file.lastPathComponent)
+                        Text(file.deletingPathExtension().lastPathComponent)
                     }
                     }
             }

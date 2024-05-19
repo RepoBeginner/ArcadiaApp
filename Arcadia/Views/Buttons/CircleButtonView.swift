@@ -26,6 +26,7 @@ struct CircleButtonView: View {
             ZStack {
                 Circle()
                     .fill(color)
+                    .frame(width: 50, height: 50)
                 Text(buttonText)
             }
         }

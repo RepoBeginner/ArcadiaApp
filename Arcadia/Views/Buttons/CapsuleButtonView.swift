@@ -26,6 +26,7 @@ struct CapsuleButtonView: View {
             ZStack {
                 Capsule()
                     .fill(color)
+                    .frame(width: 50*1.5, height: 50)
                 Text(buttonText)
             }
         }

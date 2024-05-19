@@ -22,10 +22,18 @@ struct DPadButtonView: View {
         Button(action: {
             ArcadiaCoreEmulationState.sharedInstance.pressButton(button: arcadiaCoreButton)
         }) {
-            Trapezoid()
-                .fill(Color.red)
-                .frame(width: 30, height: 30*1.5)
-                .rotationEffect(Angle(degrees: rotationAngle))
+
+                ZStack {
+                    Trapezoid()
+                        .stroke(.orange, style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
+                        .fill(Color.red)
+                        .padding(5)
+                        .rotationEffect(Angle(degrees: rotationAngle))
+                        
+                }
+                .frame(width: 60, height: 60)
+            
+                
         }
     }
 }

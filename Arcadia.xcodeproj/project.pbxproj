@@ -24,6 +24,9 @@
 		955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3812BF7E54E00C930ED /* CircleButtonView.swift */; };
 		955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */; };
 		955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */; };
+		955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; };
+		955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC39A2BFA0D9B00C930ED /* Triangle.swift */; };
 		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
 		956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */; };
 		956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */; };
@@ -62,6 +65,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */,
+				955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +94,8 @@
 		955CC3812BF7E54E00C930ED /* CircleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleButtonView.swift; sourceTree = "<group>"; };
 		955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButtonView.swift; sourceTree = "<group>"; };
 		955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGameType.swift; sourceTree = "<group>"; };
+		955CC3972BF9668300C930ED /* ArcadiaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955CC39A2BFA0D9B00C930ED /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		956F83FA2BEA67370025FC5F /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
 		956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFrameView.swift; sourceTree = "<group>"; };
 		956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGame.swift; sourceTree = "<group>"; };
@@ -109,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */,
+				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				955CC3972BF9668300C930ED /* ArcadiaCore.framework */,
 				956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */,
 			);
 			name = Frameworks;
@@ -234,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				955CC37B2BF7E47D00C930ED /* Trapezoid.swift */,
+				955CC39A2BFA0D9B00C930ED /* Triangle.swift */,
 			);
 			path = Shapes;
 			sourceTree = "<group>";
@@ -393,6 +402,7 @@
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
 				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
 				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,
+				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
@@ -581,7 +591,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -591,6 +601,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -621,7 +632,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
@@ -631,6 +642,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

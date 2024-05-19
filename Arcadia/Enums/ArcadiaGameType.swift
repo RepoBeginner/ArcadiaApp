@@ -10,7 +10,7 @@ import UniformTypeIdentifiers
 import ArcadiaCore
 import ArcadiaGBCCore
 
-enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable {
+enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
     
     var id: Self {
         return self
@@ -29,6 +29,13 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .gameBoyGame:
             return ArcadiaGBC()
+        }
+    }
+    
+    var saveFileExtension: String {
+        switch self {
+        case .gameBoyGame:
+            return "srm"
         }
     }
     
