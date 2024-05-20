@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UniformTypeIdentifiers
 
 @Observable class ArcadiaFileManager {
     
@@ -60,7 +61,14 @@ import Foundation
     func getGamesURL(gameSystem: ArcadiaGameType) -> [URL] {
         do {
             let dir = try FileManager.default.contentsOfDirectory(at: self.gamesDirectory.appendingPathComponent(gameSystem.rawValue), includingPropertiesForKeys: nil)
-            return dir
+            var correctFiles = [URL]()
+            for fileToCheck in dir {
+                if gameSystem.allowedExtensions.contains(UTType(filenameExtension: fileToCheck.pathExtension)!) {
+                    correctFiles.append(fileToCheck)
+                }
+                
+            }
+            return correctFiles
         }
         catch {
             return []
