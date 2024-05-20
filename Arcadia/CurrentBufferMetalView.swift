@@ -28,6 +28,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
         metalView.delegate = context.coordinator.metalRenderer
         metalView.enableSetNeedsDisplay = true
         metalView.framebufferOnly = false
+        metalView.preferredFramesPerSecond = 60
         return metalView
     }
 
@@ -42,6 +43,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
         metalView.delegate = context.coordinator.metalRenderer
         metalView.enableSetNeedsDisplay = true
         metalView.framebufferOnly = false
+        metalView.preferredFramesPerSecond = 60
         return metalView
     }
 

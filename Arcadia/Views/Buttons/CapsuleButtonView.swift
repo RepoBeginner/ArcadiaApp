@@ -22,12 +22,24 @@ struct CapsuleButtonView: View {
     var body: some View {
         Button(action: {
             ArcadiaCoreEmulationState.sharedInstance.pressButton(button: arcadiaCoreButton)
+            #if os(iOS)
+            UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            #endif
         }) {
             ZStack {
                 Capsule()
-                    .fill(color)
+                    .fill(.gray
+                        .shadow(.inner(color: .black, radius: 5))
+                        .shadow(.drop(color: .black, radius: 10))
+                
+                    )
                     .frame(width: 50*1.5, height: 50)
                 Text(buttonText)
+                    .font(.headline)
+                    .foregroundStyle(
+                        Color.white
+                            .shadow(.inner(color: .black, radius: 0.1, x: 0.3, y: 0.3))
+                    )
             }
         }
     }

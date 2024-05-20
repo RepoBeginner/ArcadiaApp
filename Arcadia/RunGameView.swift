@@ -35,8 +35,6 @@ struct RunGameView: View {
     var body: some View {
         @Bindable var emulationState = emulationState
         VStack{
-            //MetalView()
-            //CurrentFrameView(currentFrame: $emulationState.currentFrame)
             CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, audioData: $emulationState.currentAudioFrame, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
                 .scaledToFit()
                 .focusable()
@@ -58,7 +56,6 @@ struct RunGameView: View {
                 })
                 .onDisappear(perform: {
                     emulationState.pauseEmulation()
-                    //metalView.coordia
                 })
             HStack {
                 CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
@@ -68,12 +65,9 @@ struct RunGameView: View {
             HStack {
                 DPadView()
                 Spacer()
-                HStack {
-                    CircleButtonView(arcadiaCoreButton: .joypadA, buttonText: "A", color: Color.red)
-                    CircleButtonView(arcadiaCoreButton: .joypadB, buttonText: "B", color: Color.red)
-                }
-                .padding(.horizontal)
+                TwoButtonsView()
             }
+            .padding(.horizontal, 5)
         }
 
     }

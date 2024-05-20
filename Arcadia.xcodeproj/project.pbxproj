@@ -27,6 +27,7 @@
 		955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; };
 		955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC39A2BFA0D9B00C930ED /* Triangle.swift */; };
+		955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */; };
 		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
 		956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */; };
 		956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */; };
@@ -96,6 +97,7 @@
 		955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGameType.swift; sourceTree = "<group>"; };
 		955CC3972BF9668300C930ED /* ArcadiaCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		955CC39A2BFA0D9B00C930ED /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoButtonsView.swift; sourceTree = "<group>"; };
 		956F83FA2BEA67370025FC5F /* GameLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLibraryView.swift; sourceTree = "<group>"; };
 		956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFrameView.swift; sourceTree = "<group>"; };
 		956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGame.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				955CC3782BF7E43400C930ED /* DPadButtonView.swift */,
 				955CC3812BF7E54E00C930ED /* CircleButtonView.swift */,
 				955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */,
+				955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
+				955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
 				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
@@ -581,16 +585,21 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -599,7 +608,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = auto;
+				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -622,16 +631,21 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -640,7 +654,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = auto;
+				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;

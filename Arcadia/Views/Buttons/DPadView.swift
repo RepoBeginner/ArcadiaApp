@@ -11,9 +11,9 @@ import ArcadiaCore
 struct DPadView: View {
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: -15) {
                     DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
-                    HStack(spacing: 10) {
+                    HStack(spacing: -15) {
                         DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
                         Spacer()
                             .frame(width: 60, height: 60)

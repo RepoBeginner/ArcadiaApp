@@ -39,6 +39,7 @@ class CurrentBufferAudioPlayer {
     }
 
     func updateBuffer(with audioData: [Int16]) {
+        
         let frameCount = AVAudioFrameCount(audioData.count / 2)
         
         guard let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: frameCount) else {
@@ -63,6 +64,7 @@ class CurrentBufferAudioPlayer {
         }
 
         playerNode.scheduleBuffer(buffer, completionHandler: nil)
+         
     }
 }
 
