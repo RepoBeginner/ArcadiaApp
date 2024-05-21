@@ -35,7 +35,7 @@ struct RunGameView: View {
     var body: some View {
         @Bindable var emulationState = emulationState
         VStack{
-            CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, audioData: $emulationState.currentAudioFrame, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
+            CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, audioData: $emulationState.currentAudioFrameFloat, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
                 .scaledToFit()
                 .focusable()
                 .focused($isFocused)

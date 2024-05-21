@@ -4,7 +4,6 @@
 //
 //  Created by Davide Andreoli on 17/05/24.
 //
-
 import AVFoundation
 
 class CurrentBufferAudioPlayer {
@@ -19,7 +18,7 @@ class CurrentBufferAudioPlayer {
         let sampleRate: Double = 44100
         let channels: AVAudioChannelCount = 2 // Two channels for stereo
 
-        // Use Float32 format with interleaved data
+        // Use Float32 format with non-interleaved data
         guard let format = AVAudioFormat(standardFormatWithSampleRate: sampleRate, channels: channels) else {
             fatalError("Failed to create audio format")
         }
@@ -39,8 +38,7 @@ class CurrentBufferAudioPlayer {
     }
 
     func updateBuffer(with audioData: [Int16]) {
-        
-        let frameCount = AVAudioFrameCount(audioData.count / 2)
+        let frameCount = AVAudioFrameCount(audioData.count / Int(audioFormat.channelCount))
         
         guard let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: frameCount) else {
             print("Failed to create PCM buffer with frame capacity \(frameCount)")
@@ -48,23 +46,47 @@ class CurrentBufferAudioPlayer {
         }
         buffer.frameLength = frameCount
 
-        // Access the audioBufferList directly for interleaved data
-        guard let audioBuffer = buffer.audioBufferList.pointee.mBuffers.mData else {
-            print("Failed to get audio buffer data")
+        // Get pointers to each channel's data buffer
+        guard let channelData = buffer.floatChannelData else {
+            print("Failed to get float channel data")
             return
         }
 
-        // Get a pointer to the interleaved Float32 data
-        let floatBuffer = audioBuffer.bindMemory(to: Float32.self, capacity: Int(buffer.frameLength) * Int(audioFormat.channelCount))
-
-        // Convert Int16 data to Float32 and fill the interleaved buffer
-        for i in 0..<Int(buffer.frameLength) {
-            floatBuffer[2 * i] = Float32(audioData[2 * i]) / Float32(Int16.max)
-            floatBuffer[2 * i + 1] = Float32(audioData[2 * i + 1]) / Float32(Int16.max)
+        // Fill each channel's buffer with converted Float32 data
+        for frame in 0..<Int(frameCount) {
+            for channel in 0..<Int(audioFormat.channelCount) {
+                let sample = audioData[frame * Int(audioFormat.channelCount) + channel]
+                channelData[channel][frame] = Float32(sample) / Float32(Int16.max)
+            }
         }
 
         playerNode.scheduleBuffer(buffer, completionHandler: nil)
-         
     }
-}
+    
+    func updateBuffer(with audioData: [Float32]) {
+        let frameCount = AVAudioFrameCount(audioData.count / Int(audioFormat.channelCount))
+        
+        guard let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: frameCount) else {
+            print("Failed to create PCM buffer with frame capacity \(frameCount)")
+            return
+        }
+        buffer.frameLength = frameCount
 
+        // Get pointers to each channel's data buffer
+        guard let channelData = buffer.floatChannelData else {
+            print("Failed to get float channel data")
+            return
+        }
+
+        // Directly copy the audio data into the channel buffers
+        for channel in 0..<Int(audioFormat.channelCount) {
+            let stride = Int(audioFormat.channelCount)
+            for frame in 0..<Int(frameCount) {
+                channelData[channel][frame] = audioData[frame * stride + channel]
+            }
+        }
+
+        playerNode.scheduleBuffer(buffer, completionHandler: nil)
+    }
+
+}

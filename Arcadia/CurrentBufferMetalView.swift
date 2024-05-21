@@ -13,7 +13,7 @@ import UIKit
 
 struct CurrentBufferMetalView: PlatformViewRepresentable {
     @Binding var pixelData: [UInt8]
-    @Binding var audioData: [Int16]
+    @Binding var audioData: [Float32]
     let width: Int
     let height: Int
 
@@ -66,7 +66,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
             audioPlayer.start()
         }
 
-        func update(pixelData: [UInt8], audioData: [Int16], width: Int, height: Int) {
+        func update(pixelData: [UInt8], audioData: [Float32], width: Int, height: Int) {
             // Update texture
             metalRenderer.updateTexture(with: pixelData, width: width, height: height)
 
