@@ -40,6 +40,7 @@
 		956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; };
 		956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */; };
+		95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 		956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCVirtualControllerView.swift; sourceTree = "<group>"; };
+		95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 		955CC3762BF7E3FF00C930ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95707CB42BFF4C2F00217B82 /* ButtonsLayout */,
 				955CC37A2BF7E47100C930ED /* Shapes */,
 				955CC3772BF7E40B00C930ED /* Buttons */,
 			);
@@ -268,6 +271,14 @@
 				956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		95707CB42BFF4C2F00217B82 /* ButtonsLayout */ = {
+			isa = PBXGroup;
+			children = (
+				95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */,
+			);
+			path = ButtonsLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +422,7 @@
 				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
+				95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */,
 				955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameIconView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,

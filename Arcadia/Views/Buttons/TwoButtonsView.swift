@@ -13,7 +13,7 @@ struct TwoButtonsView: View {
         HStack(spacing: 5) {
             VStack {
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 80)
                 CircleButtonView(arcadiaCoreButton: .joypadB, buttonText: "B", color: .gray)
             }
             Spacer()
@@ -21,7 +21,7 @@ struct TwoButtonsView: View {
             VStack {
                 CircleButtonView(arcadiaCoreButton: .joypadA, buttonText: "A", color: .gray)
                 Spacer()
-                    .frame(height: 50)
+                    .frame(height: 80)
             }
             
         }

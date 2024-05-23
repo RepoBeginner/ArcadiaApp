@@ -21,7 +21,6 @@ struct DPadView: View {
                     }
                     DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
                 }
-        .frame(width: 200, height: 200)
                 
 
  

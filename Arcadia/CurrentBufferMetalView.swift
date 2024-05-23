@@ -20,9 +20,8 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
-#if os(macOS)
-    func makeNSView(context: Context) -> MTKView {
+    
+    func makeMetalView(context: Context) -> MTKView {
         let metalView = MTKView()
         metalView.device = MTLCreateSystemDefaultDevice()
         metalView.delegate = context.coordinator.metalRenderer
@@ -30,6 +29,11 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
         metalView.framebufferOnly = false
         metalView.preferredFramesPerSecond = 60
         return metalView
+    }
+
+#if os(macOS)
+    func makeNSView(context: Context) -> MTKView {
+        return makeMetalView(context: context)
     }
 
     func updateNSView(_ nsView: MTKView, context: Context) {
@@ -40,13 +44,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
     }
 #else
     func makeUIView(context: Context) -> MTKView {
-        let metalView = MTKView()
-        metalView.device = MTLCreateSystemDefaultDevice()
-        metalView.delegate = context.coordinator.metalRenderer
-        metalView.enableSetNeedsDisplay = true
-        metalView.framebufferOnly = false
-        metalView.preferredFramesPerSecond = 60
-        return metalView
+        return makeMetalView(context: context)
     }
 
     func updateUIView(_ uiView: MTKView, context: Context) {

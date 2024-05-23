@@ -36,18 +36,8 @@ struct RunGameView: View {
         @Bindable var emulationState = emulationState
         VStack{
             CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, audioData: $emulationState.currentAudioFrameFloat, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
+            //CurrentFrameView(currentFrame: $emulationState.currentFrame)
                 .scaledToFit()
-                .focusable()
-                .focused($isFocused)
-                .onKeyPress( action: { keypress in
-                    switch keypress.key {
-                    case .return:
-                        emulationState.pressButton(port: 0, device: 1, index: 0, button: .joypadStart)
-                        return .handled
-                    default:
-                        return .ignored
-                    }
-                })
                 .onAppear(perform: {
                     isFocused = true
                     emulationState.attachCore(core: gameType.associatedCore)
