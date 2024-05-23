@@ -42,3 +42,6 @@ struct CapsuleButtonView: View {
     }
 }
 
+#Preview {
+    CapsuleButtonView(arcadiaCoreButton: .joypadA, buttonText: "Start", color: .gray)
+}

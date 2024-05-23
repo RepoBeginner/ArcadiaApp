@@ -51,4 +51,5 @@ struct GameCollectionView: View {
 
 #Preview {
     GameCollectionView(gameType: ArcadiaGameType.gameBoyGame)
+        .environment(ArcadiaFileManager.shared)
 }

@@ -48,3 +48,7 @@ struct DPadButtonView: View {
     }
 }
 
+#Preview {
+    DPadButtonView(arcadiaCoreButton: .joypadA, rotationAngle: 90)
+}
+

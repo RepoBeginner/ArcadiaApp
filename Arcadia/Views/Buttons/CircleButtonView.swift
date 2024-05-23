@@ -43,3 +43,7 @@ struct CircleButtonView: View {
     }
 }
 
+#Preview {
+    CircleButtonView(arcadiaCoreButton: .joypadA, buttonText: "A", color: .gray)
+}
+

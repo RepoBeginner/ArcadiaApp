@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class iRetroAppUITestsLaunchTests: XCTestCase {
+final class ArcadiaAppUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

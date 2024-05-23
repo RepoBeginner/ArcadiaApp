@@ -28,13 +28,7 @@ struct DPadView: View {
     }
 }
 
-
-
-
-
-
-/*
 #Preview {
-    JoypadView()
+    DPadView()
 }
-*/
+

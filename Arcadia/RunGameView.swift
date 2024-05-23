@@ -70,7 +70,8 @@ struct RunGameView: View {
             }
             .padding(.horizontal, 5)
 #else
-//GCVirtualControllerView()
+            
+                //GCVirtualControllerView()
             HStack {
                 CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
                 CapsuleButtonView(arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
