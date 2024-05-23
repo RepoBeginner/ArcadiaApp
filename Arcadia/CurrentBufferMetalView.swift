@@ -34,7 +34,9 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
 
     func updateNSView(_ nsView: MTKView, context: Context) {
         context.coordinator.update(pixelData: pixelData, audioData: audioData, width: width, height: height)
-        nsView.setNeedsDisplay(nsView.bounds)
+        DispatchQueue.main.async {
+            nsView.setNeedsDisplay(nsView.bounds)
+        }
     }
 #else
     func makeUIView(context: Context) -> MTKView {
@@ -49,7 +51,9 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
 
     func updateUIView(_ uiView: MTKView, context: Context) {
         context.coordinator.update(pixelData: pixelData, audioData: audioData, width: width, height: height)
-        uiView.setNeedsDisplay()
+        DispatchQueue.main.async {
+            uiView.setNeedsDisplay()
+        }
     }
 #endif
 

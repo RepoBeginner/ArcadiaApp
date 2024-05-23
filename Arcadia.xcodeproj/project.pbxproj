@@ -39,6 +39,7 @@
 		956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */; };
 		956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; };
 		956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95707CB32BFF148B00217B82 /* GCControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB22BFF148B00217B82 /* GCControllerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		956F84262BF4846C0025FC5F /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 		956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95707CB22BFF148B00217B82 /* GCControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCControllerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				956F840A2BEBED810025FC5F /* GameIconView.swift */,
 				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */,
+				95707CB22BFF148B00217B82 /* GCControllerView.swift */,
 				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
 				9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */,
 				955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */,
@@ -416,6 +419,7 @@
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
+				95707CB32BFF148B00217B82 /* GCControllerView.swift in Sources */,
 				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
@@ -509,7 +513,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -564,7 +570,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -610,7 +618,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -656,7 +664,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

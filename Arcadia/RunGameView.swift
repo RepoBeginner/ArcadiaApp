@@ -42,7 +42,7 @@ struct RunGameView: View {
                 .onKeyPress( action: { keypress in
                     switch keypress.key {
                     case .return:
-                        emulationState.pressButton(button: .joypadStart)
+                        emulationState.pressButton(port: 0, device: 1, index: 0, button: .joypadStart)
                         return .handled
                     default:
                         return .ignored
@@ -57,6 +57,7 @@ struct RunGameView: View {
                 .onDisappear(perform: {
                     emulationState.pauseEmulation()
                 })
+#if os(macOS)
             HStack {
                 CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
                 CapsuleButtonView(arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
@@ -68,6 +69,21 @@ struct RunGameView: View {
                 TwoButtonsView()
             }
             .padding(.horizontal, 5)
+#else
+//GCVirtualControllerView()
+            HStack {
+                CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
+                CapsuleButtonView(arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
+            }
+
+            HStack {
+                DPadView()
+                Spacer()
+                TwoButtonsView()
+            }
+            .padding(.horizontal, 5)
+#endif
+
         }
 
     }

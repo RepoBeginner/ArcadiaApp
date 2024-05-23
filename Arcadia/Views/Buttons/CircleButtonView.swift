@@ -21,10 +21,7 @@ struct CircleButtonView: View {
     
     var body: some View {
         Button(action: {
-            ArcadiaCoreEmulationState.sharedInstance.pressButton(button: arcadiaCoreButton)
-            #if os(iOS)
-            UIImpactFeedbackGenerator(style: .soft).impactOccurred()
-            #endif
+            ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton)
         }) {
             ZStack {
                 Circle()
