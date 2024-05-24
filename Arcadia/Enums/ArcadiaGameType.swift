@@ -9,6 +9,7 @@ import Foundation
 import UniformTypeIdentifiers
 import ArcadiaCore
 import ArcadiaGBCCore
+import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
     
@@ -36,6 +37,13 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         switch self {
         case .gameBoyGame:
             return "srm"
+        }
+    }
+    
+    var defaultCollectionImage: Image {
+        switch self {
+        case .gameBoyGame:
+            return Image("gbc_icon")
         }
     }
     

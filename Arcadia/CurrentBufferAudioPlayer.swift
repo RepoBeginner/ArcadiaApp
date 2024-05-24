@@ -10,6 +10,7 @@ class CurrentBufferAudioPlayer {
     private var audioEngine: AVAudioEngine
     private var playerNode: AVAudioPlayerNode
     private var audioFormat: AVAudioFormat
+    private let bufferUpdateQueue = DispatchQueue(label: "com.Arcadia.bufferUpdateQueue")
 
     init() {
         audioEngine = AVAudioEngine()
@@ -64,29 +65,33 @@ class CurrentBufferAudioPlayer {
     }
     
     func updateBuffer(with audioData: [Float32]) {
-        let frameCount = AVAudioFrameCount(audioData.count / Int(audioFormat.channelCount))
-        
-        guard let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: frameCount) else {
-            print("Failed to create PCM buffer with frame capacity \(frameCount)")
-            return
-        }
-        buffer.frameLength = frameCount
-
-        // Get pointers to each channel's data buffer
-        guard let channelData = buffer.floatChannelData else {
-            print("Failed to get float channel data")
-            return
-        }
-
-        // Directly copy the audio data into the channel buffers
-        for channel in 0..<Int(audioFormat.channelCount) {
-            let stride = Int(audioFormat.channelCount)
-            for frame in 0..<Int(frameCount) {
-                channelData[channel][frame] = audioData[frame * stride + channel]
+        bufferUpdateQueue.async { [weak self] in
+            guard let self = self else { return }
+            
+            let frameCount = AVAudioFrameCount(audioData.count / Int(self.audioFormat.channelCount))
+            
+            guard let buffer = AVAudioPCMBuffer(pcmFormat: self.audioFormat, frameCapacity: frameCount) else {
+                print("Failed to create PCM buffer with frame capacity \(frameCount)")
+                return
             }
-        }
+            buffer.frameLength = frameCount
 
-        playerNode.scheduleBuffer(buffer, completionHandler: nil)
+            // Get pointers to each channel's data buffer
+            guard let channelData = buffer.floatChannelData else {
+                print("Failed to get float channel data")
+                return
+            }
+
+            // Directly copy the audio data into the channel buffers
+            for channel in 0..<Int(self.audioFormat.channelCount) {
+                let stride = Int(self.audioFormat.channelCount)
+                for frame in 0..<Int(frameCount) {
+                    channelData[channel][frame] = audioData[frame * stride + channel]
+                }
+            }
+
+            self.playerNode.scheduleBuffer(buffer, completionHandler: nil)
+        }
     }
 
 }

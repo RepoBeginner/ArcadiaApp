@@ -16,25 +16,46 @@ import UniformTypeIdentifiers
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
     }
     
+    var libraryDirectory: URL {
+        return FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+    }
+    
+    var documentsMainDirectory: URL {
+        return documentsDirectory.appendingPathComponent("Arcadia")
+    }
+    
+    var libraryMainDirectory: URL {
+        return libraryDirectory.appendingPathComponent("Arcadia")
+    }
+    
     var gamesDirectory: URL {
-        return documentsDirectory.appendingPathComponent("Games")
+        return documentsMainDirectory.appendingPathComponent("Games")
     }
     
     var savesDirectory: URL {
-        return documentsDirectory.appendingPathComponent("Saves")
+        return documentsMainDirectory.appendingPathComponent("Saves")
     }
     
     var statesDirectory: URL {
-        return documentsDirectory.appendingPathComponent("States")
+        return documentsMainDirectory.appendingPathComponent("States")
+    }
+    
+    var imagesDirectory: URL {
+        return libraryMainDirectory.appendingPathComponent("Images")
     }
     
 
     private init() {
         
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let gamesDirectory = documentsDirectory.appendingPathComponent("Games")
-        let savesDirectory = documentsDirectory.appendingPathComponent("Saves")
-        let statesDirectory = documentsDirectory.appendingPathComponent("States")
+        let libraryDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
+        let documentsMainDirectory = documentsDirectory.appendingPathComponent("Arcadia")
+        let libraryMainDirectory = libraryDirectory.appendingPathComponent("Arcadia")
+        
+        let gamesDirectory = documentsMainDirectory.appendingPathComponent("Games")
+        let savesDirectory = documentsMainDirectory.appendingPathComponent("Saves")
+        let statesDirectory = documentsMainDirectory.appendingPathComponent("States")
+        let imagesDirectory = libraryMainDirectory.appendingPathComponent("Images")
         
         for dir in [gamesDirectory, savesDirectory, statesDirectory] {
             do {
@@ -91,5 +112,29 @@ import UniformTypeIdentifiers
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
         return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("srm")
     }
+    
+    func getStateURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
+        return self.statesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("state")
+    }
+    
+    func getImageURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
+        return self.imagesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("png")
+    }
+    
+    func getImageData(gameURL: URL, gameType: ArcadiaGameType) -> Data? {
+        let fileURL = getImageURL(gameURL: gameURL, gameType: gameType)
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            do {
+                let imageData = try Data(contentsOf: fileURL)
+                return imageData
+            } catch {
+                print("Error loading image : \(error)")
+            }
+            return nil
+        }
+        return nil
+    }
+    
+
     
 }
