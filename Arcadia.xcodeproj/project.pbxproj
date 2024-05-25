@@ -42,6 +42,11 @@
 		95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */; };
 		95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */; };
 		95707CB82C006F4100217B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95707CB72C006F4100217B82 /* Assets.xcassets */; };
+		95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB92C00E67100217B82 /* GameSystemRowView.swift */; };
+		95707CBC2C00ED7500217B82 /* ArrowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CBB2C00ED7500217B82 /* ArrowButtonView.swift */; };
+		95707CBF2C01D77400217B82 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CBE2C01D77400217B82 /* HelpView.swift */; };
+		95707CC12C01E38100217B82 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CC02C01E38100217B82 /* CreditsView.swift */; };
+		95707CC32C020F7200217B82 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CC22C020F7200217B82 /* OverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +120,11 @@
 		95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCVirtualControllerView.swift; sourceTree = "<group>"; };
 		95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayout.swift; sourceTree = "<group>"; };
 		95707CB72C006F4100217B82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95707CB92C00E67100217B82 /* GameSystemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSystemRowView.swift; sourceTree = "<group>"; };
+		95707CBB2C00ED7500217B82 /* ArrowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowButtonView.swift; sourceTree = "<group>"; };
+		95707CBE2C01D77400217B82 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		95707CC02C01E38100217B82 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		95707CC22C020F7200217B82 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,18 +185,19 @@
 				955CC3762BF7E3FF00C930ED /* Views */,
 				956F83FE2BEA70800025FC5F /* Models */,
 				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
+				95707CB92C00E67100217B82 /* GameSystemRowView.swift */,
 				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
 				956F840A2BEBED810025FC5F /* GameRowView.swift */,
 				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */,
 				95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */,
 				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
+				95707CC22C020F7200217B82 /* OverlayView.swift */,
 				9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */,
 				955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */,
 				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
 				956F84262BF4846C0025FC5F /* Shaders.metal */,
 				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
-				956F840C2BEBF59F0025FC5F /* SettingsView.swift */,
 				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
 				95456BBD2BE2ACAB00113B8A /* Arcadia.entitlements */,
 				95456BBE2BE2ACAC00113B8A /* Preview Content */,
@@ -231,6 +242,7 @@
 		955CC3762BF7E3FF00C930ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95707CBD2C01D76000217B82 /* Settings */,
 				95707CB42BFF4C2F00217B82 /* ButtonsLayout */,
 				955CC37A2BF7E47100C930ED /* Shapes */,
 				955CC3772BF7E40B00C930ED /* Buttons */,
@@ -246,6 +258,7 @@
 				955CC3812BF7E54E00C930ED /* CircleButtonView.swift */,
 				955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */,
 				955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */,
+				95707CBB2C00ED7500217B82 /* ArrowButtonView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -282,6 +295,16 @@
 				95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */,
 			);
 			path = ButtonsLayout;
+			sourceTree = "<group>";
+		};
+		95707CBD2C01D76000217B82 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				956F840C2BEBF59F0025FC5F /* SettingsView.swift */,
+				95707CC02C01E38100217B82 /* CreditsView.swift */,
+				95707CBE2C01D77400217B82 /* HelpView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,17 +443,22 @@
 				955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
 				956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */,
+				95707CC12C01E38100217B82 /* CreditsView.swift in Sources */,
+				95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
 				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
 				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,
+				95707CC32C020F7200217B82 /* OverlayView.swift in Sources */,
 				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */,
 				955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameRowView.swift in Sources */,
+				95707CBC2C00ED7500217B82 /* ArrowButtonView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
 				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
+				95707CBF2C01D77400217B82 /* HelpView.swift in Sources */,
 				955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */,
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,

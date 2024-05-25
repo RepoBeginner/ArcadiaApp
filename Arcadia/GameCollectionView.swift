@@ -12,10 +12,12 @@ import ArcadiaCore
 struct GameCollectionView: View {
     @State private var gameType: ArcadiaGameType
     @State private var showingAddGameView: Bool = false
+    
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     
     init(gameType: ArcadiaGameType) {
         self.gameType = gameType
+
     }
     
     var body: some View {
@@ -30,7 +32,7 @@ struct GameCollectionView: View {
                     }
                     }
             }
-                .navigationTitle("Game Collection")
+            .navigationTitle("Game Collection")
                 .toolbar() {
                     Button(action: { showingAddGameView.toggle() }, label: {
                         Image(systemName: "plus")
@@ -46,11 +48,16 @@ struct GameCollectionView: View {
                     }
                     return
                 })
+        #if os(iOS)
+                .navigationBarTitleDisplayMode(.inline)
+        #endif
 
     }
 }
 
-#Preview {
-    GameCollectionView(gameType: ArcadiaGameType.gameBoyGame)
-        .environment(ArcadiaFileManager.shared)
-}
+
+ #Preview {
+ GameCollectionView(gameType: ArcadiaGameType.gameBoyGame)
+ .environment(ArcadiaFileManager.shared)
+ }
+ 

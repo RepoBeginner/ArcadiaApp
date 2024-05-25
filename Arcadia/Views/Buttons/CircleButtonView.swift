@@ -10,40 +10,50 @@ import ArcadiaCore
 
 struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
-    private var buttonText: String
     private var color: Color
     
-    init(arcadiaCoreButton: ArcadiaCoreButton, buttonText: String, color: Color) {
+    init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray) {
         self.arcadiaCoreButton = arcadiaCoreButton
-        self.buttonText = buttonText
         self.color = color
     }
     
     var body: some View {
         Button(action: {
-            ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton)
-        }) {
-            ZStack {
-                Circle()
-                    .fill(color
-                        .shadow(.inner(color: .black, radius: 5))
-                        .shadow(.drop(color: .black, radius: 10))
-                    
-                    )
-
-                    .frame(width: 60, height: 60)
-                Text(buttonText)
-                    .font(.title)
-                    .foregroundStyle(
-                        Color.white
-                            .shadow(.inner(color: .black, radius: 0.5, x: 0.5, y: 0.5))
-                    )
+            if arcadiaCoreButton != .arcadiaButton {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.pauseEmulation()
+                ArcadiaCoreEmulationState.sharedInstance.showOverlay.toggle()
             }
+        }) {
+            Image(systemName: arcadiaCoreButton.systemImageName)
+                .resizable()
+                .frame(width: 50, height: 50)
+                .foregroundStyle(.primary)
+/*
+ ZStack {
+     Circle()
+         .fill(color
+             .shadow(.inner(color: .black, radius: 5))
+             .shadow(.drop(color: .black, radius: 10))
+         
+         )
+
+         .frame(width: 60, height: 60)
+     Text(buttonText)
+         .font(.title)
+         .foregroundStyle(
+             Color.white
+                 .shadow(.inner(color: .black, radius: 0.5, x: 0.5, y: 0.5))
+         )
+ }
+ */
         }
+        .buttonRepeatBehavior(.enabled)
     }
 }
 
 #Preview {
-    CircleButtonView(arcadiaCoreButton: .joypadA, buttonText: "A", color: .gray)
+    CircleButtonView(arcadiaCoreButton: .joypadA)
 }
 

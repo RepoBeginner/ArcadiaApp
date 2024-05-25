@@ -11,15 +11,19 @@ import ArcadiaCore
 struct DPadView: View {
     
     var body: some View {
-        VStack(spacing: -15) {
-                    DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
-                    HStack(spacing: -15) {
-                        DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
+        VStack(spacing: -5) {
+                    //DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
+            CircleButtonView(arcadiaCoreButton: .joypadUp)
+                    HStack(spacing: -0) {
+                        CircleButtonView(arcadiaCoreButton: .joypadLeft)
+                        //DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
                         Spacer()
-                            .frame(width: 60, height: 60)
-                        DPadButtonView(arcadiaCoreButton: .joypadRight, rotationAngle: 90)
+                            .frame(width: 50, height: 50)
+                        CircleButtonView(arcadiaCoreButton: .joypadRight)
+                        //DPadButtonView(arcadiaCoreButton: .joypadRight, rotationAngle: 90)
                     }
-                    DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
+                    //DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
+            CircleButtonView(arcadiaCoreButton: .joypadDown)
                 }
                 
 

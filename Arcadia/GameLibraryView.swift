@@ -8,29 +8,28 @@
 import SwiftUI
 
 struct GameLibraryView: View {
-    @State private var system: ArcadiaGameType = ArcadiaGameType.gameBoyGame
+    @State private var system: ArcadiaGameType?
+
     
     var body: some View {
-        #if os(macOS)
+
         NavigationSplitView {
             List(ArcadiaGameType.allCases, selection: $system) { gameType in
-                NavigationLink(destination: GameCollectionView(gameType: gameType)) {
-                    Text(gameType.rawValue)
-                }
-            }
-        } detail: {
-            Text("Hello")
-        }
-        #else
-        NavigationStack {
-            List(ArcadiaGameType.allCases) { gameType in
-                NavigationLink(destination: GameCollectionView(gameType: gameType)) {
-                    Text(gameType.rawValue)
-                }
+                    GameSystemRowView(gameSystem: gameType)
             }
             .navigationTitle("Game Systems")
+        } detail: {
+            if let selection = system {
+                NavigationStack {
+                    GameCollectionView(gameType: selection)
+                }
+
+            } else {
+                Text("Select a system")
+            }
         }
-        #endif
+        
+
     }
 }
 

@@ -23,7 +23,8 @@ import UIKit
 struct RunGameView: View {
     @State private var gameURL: URL
     @State private var gameType: ArcadiaGameType
-    @FocusState private var isFocused: Bool
+    @State private var toDismiss: Bool = false
+    @Environment(\.dismiss) var dismiss
     @Environment(ArcadiaCoreEmulationState.self) private var emulationState: ArcadiaCoreEmulationState
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     
@@ -36,10 +37,8 @@ struct RunGameView: View {
         @Bindable var emulationState = emulationState
         VStack{
             CurrentBufferMetalView(pixelData: $emulationState.mainBuffer, audioData: $emulationState.currentAudioFrameFloat, width: emulationState.audioVideoInfo?.geometry.width ?? 1, height: emulationState.audioVideoInfo?.geometry.height ?? 1)
-            //CurrentFrameView(currentFrame: $emulationState.currentFrame)
                 .scaledToFit()
                 .onAppear(perform: {
-                    isFocused = true
                     emulationState.attachCore(core: gameType.associatedCore)
                     emulationState.currentSaveFolder = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType)
                     emulationState.startEmulation(gameURL: gameURL)
@@ -47,33 +46,21 @@ struct RunGameView: View {
                 .onDisappear(perform: {
                     emulationState.pauseEmulation()
                 })
-#if os(macOS)
-            HStack {
-                CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
-                CapsuleButtonView(arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
-            }
+                .onChange(of: toDismiss) { oldValue, newValue in
+                    if newValue {
+                        dismiss()
+                    }
+                    
+                }
 
-            HStack {
-                DPadView()
-                Spacer()
-                TwoButtonsView()
-            }
-            .padding(.horizontal, 5)
-#else
-            
-                //GCVirtualControllerView()
-            HStack {
-                CapsuleButtonView(arcadiaCoreButton: .joypadStart, buttonText: "Start", color: Color.gray)
-                CapsuleButtonView(arcadiaCoreButton: .joypadSelect, buttonText: "Select", color: Color.gray)
-            }
+            GBCButtonLayout()
+                .sheet(isPresented: $emulationState.showOverlay, content: {
+                    OverlayView(dismissMainView: $toDismiss)
+                })
+            #if os(iOS)
+                .toolbar(.hidden, for: .tabBar)
+            #endif
 
-            HStack {
-                DPadView()
-                Spacer()
-                TwoButtonsView()
-            }
-            .padding(.horizontal, 5)
-#endif
 
         }
 
@@ -83,9 +70,9 @@ struct RunGameView: View {
 }
 
 
-/*
+
 #Preview {
-    RunGameView(gameURL: URL(fileURLWithPath: "e"))
+    RunGameView(gameURL: URL(fileURLWithPath: "e"), gameType: .gameBoyGame)
 }
-*/
+
 

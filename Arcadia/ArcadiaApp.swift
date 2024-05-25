@@ -25,9 +25,28 @@ struct ArcadiaApp: App {
 
     var body: some Scene {
         WindowGroup {
+            #if os(macOS)
+            GameLibraryView()
+            #elseif os(iOS)
+            TabView {
                 GameLibraryView()
+                    .tabItem {
+                            Label("Game Systems", systemImage: "gamecontroller")
+                        }
+                SettingsView()
+                    .tabItem {
+                                Label("Settings", systemImage: "gear")
+                            }
+            }
+            #endif
+                
         }
         .modelContainer(sharedModelContainer)
         .environment(ArcadiaFileManager.shared)
+        #if os(macOS)
+        Settings {
+            SettingsView()
+        }
+        #endif
     }
 }

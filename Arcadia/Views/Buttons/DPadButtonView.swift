@@ -23,24 +23,20 @@ struct DPadButtonView: View {
             ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton)
         }) {
 
-                ZStack {
-                    Trapezoid()
-                    /*
-                        .stroke(.gray
-                            .shadow(.inner(color: .black, radius: 5))
-                            .shadow(.drop(color: .black, radius: 10)),
-                                style: StrokeStyle(lineWidth: 10, lineCap: .round, lineJoin: .round))
-                     */
-                        .fill(.gray
-                            .shadow(.inner(color: .black, radius: 5))
-                            .shadow(.drop(color: .black, radius: 10))
-                    
-                        )
-                        .padding(5)
-                        .rotationEffect(Angle(degrees: rotationAngle))
-                        
-                }
-                .frame(width: 60, height: 70)
+
+             ZStack {
+                 Trapezoid()
+                     .fill(.gray
+                         .shadow(.inner(color: .black, radius: 5))
+                         .shadow(.drop(color: .black, radius: 10))
+                 
+                     )
+                     .padding(5)
+                     .rotationEffect(Angle(degrees: rotationAngle))
+                     
+             }
+             .frame(width: 60, height: 70)
+
             
                 
         }
