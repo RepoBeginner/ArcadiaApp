@@ -25,8 +25,10 @@ struct CreditsView: View {
                 
                 • GameBoy (Color): drhelius's [Gearboy](https://github.com/drhelius/Gearboy)
                 """)
+                Spacer()
             }
             .padding()
+            
         }
     }
 }

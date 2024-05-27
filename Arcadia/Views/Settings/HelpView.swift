@@ -48,6 +48,7 @@ struct HelpView: View {
                     TableColumn("Mapping", value: \.mappingExplanation)
                 }
                 Text("I'm not saying that I'll never go into route one, just not as of right now.")
+                Spacer()
             }
             .padding()
         }

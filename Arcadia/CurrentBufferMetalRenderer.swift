@@ -33,13 +33,15 @@ class CurrentBufferMetalRenderer: NSObject, MTKViewDelegate {
     func updateTexture(with pixelData: [UInt8], width: Int, height: Int) {
         guard let device = MTLCreateSystemDefaultDevice() else { return }
 
-        let textureDescriptor = MTLTextureDescriptor()
-        textureDescriptor.pixelFormat = .bgra8Unorm
-        textureDescriptor.width = width
-        textureDescriptor.height = height
-        textureDescriptor.usage = .shaderRead
+        if texture == nil || texture?.width != width || texture?.height != height {
+            let textureDescriptor = MTLTextureDescriptor()
+            textureDescriptor.pixelFormat = .bgra8Unorm
+            textureDescriptor.width = width
+            textureDescriptor.height = height
+            textureDescriptor.usage = .shaderRead
 
-        texture = device.makeTexture(descriptor: textureDescriptor)
+            texture = device.makeTexture(descriptor: textureDescriptor)
+        }
         let region = MTLRegionMake2D(0, 0, width, height)
         texture?.replace(region: region, mipmapLevel: 0, withBytes: pixelData, bytesPerRow: 4 * width)
     }

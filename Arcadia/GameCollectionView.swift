@@ -29,6 +29,20 @@ struct GameCollectionView: View {
                     ) {
                         GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
                             .environment(fileManager)
+                            .swipeActions(allowsFullSwipe: false) {
+                                Button(role: .destructive) {
+                                    fileManager.deleteGame(gameURL: file, gameType: gameType)
+                                } label: {
+                                    Label("Delete", systemImage: "trash.fill")
+                                }
+                            }
+                            .contextMenu(menuItems: {
+                                Button(role: .destructive) {
+                                    fileManager.deleteGame(gameURL: file, gameType: gameType)
+                                } label: {
+                                    Label("Delete", systemImage: "trash.fill")
+                                }
+                            })
                     }
                     }
             }

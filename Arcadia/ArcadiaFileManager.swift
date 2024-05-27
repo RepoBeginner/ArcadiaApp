@@ -135,6 +135,32 @@ import UniformTypeIdentifiers
         return nil
     }
     
+    func deleteGame(gameURL: URL, gameType: ArcadiaGameType) {
+        let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
+        let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
+        let stateURL = getStateURL(gameURL: gameURL, gameType: gameType)
+        
+        for fileURL in [imageURL, saveURL, stateURL] {
+            if FileManager.default.fileExists(atPath: fileURL.path) {
+                do {
+                    try FileManager.default.removeItem(atPath: fileURL.path)
+                } catch {
+                    print("Could not delete")
+                }
+            }
+        }
+        
+        if FileManager.default.fileExists(atPath: gameURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: gameURL.path)
+            } catch {
+                print("Could not delete")
+            }
+        }
+        
+
+    }
+    
 
     
 }
