@@ -47,7 +47,9 @@ struct HelpView: View {
                     TableColumn("Name", value: \.buttonName)
                     TableColumn("Mapping", value: \.mappingExplanation)
                 }
+                .frame(minWidth: 100, minHeight: 100)
                 Text("I'm not saying that I'll never go into route one, just not as of right now.")
+                
                 Spacer()
             }
             .padding()
