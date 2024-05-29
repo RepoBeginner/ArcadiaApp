@@ -10,7 +10,6 @@ import SwiftUI
 struct GameLibraryView: View {
     @State private var system: ArcadiaGameType?
 
-    
     var body: some View {
 
         NavigationSplitView {
@@ -19,9 +18,10 @@ struct GameLibraryView: View {
             }
             .navigationTitle("Game Systems")
         } detail: {
-            if let selection = system {
+            if let selectedSystem = system {
                 NavigationStack {
-                    GameCollectionView(gameType: selection)
+                    GameCollectionView(gameType: selectedSystem)
+                        .id(selectedSystem.id)
                 }
 
             } else {

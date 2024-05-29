@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
+		952CF6822C0724C200DF2832 /* ArcadiaNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; };
+		952CF6832C0724C200DF2832 /* ArcadiaNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
 		95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* RunGameView.swift */; };
 		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
@@ -74,6 +76,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */,
+				952CF6832C0724C200DF2832 /* ArcadiaNESCore.framework in Embed Frameworks */,
 				955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -84,6 +87,7 @@
 /* Begin PBXFileReference section */
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaNESCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB22BE2ACA900113B8A /* Arcadia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcadia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaApp.swift; sourceTree = "<group>"; };
 		95456BB72BE2ACA900113B8A /* RunGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGameView.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */,
+				952CF6822C0724C200DF2832 /* ArcadiaNESCore.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,6 +238,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */,
 				955CC3972BF9668300C930ED /* ArcadiaCore.framework */,
 				956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */,
 			);
