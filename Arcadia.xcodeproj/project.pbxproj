@@ -159,11 +159,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952C02222C088EA400DF2832 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		952C02232C088EB700DF2832 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				956F840A2BEBED810025FC5F /* GameRowView.swift */,
+				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
+				95707CB92C00E67100217B82 /* GameSystemRowView.swift */,
+				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		952C02242C088ECD00DF2832 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				95707CC22C020F7200217B82 /* OverlayView.swift */,
+				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
+				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
+				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		952C02252C088EF200DF2832 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9528F7862BF4E52400E2CEC6 /* InputController.swift */,
+				955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */,
+				9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */,
+				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		95456BA92BE2ACA900113B8A = {
 			isa = PBXGroup;
 			children = (
 				95707CB72C006F4100217B82 /* Assets.xcassets */,
-				9528F7862BF4E52400E2CEC6 /* InputController.swift */,
 				956F84092BEBE9740025FC5F /* README.md */,
 				95456BB42BE2ACA900113B8A /* Arcadia */,
 				95456BC82BE2ACAC00113B8A /* ArcadiaAppTests */,
@@ -186,23 +226,12 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				952C02252C088EF200DF2832 /* Classes */,
 				955CC3922BF8EE8F00C930ED /* Enums */,
 				955CC3762BF7E3FF00C930ED /* Views */,
 				956F83FE2BEA70800025FC5F /* Models */,
-				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
-				95707CB92C00E67100217B82 /* GameSystemRowView.swift */,
-				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
-				956F840A2BEBED810025FC5F /* GameRowView.swift */,
-				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
 				95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */,
-				95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */,
-				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
-				95707CC22C020F7200217B82 /* OverlayView.swift */,
-				9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */,
-				955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */,
-				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
 				956F84262BF4846C0025FC5F /* Shaders.metal */,
-				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
 				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
 				95456BBD2BE2ACAB00113B8A /* Arcadia.entitlements */,
 				95456BBE2BE2ACAC00113B8A /* Preview Content */,
@@ -248,6 +277,9 @@
 		955CC3762BF7E3FF00C930ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				952C02242C088ECD00DF2832 /* Game */,
+				952C02232C088EB700DF2832 /* Library */,
+				952C02222C088EA400DF2832 /* Experimental */,
 				95707CBD2C01D76000217B82 /* Settings */,
 				95707CB42BFF4C2F00217B82 /* ButtonsLayout */,
 				955CC37A2BF7E47100C930ED /* Shapes */,
