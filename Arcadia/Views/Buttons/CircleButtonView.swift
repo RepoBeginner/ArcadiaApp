@@ -11,6 +11,8 @@ import ArcadiaCore
 struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var color: Color
+    @State private var timer: Timer?
+    @State var isLongPressing = false
     
     init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray) {
         self.arcadiaCoreButton = arcadiaCoreButton
@@ -18,18 +20,29 @@ struct CircleButtonView: View {
     }
     
     var body: some View {
+        
         Button(action: {
-            if arcadiaCoreButton != .arcadiaButton {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton)
-            } else {
-                ArcadiaCoreEmulationState.sharedInstance.pauseEmulation()
-                ArcadiaCoreEmulationState.sharedInstance.showOverlay.toggle()
-            }
+            if(self.isLongPressing){
+                                self.isLongPressing.toggle()
+                ArcadiaCoreEmulationState.sharedInstance.removeAction(port: 0, device: 1, index: 0, buttonIndex: arcadiaCoreButton.rawValue)
+                                
+                            } else {
+                                if arcadiaCoreButton != .arcadiaButton {
+                                    ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton)
+                                } else {
+                                    ArcadiaCoreEmulationState.sharedInstance.pauseEmulation()
+                                    ArcadiaCoreEmulationState.sharedInstance.showOverlay.toggle()
+                                }
+                                
+                            }
+
         }) {
             Image(systemName: arcadiaCoreButton.systemImageName)
                 .resizable()
                 .frame(width: 50, height: 50)
                 .foregroundStyle(.primary)
+
+            
 /*
  ZStack {
      Circle()
@@ -49,7 +62,15 @@ struct CircleButtonView: View {
  }
  */
         }
-        .buttonRepeatBehavior(.enabled)
+        .simultaneousGesture(LongPressGesture(minimumDuration: 0.2).onEnded { _ in
+                        print("long press")
+                        self.isLongPressing = true
+            ArcadiaCoreEmulationState.sharedInstance.addAction(port: 0, device: 1, index: 0, buttonIndex: arcadiaCoreButton.rawValue)
+  
+                    })
+                
+
+                       
     }
 }
 
