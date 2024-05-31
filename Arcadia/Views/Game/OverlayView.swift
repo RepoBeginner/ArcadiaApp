@@ -40,13 +40,14 @@ struct OverlayView: View {
                 ToolbarItem(placement: .automatic) {
                     Button(role: .cancel, action: {
                         dismiss()
-                        ArcadiaCoreEmulationState.sharedInstance.resumeEmulation()
-                        
                     }, label: {
                         Label("Dismiss", systemImage: "xmark")
                     })
                 }
                
+            }
+            .onDisappear {
+                ArcadiaCoreEmulationState.sharedInstance.resumeEmulation()
             }
             #if os(iOS)
                 .navigationBarTitleDisplayMode(.inline)

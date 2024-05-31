@@ -10,10 +10,10 @@ import SwiftUI
 struct GBCButtonLayout: View {
     var body: some View {
         HStack {
-            CircleButtonView(arcadiaCoreButton: .joypadStart)
+            CircleButtonView(arcadiaCoreButton: .joypadSelect)
             Spacer()
                 .frame(width: 50)
-            CircleButtonView(arcadiaCoreButton: .joypadSelect)
+            CircleButtonView(arcadiaCoreButton: .joypadStart)
         }
 
         HStack {

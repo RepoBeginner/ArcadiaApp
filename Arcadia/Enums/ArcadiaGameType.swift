@@ -54,9 +54,17 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameBoyGame:
             return Image("gbc_icon")
         case .nesGame:
-            return Image("gbc_icon")
+            return Image("nes_icon")
         }
     }
     
+    var portraitButtonLayout: some View {
+        switch self {
+        case .gameBoyGame:
+            return GBCButtonLayout()
+        case .nesGame:
+            return GBCButtonLayout()
+        }
+    }
 
 }
