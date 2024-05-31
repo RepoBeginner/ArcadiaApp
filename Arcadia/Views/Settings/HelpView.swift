@@ -61,15 +61,15 @@ struct HelpView: View {
                 
                 Choosing the second options means that I've had to make some choices for a general button appearance, so below you'll find the mappings that apply to all systems.
                 """)
-                // TODO: Fix the list not showing (options: make scrollview into list and this list into a foreach, but I don't like the page inset)
                 List(ArcadiaCoreButton.allCases) {item in
                     HStack {
                         Image(systemName: item.systemImageName)
                         Text(item.buttonName)
-                        Text(item.mappingExplanation)
+                        //Text(item.mappingExplanation)
                     }
                     
                 }
+                .frame(minWidth: 100, minHeight: 400)
                 /*
                 Table(ArcadiaCoreButton.allCases) {
                     TableColumn("Button image") { item in
