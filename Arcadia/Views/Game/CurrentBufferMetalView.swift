@@ -12,10 +12,10 @@ import UIKit
 #endif
 
 struct CurrentBufferMetalView: PlatformViewRepresentable {
-    @Binding var pixelData: [UInt8]
-    @Binding var audioData: [Float32]
+
     let width: Int
     let height: Int
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -48,7 +48,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
     }
 
     func updateUIView(_ uiView: MTKView, context: Context) {
-        context.coordinator.update(pixelData: pixelData, audioData: audioData, width: width, height: height)
+        context.coordinator.update(pixelData: emulationState.mainBuffer, audioData: emulationState.currentAudioFrameFloat, width: width, height: height)
         DispatchQueue.main.async {
             uiView.setNeedsDisplay()
         }

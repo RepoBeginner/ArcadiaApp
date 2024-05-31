@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import ArcadiaCore
 
 @main
 struct ArcadiaApp: App {
@@ -43,6 +44,7 @@ struct ArcadiaApp: App {
         }
         .modelContainer(sharedModelContainer)
         .environment(ArcadiaFileManager.shared)
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
         #if os(macOS)
         Settings {
             SettingsView()

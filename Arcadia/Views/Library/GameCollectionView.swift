@@ -14,6 +14,7 @@ struct GameCollectionView: View {
     @State private var showingAddGameView: Bool = false
     
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     
     init(gameType: ArcadiaGameType) {
         self.gameType = gameType
@@ -24,8 +25,6 @@ struct GameCollectionView: View {
             List {
                 ForEach(fileManager.getGamesURL(gameSystem: gameType), id: \.self) { file in
                     NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
-                        .environment(ArcadiaCoreEmulationState.sharedInstance)
-                        .environment(fileManager)
                     ) {
                         GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
                             .environment(fileManager)

@@ -11,6 +11,7 @@ import ArcadiaCore
 struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var color: Color
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
 
     
     init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray) {
@@ -33,17 +34,17 @@ struct CircleButtonView: View {
             DragGesture(minimumDistance: 0)
                 .onChanged({ _ in
                     if arcadiaCoreButton != .arcadiaButton {
-                        ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                        emulationState.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
                     } else {
                         
                     }
                 })
                 .onEnded({ _ in
                     if arcadiaCoreButton != .arcadiaButton {
-                        ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                        emulationState.unpressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
                     } else {
-                        ArcadiaCoreEmulationState.sharedInstance.pauseEmulation()
-                        ArcadiaCoreEmulationState.sharedInstance.showOverlay.toggle()
+                        emulationState.pauseEmulation()
+                        emulationState.showOverlay.toggle()
                     }
                 })
         )
@@ -56,5 +57,6 @@ struct CircleButtonView: View {
 
 #Preview {
     CircleButtonView(arcadiaCoreButton: .joypadA)
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
 }
 
