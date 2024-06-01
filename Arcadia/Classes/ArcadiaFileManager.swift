@@ -7,6 +7,7 @@
 
 import Foundation
 import UniformTypeIdentifiers
+import ArcadiaCore
 
 @Observable class ArcadiaFileManager {
     
@@ -111,6 +112,10 @@ import UniformTypeIdentifiers
     
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
         return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("srm")
+    }
+    
+    func getSaveURL(gameURL: URL, gameType: ArcadiaGameType, memoryType: ArcadiaCoreMemoryType) -> URL {
+        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[memoryType]!)
     }
     
     func getStateURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {

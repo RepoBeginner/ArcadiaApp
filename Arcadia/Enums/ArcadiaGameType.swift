@@ -49,6 +49,20 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         }
     }
     
+    var supportedSaveFiles: [ArcadiaCoreMemoryType : String] {
+        switch self {
+        case .gameBoyGame:
+            return [
+                .memorySaveRam : "srm",
+                .memoryRTC : "rtc"
+            ]
+        case.nesGame:
+            return [
+                .memorySaveRam : "srm"
+            ]
+        }
+    }
+    
     var defaultCollectionImage: Image {
         switch self {
         case .gameBoyGame:

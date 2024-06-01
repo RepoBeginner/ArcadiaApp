@@ -39,7 +39,12 @@ struct RunGameView: View {
             CurrentBufferMetalView(width: Int(emulationState.audioVideoInfo?.geometry.base_width ?? 1), height: Int(emulationState.audioVideoInfo?.geometry.base_height ?? 1))
                 .scaledToFit()
                 .onAppear(perform: {
+                    emulationState.currentGameType = gameType
                     emulationState.attachCore(core: gameType.associatedCore)
+                    emulationState.currentSaveFileURL = [:]
+                    for memoryType in gameType.supportedSaveFiles.keys {
+                        emulationState.currentSaveFileURL[memoryType] = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType)
+                    }
                     emulationState.currentSaveFolder = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType)
                     emulationState.startEmulation(gameURL: gameURL)
                 })
