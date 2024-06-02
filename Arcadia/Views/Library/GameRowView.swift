@@ -22,6 +22,7 @@ struct GameRowView: View {
     
     var body: some View {
         HStack {
+            //TODO: if the image is loaded when the row is on screen, the image should update
             if let imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType) {
                 #if os(macOS)
                 Image(nsImage: NSImage(data: imageData)!)

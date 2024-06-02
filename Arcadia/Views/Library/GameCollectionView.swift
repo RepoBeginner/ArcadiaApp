@@ -27,7 +27,6 @@ struct GameCollectionView: View {
                     NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                     ) {
                         GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
-                            .environment(fileManager)
                             .swipeActions(allowsFullSwipe: false) {
                                 Button(role: .destructive) {
                                     fileManager.deleteGame(gameURL: file, gameType: gameType)
@@ -35,6 +34,7 @@ struct GameCollectionView: View {
                                     Label("Delete", systemImage: "trash.fill")
                                 }
                             }
+                        //TODO: when the row is deleted the view is not updated?
                             .contextMenu(menuItems: {
                                 Button(role: .destructive) {
                                     fileManager.deleteGame(gameURL: file, gameType: gameType)
