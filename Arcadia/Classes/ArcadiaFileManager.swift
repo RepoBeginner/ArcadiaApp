@@ -109,30 +109,40 @@ import AppKit
     }
     
     func saveGame(gameURL: URL, gameType: ArcadiaGameType) {
-        
+        if  gameURL.startAccessingSecurityScopedResource() {
+            
+            defer {
+                gameURL.stopAccessingSecurityScopedResource()
+            }
+            
             do {
-                gameURL.startAccessingSecurityScopedResource()
+                
                 let romFile = try Data(contentsOf: gameURL)
                 let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
                 try romFile.write(to: savePath, options: .atomic)
-                gameURL.stopAccessingSecurityScopedResource()
+                
+                if let boxArtPath = getGameFromURL(gameURL: gameURL) {
+                    guard let boxArtURL = URL(string: boxArtPath) else { return }
+                    print("Got boxULR :\(boxArtURL)")
+                    downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
+                        DispatchQueue.main.async {
+                            if let error = error {
+                                print("Error: \(error.localizedDescription)")
+                            } else {
+                                print("Image saved successfully")
+                            }
+                        }
+                    }
+                }
+                
             } catch {
                 print("couldn't save file")
             }
         
-        if let boxArtPath = getGameFromURL(gameURL: gameURL) {
-            guard let boxArtURL = URL(string: boxArtPath) else { return }
-            print("Got boxULR :\(boxArtURL)")
-            downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
-                DispatchQueue.main.async {
-                    if let error = error {
-                        print("Error: \(error.localizedDescription)")
-                    } else {
-                        print("Image saved successfully")
-                    }
-                }
-            }
+
         }
+
+        
     }
     
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
