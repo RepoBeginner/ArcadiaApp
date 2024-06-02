@@ -28,6 +28,7 @@ struct GameRowView: View {
                     .frame(width: 80, height: 80)
                 #else
                 Image(uiImage: UIImage(data: imageData)!)
+                    .resizable()
                     .frame(width: 80, height: 80)
                 #endif
             } else {

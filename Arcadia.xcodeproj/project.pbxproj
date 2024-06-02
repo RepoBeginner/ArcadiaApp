@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
+		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
 		952CF6822C0724C200DF2832 /* ArcadiaNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; };
 		952CF6832C0724C200DF2832 /* ArcadiaNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
@@ -87,6 +88,7 @@
 /* Begin PBXFileReference section */
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
 		952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaNESCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB22BE2ACA900113B8A /* Arcadia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Arcadia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaApp.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */,
 				952C02252C088EF200DF2832 /* Classes */,
 				955CC3922BF8EE8F00C930ED /* Enums */,
 				955CC3762BF7E3FF00C930ED /* Views */,
@@ -450,6 +453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */,
 				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
 				95707CB82C006F4100217B82 /* Assets.xcassets in Resources */,
 				95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */,

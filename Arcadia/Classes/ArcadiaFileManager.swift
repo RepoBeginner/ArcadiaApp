@@ -8,10 +8,14 @@
 import Foundation
 import UniformTypeIdentifiers
 import ArcadiaCore
+import SQLite3
+import CryptoKit
+import UIKit
 
 @Observable class ArcadiaFileManager {
     
     public static var shared = ArcadiaFileManager()
+    public var db: OpaquePointer?
     
     var documentsDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -48,6 +52,8 @@ import ArcadiaCore
 
     private init() {
         
+        self.db = openDatabase()
+        
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let libraryDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let documentsMainDirectory = documentsDirectory.appendingPathComponent("Arcadia")
@@ -58,7 +64,7 @@ import ArcadiaCore
         let statesDirectory = documentsMainDirectory.appendingPathComponent("States")
         let imagesDirectory = libraryMainDirectory.appendingPathComponent("Images")
         
-        for dir in [gamesDirectory, savesDirectory, statesDirectory] {
+        for dir in [gamesDirectory, savesDirectory, statesDirectory, imagesDirectory] {
             do {
                 if !FileManager.default.fileExists(atPath: dir.path) {
                     try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true, attributes: nil)
@@ -98,7 +104,7 @@ import ArcadiaCore
     }
     
     func saveGame(gameURL: URL, gameType: ArcadiaGameType) {
-
+        
             do {
                 gameURL.startAccessingSecurityScopedResource()
                 let romFile = try Data(contentsOf: gameURL)
@@ -108,6 +114,20 @@ import ArcadiaCore
             } catch {
                 print("couldn't save file")
             }
+        
+        if let boxArtPath = getGameFromURL(gameURL: gameURL) {
+            guard let boxArtURL = URL(string: boxArtPath) else { return }
+            print("Got boxULR :\(boxArtURL)")
+            downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                    } else {
+                        print("Image saved successfully")
+                    }
+                }
+            }
+        }
     }
     
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
@@ -123,7 +143,7 @@ import ArcadiaCore
     }
     
     func getImageURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
-        return self.imagesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("png")
+        return self.imagesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("jpg")
     }
     
     func getImageData(gameURL: URL, gameType: ArcadiaGameType) -> Data? {
@@ -164,6 +184,120 @@ import ArcadiaCore
         }
         
 
+    }
+    
+    func md5Hash(from url: URL) -> String? {
+        do {
+
+            let data = try Data(contentsOf: url)
+            let md5 = Insecure.MD5.hash(data: data)
+            
+            let md5String = md5.map { String(format: "%02hhx", $0) }.joined()
+            
+            return md5String.uppercased()
+        } catch {
+            print("Error reading data from URL: \(error)")
+            return nil
+        }
+    }
+
+    func openDatabase() -> OpaquePointer? {
+        guard let fileURL = Bundle.main.url(forResource: "openvgdb", withExtension: "sqlite") else {
+            print("Database file not found in bundle.")
+            return nil
+        }
+        print("Database file path: \(fileURL.path)")
+        
+        var db: OpaquePointer? = nil
+        if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
+            debugPrint("Cannot open DB. Error: \(String(cString: sqlite3_errmsg(db)))")
+            return nil
+        } else {
+            print("DB successfully opened.")
+            return db
+        }
+    }
+
+    func getGameFromURL(gameURL: URL) -> String? {
+        
+        guard let gameHash = md5Hash(from: gameURL) else {
+            return nil
+        }
+        print("MD5 Hash: \(gameHash)")
+        
+        let queryStatementString = """
+        SELECT releaseCoverFront
+        FROM ROMs
+        INNER JOIN RELEASES ON ROMs.romID = RELEASES.romID
+        WHERE ROMs.romHashMD5 = '\(gameHash)'
+        ORDER BY RELEASES.releaseDate DESC
+        LIMIT 1;
+        """
+        print("SQL Query: \(queryStatementString)")
+        
+        var queryStatement: OpaquePointer? = nil
+        
+        var boxArtUrl: String? = nil
+        
+        if sqlite3_prepare_v2(self.db, queryStatementString, -1, &queryStatement, nil) != SQLITE_OK {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("Error preparing SELECT statement: \(errmsg)")
+        } else {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                boxArtUrl = String(describing: String(cString: sqlite3_column_text(queryStatement, 0))) //TODO: Handle misses, as of now the app crashes because it finds nil
+            }
+        }
+        sqlite3_finalize(queryStatement)
+        sqlite3_close(self.db)
+        return boxArtUrl
+    }
+    
+    
+    func downloadAndProcessImage(of gameURL: URL, from imageURL: URL, gameType: ArcadiaGameType, completion: @escaping (Error?) -> Void) {
+        
+        print("Trying to download from \(imageURL)")
+        URLSession.shared.dataTask(with: imageURL) { data, response, error in
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            print("Downloaded from \(imageURL)")
+            guard let data = data, let image = UIImage(data: data) else {
+                completion(NSError(domain: "ImageProcessingError", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Unable to create image from data"]))
+                return
+            }
+            
+            let imageFileName = self.getImageURL(gameURL: gameURL, gameType: gameType)
+            
+            let resizedImage = self.resizeImage(image: image, toWidth: 80)
+            print("Resized image")
+            guard let jpegData = resizedImage.jpegData(compressionQuality: 1.0) else {
+                completion(NSError(domain: "ImageProcessingError", code: 1002, userInfo: [NSLocalizedDescriptionKey: "Unable to convert image to JPEG"]))
+                return
+            }
+            
+            do {
+                print("Writing to \(imageFileName)")
+                try jpegData.write(to: imageFileName)
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+        }.resume()
+    }
+
+    func resizeImage(image: UIImage, toWidth width: CGFloat) -> UIImage {
+        let size = image.size
+        let height = width / size.width * size.height
+        let targetSize = CGSize(width: width, height: height)
+        
+        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        let resizedImage = renderer.image { (context) in
+            image.draw(in: CGRect(origin: .zero, size: targetSize))
+        }
+        
+        return resizedImage
     }
     
 
