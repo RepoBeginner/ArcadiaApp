@@ -10,7 +10,12 @@ import UniformTypeIdentifiers
 import ArcadiaCore
 import SQLite3
 import CryptoKit
+#if os(iOS)
 import UIKit
+#elseif os(macOS)
+import AppKit
+#endif
+
 
 @Observable class ArcadiaFileManager {
     
@@ -263,19 +268,41 @@ import UIKit
             }
             
             print("Downloaded from \(imageURL)")
-            guard let data = data, let image = UIImage(data: data) else {
+            guard let data = data else {
+                completion(NSError(domain: "ImageProcessingError", code: 1001, userInfo: [NSLocalizedDescriptionKey: "No data received"]))
+                return
+            }
+            
+            #if os(iOS)
+            guard let image = UIImage(data: data) else {
                 completion(NSError(domain: "ImageProcessingError", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Unable to create image from data"]))
                 return
             }
+            #elseif os(macOS)
+            guard let image = NSImage(data: data) else {
+                completion(NSError(domain: "ImageProcessingError", code: 1001, userInfo: [NSLocalizedDescriptionKey: "Unable to create image from data"]))
+                return
+            }
+            #endif
             
             let imageFileName = self.getImageURL(gameURL: gameURL, gameType: gameType)
             
             let resizedImage = self.resizeImage(image: image, toWidth: 80)
             print("Resized image")
+            
+            #if os(iOS)
             guard let jpegData = resizedImage.jpegData(compressionQuality: 1.0) else {
                 completion(NSError(domain: "ImageProcessingError", code: 1002, userInfo: [NSLocalizedDescriptionKey: "Unable to convert image to JPEG"]))
                 return
             }
+            #elseif os(macOS)
+            guard let tiffData = resizedImage.tiffRepresentation,
+                  let bitmap = NSBitmapImageRep(data: tiffData),
+                  let jpegData = bitmap.representation(using: .jpeg, properties: [:]) else {
+                completion(NSError(domain: "ImageProcessingError", code: 1002, userInfo: [NSLocalizedDescriptionKey: "Unable to convert image to JPEG"]))
+                return
+            }
+            #endif
             
             do {
                 print("Writing to \(imageFileName)")
@@ -287,6 +314,7 @@ import UIKit
         }.resume()
     }
 
+    #if os(iOS)
     func resizeImage(image: UIImage, toWidth width: CGFloat) -> UIImage {
         let size = image.size
         let height = width / size.width * size.height
@@ -299,6 +327,23 @@ import UIKit
         
         return resizedImage
     }
+    #elseif os(macOS)
+    func resizeImage(image: NSImage, toWidth width: CGFloat) -> NSImage {
+        let size = image.size
+        let height = width / size.width * size.height
+        let targetSize = CGSize(width: width, height: height)
+        
+        let resizedImage = NSImage(size: targetSize)
+        resizedImage.lockFocus()
+        image.draw(in: NSRect(origin: .zero, size: targetSize),
+                   from: NSRect(origin: .zero, size: size),
+                   operation: .copy,
+                   fraction: 1.0)
+        resizedImage.unlockFocus()
+        
+        return resizedImage
+    }
+    #endif
     
 
     

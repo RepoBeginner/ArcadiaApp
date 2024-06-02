@@ -37,7 +37,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
     }
 
     func updateNSView(_ nsView: MTKView, context: Context) {
-        context.coordinator.update(pixelData: pixelData, audioData: audioData, width: width, height: height)
+        context.coordinator.update(pixelData: emulationState.mainBuffer, audioData: emulationState.currentAudioFrameFloat, width: width, height: height)
         DispatchQueue.main.async {
             nsView.setNeedsDisplay(nsView.bounds)
         }
