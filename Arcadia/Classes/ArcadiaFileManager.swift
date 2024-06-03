@@ -89,7 +89,7 @@ import AppKit
         
     }
     
-    func getGamesURL(gameSystem: ArcadiaGameType) {
+    func getGamesURL(gameSystem: ArcadiaGameType) -> [URL] {
         do {
             let dir = try FileManager.default.contentsOfDirectory(at: self.gamesDirectory.appendingPathComponent(gameSystem.rawValue), includingPropertiesForKeys: nil)
             var correctFiles = [URL]()

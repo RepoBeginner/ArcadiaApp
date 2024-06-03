@@ -9,11 +9,13 @@ import SwiftUI
 
 struct GameRowView: View {
     
-    private var gameTitle: String
+    @State private var gameTitle: String
     private var gameType: ArcadiaGameType
     private var gameURL: URL
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @State private var imageData: Data?
+    @State private var showingRenameAlert = false
+    @State private var newGameName: String = ""
     
     init(gameTitle: String, gameURL: URL, gameType: ArcadiaGameType) {
         self.gameTitle = gameTitle
@@ -40,9 +42,44 @@ struct GameRowView: View {
                 .frame(width: 80, height: 80)
             }
 
-            
             Text(gameTitle)
                 .font(.headline)
+        }
+        .swipeActions(allowsFullSwipe: false) {
+            Button(role: .destructive) {
+                fileManager.deleteGame(gameURL: gameURL, gameType: gameType)
+            } label: {
+                Label("Delete", systemImage: "trash.fill")
+            }
+            Button {
+                showingRenameAlert.toggle()
+            } label: {
+                Label("Rename", systemImage: "square.and.pencil")
+            }
+        }
+        .contextMenu(menuItems: {
+            Button(role: .destructive) {
+                fileManager.deleteGame(gameURL: gameURL, gameType: gameType)
+            } label: {
+                Label("Delete", systemImage: "trash.fill")
+            }
+            Button {
+                showingRenameAlert.toggle()
+                newGameName = gameURL.deletingPathExtension().lastPathComponent
+            } label: {
+                Label("Rename", systemImage: "square.and.pencil")
+            }
+        })
+        .alert("Enter your name", isPresented: $showingRenameAlert) {
+            TextField("Enter the new game name", text: $newGameName)
+            Button("Confirm", action: {
+                fileManager.renameGame(gameURL: gameURL, newName: newGameName, gameType: gameType)
+            })
+            Button("Cancel", role: .cancel) {
+                newGameName = ""
+            }
+        } message: {
+            Text("Enter the new name for the game.")
         }
         
     }
