@@ -23,7 +23,7 @@ struct GameCollectionView: View {
     
     var body: some View {
             List {
-                ForEach(fileManager.getGamesURL(gameSystem: gameType), id: \.self) { file in
+                ForEach(fileManager.currentGames, id: \.self) { file in
                     NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                     ) {
                         GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
@@ -44,6 +44,9 @@ struct GameCollectionView: View {
                             })
                     }
                     }
+            }
+            .onAppear {
+                fileManager.getGamesURL(gameSystem: gameType)
             }
             .navigationTitle("Game Collection")
                 .toolbar() {

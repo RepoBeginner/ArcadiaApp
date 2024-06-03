@@ -20,6 +20,7 @@ import AppKit
 @Observable class ArcadiaFileManager {
     
     public static var shared = ArcadiaFileManager()
+    public var currentGames: [URL] = []
     
     var documentsDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -88,7 +89,7 @@ import AppKit
         
     }
     
-    func getGamesURL(gameSystem: ArcadiaGameType) -> [URL] {
+    func getGamesURL(gameSystem: ArcadiaGameType) {
         do {
             let dir = try FileManager.default.contentsOfDirectory(at: self.gamesDirectory.appendingPathComponent(gameSystem.rawValue), includingPropertiesForKeys: nil)
             var correctFiles = [URL]()
@@ -98,10 +99,10 @@ import AppKit
                 }
                 
             }
-            return correctFiles
+            self.currentGames = correctFiles
         }
         catch {
-            return []
+            self.currentGames = []
         }
     }
     
@@ -131,7 +132,8 @@ import AppKit
                         }
                     }
                 }
-                
+                //To update the game list
+                getGamesURL(gameSystem: gameType)
             } catch {
                 print("couldn't save file")
             }
@@ -194,6 +196,8 @@ import AppKit
                 print("Could not delete")
             }
         }
+        //To update the list
+        getGamesURL(gameSystem: gameType)
         
 
     }
