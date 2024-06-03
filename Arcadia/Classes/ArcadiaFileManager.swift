@@ -199,7 +199,40 @@ import AppKit
         //To update the list
         getGamesURL(gameSystem: gameType)
         
-
+    }
+    
+    func renameGame(gameURL: URL, newName: String, gameType: ArcadiaGameType) {
+        let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
+        let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
+        let stateURL = getStateURL(gameURL: gameURL, gameType: gameType)
+        
+        let newGameURL = gameURL.deletingLastPathComponent().appendingPathComponent(newName).appendingPathExtension(gameURL.pathExtension)
+        let newImageURL = getImageURL(gameURL: newGameURL, gameType: gameType)
+        let newSaveURL = getSaveURL(gameURL: newGameURL, gameType: gameType)
+        let newStateURL = getStateURL(gameURL: newGameURL, gameType: gameType)
+        
+        let fileURLs = [(imageURL, newImageURL), (saveURL, newSaveURL), (stateURL, newStateURL)]
+        
+        for (oldURL, newURL) in fileURLs {
+            if FileManager.default.fileExists(atPath: oldURL.path) {
+                do {
+                    try FileManager.default.moveItem(at: oldURL, to: newURL)
+                } catch {
+                    print("Could not rename \(oldURL.lastPathComponent) to \(newURL.lastPathComponent)")
+                }
+            }
+        }
+        
+        if FileManager.default.fileExists(atPath: gameURL.path) {
+            do {
+                try FileManager.default.moveItem(at: gameURL, to: newGameURL)
+            } catch {
+                print("Could not rename \(gameURL.lastPathComponent) to \(newGameURL.lastPathComponent)")
+            }
+        }
+        // To update the list
+        getGamesURL(gameSystem: gameType)
+        
     }
     
     func md5Hash(from url: URL) -> String? {

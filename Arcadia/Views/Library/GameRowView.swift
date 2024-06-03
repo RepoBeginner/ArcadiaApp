@@ -13,6 +13,7 @@ struct GameRowView: View {
     private var gameType: ArcadiaGameType
     private var gameURL: URL
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
+    @State private var imageData: Data?
     
     init(gameTitle: String, gameURL: URL, gameType: ArcadiaGameType) {
         self.gameTitle = gameTitle
