@@ -20,7 +20,6 @@ import AppKit
 @Observable class ArcadiaFileManager {
     
     public static var shared = ArcadiaFileManager()
-    public var db: OpaquePointer?
     
     var documentsDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -56,9 +55,7 @@ import AppKit
     
 
     private init() {
-        
-        self.db = openDatabase()
-        
+                
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let libraryDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let documentsMainDirectory = documentsDirectory.appendingPathComponent("Arcadia")
@@ -234,38 +231,39 @@ import AppKit
     }
 
     func getGameFromURL(gameURL: URL) -> String? {
-        
-        guard let gameHash = md5Hash(from: gameURL) else {
-            return nil
-        }
-        print("MD5 Hash: \(gameHash)")
-        
-        let queryStatementString = """
-        SELECT releaseCoverFront
-        FROM ROMs
-        INNER JOIN RELEASES ON ROMs.romID = RELEASES.romID
-        WHERE ROMs.romHashMD5 = '\(gameHash)'
-        ORDER BY RELEASES.releaseDate DESC
-        LIMIT 1;
-        """
-        print("SQL Query: \(queryStatementString)")
-        
-        var queryStatement: OpaquePointer? = nil
-        
-        var boxArtUrl: String? = nil
-        
-        if sqlite3_prepare_v2(self.db, queryStatementString, -1, &queryStatement, nil) != SQLITE_OK {
+           guard let db = openDatabase() else { return nil }
+           defer { sqlite3_close(db) }
+           
+           guard let gameHash = md5Hash(from: gameURL) else { return nil }
+           print("MD5 Hash: \(gameHash)")
+           
+           let queryStatementString = """
+           SELECT releaseCoverFront
+           FROM ROMs
+           INNER JOIN RELEASES ON ROMs.romID = RELEASES.romID
+           WHERE ROMs.romHashMD5 = '\(gameHash)'
+           ORDER BY RELEASES.releaseDate DESC
+           LIMIT 1;
+           """
+           print("SQL Query: \(queryStatementString)")
+           
+           var queryStatement: OpaquePointer? = nil
+           var boxArtUrl: String? = nil
+           
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                if let columnText = sqlite3_column_text(queryStatement, 0) {
+                    boxArtUrl = String(cString: columnText)
+                }
+            }
+            sqlite3_finalize(queryStatement)
+        } else {
             let errmsg = String(cString: sqlite3_errmsg(db))
             print("Error preparing SELECT statement: \(errmsg)")
-        } else {
-            while sqlite3_step(queryStatement) == SQLITE_ROW {
-                boxArtUrl = String(describing: String(cString: sqlite3_column_text(queryStatement, 0))) //TODO: Handle misses, as of now the app crashes because it finds nil
-            }
         }
-        sqlite3_finalize(queryStatement)
-        sqlite3_close(self.db)
-        return boxArtUrl
-    }
+           
+           return boxArtUrl
+       }
     
     
     func downloadAndProcessImage(of gameURL: URL, from imageURL: URL, gameType: ArcadiaGameType, completion: @escaping (Error?) -> Void) {
