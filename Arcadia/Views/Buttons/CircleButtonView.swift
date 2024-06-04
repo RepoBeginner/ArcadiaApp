@@ -39,7 +39,9 @@ struct CircleButtonView: View {
             Image(systemName: arcadiaCoreButton.systemImageName)
                 .resizable()
                 .frame(width: size, height: size)
+#if os(iOS)
                 .foregroundStyle(color)
+            #endif
         }
         #if os(iOS)
         //TODO: Understand why this does not work on macOS
@@ -97,7 +99,8 @@ struct ButtonPressHandler: ButtonStyle {
     
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundStyle(configuration.isPressed ? color.opacity(0.7) : color)
+            .foregroundStyle(color)
+            .opacity(configuration.isPressed ? 0.7 : 1.0)
             .onChange(of: configuration.isPressed, pressAction)
     }
 }
