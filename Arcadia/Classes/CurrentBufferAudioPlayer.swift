@@ -10,7 +10,7 @@ class CurrentBufferAudioPlayer {
     private var audioEngine: AVAudioEngine
     private var playerNode: AVAudioPlayerNode
     private var audioFormat: AVAudioFormat
-    private let bufferUpdateQueue = DispatchQueue(label: "com.Arcadia.bufferUpdateQueue")
+    private let bufferUpdateQueue = DispatchQueue(label: "com.Arcadia.bufferUpdateQueue", qos: .userInteractive)
 
     init() {
         audioEngine = AVAudioEngine()
@@ -38,38 +38,11 @@ class CurrentBufferAudioPlayer {
         }
     }
 
-    func updateBuffer(with audioData: [Int16]) {
-        let frameCount = AVAudioFrameCount(audioData.count / Int(audioFormat.channelCount))
-        
-        guard let buffer = AVAudioPCMBuffer(pcmFormat: audioFormat, frameCapacity: frameCount) else {
-            print("Failed to create PCM buffer with frame capacity \(frameCount)")
-            return
-        }
-        buffer.frameLength = frameCount
-
-        // Get pointers to each channel's data buffer
-        guard let channelData = buffer.floatChannelData else {
-            print("Failed to get float channel data")
-            return
-        }
-
-        // Fill each channel's buffer with converted Float32 data
-        for frame in 0..<Int(frameCount) {
-            for channel in 0..<Int(audioFormat.channelCount) {
-                let sample = audioData[frame * Int(audioFormat.channelCount) + channel]
-                channelData[channel][frame] = Float32(sample) / Float32(Int16.max)
-            }
-        }
-
-        playerNode.scheduleBuffer(buffer, completionHandler: nil)
-    }
-    
     func updateBuffer(with audioData: [Float32]) {
         bufferUpdateQueue.async { [weak self] in
             guard let self = self else { return }
             
             let frameCount = AVAudioFrameCount(audioData.count / Int(self.audioFormat.channelCount))
-            
             guard let buffer = AVAudioPCMBuffer(pcmFormat: self.audioFormat, frameCapacity: frameCount) else {
                 print("Failed to create PCM buffer with frame capacity \(frameCount)")
                 return
@@ -89,8 +62,10 @@ class CurrentBufferAudioPlayer {
                     channelData[channel][frame] = audioData[frame * stride + channel]
                 }
             }
-
-            self.playerNode.scheduleBuffer(buffer, completionHandler: nil)
+            
+            self.playerNode.scheduleBuffer(buffer, completionHandler: nil) //Works but audio is late
+            
+            //self.playerNode.scheduleBuffer(buffer, at: nil, options: .interrupts, completionHandler: nil) // Works but audio is choppy
         }
     }
 

@@ -69,11 +69,14 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
         }
 
         func update(pixelData: [UInt8], audioData: [Float32], width: Int, height: Int) {
-            // Update texture
-            metalRenderer.updateTexture(with: pixelData, width: width, height: height)
+            DispatchQueue.main.async {
+                // Update audio data
+                self.audioPlayer.updateBuffer(with: audioData)
+                // Update texture
+                self.metalRenderer.updateTexture(with: pixelData, width: width, height: height)
 
-            // Update audio data
-            audioPlayer.updateBuffer(with: audioData)
+                
+            }
         }
     }
 }
