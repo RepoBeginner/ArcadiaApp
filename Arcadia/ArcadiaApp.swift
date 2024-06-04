@@ -45,6 +45,7 @@ struct ArcadiaApp: App {
         .modelContainer(sharedModelContainer)
         .environment(ArcadiaFileManager.shared)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
         #if os(macOS)
         Settings {
             SettingsView()

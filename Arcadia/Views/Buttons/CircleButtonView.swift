@@ -12,9 +12,7 @@ struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var color: Color
     private var size: CGFloat
-    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
-
-    
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState    
     init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray, size: CGFloat) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.color = color

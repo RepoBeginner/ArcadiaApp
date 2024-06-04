@@ -7,29 +7,125 @@
 
 import Foundation
 import GameController
+import SwiftUI
+import ArcadiaCore
 
-class InputController {
+@Observable class InputController {
     static let shared = InputController()
-    var keysPressed: Set<GCKeyCode> = []
-    private init() {
-        let center = NotificationCenter.default
-        center.addObserver(
-            forName: .GCKeyboardDidConnect,
-            object: nil,
-            queue: nil)
-        { notification in
-            let keyboard = notification.object as? GCKeyboard
-            keyboard?.keyboardInput?.keyChangedHandler = { _, _, keyCode, pressed in
-                if pressed {
-                    self.keysPressed.insert(keyCode)
-                } else {
-                    self.keysPressed.remove(keyCode)
-                }
+    
+    var controller: GCController?
+    var pressHandlers: [UInt32 : [UInt32 : [UInt32 : [UInt32 : Int16]]]] = [:]
+    
+    init() {
+        NotificationCenter.default.addObserver(self, selector: #selector(controllerDidConnect), name: .GCControllerDidConnect, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(controllerDidDisconnect), name: .GCControllerDidDisconnect, object: nil)
+        GCController.startWirelessControllerDiscovery(completionHandler: nil)
+    }
+    
+    @objc private func controllerDidConnect(notification: Notification) {
+        controller = notification.object as? GCController
+        setupController(controller: controller)
+    }
+    
+    @objc private func controllerDidDisconnect(notification: Notification) {
+        if let disconnectedController = notification.object as? GCController, disconnectedController == controller {
+            controller = nil
+        }
+    }
+    
+    private func setupController(controller: GCController?) {
+        guard let extendedGamepad = controller?.extendedGamepad else { return }
+        
+        extendedGamepad.buttonA.pressedChangedHandler = { button, value, pressed in
+
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadA)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadA)
             }
         }
         
-    #if os(macOS)
-    NSEvent.addLocalMonitorForEvents(matching: [.keyUp, .keyDown]) { _ in nil }
-    #endif
+        extendedGamepad.buttonB.pressedChangedHandler = { button, value, pressed in
+
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadB)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadB)
+            }
+        }
+        extendedGamepad.buttonX.pressedChangedHandler = { button, value, pressed in
+
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadX)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadX)
+            }
+        }
+        extendedGamepad.buttonY.pressedChangedHandler = { button, value, pressed in
+
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadY)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadY)
+            }
+        }
+                
+        extendedGamepad.dpad.left.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadLeft)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadLeft)
+            }
+        }
+        
+        extendedGamepad.dpad.right.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadRight)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadRight)
+            }
+        }
+        
+        extendedGamepad.dpad.down.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadDown)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadDown)
+            }
+        }
+        
+        extendedGamepad.dpad.up.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadUp)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadUp)
+            }
+        }
+        
+        extendedGamepad.buttonOptions?.pressedChangedHandler = { button, value, pressed in
+
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadSelect)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadSelect)
+            }
+        }
+        
+        extendedGamepad.buttonMenu.pressedChangedHandler = { button, value, pressed in
+
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: 1, index: 0, button: .joypadStart)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: 1, index: 0, button: .joypadStart)
+            }
+        }
+        
+        extendedGamepad.buttonHome?.pressedChangedHandler = { button, value, pressed in
+            ArcadiaCoreEmulationState.sharedInstance.showOverlay.toggle()
+        }
     }
+    
+
+    
+
 }
