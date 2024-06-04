@@ -14,7 +14,9 @@ struct GameLibraryView: View {
 
         NavigationSplitView {
             List(ArcadiaGameType.allCases, selection: $system) { gameType in
+                NavigationLink(value: gameType) {
                     GameSystemRowView(gameSystem: gameType)
+                }
             }
             .navigationTitle("Game Systems")
         } detail: {

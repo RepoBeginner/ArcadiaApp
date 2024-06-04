@@ -10,24 +10,27 @@ import ArcadiaCore
 
 struct TwoButtonsView: View {
     var body: some View {
-        HStack(spacing: 5) {
-            VStack {
-                Spacer()
-                    .frame(height: 70)
-                CircleButtonView(arcadiaCoreButton: .joypadB)
-            }
+        VStack(spacing: -5) {
+                    //DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
             Spacer()
-                .frame(width: 30)
-            VStack {
-                CircleButtonView(arcadiaCoreButton: .joypadA)
-                Spacer()
-                    .frame(height: 70)
-            }
-            
-        }
+                .frame(width: 50, height: 50)
+                    HStack(spacing: -0) {
+                        Spacer()
+                            .frame(width: 50, height: 50)
+                        //DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
+                        Spacer()
+                            .frame(width: 50, height: 50)
+                        CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
+                        //DPadButtonView(arcadiaCoreButton: .joypadRight, rotationAngle: 90)
+                    }
+                    //DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
+            CircleButtonView(arcadiaCoreButton: .joypadB, size:50)
+                }
     }
 }
 
 #Preview {
     TwoButtonsView()
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
+    
 }

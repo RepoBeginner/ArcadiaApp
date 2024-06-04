@@ -11,12 +11,14 @@ import ArcadiaCore
 struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var color: Color
+    private var size: CGFloat
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
 
     
-    init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray) {
+    init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray, size: CGFloat) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.color = color
+        self.size = size
     }
     
     var body: some View {
@@ -36,8 +38,8 @@ struct CircleButtonView: View {
         }) {
             Image(systemName: arcadiaCoreButton.systemImageName)
                 .resizable()
-                .frame(width: 50, height: 50)
-                .foregroundStyle(.primary)
+                .frame(width: size, height: size)
+                .foregroundStyle(color)
         }
         #if os(iOS)
         //TODO: Understand why this does not work on macOS
@@ -60,7 +62,7 @@ struct CircleButtonView: View {
                 })
         )
         #elseif os(macOS)
-        .buttonStyle(ButtonPressHandler {
+        .buttonStyle(ButtonPressHandler(color: color) {
             //First action that gets called
             if arcadiaCoreButton != .arcadiaButton {
                 emulationState.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
@@ -77,6 +79,7 @@ struct CircleButtonView: View {
 }
 
 struct ButtonPressHandler: ButtonStyle {
+    var color: Color
     var action: () -> ()
     var pressAction: (Bool, Bool) -> () {
         return { first, second in
@@ -86,16 +89,21 @@ struct ButtonPressHandler: ButtonStyle {
             
         }
     }
+    
+    init(color: Color, action: @escaping () -> Void) {
+        self.color = color
+        self.action = action
+    }
+    
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .foregroundColor(configuration.isPressed ?
-                             Color.blue.opacity(0.7) : Color.blue)   // just to look like system
+            .foregroundStyle(configuration.isPressed ? color.opacity(0.7) : color)
             .onChange(of: configuration.isPressed, pressAction)
     }
 }
 
 #Preview {
-    CircleButtonView(arcadiaCoreButton: .joypadA)
+    CircleButtonView(arcadiaCoreButton: .joypadA, size: 50)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
 }
 

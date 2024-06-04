@@ -99,7 +99,10 @@ import AppKit
                 }
                 
             }
-            self.currentGames = correctFiles
+            self.currentGames = correctFiles.sorted(by: {
+                file1, file2 in
+                return file1.deletingPathExtension().lastPathComponent.lowercased() <  file2.deletingPathExtension().lastPathComponent.lowercased()
+            })
         }
         catch {
             self.currentGames = []

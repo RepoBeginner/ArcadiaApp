@@ -15,12 +15,12 @@ struct ArcadiaButtonMapping: Identifiable {
 }
 
 struct HelpView: View {
-    @State private var people = [
-        ArcadiaButtonMapping(id: 0, systemImageName: "a.circle.fill", explanation: "Test"),
-        ArcadiaButtonMapping(id: 0, systemImageName: "b.circle.fill", explanation: "Test"),
-        ArcadiaButtonMapping(id: 0, systemImageName: "y.circle.fill", explanation: "Test"),
-        ArcadiaButtonMapping(id: 0, systemImageName: "x.circle.fill", explanation: "Test"),
-    ]
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    private var isCompact: Bool { horizontalSizeClass == .compact }
+    #else
+    private let isCompact = false
+    #endif
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -61,6 +61,7 @@ struct HelpView: View {
                 
                 Choosing the second options means that I've had to make some choices for a general button appearance, so below you'll find the mappings that apply to all systems.
                 """)
+                /*
                 List(ArcadiaCoreButton.allCases) {item in
                     HStack {
                         Image(systemName: item.systemImageName)
@@ -70,16 +71,18 @@ struct HelpView: View {
                     
                 }
                 .frame(minWidth: 100, minHeight: 400)
-                /*
+                */
                 Table(ArcadiaCoreButton.allCases) {
                     TableColumn("Button image") { item in
                         Image(systemName: item.systemImageName)
+                        if isCompact {
+                            Text(item.buttonName)
+                        }
                     }
                     TableColumn("Name", value: \.buttonName)
                     TableColumn("Mapping", value: \.mappingExplanation)
                 }
                 .frame(minWidth: 100, minHeight: 400)
-                 */
                 Text("I'm not saying that I'll never go into route one, just not as of right now.")
                 
                 Spacer()

@@ -6,14 +6,15 @@
 //
 
 import SwiftUI
+import ArcadiaCore
 
 struct GBCButtonLayout: View {
     var body: some View {
         HStack {
-            CircleButtonView(arcadiaCoreButton: .joypadSelect)
+            CircleButtonView(arcadiaCoreButton: .joypadSelect, size: 35)
             Spacer()
                 .frame(width: 50)
-            CircleButtonView(arcadiaCoreButton: .joypadStart)
+            CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35)
         }
 
         HStack {
@@ -22,7 +23,7 @@ struct GBCButtonLayout: View {
             VStack {
                 Spacer()
                     .frame(maxHeight: 100)
-                CircleButtonView(arcadiaCoreButton: .arcadiaButton)
+                CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
             }
             Spacer()
             TwoButtonsView()
@@ -34,4 +35,5 @@ struct GBCButtonLayout: View {
 
 #Preview {
     GBCButtonLayout()
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
 }

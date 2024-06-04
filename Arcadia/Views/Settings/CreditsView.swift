@@ -24,6 +24,7 @@ struct CreditsView: View {
                 In Arcadia, you will find the following cores:
                 
                 • GameBoy (Color): drhelius's [Gearboy](https://github.com/drhelius/Gearboy)
+                • NES: [Libretro version](https://github.com/libretro/QuickNES_Core) of kode54's [QuickNES](https://github.com/kode54/QuickNES)
                 """)
                 Spacer()
             }
