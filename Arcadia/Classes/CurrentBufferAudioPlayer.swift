@@ -10,6 +10,7 @@ class CurrentBufferAudioPlayer {
     private var audioEngine: AVAudioEngine
     private var playerNode: AVAudioPlayerNode
     private var audioFormat: AVAudioFormat
+
     private let bufferUpdateQueue = DispatchQueue(label: "com.Arcadia.bufferUpdateQueue", qos: .userInteractive)
 
     init() {

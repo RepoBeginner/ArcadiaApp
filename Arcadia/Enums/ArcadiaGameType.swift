@@ -8,6 +8,7 @@
 import Foundation
 import UniformTypeIdentifiers
 import ArcadiaCore
+import ArcadiaGBACore
 import ArcadiaGBCCore
 import ArcadiaNESCore
 import SwiftUI
@@ -18,6 +19,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         return self
     }
     
+    case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
     
@@ -25,6 +27,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         switch self {
         case .gameBoyGame:
             return [UTType(filenameExtension: "gb")!, UTType(filenameExtension: "gbc")!, UTType(filenameExtension: "sgb")!, UTType(filenameExtension: "cgb")!]
+        case .gameBoyAdvanceGame:
+            return [UTType(filenameExtension: "gba")!]
         case .nesGame:
             return [UTType(filenameExtension: "nes")!]
         }
@@ -33,6 +37,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     
     var associatedCore: any ArcadiaCoreProtocol {
         switch self {
+        case .gameBoyAdvanceGame:
+            return ArcadiaGBA()
         case .gameBoyGame:
             return ArcadiaGBC()
         case .nesGame:
@@ -42,6 +48,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     
     var saveFileExtension: String {
         switch self {
+        case .gameBoyAdvanceGame:
+            return "sav"
         case .gameBoyGame:
             return "srm"
         case .nesGame:
@@ -51,6 +59,11 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     
     var supportedSaveFiles: [ArcadiaCoreMemoryType : String] {
         switch self {
+        case .gameBoyAdvanceGame:
+            return [
+                .memorySaveRam : "srm",
+                .memoryRTC : "rtc"
+            ]
         case .gameBoyGame:
             return [
                 .memorySaveRam : "srm",
@@ -65,6 +78,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     
     var defaultCollectionImage: Image {
         switch self {
+        case .gameBoyAdvanceGame:
+            return Image("gba_icon")
         case .gameBoyGame:
             return Image("gbc_icon")
         case .nesGame:
@@ -74,6 +89,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     
     var portraitButtonLayout: some View {
         switch self {
+        case .gameBoyAdvanceGame:
+            return GBCButtonLayout()
         case .gameBoyGame:
             return GBCButtonLayout()
         case .nesGame:

@@ -1,66 +1,77 @@
 {
   "images" : [
     {
+      "filename" : "Arcadia-iOS-20pt-icon@x2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "Arcadia-iOS-20pt-icon@x3.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
+      "filename" : "Arcadia-iOS-29pt-icon@x2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
+      "filename" : "Arcadia-iOS-29pt-icon@x3.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
+      "filename" : "Arcadia-iOS-38pt-icon@x2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "38x38"
     },
     {
+      "filename" : "Arcadia-iOS-38pt-icon@x3.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "38x38"
     },
     {
+      "filename" : "Arcadia-iOS-40pt-icon@x2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
+      "filename" : "Arcadia-iOS-40pt-icon@x3.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
+      "filename" : "Arcadia-iOS-60pt-icon@x2.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "Arcadia-iOS-60pt-icon@3x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
       "size" : "60x60"
     },
     {
+      "filename" : "Arcadia-iOS-64pt-icon@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
@@ -73,25 +84,28 @@
       "size" : "64x64"
     },
     {
+      "filename" : "Arcadia-iOS-68pt-icon@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "68x68"
     },
     {
+      "filename" : "Arcadia-iOS-76pt-icon@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "76x76"
     },
     {
+      "filename" : "Arcadia-iOS-83-5pt-icon@2x.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "83.5x83.5"
     },
     {
-      "filename" : "Arcadia-iOS-icon.png",
+      "filename" : "Arcadia-iOS-1024pt-icon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -145,13 +159,13 @@
       "size" : "256x256"
     },
     {
-      "filename" : "Arcadia-macOS-AppStore-icon.png",
+      "filename" : "Arcadia-macOS-512pt-icon.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "Arcadia-macOS-AppStore-icon@2x.png",
+      "filename" : "Arcadia-macOS-512pt-icon@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
