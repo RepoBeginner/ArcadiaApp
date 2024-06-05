@@ -87,7 +87,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         }
     }
     
-    var portraitButtonLayout: some View {
+    //TODO: Fix this not being able to be called from the view
+    var portraitButtonLayout: any View {
         switch self {
         case .gameBoyAdvanceGame:
             return GBAButtonLayout()

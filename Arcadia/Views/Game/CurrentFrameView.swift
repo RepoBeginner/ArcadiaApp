@@ -18,7 +18,8 @@ struct CurrentFrameView: View {
         #if os(macOS)
         if let image = currentFrame {
             Image(nsImage: NSImage(cgImage: image, size: NSSize(width: image.width, height: image.height)))
-                .aspectRatio(contentMode: .fit)
+                .resizable()
+                .scaledToFit()
         } else {
             //TODO: render a placeholder image
             Text("No Image")
@@ -26,7 +27,8 @@ struct CurrentFrameView: View {
         #else
         if let image = currentFrame {
             Image(uiImage: UIImage(cgImage: image))
-                    .aspectRatio(contentMode: .fit)
+                .resizable()
+                .scaledToFit()
                     
         } else {
             //TODO: render a placeholder image
@@ -38,7 +40,6 @@ struct CurrentFrameView: View {
     }
 
 }
-
 
 #Preview {
     CurrentFrameView(currentFrame: Binding.constant(nil))

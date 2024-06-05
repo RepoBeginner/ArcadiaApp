@@ -36,8 +36,8 @@ struct RunGameView: View {
     var body: some View {
         @Bindable var emulationState = emulationState
         VStack{
-            CurrentBufferMetalView(width: Int(emulationState.audioVideoInfo?.geometry.base_width ?? 1), height: Int(emulationState.audioVideoInfo?.geometry.base_height ?? 1))
-                .scaledToFit()
+            CurrentFrameView(currentFrame: $emulationState.currentFrame)
+            //CurrentBufferMetalView(width: Int(emulationState.audioVideoInfo?.geometry.base_width ?? 1), height: Int(emulationState.audioVideoInfo?.geometry.base_height ?? 1))
                 .onAppear(perform: {
                     emulationState.currentGameType = gameType
                     emulationState.attachCore(core: gameType.associatedCore)
