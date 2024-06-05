@@ -21,20 +21,23 @@ struct OverlayView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Core options")) {
-                    List {
-                        ForEach(ArcadiaCoreEmulationState.sharedInstance.currentCoreOptions, id: \.self) { option in
-                            HStack {
-                                Text(option.key)
-                                Text(option.description)
-                            }
-                        }
+                Section(header: Text("Save states")) {
+                    Button(
+                        action: {
+                            ArcadiaCoreEmulationState.sharedInstance.currentCore?.saveState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!)
+                        }) {
+                        Text("Save State")
                     }
+                    Button(
+                        action: {
+                            ArcadiaCoreEmulationState.sharedInstance.currentCore?.loadState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!)
+                        }) {
+                        Text("Load State")
+                    }
+                    // TODO: Disable load state if there is no state to load
                 }
             }
-            .font(.title)
             .padding()
-            .background(.black)
             .navigationTitle("Overlay")
             .toolbar() {
                 ToolbarItem(placement: .automatic) {

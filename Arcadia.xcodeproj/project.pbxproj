@@ -52,6 +52,7 @@
 		95707CBF2C01D77400217B82 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CBE2C01D77400217B82 /* HelpView.swift */; };
 		95707CC12C01E38100217B82 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CC02C01E38100217B82 /* CreditsView.swift */; };
 		95707CC32C020F7200217B82 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CC22C020F7200217B82 /* OverlayView.swift */; };
+		959F3BA72C10DE2F009EF53B /* GBAButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F3BA62C10DE2F009EF53B /* GBAButtonLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		95707CBE2C01D77400217B82 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		95707CC02C01E38100217B82 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		95707CC22C020F7200217B82 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		959F3BA62C10DE2F009EF53B /* GBAButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAButtonLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */,
+				959F3BA62C10DE2F009EF53B /* GBAButtonLayout.swift */,
 			);
 			path = ButtonsLayout;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
 				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
 				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,
+				959F3BA72C10DE2F009EF53B /* GBAButtonLayout.swift in Sources */,
 				95707CC32C020F7200217B82 /* OverlayView.swift in Sources */,
 				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,

@@ -41,11 +41,11 @@ struct RunGameView: View {
                 .onAppear(perform: {
                     emulationState.currentGameType = gameType
                     emulationState.attachCore(core: gameType.associatedCore)
+                    emulationState.currentStateURL = fileManager.getStateURL(gameURL: gameURL, gameType: gameType)
                     emulationState.currentSaveFileURL = [:]
                     for memoryType in gameType.supportedSaveFiles.keys {
                         emulationState.currentSaveFileURL[memoryType] = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType)
                     }
-                    emulationState.currentSaveFolder = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType)
                     emulationState.startEmulation(gameURL: gameURL)
                 })
                 .onDisappear(perform: {

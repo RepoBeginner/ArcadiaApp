@@ -90,7 +90,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     var portraitButtonLayout: some View {
         switch self {
         case .gameBoyAdvanceGame:
-            return GBCButtonLayout()
+            return GBAButtonLayout()
         case .gameBoyGame:
             return GBCButtonLayout()
         case .nesGame:
