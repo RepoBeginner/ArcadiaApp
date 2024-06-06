@@ -41,7 +41,7 @@
 		956F840B2BEBED810025FC5F /* GameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840A2BEBED810025FC5F /* GameRowView.swift */; };
 		956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840C2BEBF59F0025FC5F /* SettingsView.swift */; };
 		956F84272BF4846C0025FC5F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 956F84262BF4846C0025FC5F /* Shaders.metal */; };
-		956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */; };
+		956F84292BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84282BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift */; };
 		956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; };
 		956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */; };
@@ -53,6 +53,7 @@
 		95707CC12C01E38100217B82 /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CC02C01E38100217B82 /* CreditsView.swift */; };
 		95707CC32C020F7200217B82 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CC22C020F7200217B82 /* OverlayView.swift */; };
 		959F3BA72C10DE2F009EF53B /* GBAButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F3BA62C10DE2F009EF53B /* GBAButtonLayout.swift */; };
+		959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +127,7 @@
 		956F840A2BEBED810025FC5F /* GameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRowView.swift; sourceTree = "<group>"; };
 		956F840C2BEBF59F0025FC5F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		956F84262BF4846C0025FC5F /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
-		956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
+		956F84282BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalViewBinding.swift; sourceTree = "<group>"; };
 		956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCVirtualControllerView.swift; sourceTree = "<group>"; };
 		95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayout.swift; sourceTree = "<group>"; };
@@ -137,6 +138,7 @@
 		95707CC02C01E38100217B82 /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
 		95707CC22C020F7200217B82 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		959F3BA62C10DE2F009EF53B /* GBAButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAButtonLayout.swift; sourceTree = "<group>"; };
+		959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,8 +194,9 @@
 			children = (
 				95707CC22C020F7200217B82 /* OverlayView.swift */,
 				95456BB72BE2ACA900113B8A /* RunGameView.swift */,
-				956F84282BF486E80025FC5F /* CurrentBufferMetalView.swift */,
+				956F84282BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift */,
 				956F83FC2BEA67590025FC5F /* CurrentFrameView.swift */,
+				959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -492,8 +495,9 @@
 			files = (
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
 				955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */,
+				959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
-				956F84292BF486E80025FC5F /* CurrentBufferMetalView.swift in Sources */,
+				956F84292BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift in Sources */,
 				95707CC12C01E38100217B82 /* CreditsView.swift in Sources */,
 				95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,

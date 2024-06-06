@@ -3,7 +3,6 @@ import ArcadiaCore
 import SwiftUI
 import MetalKit
 
-/*
 #if os(macOS)
 typealias PlatformViewRepresentable = NSViewRepresentable
 import AppKit
@@ -11,25 +10,24 @@ import AppKit
 typealias PlatformViewRepresentable = UIViewRepresentable
 import UIKit
 #endif
-*/
 
-struct CurrentBufferMetalView: PlatformViewRepresentable {
+struct CurrentBufferMetalViewBinding: PlatformViewRepresentable {
 
+    let width: Int
+    let height: Int
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self, renderer: emulationState.metalRendered)
+        Coordinator(self)
     }
     
     func makeMetalView(context: Context) -> MTKView {
-        print("makeMetalView called")
         let metalView = MTKView()
         metalView.device = MTLCreateSystemDefaultDevice()
         metalView.delegate = context.coordinator.metalRenderer
         metalView.enableSetNeedsDisplay = true
         metalView.framebufferOnly = false
         metalView.preferredFramesPerSecond = 60
-        metalView.isPaused = false // Ensure the view is not paused
         return metalView
     }
 
@@ -39,6 +37,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
     }
 
     func updateNSView(_ nsView: MTKView, context: Context) {
+        context.coordinator.update(pixelData: emulationState.mainBuffer, audioData: emulationState.currentAudioFrameFloat, width: width, height: height)
         DispatchQueue.main.async {
             nsView.setNeedsDisplay(nsView.bounds)
         }
@@ -49,6 +48,7 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
     }
 
     func updateUIView(_ uiView: MTKView, context: Context) {
+        context.coordinator.update(pixelData: emulationState.mainBuffer, audioData: emulationState.currentAudioFrameFloat, width: width, height: height)
         DispatchQueue.main.async {
             uiView.setNeedsDisplay()
         }
@@ -56,15 +56,28 @@ struct CurrentBufferMetalView: PlatformViewRepresentable {
 #endif
 
     class Coordinator: NSObject {
-        var parent: CurrentBufferMetalView
-        var metalRenderer: ArcadiaCoreMetalRenderer
+        var parent: CurrentBufferMetalViewBinding
+        var audioPlayer: CurrentBufferAudioPlayer
+        var metalRenderer: CurrentBufferMetalRenderer
 
-        init(_ parent: CurrentBufferMetalView, renderer: ArcadiaCoreMetalRenderer) {
+        init(_ parent: CurrentBufferMetalViewBinding) {
             self.parent = parent
-            self.metalRenderer = renderer
+            self.audioPlayer = CurrentBufferAudioPlayer()
+            self.metalRenderer = CurrentBufferMetalRenderer()
             super.init()
+            audioPlayer.start()
+        }
+
+        func update(pixelData: [UInt8], audioData: [Float32], width: Int, height: Int) {
+            DispatchQueue.global(qos: .userInteractive).async {
+                // Update audio data
+                self.audioPlayer.updateBuffer(with: audioData)
+                // Update texture
+                self.metalRenderer.updateTexture(with: pixelData, width: width, height: height)
+
+                
+            }
         }
     }
 }
-
 
