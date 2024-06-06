@@ -74,9 +74,13 @@ struct HelpView: View {
                 */
                 Table(ArcadiaCoreButton.allCases) {
                     TableColumn("Button image") { item in
-                        Image(systemName: item.systemImageName)
                         if isCompact {
-                            Text(item.buttonName)
+                            HStack {
+                                Image(systemName: item.systemImageName)
+                                Text(item.buttonName)
+                            }
+                        } else {
+                            Image(systemName: item.systemImageName)
                         }
                     }
                     TableColumn("Name", value: \.buttonName)

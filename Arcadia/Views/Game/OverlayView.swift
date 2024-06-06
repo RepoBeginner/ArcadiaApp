@@ -25,16 +25,20 @@ struct OverlayView: View {
                     Button(
                         action: {
                             ArcadiaCoreEmulationState.sharedInstance.currentCore?.saveState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!)
+                            dismiss()
                         }) {
                         Text("Save State")
                     }
                     Button(
                         action: {
                             ArcadiaCoreEmulationState.sharedInstance.currentCore?.loadState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!)
+                            dismiss()
                         }) {
                         Text("Load State")
                     }
-                    // TODO: Disable load state if there is no state to load
+                        .disabled(
+                            !FileManager.default.fileExists(atPath: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!.path())
+                        )
                 }
             }
             .padding()

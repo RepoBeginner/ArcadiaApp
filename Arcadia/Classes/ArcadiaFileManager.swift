@@ -177,6 +177,10 @@ import AppKit
         return nil
     }
     
+    func loadCustomImage(imageURL: URL) {
+        
+    }
+    
     func deleteGame(gameURL: URL, gameType: ArcadiaGameType) {
         let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
         let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
