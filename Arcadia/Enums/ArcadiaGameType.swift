@@ -23,6 +23,17 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
     
+    var name: String {
+        switch self {
+        case .gameBoyGame:
+            return "GameBoy (Color)"
+        case .gameBoyAdvanceGame:
+            return "GameBoy Advance"
+        case .nesGame:
+            return "NES"
+        }
+    }
+    
     var allowedExtensions: [UTType] {
         switch self {
         case .gameBoyGame:
@@ -88,14 +99,14 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     }
     
     //TODO: Fix this not being able to be called from the view
-    var portraitButtonLayout: any View {
+    @ViewBuilder var portraitButtonLayout: some View {
         switch self {
         case .gameBoyAdvanceGame:
-            return GBAButtonLayout()
+            GBAButtonLayout()
         case .gameBoyGame:
-            return GBCButtonLayout()
+            GBCButtonLayout()
         case .nesGame:
-            return GBCButtonLayout()
+            GBCButtonLayout()
         }
     }
 

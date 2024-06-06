@@ -17,7 +17,6 @@
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
 		95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* RunGameView.swift */; };
 		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
-		95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95456BBB2BE2ACAB00113B8A /* Assets.xcassets */; };
 		95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95456BBF2BE2ACAC00113B8A /* Preview Assets.xcassets */; };
 		95456BCA2BE2ACAC00113B8A /* ArcadiaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BC92BE2ACAC00113B8A /* ArcadiaAppTests.swift */; };
 		95456BD42BE2ACAC00113B8A /* ArcadiaAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BD32BE2ACAC00113B8A /* ArcadiaAppUITests.swift */; };
@@ -100,7 +99,6 @@
 		95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaApp.swift; sourceTree = "<group>"; };
 		95456BB72BE2ACA900113B8A /* RunGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunGameView.swift; sourceTree = "<group>"; };
 		95456BB92BE2ACA900113B8A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		95456BBB2BE2ACAB00113B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95456BBD2BE2ACAB00113B8A /* Arcadia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Arcadia.entitlements; sourceTree = "<group>"; };
 		95456BBF2BE2ACAC00113B8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		95456BC52BE2ACAC00113B8A /* ArcadiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArcadiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,7 +243,6 @@
 				956F83FE2BEA70800025FC5F /* Models */,
 				95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */,
 				956F84262BF4846C0025FC5F /* Shaders.metal */,
-				95456BBB2BE2ACAB00113B8A /* Assets.xcassets */,
 				95456BBD2BE2ACAB00113B8A /* Arcadia.entitlements */,
 				95456BBE2BE2ACAC00113B8A /* Preview Content */,
 			);
@@ -468,7 +465,6 @@
 				952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */,
 				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
 				95707CB82C006F4100217B82 /* Assets.xcassets in Resources */,
-				95456BBC2BE2ACAB00113B8A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,7 +59,7 @@ struct RunGameView: View {
                     
                 }
             Spacer()
-            GBCButtonLayout()
+            gameType.portraitButtonLayout
                 .sheet(isPresented: $emulationState.showOverlay, content: {
                     OverlayView(dismissMainView: $toDismiss)
                 })
