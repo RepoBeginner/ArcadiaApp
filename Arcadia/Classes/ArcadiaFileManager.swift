@@ -51,7 +51,11 @@ import AppKit
     }
     
     var imagesDirectory: URL {
-        return libraryMainDirectory.appendingPathComponent("Images")
+        return documentsMainDirectory.appendingPathComponent("Images")
+    }
+    
+    var coresDirectory: URL {
+        return documentsMainDirectory.appendingPathComponent("Cores")
     }
     
 
@@ -60,14 +64,15 @@ import AppKit
         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
         let libraryDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         let documentsMainDirectory = documentsDirectory.appendingPathComponent("Arcadia")
-        let libraryMainDirectory = libraryDirectory.appendingPathComponent("Arcadia")
+
         
         let gamesDirectory = documentsMainDirectory.appendingPathComponent("Games")
         let savesDirectory = documentsMainDirectory.appendingPathComponent("Saves")
         let statesDirectory = documentsMainDirectory.appendingPathComponent("States")
-        let imagesDirectory = libraryMainDirectory.appendingPathComponent("Images")
+        let imagesDirectory = documentsMainDirectory.appendingPathComponent("Images")
+        let coresDirectory = documentsMainDirectory.appendingPathComponent("Cores")
         
-        for dir in [gamesDirectory, savesDirectory, statesDirectory, imagesDirectory] {
+        for dir in [gamesDirectory, savesDirectory, statesDirectory, imagesDirectory, coresDirectory] {
             do {
                 if !FileManager.default.fileExists(atPath: dir.path) {
                     try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true, attributes: nil)
@@ -397,6 +402,21 @@ import AppKit
     }
     #endif
     
+    func getSaveDirectory(for gameSystem: ArcadiaGameType) -> URL {
+        return self.savesDirectory.appendingPathComponent(gameSystem.rawValue)
+    }
+    
+    func getStateDirectory(for gameSystem: ArcadiaGameType) -> URL {
+        return self.statesDirectory.appendingPathComponent(gameSystem.rawValue)
+    }
+    
+    func getImageDirectory(for gameSystem: ArcadiaGameType) -> URL {
+        return self.imagesDirectory.appendingPathComponent(gameSystem.rawValue)
+    }
+    
+    func getCoreDirectory(for gameSystem: ArcadiaGameType) -> URL {
+        return self.coresDirectory.appendingPathComponent(gameSystem.rawValue)
+    }
 
     
 }

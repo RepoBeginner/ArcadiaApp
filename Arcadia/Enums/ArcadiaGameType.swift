@@ -72,8 +72,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         switch self {
         case .gameBoyAdvanceGame:
             return [
-                .memorySaveRam : "srm",
-                .memoryRTC : "rtc"
+                .memorySaveRam : "srm"
             ]
         case .gameBoyGame:
             return [
@@ -108,6 +107,22 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .nesGame:
             GBCButtonLayout()
         }
+    }
+    
+    var getSaveDirectory: URL {
+        return ArcadiaFileManager.shared.getSaveDirectory(for: self)
+    }
+    
+    var getStateDirectory: URL {
+        return ArcadiaFileManager.shared.getStateDirectory(for: self)
+    }
+    
+    var getImageDirectory: URL {
+        return ArcadiaFileManager.shared.getImageDirectory(for: self)
+    }
+    
+    var getCoreDirectory: URL {
+        return ArcadiaFileManager.shared.getCoreDirectory(for: self)
     }
 
 }
