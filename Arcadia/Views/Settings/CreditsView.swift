@@ -23,8 +23,9 @@ struct CreditsView: View {
                 Arcadia is built on top many different cores developed by extraordinary developers who made it possible to relive classic console experiences on other devices.
                 In Arcadia, you will find the following cores:
                 
+                • GameBoy Advance: [Libretro version](https://github.com/libretro/vba-next) of VBA Next
                 • GameBoy (Color): drhelius's [Gearboy](https://github.com/drhelius/Gearboy)
-                • NES: [Libretro version](https://github.com/libretro/QuickNES_Core) of kode54's [QuickNES](https://github.com/kode54/QuickNES)
+                • NES: [Libretro version](https://github.com/libretro/nestopia) of [Nestopia UE](https://github.com/0ldsk00l/nestopia)
                 """)
                 Spacer()
             }
