@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct GameRowView: View {
     
@@ -15,7 +16,10 @@ struct GameRowView: View {
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @State private var imageData: Data?
     @State private var showingRenameAlert = false
+    @State private var showingChangeImage = false
+    @State private var showingSaveExporter = false
     @State private var newGameName: String = ""
+    @State private var selectedCustomImage: PhotosPickerItem?
     
     init(gameTitle: String, gameURL: URL, gameType: ArcadiaGameType) {
         self.gameTitle = gameTitle
@@ -33,6 +37,7 @@ struct GameRowView: View {
                 #else
                 Image(uiImage: UIImage(data: imageData)!)
                     .resizable()
+                    .scaledToFit()
                     .frame(width: 80, height: 80)
                 #endif
             } else {
@@ -56,6 +61,16 @@ struct GameRowView: View {
             } label: {
                 Label("Rename", systemImage: "square.and.pencil")
             }
+            Button {
+                showingSaveExporter.toggle()
+            } label: {
+                Label("Export save", systemImage: "square.and.arrow.up")
+            }
+            Button(role: .destructive) {
+                fileManager.clearSavesAndStates(gameURL: gameURL, gameType: gameType)
+            } label: {
+                Label("Clear saves and states", systemImage: "clear")
+            }
         }
         .contextMenu(menuItems: {
             Button(role: .destructive) {
@@ -69,6 +84,21 @@ struct GameRowView: View {
             } label: {
                 Label("Rename", systemImage: "square.and.pencil")
             }
+            Button(role: .destructive) {
+                fileManager.clearSavesAndStates(gameURL: gameURL, gameType: gameType)
+            } label: {
+                Label("Clear saves and states", systemImage: "clear")
+            }
+            Button {
+                showingSaveExporter.toggle()
+            } label: {
+                Label("Export save", systemImage: "square.and.arrow.up")
+            }
+            Button {
+                showingChangeImage.toggle()
+            } label: {
+                Label("Change image", systemImage: "photo.artframe")
+            }
         })
         .alert("Enter your name", isPresented: $showingRenameAlert) {
             TextField("Enter the new game name", text: $newGameName)
@@ -81,6 +111,20 @@ struct GameRowView: View {
         } message: {
             Text("Enter the new name for the game.")
         }
+        .photosPicker(isPresented: $showingChangeImage, selection: $selectedCustomImage, matching: .images)
+        //TODO: understand if this can be used to refresh the cover image
+        .task(id: selectedCustomImage) {
+            let imageData = try? await selectedCustomImage?.loadTransferable(type: Data.self)
+            guard let loadedImage = imageData else {
+                return
+            }
+            fileManager.loadCustomImage(imageData: loadedImage, gameURL: gameURL, gameType: gameType)
+        }
+        /*
+        .fileExporter(isPresented: $showingSaveExporter, document: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType), defaultFilename: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType).lastPathComponent) {
+            result in
+        }
+         */
         
     }
 }

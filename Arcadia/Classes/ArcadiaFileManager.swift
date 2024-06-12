@@ -182,8 +182,36 @@ import AppKit
         return nil
     }
     
-    func loadCustomImage(imageURL: URL) {
-        
+    func loadCustomImage(imageData: Data, gameURL: URL, gameType: ArcadiaGameType) {
+        #if os(iOS)
+        guard let image = UIImage(data: imageData) else {
+            return
+        }
+        let resizedImage = resizeImage(image: image, toMaxDimension: 80)
+        guard let resizedImageData = resizedImage.pngData() else {
+            return
+        }
+        #elseif os(macOS)
+        guard let image = NSImage(data: imageData) else {
+            return
+        }
+        let resizedImage = resizeImage(image: image, toMaxDimension: 80)
+        guard let resizedImageTiffData = resizedImage.tiffRepresentation else {
+            return
+        }
+        let bitmapImageRep = NSBitmapImageRep(data: resizedImageTiffData)
+        guard let resizedImageData = bitmapImageRep?.representation(using: .png, properties: [:]) else {
+            return
+        }
+        #endif
+        let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
+        do {
+            try resizedImageData.write(to: imageURL)
+        }
+        catch {
+            print("Error saving image")
+        }
+
     }
     
     func deleteGame(gameURL: URL, gameType: ArcadiaGameType) {
@@ -211,6 +239,38 @@ import AppKit
         //To update the list
         getGamesURL(gameSystem: gameType)
         
+    }
+    
+    func deleteSaves(gameURL: URL, gameType: ArcadiaGameType) {
+        let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
+        
+        if FileManager.default.fileExists(atPath: saveURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: saveURL.path)
+            } catch {
+                print("Could not delete")
+            }
+        }
+
+    }
+    
+    func deleteStates(gameURL: URL, gameType: ArcadiaGameType) {
+        let stateURL = getStateURL(gameURL: gameURL, gameType: gameType)
+        
+        if FileManager.default.fileExists(atPath: stateURL.path) {
+            do {
+                try FileManager.default.removeItem(atPath: stateURL.path)
+            } catch {
+                print("Could not delete")
+            }
+        }
+
+    }
+    
+    func clearSavesAndStates(gameURL: URL, gameType: ArcadiaGameType) {
+        deleteSaves(gameURL: gameURL, gameType: gameType)
+        deleteStates(gameURL: gameURL, gameType: gameType)
+
     }
     
     func renameGame(gameURL: URL, newName: String, gameType: ArcadiaGameType) {
@@ -344,7 +404,7 @@ import AppKit
             
             let imageFileName = self.getImageURL(gameURL: gameURL, gameType: gameType)
             
-            let resizedImage = self.resizeImage(image: image, toWidth: 80)
+            let resizedImage = self.resizeImage(image: image, toMaxDimension: 80)
             print("Resized image")
             
             #if os(iOS)
@@ -372,27 +432,35 @@ import AppKit
     }
 
     #if os(iOS)
-    func resizeImage(image: UIImage, toWidth width: CGFloat) -> UIImage {
+    func resizeImage(image: UIImage, toMaxDimension maxDimension: CGFloat) -> UIImage {
         let size = image.size
-        let height = width / size.width * size.height
-        let targetSize = CGSize(width: width, height: height)
+        let widthRatio = maxDimension / size.width
+        let heightRatio = maxDimension / size.height
+
+        let scaleFactor = min(widthRatio, heightRatio)
         
-        let renderer = UIGraphicsImageRenderer(size: targetSize)
+        let newSize = CGSize(width: size.width * scaleFactor, height: size.height * scaleFactor)
+        
+        let renderer = UIGraphicsImageRenderer(size: newSize)
         let resizedImage = renderer.image { (context) in
-            image.draw(in: CGRect(origin: .zero, size: targetSize))
+            image.draw(in: CGRect(origin: .zero, size: newSize))
         }
         
         return resizedImage
     }
     #elseif os(macOS)
-    func resizeImage(image: NSImage, toWidth width: CGFloat) -> NSImage {
+    func resizeImage(image: NSImage, toMaxDimension maxDimension: CGFloat) -> NSImage {
         let size = image.size
-        let height = width / size.width * size.height
-        let targetSize = CGSize(width: width, height: height)
+        let widthRatio = maxDimension / size.width
+        let heightRatio = maxDimension / size.height
         
-        let resizedImage = NSImage(size: targetSize)
+        let scaleFactor = min(widthRatio, heightRatio)
+        
+        let newSize = CGSize(width: size.width * scaleFactor, height: size.height * scaleFactor)
+        
+        let resizedImage = NSImage(size: newSize)
         resizedImage.lockFocus()
-        image.draw(in: NSRect(origin: .zero, size: targetSize),
+        image.draw(in: NSRect(origin: .zero, size: newSize),
                    from: NSRect(origin: .zero, size: size),
                    operation: .copy,
                    fraction: 1.0)
