@@ -97,7 +97,6 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         }
     }
     
-    //TODO: Fix this not being able to be called from the view
     @ViewBuilder var portraitButtonLayout: some View {
         switch self {
         case .gameBoyAdvanceGame:
@@ -106,6 +105,28 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayout()
         case .nesGame:
             GBCButtonLayout()
+        }
+    }
+    
+    @ViewBuilder var landscapeButtonLayoutLeft: some View {
+        switch self {
+        case .gameBoyAdvanceGame:
+            GBAButtonLayoutLeft()
+        case .gameBoyGame:
+            GBCButtonLayoutLeft()
+        case .nesGame:
+            GBCButtonLayoutLeft()
+        }
+    }
+    
+    @ViewBuilder var landscapeButtonLayoutRight: some View {
+        switch self {
+        case .gameBoyAdvanceGame:
+            GBAButtonLayoutRight()
+        case .gameBoyGame:
+            GBCButtonLayoutRight()
+        case .nesGame:
+            GBCButtonLayoutRight()
         }
     }
     

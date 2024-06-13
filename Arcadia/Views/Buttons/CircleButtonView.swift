@@ -12,7 +12,8 @@ struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var color: Color
     private var size: CGFloat
-    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState    
+    @AppStorage("hapticFeedback") private var useHapticFeedback = true
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray, size: CGFloat) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.color = color
@@ -23,7 +24,9 @@ struct CircleButtonView: View {
         
         Button(action: {
             #if os(iOS)
-            UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            if useHapticFeedback {
+                UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+            }
             #elseif os(macOS)
             //Second action that gets called
             if arcadiaCoreButton != .arcadiaButton {

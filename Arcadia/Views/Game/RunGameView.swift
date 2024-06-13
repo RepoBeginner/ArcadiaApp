@@ -24,6 +24,9 @@ struct RunGameView: View {
     @State private var gameURL: URL
     @State private var gameType: ArcadiaGameType
     @State private var toDismiss: Bool = false
+
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.dismiss) var dismiss
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
@@ -35,40 +38,52 @@ struct RunGameView: View {
 
     var body: some View {
         @Bindable var emulationState = emulationState
-        VStack{
-            CurrentBufferMetalView()
-                .scaledToFit()
-            //CurrentFrameView(currentFrame: $emulationState.currentFrame)
-            //CurrentBufferMetalViewBinding(width: Int(emulationState.audioVideoInfo?.geometry.base_width ?? 1), height: Int(emulationState.audioVideoInfo?.geometry.base_height ?? 1))
-                .onAppear(perform: {
-                    //TODO: Invece del gameURL mandare uno struct con tutte le informazioni
-                    let stateURL = fileManager.getStateURL(gameURL: gameURL, gameType: gameType)
-                    var saveFIleURLs: [ArcadiaCoreMemoryType : URL] = [:]
-                    for memoryType in gameType.supportedSaveFiles.keys {
-                        saveFIleURLs[memoryType] = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType)
-                    }
-                    emulationState.startEmulation(gameURL: gameURL, gameType: gameType, stateURL: stateURL, saveFileURLs: saveFIleURLs)
-                })
-                .onDisappear(perform: {
-                    emulationState.pauseEmulation()
-                })
-                .onChange(of: toDismiss) { oldValue, newValue in
-                    if newValue {
-                        dismiss()
-                    }
-                    
+        Group {
+            if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+                VStack {
+                    CurrentBufferMetalView()
+                        .scaledToFit()
+                    Spacer()
+                    gameType.portraitButtonLayout
+
                 }
-            Spacer()
-            gameType.portraitButtonLayout
-                .sheet(isPresented: $emulationState.showOverlay, content: {
-                    OverlayView(dismissMainView: $toDismiss)
-                })
-            #if os(iOS)
-                .toolbar(.hidden, for: .tabBar)
-            #endif
+            }
+            else {
+                HStack {
+                    gameType.landscapeButtonLayoutLeft
+                    Spacer()
+                    CurrentBufferMetalView()
+                        .scaledToFill()
+                    Spacer()
+                    gameType.landscapeButtonLayoutRight
 
-
+                }
+            }
         }
+        .onAppear(perform: {
+            //TODO: Invece del gameURL mandare uno struct con tutte le informazioni
+            let stateURL = fileManager.getStateURL(gameURL: gameURL, gameType: gameType)
+            var saveFIleURLs: [ArcadiaCoreMemoryType : URL] = [:]
+            for memoryType in gameType.supportedSaveFiles.keys {
+                saveFIleURLs[memoryType] = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType)
+            }
+            emulationState.startEmulation(gameURL: gameURL, gameType: gameType, stateURL: stateURL, saveFileURLs: saveFIleURLs)
+        })
+        .onDisappear(perform: {
+            emulationState.pauseEmulation()
+        })
+        .onChange(of: toDismiss) { oldValue, newValue in
+            if newValue {
+                dismiss()
+            }
+            
+        }
+        .sheet(isPresented: $emulationState.showOverlay, content: {
+            OverlayView(dismissMainView: $toDismiss)
+        })
+    #if os(iOS)
+        .toolbar(.hidden, for: .tabBar)
+    #endif
 
     }
 

@@ -11,11 +11,14 @@ import SwiftUI
 
 
 struct SettingsView: View {
-   
         
     var body: some View {
         #if os(macOS)
         TabView {
+            InputSettingsView()
+                .tabItem {
+                    Label("Input", systemImage: "gamecontroller")
+                }
             HelpView()
                 .tabItem {
                     Label("Help", systemImage: "gear")
@@ -31,6 +34,9 @@ struct SettingsView: View {
         #else
         NavigationStack {
             Form {
+                NavigationLink(destination: InputSettingsView()) {
+                    Text("Input")
+                }
                 NavigationLink(destination: HelpView()) {
                     Text("Help")
                 }
