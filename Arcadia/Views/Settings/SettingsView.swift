@@ -31,6 +31,7 @@ struct SettingsView: View {
 
         }
         .navigationTitle("Settings")
+        .frame(minWidth: 375, minHeight: 150)
         #else
         NavigationStack {
             Form {

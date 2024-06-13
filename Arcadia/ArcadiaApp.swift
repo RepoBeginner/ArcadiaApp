@@ -49,6 +49,7 @@ struct ArcadiaApp: App {
         #if os(macOS)
         Settings {
             SettingsView()
+                .environment(InputController.shared)
         }
         #endif
     }
