@@ -14,6 +14,8 @@ struct CircleButtonView: View {
     private var size: CGFloat
     @AppStorage("hapticFeedback") private var useHapticFeedback = true
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
+    @Environment(InputController.self) var inputController: InputController
+    
     init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray, size: CGFloat) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.color = color
@@ -30,7 +32,7 @@ struct CircleButtonView: View {
             #elseif os(macOS)
             //Second action that gets called
             if arcadiaCoreButton != .arcadiaButton {
-                emulationState.unpressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                emulationState.unpressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
             } else {
                 emulationState.pauseEmulation()
                 emulationState.showOverlay.toggle()
@@ -50,14 +52,14 @@ struct CircleButtonView: View {
             DragGesture(minimumDistance: 0)
                 .onChanged({ _ in
                     if arcadiaCoreButton != .arcadiaButton {
-                        emulationState.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                        emulationState.pressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
                     } else {
                         
                     }
                 })
                 .onEnded({ _ in
                     if arcadiaCoreButton != .arcadiaButton {
-                        emulationState.unpressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                        emulationState.unpressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
                     } else {
                         emulationState.pauseEmulation()
                         emulationState.showOverlay.toggle()
@@ -68,7 +70,7 @@ struct CircleButtonView: View {
         .buttonStyle(ButtonPressHandler(color: color) {
             //First action that gets called
             if arcadiaCoreButton != .arcadiaButton {
-                emulationState.pressButton(port: 0, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                emulationState.pressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
             } else {
                 
             }

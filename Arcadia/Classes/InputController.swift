@@ -14,8 +14,9 @@ import ArcadiaCore
     static let shared = InputController()
     
     var controllers: [GCController: UInt32] = [:]
-    var availableDeviceIDs: [UInt32] = []
-    var nextDeviceID: UInt32 = 1
+    var availablePortIDs: [UInt32] = []
+    var nextPortID: UInt32 = 0
+    var mainInputPortID: UInt32 = 0
     
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(controllerDidConnect), name: .GCControllerDidConnect, object: nil)
@@ -25,15 +26,15 @@ import ArcadiaCore
     
     @objc private func controllerDidConnect(notification: Notification) {
         if let controller = notification.object as? GCController {
-            let deviceID: UInt32
-            if availableDeviceIDs.isEmpty {
-                deviceID = nextDeviceID
-                nextDeviceID += 1
+            let portID: UInt32
+            if availablePortIDs.isEmpty {
+                portID = nextPortID
+                nextPortID += 1
             } else {
-                deviceID = availableDeviceIDs.removeFirst()
+                portID = availablePortIDs.removeFirst()
             }
-            controllers[controller] = deviceID
-            setupController(controller: controller, device: deviceID)
+            controllers[controller] = portID
+            setupController(controller: controller, device: portID)
         }
     }
     
@@ -41,20 +42,21 @@ import ArcadiaCore
         if let disconnectedController = notification.object as? GCController {
             if let deviceID = controllers[disconnectedController] {
                 controllers.removeValue(forKey: disconnectedController)
-                availableDeviceIDs.append(deviceID)
+                availablePortIDs.append(deviceID)
             }
         }
     }
     
-    public func updateControllerConfiguration(controller: GCController, from originDevice: UInt32?, to destinationDevice: UInt32?) {
-        guard let destinationDevice = destinationDevice, let originDevice = originDevice else {
+    public func updateControllerConfiguration(controller: GCController, from originPort: UInt32?, to destinationPort: UInt32?) {
+        guard let destinationPort = destinationPort, let originPort = originPort else {
             return
         }
-        if !availableDeviceIDs.contains(originDevice) {
-            availableDeviceIDs.append(originDevice)
-            // Check if not used by other controllers
+        if !availablePortIDs.contains(originPort) && !controllers.values.contains(originPort) && nextPortID > originPort {
+            availablePortIDs.append(originPort)
+        } else if availablePortIDs.contains(destinationPort) {
+            availablePortIDs.removeAll(where: { element in element == destinationPort })
         }
-        setupController(controller: controller, device: destinationDevice)
+        setupController(controller: controller, device: destinationPort)
     }
     
     private func setupController(controller: GCController, device: UInt32) {
@@ -62,81 +64,81 @@ import ArcadiaCore
         
         extendedGamepad.buttonA.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadA)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadA)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadA)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadA)
             }
         }
         
         extendedGamepad.buttonB.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadB)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadB)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadB)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadB)
             }
         }
         
         extendedGamepad.buttonX.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadX)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadX)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadX)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadX)
             }
         }
         
         extendedGamepad.buttonY.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadY)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadY)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadY)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadY)
             }
         }
         
         extendedGamepad.dpad.left.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadLeft)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadLeft)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadLeft)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadLeft)
             }
         }
         
         extendedGamepad.dpad.right.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadRight)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadRight)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadRight)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadRight)
             }
         }
         
         extendedGamepad.dpad.down.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadDown)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadDown)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadDown)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadDown)
             }
         }
         
         extendedGamepad.dpad.up.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadUp)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadUp)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadUp)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadUp)
             }
         }
         
         extendedGamepad.buttonOptions?.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadSelect)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadSelect)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadSelect)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadSelect)
             }
         }
         
         extendedGamepad.buttonMenu.pressedChangedHandler = { button, value, pressed in
             if pressed {
-                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: 0, device: device, index: 0, button: .joypadStart)
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadStart)
             } else {
-                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: 0, device: device, index: 0, button: .joypadStart)
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadStart)
             }
         }
         
