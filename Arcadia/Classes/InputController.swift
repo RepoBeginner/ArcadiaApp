@@ -17,11 +17,44 @@ import ArcadiaCore
     var availablePortIDs: [UInt32] = []
     var nextPortID: UInt32 = 0
     var mainInputPortID: UInt32 = 0
+    var gameKeyboardMapping: [ArcadiaCoreButton : GCKeyCode] =  [
+        .joypadB : .keyB,
+        .joypadY : .keyY,
+        .joypadSelect : .returnOrEnter,
+        .joypadStart : .leftControl,
+        .joypadUp: .upArrow,
+        .joypadDown: .downArrow,
+        .joypadLeft: .leftArrow,
+        .joypadRight: .rightArrow,
+        .joypadA : .keyA,
+        .joypadX : .keyX,
+        .joypadL : .one,
+        .joypadR : .four,
+        .joypadL2 : .two,
+        .joypadR2 : .five,
+        .joypadL3 : .three,
+        .joypadR3 : .six,
+    ]
+    var keyboardIsConnected: Bool {
+        if let keyboard = GCKeyboard.coalesced?.keyboardInput {
+            return true
+        } else {
+            return false
+        }
+    }
     
     init() {
         NotificationCenter.default.addObserver(self, selector: #selector(controllerDidConnect), name: .GCControllerDidConnect, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(controllerDidDisconnect), name: .GCControllerDidDisconnect, object: nil)
         GCController.startWirelessControllerDiscovery(completionHandler: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidConnect), name: .GCKeyboardDidConnect, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisconnect), name: .GCKeyboardDidDisconnect, object: nil)
+        
+        loadGameKeyMappings()
+        if let keyboard = GCKeyboard.coalesced?.keyboardInput {
+            setupKeyboard(keyboard)
+        }
     }
     
     @objc private func controllerDidConnect(notification: Notification) {
@@ -45,6 +78,15 @@ import ArcadiaCore
                 availablePortIDs.append(deviceID)
             }
         }
+    }
+    
+    @objc private func keyboardDidConnect(notification: Notification) {
+        if let keyboard = notification.object as? GCKeyboard {
+            setupKeyboard(keyboard.keyboardInput)
+        }
+    }
+    
+    @objc private func keyboardDidDisconnect(notification: Notification) {
     }
     
     public func updateControllerConfiguration(controller: GCController, from originPort: UInt32?, to destinationPort: UInt32?) {
@@ -146,4 +188,49 @@ import ArcadiaCore
             ArcadiaCoreEmulationState.sharedInstance.showOverlay.toggle()
         }
     }
+    
+    
+    private func setupKeyboard(_ keyboard: GCKeyboardInput?) {
+        guard let keyboard = keyboard else { return }
+        
+        for (arcadiaButton ,keyCode) in gameKeyboardMapping {
+            keyboard.button(forKeyCode: keyCode)?.pressedChangedHandler = { button, value, pressed in
+                if pressed {
+                    ArcadiaCoreEmulationState.sharedInstance.pressButton(port: self.mainInputPortID, device: 1, index: 0, button: arcadiaButton)
+                } else {
+                    ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: self.mainInputPortID, device: 1, index: 0, button: arcadiaButton)
+                }
+            }
+        }
+    }
+    
+    public func updateKeyboardMapping() {
+        if let keyboard = GCKeyboard.coalesced?.keyboardInput {
+            setupKeyboard(keyboard)
+            saveGameKeyMappings()
+        }
+    }
+    
+    private func saveGameKeyMappings() {
+        let mappings = keyboardMapping.map { (key, value) in
+            return ["key": key.rawValue, "action": value.rawValue]
+        }
+        UserDefaults.standard.set(mappings, forKey: "keyMappings")
+    }
+    
+    private func loadGameKeyMappings() {
+        if let mappings = UserDefaults.standard.array(forKey: "keyMappings") as? [[String: Int]] {
+            for mapping in mappings {
+                guard let arcadiaKey = mapping["key"], let key = mapping["action"] else {
+                    break
+                }
+                let keyCode = GCKeyCode(rawValue: key)
+                guard let arcadiaButton = ArcadiaCoreButton(rawValue: UInt32(arcadiaKey)) else {
+                    break
+                }
+                keyboardMapping[arcadiaButton] = keyCode
+            }
+        }
+    }
 }
+

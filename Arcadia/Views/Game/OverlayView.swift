@@ -40,6 +40,10 @@ struct OverlayView: View {
                             !FileManager.default.fileExists(atPath: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!.path())
                         )
                 }
+                
+                Section {
+                    InputSettingsView()
+                }
             }
             .padding()
             .navigationTitle("Overlay")
