@@ -30,6 +30,7 @@ struct RunGameView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
+    @Environment(InputController.self) var inputController: InputController
     
     init(gameURL: URL, gameType: ArcadiaGameType) {
         self.gameURL = gameURL
@@ -61,6 +62,7 @@ struct RunGameView: View {
             }
         }
         .onAppear(perform: {
+            inputController.loadGameConfiguration()
             //TODO: Invece del gameURL mandare uno struct con tutte le informazioni
             let stateURL = fileManager.getStateURL(gameURL: gameURL, gameType: gameType)
             var saveFIleURLs: [ArcadiaCoreMemoryType : URL] = [:]
@@ -70,6 +72,7 @@ struct RunGameView: View {
             emulationState.startEmulation(gameURL: gameURL, gameType: gameType, stateURL: stateURL, saveFileURLs: saveFIleURLs)
         })
         .onDisappear(perform: {
+            inputController.unloadGameConfiguration()
             emulationState.pauseEmulation()
         })
         .onChange(of: toDismiss) { oldValue, newValue in

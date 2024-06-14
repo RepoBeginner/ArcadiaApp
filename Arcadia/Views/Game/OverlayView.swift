@@ -12,7 +12,7 @@ struct OverlayView: View {
     @Environment(\.dismiss) var dismiss
     @State private var currentSelection: String = ""
     @Binding var dismissMainView: Bool
-
+    @Environment(InputController.self) var inputController: InputController
     
     init(dismissMainView: Binding<Bool>) {
         self._dismissMainView = dismissMainView
@@ -41,9 +41,7 @@ struct OverlayView: View {
                         )
                 }
                 
-                Section {
-                    InputSettingsView()
-                }
+                PlayerSelectionView()
             }
             .padding()
             .navigationTitle("Overlay")
@@ -57,7 +55,11 @@ struct OverlayView: View {
                 }
                
             }
+            .onAppear {
+                inputController.unloadGameConfiguration()
+            }
             .onDisappear {
+                inputController.loadGameConfiguration()
                 ArcadiaCoreEmulationState.sharedInstance.resumeEmulation()
             }
             #if os(iOS)

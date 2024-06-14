@@ -58,6 +58,7 @@
 		959F81F12C1ACD64009EF53B /* GBAButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F02C1ACD64009EF53B /* GBAButtonLayoutRight.swift */; };
 		959F81F32C1B14ED009EF53B /* GBCButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F22C1B14ED009EF53B /* GBCButtonLayoutLeft.swift */; };
 		959F81F62C1B1582009EF53B /* GBCButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F52C1B1582009EF53B /* GBCButtonLayoutRight.swift */; };
+		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +148,7 @@
 		959F81F02C1ACD64009EF53B /* GBAButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBAButtonLayoutRight.swift; sourceTree = "<group>"; };
 		959F81F22C1B14ED009EF53B /* GBCButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayoutLeft.swift; sourceTree = "<group>"; };
 		959F81F52C1B1582009EF53B /* GBCButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayoutRight.swift; sourceTree = "<group>"; };
+		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +366,7 @@
 				95707CC02C01E38100217B82 /* CreditsView.swift */,
 				95707CBE2C01D77400217B82 /* HelpView.swift */,
 				959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */,
+				959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */,
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
 				955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */,
 				959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */,

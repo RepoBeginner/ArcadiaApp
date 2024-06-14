@@ -34,6 +34,7 @@ struct GameCollectionView: View {
                         NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                         ) {
                             GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
+                                .focusable()
 
                         }
                         }

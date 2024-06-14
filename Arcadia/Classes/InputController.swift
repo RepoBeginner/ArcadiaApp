@@ -53,7 +53,7 @@ import ArcadiaCore
         
         loadGameKeyMappings()
         if let keyboard = GCKeyboard.coalesced?.keyboardInput {
-            setupKeyboard(keyboard)
+            //setupKeyboard(keyboard)
         }
     }
     
@@ -98,7 +98,7 @@ import ArcadiaCore
         } else if availablePortIDs.contains(destinationPort) {
             availablePortIDs.removeAll(where: { element in element == destinationPort })
         }
-        setupController(controller: controller, device: destinationPort)
+        //setupController(controller: controller, device: destinationPort)
     }
     
     private func setupController(controller: GCController, device: UInt32) {
@@ -205,14 +205,11 @@ import ArcadiaCore
     }
     
     public func updateKeyboardMapping() {
-        if let keyboard = GCKeyboard.coalesced?.keyboardInput {
-            setupKeyboard(keyboard)
             saveGameKeyMappings()
-        }
     }
     
     private func saveGameKeyMappings() {
-        let mappings = keyboardMapping.map { (key, value) in
+        let mappings = gameKeyboardMapping.map { (key, value) in
             return ["key": key.rawValue, "action": value.rawValue]
         }
         UserDefaults.standard.set(mappings, forKey: "keyMappings")
@@ -228,9 +225,28 @@ import ArcadiaCore
                 guard let arcadiaButton = ArcadiaCoreButton(rawValue: UInt32(arcadiaKey)) else {
                     break
                 }
-                keyboardMapping[arcadiaButton] = keyCode
+                gameKeyboardMapping[arcadiaButton] = keyCode
             }
         }
     }
+    
+    public func loadGameConfiguration() {
+        for controller in controllers.keys {
+            setupController(controller: controller, device: controllers[controller]!)
+        }
+        if let keyboard = GCKeyboard.coalesced?.keyboardInput {
+            setupKeyboard(keyboard)
+        }
+    }
+    
+    public func unloadGameConfiguration() {
+        for controller in controllers.keys {
+            controller.extendedGamepad?.valueChangedHandler = nil
+        }
+        if let keyboard = GCKeyboard.coalesced?.keyboardInput {
+            keyboard.valueDidChangeHandler = nil
+        }
+    }
+    
 }
 
