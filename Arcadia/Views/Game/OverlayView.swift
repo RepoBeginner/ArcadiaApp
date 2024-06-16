@@ -56,10 +56,10 @@ struct OverlayView: View {
                
             }
             .onAppear {
-                inputController.unloadGameConfiguration()
+                //inputController.unloadGameConfiguration()
             }
             .onDisappear {
-                inputController.loadGameConfiguration()
+                //inputController.loadGameConfiguration()
                 ArcadiaCoreEmulationState.sharedInstance.resumeEmulation()
             }
             #if os(iOS)

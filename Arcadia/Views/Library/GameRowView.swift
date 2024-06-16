@@ -29,13 +29,12 @@ struct GameRowView: View {
     
     var body: some View {
         HStack {
-            //TODO: if the image is loaded when the row is on screen, the image should update
-            if let imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType) {
+            if let image = imageData {
                 #if os(macOS)
-                Image(nsImage: NSImage(data: imageData)!)
+                Image(nsImage: NSImage(data: image)!)
                     .frame(width: 80, height: 80)
                 #else
-                Image(uiImage: UIImage(data: imageData)!)
+                Image(uiImage: UIImage(data: image)!)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 80, height: 80)
@@ -49,6 +48,17 @@ struct GameRowView: View {
 
             Text(gameTitle)
                 .font(.headline)
+        }
+        .onAppear {
+            imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
+            //TODO: Find a more robust way to load the cover after the game has been loaded
+            /*
+            if imageData == nil {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
+                }
+            }
+             */
         }
         .swipeActions(allowsFullSwipe: false) {
             Button(role: .destructive) {
@@ -104,6 +114,7 @@ struct GameRowView: View {
             TextField("Enter the new game name", text: $newGameName)
             Button("Confirm", action: {
                 fileManager.renameGame(gameURL: gameURL, newName: newGameName, gameType: gameType)
+                newGameName = ""
             })
             Button("Cancel", role: .cancel) {
                 newGameName = ""
@@ -112,13 +123,13 @@ struct GameRowView: View {
             Text("Enter the new name for the game.")
         }
         .photosPicker(isPresented: $showingChangeImage, selection: $selectedCustomImage, matching: .images)
-        //TODO: understand if this can be used to refresh the cover image
         .task(id: selectedCustomImage) {
             let imageData = try? await selectedCustomImage?.loadTransferable(type: Data.self)
             guard let loadedImage = imageData else {
                 return
             }
             fileManager.loadCustomImage(imageData: loadedImage, gameURL: gameURL, gameType: gameType)
+            self.imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
         }
         /*
         .fileExporter(isPresented: $showingSaveExporter, document: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType), defaultFilename: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType).lastPathComponent) {

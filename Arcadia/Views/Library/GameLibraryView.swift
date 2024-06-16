@@ -9,13 +9,14 @@ import SwiftUI
 
 struct GameLibraryView: View {
     @State private var system: ArcadiaGameType?
-
+    
     var body: some View {
 
         NavigationSplitView {
             List(ArcadiaGameType.allCases, selection: $system) { gameType in
                 NavigationLink(value: gameType) {
                     GameSystemRowView(gameSystem: gameType)
+                        .focusable()
                 }
             }
             .navigationTitle("Game Systems")

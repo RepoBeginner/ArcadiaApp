@@ -10,8 +10,18 @@ import GameController
 import SwiftUI
 import ArcadiaCore
 
+enum MenuMovementAction {
+    case moveUp
+    case moveDown
+    case moveLeft
+    case moveRight
+    case enter
+}
+
 @Observable class InputController {
     static let shared = InputController()
+    
+    var action: MenuMovementAction?
     
     var controllers: [GCController: UInt32] = [:]
     var availablePortIDs: [UInt32] = []
@@ -53,7 +63,7 @@ import ArcadiaCore
         
         loadGameKeyMappings()
         if let keyboard = GCKeyboard.coalesced?.keyboardInput {
-            //setupKeyboard(keyboard)
+            setupKeyboard(keyboard)
         }
     }
     
@@ -98,7 +108,7 @@ import ArcadiaCore
         } else if availablePortIDs.contains(destinationPort) {
             availablePortIDs.removeAll(where: { element in element == destinationPort })
         }
-        //setupController(controller: controller, device: destinationPort)
+        setupController(controller: controller, device: destinationPort)
     }
     
     private func setupController(controller: GCController, device: UInt32) {
@@ -139,8 +149,10 @@ import ArcadiaCore
         extendedGamepad.dpad.left.pressedChangedHandler = { button, value, pressed in
             if pressed {
                 ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadLeft)
+                self.action = .moveLeft
             } else {
                 ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadLeft)
+                self.action = nil
             }
         }
         
@@ -155,8 +167,10 @@ import ArcadiaCore
         extendedGamepad.dpad.down.pressedChangedHandler = { button, value, pressed in
             if pressed {
                 ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadDown)
+                self.action = .moveDown
             } else {
                 ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadDown)
+                self.action = nil
             }
         }
         
