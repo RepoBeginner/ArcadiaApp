@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GameLibraryView: View {
     @State private var system: ArcadiaGameType?
+    @FocusState private var selectedSystem: ArcadiaGameType?
+    @State private var path = NavigationPath()
     
     var body: some View {
 
@@ -22,8 +24,8 @@ struct GameLibraryView: View {
             .navigationTitle("Game Systems")
         } detail: {
             if let selectedSystem = system {
-                NavigationStack {
-                    GameCollectionView(gameType: selectedSystem)
+                NavigationStack(path: $path) {
+                    GameCollectionView(gameType: selectedSystem, path: $path)
                         .id(selectedSystem.id)
                 }
 
@@ -31,6 +33,7 @@ struct GameLibraryView: View {
                 Text("Select a system")
             }
         }
+
         
 
     }

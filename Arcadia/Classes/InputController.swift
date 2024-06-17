@@ -117,8 +117,10 @@ enum MenuMovementAction {
         extendedGamepad.buttonA.pressedChangedHandler = { button, value, pressed in
             if pressed {
                 ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadA)
+                self.action = .enter
             } else {
                 ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadA)
+                self.action = nil
             }
         }
         
@@ -159,8 +161,10 @@ enum MenuMovementAction {
         extendedGamepad.dpad.right.pressedChangedHandler = { button, value, pressed in
             if pressed {
                 ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadRight)
+                self.action = .moveRight
             } else {
                 ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadRight)
+                self.action = nil
             }
         }
         
@@ -177,8 +181,10 @@ enum MenuMovementAction {
         extendedGamepad.dpad.up.pressedChangedHandler = { button, value, pressed in
             if pressed {
                 ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadUp)
+                self.action = .moveUp
             } else {
                 ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadUp)
+                self.action = nil
             }
         }
         
