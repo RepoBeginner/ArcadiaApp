@@ -58,6 +58,7 @@ struct GameCollectionView: View {
                 .navigationDestination(for: URL.self) { selection in
                     RunGameView(gameURL: selection, gameType: gameType)
                 }
+                /*
                 .onChange(of: inputController.action) {oldValue, newValue in
                     switch newValue {
                     case .moveDown:
@@ -78,7 +79,7 @@ struct GameCollectionView: View {
                         return
                     }
                 }
-
+                */
             }
         }
             .onAppear {
@@ -91,9 +92,6 @@ struct GameCollectionView: View {
                     Button(action: { showingAddGameView.toggle() }, label: {
                         Image(systemName: "plus")
                     })
-                    Button(action: {print(self.selectedGameIndex)}) {
-                        Text("Test")
-                    }
                 }
                 .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: gameType.allowedExtensions, onCompletion: { result in
                     //TODO: Handle multiple files
