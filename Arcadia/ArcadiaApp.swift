@@ -11,6 +11,7 @@ import ArcadiaCore
 
 @main
 struct ArcadiaApp: App {
+    /*
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             ArcadiaGame.self,
@@ -23,7 +24,7 @@ struct ArcadiaApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-
+*/
     var body: some Scene {
         WindowGroup {
             #if os(macOS)
@@ -42,7 +43,7 @@ struct ArcadiaApp: App {
             #endif
                 
         }
-        .modelContainer(sharedModelContainer)
+        //.modelContainer(sharedModelContainer)
         .environment(ArcadiaFileManager.shared)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)

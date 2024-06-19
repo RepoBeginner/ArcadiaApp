@@ -160,8 +160,8 @@ import AppKit
         return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[memoryType]!)
     }
     
-    func getStateURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
-        return self.statesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("state")
+    func getStateURL(gameURL: URL, gameType: ArcadiaGameType, slot: Int) -> URL {
+        return self.statesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent("\(gameURL.deletingPathExtension().lastPathComponent)_\(slot)").appendingPathExtension("state")
     }
     
     func getImageURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
@@ -217,9 +217,11 @@ import AppKit
     func deleteGame(gameURL: URL, gameType: ArcadiaGameType) {
         let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
         let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
-        let stateURL = getStateURL(gameURL: gameURL, gameType: gameType)
+        let stateURL1 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 1)
+        let stateURL2 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 2)
+        let stateURL3 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 3)
         
-        for fileURL in [imageURL, saveURL, stateURL] {
+        for fileURL in [imageURL, saveURL, stateURL1, stateURL2, stateURL3] {
             if FileManager.default.fileExists(atPath: fileURL.path) {
                 do {
                     try FileManager.default.removeItem(atPath: fileURL.path)
@@ -255,13 +257,17 @@ import AppKit
     }
     
     func deleteStates(gameURL: URL, gameType: ArcadiaGameType) {
-        let stateURL = getStateURL(gameURL: gameURL, gameType: gameType)
+        let stateURL1 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 1)
+        let stateURL2 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 2)
+        let stateURL3 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 3)
         
-        if FileManager.default.fileExists(atPath: stateURL.path) {
-            do {
-                try FileManager.default.removeItem(atPath: stateURL.path)
-            } catch {
-                print("Could not delete")
+        for stateURL in [stateURL1, stateURL2, stateURL3] {
+            if FileManager.default.fileExists(atPath: stateURL.path) {
+                do {
+                    try FileManager.default.removeItem(atPath: stateURL.path)
+                } catch {
+                    print("Could not delete")
+                }
             }
         }
 
@@ -276,14 +282,18 @@ import AppKit
     func renameGame(gameURL: URL, newName: String, gameType: ArcadiaGameType) {
         let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
         let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
-        let stateURL = getStateURL(gameURL: gameURL, gameType: gameType)
+        let stateURL1 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 1)
+        let stateURL2 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 2)
+        let stateURL3 = getStateURL(gameURL: gameURL, gameType: gameType, slot: 3)
         
         let newGameURL = gameURL.deletingLastPathComponent().appendingPathComponent(newName).appendingPathExtension(gameURL.pathExtension)
         let newImageURL = getImageURL(gameURL: newGameURL, gameType: gameType)
         let newSaveURL = getSaveURL(gameURL: newGameURL, gameType: gameType)
-        let newStateURL = getStateURL(gameURL: newGameURL, gameType: gameType)
+        let newStateURL1 = getStateURL(gameURL: newGameURL, gameType: gameType, slot: 1)
+        let newStateURL2 = getStateURL(gameURL: newGameURL, gameType: gameType, slot: 2)
+        let newStateURL3 = getStateURL(gameURL: newGameURL, gameType: gameType, slot: 3)
         
-        let fileURLs = [(imageURL, newImageURL), (saveURL, newSaveURL), (stateURL, newStateURL)]
+        let fileURLs = [(imageURL, newImageURL), (saveURL, newSaveURL), (stateURL1, newStateURL1), (stateURL2, newStateURL2), (stateURL3, newStateURL3)]
         
         for (oldURL, newURL) in fileURLs {
             if FileManager.default.fileExists(atPath: oldURL.path) {

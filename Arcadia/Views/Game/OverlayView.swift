@@ -11,6 +11,7 @@ import ArcadiaCore
 struct OverlayView: View {
     @Environment(\.dismiss) var dismiss
     @State private var currentSelection: String = ""
+    @State private var stateSlot: Int = 1
     @Binding var dismissMainView: Bool
     @Environment(InputController.self) var inputController: InputController
     
@@ -22,24 +23,32 @@ struct OverlayView: View {
         NavigationStack {
             Form {
                 Section(header: Text("Save states")) {
-                    Button(
-                        action: {
-                            ArcadiaCoreEmulationState.sharedInstance.currentCore?.saveState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!)
-                            dismiss()
-                        }) {
-                        Text("Save State")
+                    Picker("", selection: $stateSlot) {
+                        ForEach(Array([1,2,3]), id: \.self) { i in
+                            Text("\(i)").tag(i)
+                        }
                     }
-                    Button(
-                        action: {
-                            ArcadiaCoreEmulationState.sharedInstance.currentCore?.loadState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!)
-                            dismiss()
-                        }) {
-                        Text("Load State")
+                    .pickerStyle(SegmentedPickerStyle())
+                        Button(
+                            action: {
+                                ArcadiaCoreEmulationState.sharedInstance.currentCore?.saveState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!)
+                                dismiss()
+                            }) {
+                            Text("Save State")
+                        }
+                        Spacer()
+                        Button(
+                            action: {
+                                print("Loading")
+                                ArcadiaCoreEmulationState.sharedInstance.currentCore?.loadState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!)
+                                dismiss()
+                            }) {
+                            Text("Load State")
+                        }
+                            .disabled(
+                                !FileManager.default.fileExists(atPath: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!.path)
+                            )
                     }
-                        .disabled(
-                            !FileManager.default.fileExists(atPath: ArcadiaCoreEmulationState.sharedInstance.currentStateURL!.path())
-                        )
-                }
                 
                 PlayerSelectionView()
             }

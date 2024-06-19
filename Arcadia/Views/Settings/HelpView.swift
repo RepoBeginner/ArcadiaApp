@@ -24,8 +24,6 @@ struct HelpView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("Help")
-                    .font(.largeTitle)
                 Text("""
                 In this section you'll find many tips that will help you navigate the interface and use the app at its best.
                 """)
@@ -61,17 +59,6 @@ struct HelpView: View {
                 
                 Choosing the second options means that I've had to make some choices for a general button appearance, so below you'll find the mappings that apply to all systems.
                 """)
-                /*
-                List(ArcadiaCoreButton.allCases) {item in
-                    HStack {
-                        Image(systemName: item.systemImageName)
-                        Text(item.buttonName)
-                        //Text(item.mappingExplanation)
-                    }
-                    
-                }
-                .frame(minWidth: 100, minHeight: 400)
-                */
                 Table(ArcadiaCoreButton.allCases) {
                     TableColumn("Button image") { item in
                         if isCompact {
@@ -87,12 +74,27 @@ struct HelpView: View {
                     TableColumn("Mapping", value: \.mappingExplanation)
                 }
                 .frame(minWidth: 100, minHeight: 400)
-                Text("I'm not saying that I'll never go into route one, just not as of right now.")
+                Text("""
+                     I'm not saying that I'll never go into route one, just not as of right now.
+                     
+                     Lastly, Arcadia supports local multiplayer if the game is meant to be played by more than two players.
+                     In the settings or right from the in game menu (accessible by clicking the Arcadia button) you can find the player mapped for touch input and the player mapped to each game controller, if you have any game controller connected.
+                     By default, the touch input will control player one, the first controller you add will control player one, each controller you add after the first will controll the next available player.
+                     """)
                 
+                Text("Saves and States")
+                    .font(.title)
+                Text("""
+                Arcadia and its emulators let you save your progress in two different ways:
+                
+                • saves: this is the standard way of saving of the game you're playing. It emulates the save files that are usually present in the game cartridge for example, and it is generated and updated automatically by the app. You can have only one file of this kind for each game. This format is usually pretty portable and you can find these kind of save files in Arcadia/Saves should you want to change emulator app.
+                • states: this is a non standard way of saving the game you're playing, made possible by the emulation process, and it basically creates a carbon copy of the game state at the exact moment you are hitting the save button. You can have three file of this kind for each game. This format is usually not very portable because it depends on the emulator itself, but you can find these kind of state files in Arcadia/States.
+                """)
                 Spacer()
             }
             .padding()
         }
+        .navigationTitle("Help")
     }
 }
 

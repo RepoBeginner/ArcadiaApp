@@ -64,12 +64,15 @@ struct RunGameView: View {
         .onAppear(perform: {
             //inputController.loadGameConfiguration()
             //TODO: Invece del gameURL mandare uno struct con tutte le informazioni
-            let stateURL = fileManager.getStateURL(gameURL: gameURL, gameType: gameType)
+            var stateURLs: [Int : URL] = [:]
+            for i in 1...3 {
+                stateURLs[i] = fileManager.getStateURL(gameURL: gameURL, gameType: gameType, slot: i)
+            }
             var saveFIleURLs: [ArcadiaCoreMemoryType : URL] = [:]
             for memoryType in gameType.supportedSaveFiles.keys {
                 saveFIleURLs[memoryType] = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType)
             }
-            emulationState.startEmulation(gameURL: gameURL, gameType: gameType, stateURL: stateURL, saveFileURLs: saveFIleURLs)
+            emulationState.startEmulation(gameURL: gameURL, gameType: gameType, stateURLs: stateURLs, saveFileURLs: saveFIleURLs)
         })
         .onDisappear(perform: {
             //inputController.unloadGameConfiguration()

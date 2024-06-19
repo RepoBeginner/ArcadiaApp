@@ -28,22 +28,22 @@ enum MenuMovementAction {
     var nextPortID: UInt32 = 0
     var mainInputPortID: UInt32 = 0
     var gameKeyboardMapping: [ArcadiaCoreButton : GCKeyCode] =  [
-        .joypadB : .keyB,
-        .joypadY : .keyY,
-        .joypadSelect : .returnOrEnter,
-        .joypadStart : .leftControl,
+        .joypadB : .keyZ,
+        .joypadY : .keyA,
+        .joypadSelect : .leftShift,
+        .joypadStart : .returnOrEnter,
         .joypadUp: .upArrow,
         .joypadDown: .downArrow,
         .joypadLeft: .leftArrow,
         .joypadRight: .rightArrow,
-        .joypadA : .keyA,
-        .joypadX : .keyX,
-        .joypadL : .one,
-        .joypadR : .four,
-        .joypadL2 : .two,
-        .joypadR2 : .five,
-        .joypadL3 : .three,
-        .joypadR3 : .six,
+        .joypadA : .keyX,
+        .joypadX : .keyS,
+        .joypadL : .keyQ,
+        .joypadR : .keyW,
+        .joypadL2 : .keyE,
+        .joypadR2 : .keyR,
+        .joypadL3 : .keyT,
+        .joypadR3 : .keyY,
     ]
     var keyboardIsConnected: Bool {
         if let keyboard = GCKeyboard.coalesced?.keyboardInput {
