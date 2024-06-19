@@ -29,7 +29,6 @@ struct OverlayView: View {
                         }
                     }
                     .pickerStyle(SegmentedPickerStyle())
-                    HStack {
                         Button(
                             action: {
                                 ArcadiaCoreEmulationState.sharedInstance.currentCore?.saveState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!)
@@ -37,7 +36,6 @@ struct OverlayView: View {
                             }) {
                             Text("Save State")
                         }
-                        Spacer()
                         Button(
                             action: {
                                 ArcadiaCoreEmulationState.sharedInstance.currentCore?.loadState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!)
@@ -48,7 +46,6 @@ struct OverlayView: View {
                             .disabled(
                                 !FileManager.default.fileExists(atPath: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!.path)
                             )
-                        }
                     }
                 
                 PlayerSelectionView()
