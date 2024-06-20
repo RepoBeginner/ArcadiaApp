@@ -35,14 +35,28 @@ struct SettingsView: View {
         #else
         NavigationStack {
             Form {
-                NavigationLink(destination: InputSettingsView()) {
-                    Text("Input")
+                Section {
+                    NavigationLink(destination: InputSettingsView()) {
+                        Text("Input")
+                    }
                 }
-                NavigationLink(destination: HelpView()) {
-                    Text("Help")
+                
+                Section {
+                    NavigationLink(destination: AppIconView()) {
+                        Text("App Icon")
+                    }
                 }
-                NavigationLink(destination: CreditsView()) {
-                    Text("Credits")
+
+                Section {
+                    NavigationLink(destination: HelpView()) {
+                        Text("Help")
+                    }
+                    NavigationLink(destination: CreditsView()) {
+                        Text("Credits")
+                    }
+                    NavigationLink(destination: ContributeView()) {
+                        Text("Contribute")
+                    }
                 }
             }
             .navigationTitle("Settings")
