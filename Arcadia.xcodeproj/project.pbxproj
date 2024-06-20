@@ -149,6 +149,7 @@
 		959F81F22C1B14ED009EF53B /* GBCButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayoutLeft.swift; sourceTree = "<group>"; };
 		959F81F52C1B1582009EF53B /* GBCButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayoutRight.swift; sourceTree = "<group>"; };
 		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
+		95F020092C24B1CE0087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +249,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				95F020092C24B1CE0087DAC2 /* Info.plist */,
 				952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */,
 				952C02252C088EF200DF2832 /* Classes */,
 				955CC3922BF8EE8F00C930ED /* Enums */,
@@ -730,6 +732,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Arcadia/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -779,6 +782,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Arcadia/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
