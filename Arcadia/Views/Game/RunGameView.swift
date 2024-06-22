@@ -41,6 +41,7 @@ struct RunGameView: View {
         @Bindable var emulationState = emulationState
         Group {
             if horizontalSizeClass == .compact && verticalSizeClass == .regular {
+                //iPhone portrait
                 VStack {
                     CurrentBufferMetalView()
                         .scaledToFit()
@@ -49,14 +50,25 @@ struct RunGameView: View {
 
                 }
             }
-            else {
+            else if horizontalSizeClass == .regular && verticalSizeClass == .compact {
+                //iPhone landscape
                 HStack {
                     gameType.landscapeButtonLayoutLeft
                     Spacer()
                     CurrentBufferMetalView()
-                        .scaledToFill()
+                        .scaledToFit()
+                        .layoutPriority(1)
                     Spacer()
                     gameType.landscapeButtonLayoutRight
+
+                }
+            }
+            else {
+                VStack {
+                    CurrentBufferMetalView()
+                        .scaledToFit()
+                    Spacer()
+                    gameType.portraitButtonLayout
 
                 }
             }

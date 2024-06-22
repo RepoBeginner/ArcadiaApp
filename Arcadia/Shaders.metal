@@ -42,11 +42,11 @@ fragment float4 fragmentShader(VertexOut in [[stage_in]],
     float4 color = texture.sample(textureSampler, in.texCoord);
 
     // Apply gamma correction
-    float gamma = 2.2;
+    //float gamma = 2.2;
     //color.rgb = pow(color.rgb, float3(1.0 / gamma));
 
     // Adjust exposure
-    float exposure = 1; 
+    //float exposure = 1; 
     //color.rgb *= exposure;
 
     return color;

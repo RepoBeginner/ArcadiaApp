@@ -13,18 +13,19 @@ struct GBAButtonLayout: View {
         HStack {
             CircleButtonView(arcadiaCoreButton: .joypadL, size: 50)
             Spacer()
+                .frame(width: 50)
             CircleButtonView(arcadiaCoreButton: .joypadSelect, size: 35)
             Spacer()
-                .frame(width: 50)
             CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35)
             Spacer()
+                .frame(width: 50)
             CircleButtonView(arcadiaCoreButton: .joypadR, size: 50)
         }
         .padding()
 
         HStack {
             DPadView()
-            Spacer()
+            Spacer().frame(width: 50)
             VStack {
                 Spacer()
                     .frame(maxHeight: 100)
@@ -41,4 +42,5 @@ struct GBAButtonLayout: View {
 #Preview {
     GBAButtonLayout()
         .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
 }
