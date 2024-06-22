@@ -40,13 +40,13 @@ struct SettingsView: View {
                         Text("Input")
                     }
                 }
-                
+                #if os(iOS)
                 Section {
                     NavigationLink(destination: AppIconView()) {
                         Text("App Icon")
                     }
                 }
-
+                #endif
                 Section {
                     NavigationLink(destination: HelpView()) {
                         Text("Help")

@@ -153,6 +153,7 @@
 		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
+		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,6 +253,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				95F0200F2C25EA060087DAC2 /* Info.plist */,
 				952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */,
 				952C02252C088EF200DF2832 /* Classes */,
 				955CC3922BF8EE8F00C930ED /* Enums */,
@@ -726,7 +728,7 @@
 		95456BDA2BE2ACAC00113B8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_colored;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -738,6 +740,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Arcadia/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -775,7 +778,7 @@
 		95456BDB2BE2ACAC00113B8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_colored;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
@@ -787,6 +790,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Arcadia/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
