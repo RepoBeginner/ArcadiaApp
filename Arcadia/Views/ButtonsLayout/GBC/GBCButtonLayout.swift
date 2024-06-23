@@ -19,8 +19,6 @@ struct GBCButtonLayout: View {
 
         HStack {
             DPadView()
-            Spacer()
-                .frame(width: 50)
             VStack {
                 Spacer()
                     .frame(maxHeight: 100)

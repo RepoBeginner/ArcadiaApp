@@ -64,7 +64,6 @@ struct RunGameView: View {
                 }
             }
             else {
-                
                 ZStack {
                     CurrentBufferMetalView()
                         .layoutPriority(1)
