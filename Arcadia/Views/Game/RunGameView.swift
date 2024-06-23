@@ -47,7 +47,6 @@ struct RunGameView: View {
                         .scaledToFit()
                     Spacer()
                     gameType.portraitButtonLayout
-                        .background(.red)
 
                 }
             }
@@ -55,14 +54,12 @@ struct RunGameView: View {
                 //iPhone landscape
                 HStack {
                     gameType.landscapeButtonLayoutLeft
-                        .background(.red)
                     Spacer()
                     CurrentBufferMetalView()
                         .scaledToFit()
                         .layoutPriority(1)
                     Spacer()
                     gameType.landscapeButtonLayoutRight
-                        .background(.red)
 
                 }
             }
