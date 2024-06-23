@@ -47,6 +47,7 @@ struct RunGameView: View {
                         .scaledToFit()
                     Spacer()
                     gameType.portraitButtonLayout
+                        .background(.red)
 
                 }
             }
@@ -54,23 +55,33 @@ struct RunGameView: View {
                 //iPhone landscape
                 HStack {
                     gameType.landscapeButtonLayoutLeft
+                        .background(.red)
                     Spacer()
                     CurrentBufferMetalView()
                         .scaledToFit()
                         .layoutPriority(1)
                     Spacer()
                     gameType.landscapeButtonLayoutRight
+                        .background(.red)
 
                 }
             }
             else {
-                VStack {
+                
+                ZStack {
                     CurrentBufferMetalView()
+                        .layoutPriority(1)
                         .scaledToFit()
-                    Spacer()
-                    gameType.portraitButtonLayout
+                    //Spacer()
+                    VStack {
+                        Spacer()
+                        gameType.portraitButtonLayout
+                            
+                    }
+
 
                 }
+                
             }
         }
         .onAppear(perform: {
