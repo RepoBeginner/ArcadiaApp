@@ -30,7 +30,7 @@ struct GameLibraryView: View {
                 }
 
             } else {
-                Text("Select a system")
+                Text("Select a game system using the sidebar")
             }
         }
 

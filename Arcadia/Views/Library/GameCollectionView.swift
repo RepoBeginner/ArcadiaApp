@@ -36,7 +36,7 @@ struct GameCollectionView: View {
         @Bindable var inputController = inputController
         Group {
             if fileManager.currentGames.isEmpty {
-                Text("Add new games")
+                Text("Your game collection is empty, add new games using the plus button at the top")
             } else {
                 List {
                     ForEach(fileManager.currentGames, id: \.self) { file in
@@ -93,15 +93,19 @@ struct GameCollectionView: View {
                         Image(systemName: "plus")
                     })
                 }
-                .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: gameType.allowedExtensions, onCompletion: { result in
-                    //TODO: Handle multiple files
-                    do {
-                        let fileUrl = try result.get()
-                        fileManager.saveGame(gameURL: fileUrl, gameType: gameType)
-                    } catch {
-                        print ("error reading: \(error.localizedDescription)")
+                .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: gameType.allowedExtensions, allowsMultipleSelection: true, onCompletion: { result in
+                    DispatchQueue.global(qos: .userInteractive).async {
+                        do {
+                            let fileUrls = try result.get()
+                            for fileUrl in fileUrls {
+                                fileManager.saveGame(gameURL: fileUrl, gameType: gameType)
+                            }
+                        } catch {
+                            DispatchQueue.main.async {
+                                print("error reading: \(error.localizedDescription)")
+                            }
+                        }
                     }
-                    return
                 })
         #if os(iOS)
                 .navigationBarTitleDisplayMode(.inline)

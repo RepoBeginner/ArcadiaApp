@@ -25,6 +25,11 @@ struct CreditsView: View {
                 • GameBoy (Color): drhelius's [Gearboy](https://github.com/drhelius/Gearboy)
                 • NES: [Libretro version](https://github.com/libretro/nestopia) of [Nestopia UE](https://github.com/0ldsk00l/nestopia)
                 """)
+                Text("Other")
+                    .font(.title)
+                Text("""
+                • Game matching and cover downloading is provided thanks to [OpenVGDB](https://github.com/OpenVGDB/OpenVGDB)
+                """)
                 Spacer()
             }
             .padding()
