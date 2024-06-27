@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Arcadia_light-macOS-512pt-icon@2x 2.png",
+      "filename" : "Arcadia_pink-macOS-512pt-icon@2x 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Arcadia_light-macOS-512pt-icon@2x 1.png",
+      "filename" : "Arcadia_pink-macOS-512pt-icon@2x 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Arcadia_light-macOS-512pt-icon@2x.png",
+      "filename" : "Arcadia_pink-macOS-512pt-icon@2x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

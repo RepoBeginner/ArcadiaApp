@@ -1,67 +1,67 @@
 {
   "images" : [
     {
-      "filename" : "Arcadia-iOS-1024pt-icon.png",
+      "filename" : "Arcadia_dark-iOS-1024pt-icon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
     },
     {
-      "filename" : "Arcadia-macOS-16pt-icon.png",
+      "filename" : "Arcadia_dark-macOS-16pt-icon.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "16x16"
     },
     {
-      "filename" : "Arcadia-macOS-16pt-icon@2x.png",
+      "filename" : "Arcadia_dark-macOS-16pt-icon@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "16x16"
     },
     {
-      "filename" : "Arcadia-macOS-32pt-icon.png",
+      "filename" : "Arcadia_dark-macOS-32pt-icon.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "32x32"
     },
     {
-      "filename" : "Arcadia-macOS-32pt-icon@2x.png",
+      "filename" : "Arcadia_dark-macOS-32pt-icon@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "32x32"
     },
     {
-      "filename" : "Arcadia-macOS-128pt-icon.png",
+      "filename" : "Arcadia_dark-macOS-128pt-icon.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "128x128"
     },
     {
-      "filename" : "Arcadia-macOS-128pt-icon@2x.png",
+      "filename" : "Arcadia_dark-macOS-128pt-icon@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "128x128"
     },
     {
-      "filename" : "Arcadia-macOS-256pt-icon.png",
+      "filename" : "Arcadia_dark-macOS-256pt-icon.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "256x256"
     },
     {
-      "filename" : "Arcadia-macOS-256pt-icon@2x.png",
+      "filename" : "Arcadia_dark-macOS-256pt-icon@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "256x256"
     },
     {
-      "filename" : "Arcadia-macOS-512pt-icon.png",
+      "filename" : "Arcadia_dark-macOS-512pt-icon.png",
       "idiom" : "mac",
       "scale" : "1x",
       "size" : "512x512"
     },
     {
-      "filename" : "Arcadia-macOS-512pt-icon@2x.png",
+      "filename" : "Arcadia_dark-macOS-512pt-icon@2x.png",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

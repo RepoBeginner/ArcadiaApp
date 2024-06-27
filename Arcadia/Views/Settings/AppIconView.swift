@@ -26,13 +26,15 @@ struct AppIconView: View {
     @State private var icons: [String] = [
         "AppIcon_colored",
         "AppIcon_dark",
-        "AppIcon_light"
+        "AppIcon_light",
+        "AppIcon_pink"
     ]
     
     @State private var defaultIcons: [AppIcon] = [
         AppIcon(iconName: nil, displayName: "Colored", assetName: "AppIcon_colored_asset", description: "Default colored version"),
         AppIcon(iconName: "AppIcon_dark", displayName: "Dark", assetName: "AppIcon_dark_asset", description: "Default dark version"),
-        AppIcon(iconName: "AppIcon_light", displayName: "Light", assetName: "AppIcon_light_asset", description: "Default light version")
+        AppIcon(iconName: "AppIcon_light", displayName: "Light", assetName: "AppIcon_light_asset", description: "Default light version"),
+        AppIcon(iconName: "AppIcon_pink", displayName: "Pink", assetName: "AppIcon_pink_asset", description: "Pink version")
     ]
     
     var body: some View {

@@ -1,0 +1,44 @@
+//
+//  SNESButtonLayout.swift
+//  Arcadia
+//
+//  Created by Davide Andreoli on 27/06/24.
+//
+
+import SwiftUI
+import ArcadiaCore
+
+struct SNESButtonLayout: View {
+    var body: some View {
+        HStack {
+            CircleButtonView(arcadiaCoreButton: .joypadL, size: 50)
+            Spacer()
+                .frame(width: 50)
+            CircleButtonView(arcadiaCoreButton: .joypadSelect, size: 35)
+            Spacer()
+            CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35)
+            Spacer()
+                .frame(width: 50)
+            CircleButtonView(arcadiaCoreButton: .joypadR, size: 50)
+        }
+        .padding()
+
+        HStack {
+            DPadView()
+            VStack {
+                Spacer()
+                    .frame(maxHeight: 100)
+                CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
+            }
+            Spacer()
+            FourButtonsView()
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    SNESButtonLayout()
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
+}

@@ -61,6 +61,12 @@
 		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
+		95F5BAD72C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; };
+		95F5BAD82C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
+		95F5BADD2C2DBC080034CAD7 /* FourButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */; };
+		95F5BADF2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADE2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift */; };
+		95F5BAE12C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BAE02C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +94,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				952C5E9D2C108F8C00DF2832 /* ArcadiaGBACore.framework in Embed Frameworks */,
+				95F5BAD82C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Embed Frameworks */,
 				956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */,
 				952CF6832C0724C200DF2832 /* ArcadiaNESCore.framework in Embed Frameworks */,
 				955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */,
@@ -154,6 +161,11 @@
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaSNESCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNESButtonLayout.swift; sourceTree = "<group>"; };
+		95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourButtonsView.swift; sourceTree = "<group>"; };
+		95F5BADE2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNESButtonLayoutLeft.swift; sourceTree = "<group>"; };
+		95F5BAE02C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNESButtonLayoutRight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				952C5E9C2C108F8C00DF2832 /* ArcadiaGBACore.framework in Frameworks */,
+				95F5BAD72C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Frameworks */,
 				956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */,
 				952CF6822C0724C200DF2832 /* ArcadiaNESCore.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
@@ -295,6 +308,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */,
 				952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */,
 				952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */,
 				955CC3972BF9668300C930ED /* ArcadiaCore.framework */,
@@ -326,6 +340,7 @@
 				955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */,
 				955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */,
 				95707CBB2C00ED7500217B82 /* ArrowButtonView.swift */,
+				95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -359,6 +374,7 @@
 		95707CB42BFF4C2F00217B82 /* ButtonsLayout */ = {
 			isa = PBXGroup;
 			children = (
+				95F5BAD92C2DB9A50034CAD7 /* SNES */,
 				959F81F72C1B15A3009EF53B /* GBA */,
 				959F81F42C1B155A009EF53B /* GBC */,
 			);
@@ -397,6 +413,16 @@
 				959F81EE2C1ACC10009EF53B /* GBAButtonLayoutLeft.swift */,
 			);
 			path = GBA;
+			sourceTree = "<group>";
+		};
+		95F5BAD92C2DB9A50034CAD7 /* SNES */ = {
+			isa = PBXGroup;
+			children = (
+				95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */,
+				95F5BADE2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift */,
+				95F5BAE02C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift */,
+			);
+			path = SNES;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,12 +561,14 @@
 				95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */,
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
 				955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */,
+				95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */,
 				959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
 				956F84292BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift in Sources */,
 				959F81F32C1B14ED009EF53B /* GBCButtonLayoutLeft.swift in Sources */,
 				95707CC12C01E38100217B82 /* CreditsView.swift in Sources */,
 				95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */,
+				95F5BAE12C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
 				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
 				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,
@@ -554,6 +582,7 @@
 				955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */,
 				95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameRowView.swift in Sources */,
+				95F5BADD2C2DBC080034CAD7 /* FourButtonsView.swift in Sources */,
 				959F81F62C1B1582009EF53B /* GBCButtonLayoutRight.swift in Sources */,
 				95707CBC2C00ED7500217B82 /* ArrowButtonView.swift in Sources */,
 				956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */,
@@ -564,6 +593,7 @@
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */,
+				95F5BADF2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift in Sources */,
 				959F81EF2C1ACC11009EF53B /* GBAButtonLayoutLeft.swift in Sources */,
 				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,

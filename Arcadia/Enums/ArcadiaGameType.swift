@@ -11,6 +11,7 @@ import ArcadiaCore
 import ArcadiaGBACore
 import ArcadiaGBCCore
 import ArcadiaNESCore
+import ArcadiaSNESCore
 import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
@@ -22,6 +23,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
+    case snesGame = "SNES"
     
     var name: String {
         switch self {
@@ -31,6 +33,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return "GameBoy Advance"
         case .nesGame:
             return "NES"
+        case .snesGame:
+            return "SNES"
         }
     }
     
@@ -42,6 +46,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [UTType(filenameExtension: "gba")!]
         case .nesGame:
             return [UTType(filenameExtension: "nes")!]
+        case .snesGame:
+            return [UTType(filenameExtension: "smc")!, UTType(filenameExtension: "sfc")!]
         }
         
     }
@@ -54,6 +60,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ArcadiaGBC()
         case .nesGame:
             return ArcadiaNES()
+        case .snesGame:
+            return ArcadiaSNES()
         }
     }
     
@@ -64,6 +72,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameBoyGame:
             return "srm"
         case .nesGame:
+            return "srm"
+        case .snesGame:
             return "srm"
         }
     }
@@ -83,7 +93,12 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [
                 .memorySaveRam : "srm"
             ]
+        case .snesGame:
+            return [
+                .memorySaveRam : "srm"
+            ]
         }
+        
     }
     
     var defaultCollectionImage: Image {
@@ -94,6 +109,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return Image("gbc_icon")
         case .nesGame:
             return Image("nes_icon")
+        case .snesGame:
+            return Image("snes_icon")
         }
     }
     
@@ -105,6 +122,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayout()
         case .nesGame:
             GBCButtonLayout()
+        case .snesGame:
+            SNESButtonLayout()
         }
     }
     
@@ -116,6 +135,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayoutLeft()
         case .nesGame:
             GBCButtonLayoutLeft()
+        case .snesGame:
+            SNESButtonLayoutLeft()
         }
     }
     
@@ -127,6 +148,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayoutRight()
         case .nesGame:
             GBCButtonLayoutRight()
+        case .snesGame:
+            SNESButtonLayoutRight()
         }
     }
     
