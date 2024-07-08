@@ -10,10 +10,6 @@
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
-		952C5E9C2C108F8C00DF2832 /* ArcadiaGBACore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */; };
-		952C5E9D2C108F8C00DF2832 /* ArcadiaGBACore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		952CF6822C0724C200DF2832 /* ArcadiaNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; };
-		952CF6832C0724C200DF2832 /* ArcadiaNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB52BE2ACA900113B8A /* ArcadiaApp.swift */; };
 		95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB72BE2ACA900113B8A /* RunGameView.swift */; };
 		95456BBA2BE2ACA900113B8A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95456BB92BE2ACA900113B8A /* Item.swift */; };
@@ -29,7 +25,6 @@
 		955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3832BF7E63F00C930ED /* CapsuleButtonView.swift */; };
 		955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC3932BF8EEA100C930ED /* ArcadiaGameType.swift */; };
 		955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; };
-		955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC39A2BFA0D9B00C930ED /* Triangle.swift */; };
 		955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */; };
 		956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F83FA2BEA67370025FC5F /* GameLibraryView.swift */; };
@@ -41,8 +36,6 @@
 		956F840D2BEBF59F0025FC5F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F840C2BEBF59F0025FC5F /* SettingsView.swift */; };
 		956F84272BF4846C0025FC5F /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 956F84262BF4846C0025FC5F /* Shaders.metal */; };
 		956F84292BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956F84282BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift */; };
-		956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; };
-		956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 956F842D2BF48F190025FC5F /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB22BFF148B00217B82 /* GCVirtualControllerView.swift */; };
 		95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95707CB52BFF4C4D00217B82 /* GBCButtonLayout.swift */; };
 		95707CB82C006F4100217B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95707CB72C006F4100217B82 /* Assets.xcassets */; };
@@ -59,10 +52,17 @@
 		959F81F32C1B14ED009EF53B /* GBCButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F22C1B14ED009EF53B /* GBCButtonLayoutLeft.swift */; };
 		959F81F62C1B1582009EF53B /* GBCButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F52C1B1582009EF53B /* GBCButtonLayoutRight.swift */; };
 		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
+		95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC71F52C3AED9E009FB8DD /* LibretroVBANext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */; };
+		95CC71F62C3AED9E009FB8DD /* LibretroVBANext.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC72062C3AEF4F009FB8DD /* LibretroGearboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */; };
+		95CC72072C3AEF4F009FB8DD /* LibretroGearboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC72092C3AEF54009FB8DD /* Libretrosnes9x.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */; };
+		95CC720A2C3AEF54009FB8DD /* Libretrosnes9x.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC720C2C3AEF5B009FB8DD /* LibretroNestopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */; };
+		95CC720D2C3AEF5B009FB8DD /* LibretroNestopia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
-		95F5BAD72C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; };
-		95F5BAD82C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
 		95F5BADD2C2DBC080034CAD7 /* FourButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */; };
 		95F5BADF2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADE2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift */; };
@@ -93,11 +93,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				952C5E9D2C108F8C00DF2832 /* ArcadiaGBACore.framework in Embed Frameworks */,
-				95F5BAD82C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Embed Frameworks */,
-				956F842F2BF48F190025FC5F /* ArcadiaGBCCore.framework in Embed Frameworks */,
-				952CF6832C0724C200DF2832 /* ArcadiaNESCore.framework in Embed Frameworks */,
-				955CC3992BF9668300C930ED /* ArcadiaCore.framework in Embed Frameworks */,
+				95CC720D2C3AEF5B009FB8DD /* LibretroNestopia.framework in Embed Frameworks */,
+				95CC71F62C3AED9E009FB8DD /* LibretroVBANext.framework in Embed Frameworks */,
+				95CC720A2C3AEF54009FB8DD /* Libretrosnes9x.framework in Embed Frameworks */,
+				95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */,
+				95CC72072C3AEF4F009FB8DD /* LibretroGearboy.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +158,10 @@
 		959F81F22C1B14ED009EF53B /* GBCButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayoutLeft.swift; sourceTree = "<group>"; };
 		959F81F52C1B1582009EF53B /* GBCButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBCButtonLayoutRight.swift; sourceTree = "<group>"; };
 		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
+		95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroVBANext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroGearboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Libretrosnes9x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroNestopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -173,11 +177,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				952C5E9C2C108F8C00DF2832 /* ArcadiaGBACore.framework in Frameworks */,
-				95F5BAD72C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework in Frameworks */,
-				956F842E2BF48F190025FC5F /* ArcadiaGBCCore.framework in Frameworks */,
-				952CF6822C0724C200DF2832 /* ArcadiaNESCore.framework in Frameworks */,
+				95CC720C2C3AEF5B009FB8DD /* LibretroNestopia.framework in Frameworks */,
+				95CC71F52C3AED9E009FB8DD /* LibretroVBANext.framework in Frameworks */,
+				95CC72092C3AEF54009FB8DD /* Libretrosnes9x.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
+				95CC72062C3AEF4F009FB8DD /* LibretroGearboy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +312,10 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */,
+				95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */,
+				95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */,
+				95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */,
 				95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */,
 				952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */,
 				952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */,
@@ -761,8 +769,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_colored;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Arcadia/Arcadia.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
@@ -771,7 +780,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Arcadia/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is needed to load custom covers for games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -812,8 +821,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon_colored;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = Arcadia/Arcadia.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
@@ -822,7 +832,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Arcadia/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Access to your photo library is needed to load custom covers for games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

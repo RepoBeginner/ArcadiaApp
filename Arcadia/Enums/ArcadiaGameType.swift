@@ -8,10 +8,10 @@
 import Foundation
 import UniformTypeIdentifiers
 import ArcadiaCore
-import ArcadiaGBACore
-import ArcadiaGBCCore
-import ArcadiaNESCore
-import ArcadiaSNESCore
+import LibretroVBANext
+import LibretroGearboy
+import LibretroNestopia
+import Libretrosnes9x
 import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {

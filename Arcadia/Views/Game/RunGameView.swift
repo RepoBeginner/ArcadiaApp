@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SwiftData
-import ArcadiaGBCCore
 import ArcadiaCore
 import AVFoundation
 
