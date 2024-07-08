@@ -21,7 +21,7 @@ struct GameLibraryView: View {
                         .focusable()
                 }
             }
-            .navigationTitle("Game Systems")
+            .navigationTitle("Game Consoles")
         } detail: {
             if let selectedSystem = system {
                 NavigationStack(path: $path) {
@@ -30,7 +30,7 @@ struct GameLibraryView: View {
                 }
 
             } else {
-                Text("Select a game system using the sidebar")
+                Text("Select a game console using the sidebar")
             }
         }
 

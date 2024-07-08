@@ -53,14 +53,14 @@
 		959F81F62C1B1582009EF53B /* GBCButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F52C1B1582009EF53B /* GBCButtonLayoutRight.swift */; };
 		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
 		95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95CC71F52C3AED9E009FB8DD /* LibretroVBANext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */; };
-		95CC71F62C3AED9E009FB8DD /* LibretroVBANext.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95CC72062C3AEF4F009FB8DD /* LibretroGearboy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */; };
-		95CC72072C3AEF4F009FB8DD /* LibretroGearboy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95CC72092C3AEF54009FB8DD /* Libretrosnes9x.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */; };
-		95CC720A2C3AEF54009FB8DD /* Libretrosnes9x.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		95CC720C2C3AEF5B009FB8DD /* LibretroNestopia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */; };
-		95CC720D2C3AEF5B009FB8DD /* LibretroNestopia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC74AB2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; };
+		95CC74AC2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC7A4F2C3BC597009FB8DD /* ArcadiaNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; };
+		95CC7A502C3BC597009FB8DD /* ArcadiaNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952CF6812C0724C200DF2832 /* ArcadiaNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC7B482C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */; };
+		95CC7B492C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC82312C3BE088009FB8DD /* ArcadiaSNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; };
+		95CC82322C3BE088009FB8DD /* ArcadiaSNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
@@ -93,11 +93,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				95CC720D2C3AEF5B009FB8DD /* LibretroNestopia.framework in Embed Frameworks */,
-				95CC71F62C3AED9E009FB8DD /* LibretroVBANext.framework in Embed Frameworks */,
-				95CC720A2C3AEF54009FB8DD /* Libretrosnes9x.framework in Embed Frameworks */,
 				95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */,
-				95CC72072C3AEF4F009FB8DD /* LibretroGearboy.framework in Embed Frameworks */,
+				95CC7B492C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Embed Frameworks */,
+				95CC7A502C3BC597009FB8DD /* ArcadiaNESCore.framework in Embed Frameworks */,
+				95CC82322C3BE088009FB8DD /* ArcadiaSNESCore.framework in Embed Frameworks */,
+				95CC74AC2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -162,6 +162,7 @@
 		95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroGearboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Libretrosnes9x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroNestopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -177,11 +178,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CC720C2C3AEF5B009FB8DD /* LibretroNestopia.framework in Frameworks */,
-				95CC71F52C3AED9E009FB8DD /* LibretroVBANext.framework in Frameworks */,
-				95CC72092C3AEF54009FB8DD /* Libretrosnes9x.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
-				95CC72062C3AEF4F009FB8DD /* LibretroGearboy.framework in Frameworks */,
+				95CC7B482C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Frameworks */,
+				95CC7A4F2C3BC597009FB8DD /* ArcadiaNESCore.framework in Frameworks */,
+				95CC82312C3BE088009FB8DD /* ArcadiaSNESCore.framework in Frameworks */,
+				95CC74AB2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +313,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */,
 				95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */,
 				95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */,
 				95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */,
