@@ -19,6 +19,10 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Input", systemImage: "gamecontroller")
                 }
+            SynchronizationSettingsView()
+                .tabItem {
+                    Label("Synchronization", systemImage: "cloud")
+                }
             HelpView()
                 .tabItem {
                     Label("Help", systemImage: "gear")
@@ -38,6 +42,9 @@ struct SettingsView: View {
                 Section {
                     NavigationLink(destination: InputSettingsView()) {
                         Text("Input")
+                    }
+                    NavigationLink(destination: SynchronizationSettingsView()) {
+                        Text("Synchronization")
                     }
                 }
                 #if os(iOS)

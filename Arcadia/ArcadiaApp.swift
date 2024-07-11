@@ -51,6 +51,7 @@ struct ArcadiaApp: App {
         Settings {
             SettingsView()
                 .environment(InputController.shared)
+                .environment(ArcadiaFileManager.shared)
         }
         #endif
     }

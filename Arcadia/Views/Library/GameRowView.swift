@@ -48,6 +48,8 @@ struct GameRowView: View {
 
             Text(gameTitle)
                 .font(.headline)
+            Spacer()
+            Image(systemName: FileManager.default.fileExists(atPath: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType).path) ? "bookmark.circle.fill" : "bookmark.circle")
         }
         .onAppear {
             imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
@@ -76,11 +78,6 @@ struct GameRowView: View {
             } label: {
                 Label("Export save", systemImage: "square.and.arrow.up")
             }
-            Button(role: .destructive) {
-                fileManager.clearSavesAndStates(gameURL: gameURL, gameType: gameType)
-            } label: {
-                Label("Clear saves and states", systemImage: "clear")
-            }
         }
         .contextMenu(menuItems: {
             Button(role: .destructive) {
@@ -98,11 +95,6 @@ struct GameRowView: View {
                 fileManager.clearSavesAndStates(gameURL: gameURL, gameType: gameType)
             } label: {
                 Label("Clear saves and states", systemImage: "clear")
-            }
-            Button {
-                showingSaveExporter.toggle()
-            } label: {
-                Label("Export save", systemImage: "square.and.arrow.up")
             }
             Button {
                 showingChangeImage.toggle()

@@ -11,6 +11,18 @@
 	</array>
 	<key>GCSupportsControllerUserInteraction</key>
 	<true/>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.com.davideandreoli.Arcadia</key>
+		<dict>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<true/>
+			<key>NSUbiquitousContainerName</key>
+			<string>Arcadia</string>
+			<key>NSUbiquitousContainerSupportedFolderLevels</key>
+			<string>ANY</string>
+		</dict>
+	</dict>
 	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UTImportedTypeDeclarations</key>

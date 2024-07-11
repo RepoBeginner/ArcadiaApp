@@ -26,6 +26,7 @@ struct HelpView: View {
             VStack(alignment: .leading) {
                 Text("""
                 In this section, you'll find various tips to help you navigate the interface and make the most of the app.
+                
                 """)
                 Text("Introduction")
                     .font(.title)
@@ -33,6 +34,7 @@ struct HelpView: View {
                 Arcadia is a frontend for multiple emulators (also called cores), each corresponding to a different game system. Specifically, Arcadia is a frontend for the Libretro API, using the libretro versions of the cores. It aims to provide a simple and accessible way to enjoy retro game systems, not to replace RetroArch. If you are tech-savvy and want more control, consider using the RetroArch app.
                 
                 In Arcadia, you'll find only one core per game system, selected by me based on various criteria. Customization of core options is not available (though this may change in future versions).
+                
                 """)
                 Text("Games")
                     .font(.title)
@@ -42,11 +44,20 @@ struct HelpView: View {
                 The first time Arcadia starts, it will create a folder to store all documents. On a Mac, you can find this inside the Documents folder, and on an iPhone, in the Files app.
                 
                 Inside, you'll find a Games folder, a Saves folder, and a States folder. The app's game library will display all files in the Games folder with their respective names. Each game has one save and one state, and all files should share the same name. If you rename the games through the app, everything will be managed for you. If you rename them manually, ensure you also rename the saves and states.
+                
+                """)
+                Text("Synchronization")
+                    .font(.title2)
+                Text("""
+                By default, iCloud synchronization is disabled, but you can enable it in the settings. Once activated, all your local content will be uploaded to iCloud. If the local files have a more recent modification date than the ones in iCloud, they will overwrite the existing files in the cloud. For example, if you have a recent save file for a game and enable iCloud sync, that save file will be uploaded and replace the file currently in iCloud.
+                If you decide to turn off iCloud synchronization, all files stored in iCloud will be downloaded to your local folder.
+
                 """)
                 Text("Where to Find Games?")
                     .font(.title2)
                 Text("""
                 Arcadia cannot include games due to legal reasons, but there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.
+                
                 """)
                 Text("Controls")
                     .font(.title)
@@ -77,6 +88,7 @@ struct HelpView: View {
                      I might explore custom interfaces in the future, but not right now.
                      
                      Arcadia supports local multiplayer for games designed for more than two players. In the settings or from the in-game menu (accessible by clicking the Arcadia button), you can see the player mapped for touch input and each game controller, if connected. By default, touch input controls player one, the first controller controls player one, and each additional controller controls the next available player.
+                     
                      """)
                 
                 Text("Saves and States")

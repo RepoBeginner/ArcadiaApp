@@ -22,6 +22,7 @@ struct CreditsView: View {
                 • GameBoy Advance: [Libretro version](https://github.com/libretro/vba-next) of VBA Next
                 • GameBoy (Color): drhelius's [Gearboy](https://github.com/drhelius/Gearboy)
                 • NES: [Libretro version](https://github.com/libretro/nestopia) of [Nestopia UE](https://github.com/0ldsk00l/nestopia)
+                • SNES: [Libretro version](https://github.com/libretro/snes9x) of [snes9x](https://github.com/snes9xgit/snes9x)
                 """)
                 Text("Other")
                     .font(.title)

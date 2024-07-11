@@ -31,6 +31,8 @@ struct RunGameView: View {
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @Environment(InputController.self) var inputController: InputController
     
+    @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
+    
     init(gameURL: URL, gameType: ArcadiaGameType) {
         self.gameURL = gameURL
         self.gameType = gameType
@@ -80,6 +82,7 @@ struct RunGameView: View {
             }
         }
         .onAppear(perform: {
+            print(gameURL.lastPathComponent)
             //inputController.loadGameConfiguration()
             //TODO: Invece del gameURL mandare uno struct con tutte le informazioni
             var stateURLs: [Int : URL] = [:]
@@ -95,6 +98,7 @@ struct RunGameView: View {
         .onDisappear(perform: {
             //inputController.unloadGameConfiguration()
             emulationState.pauseEmulation()
+
         })
         .onChange(of: toDismiss) { oldValue, newValue in
             if newValue {

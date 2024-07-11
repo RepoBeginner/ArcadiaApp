@@ -18,6 +18,7 @@ struct GameCollectionView: View {
     @State private var gameBeingRenamed : URL?
     @State private var goToGameView : Bool = false
     @Binding private var path: NavigationPath
+    @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     @FocusState private var selectedGame: URL?
     @FocusState private var selectedGameIndex: Int?
 
@@ -85,6 +86,7 @@ struct GameCollectionView: View {
             .onAppear {
                 //selectedGameIndex = 0
                 fileManager.getGamesURL(gameSystem: gameType)
+
 
             }
             .navigationTitle("Game Collection")

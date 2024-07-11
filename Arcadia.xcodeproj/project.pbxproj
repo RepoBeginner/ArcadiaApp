@@ -61,6 +61,7 @@
 		95CC7B492C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 952C5E9B2C108F8C00DF2832 /* ArcadiaGBACore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC82312C3BE088009FB8DD /* ArcadiaSNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; };
 		95CC82322C3BE088009FB8DD /* ArcadiaSNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC82342C3D4136009FB8DD /* SynchronizationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC82332C3D4136009FB8DD /* SynchronizationSettingsView.swift */; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
@@ -163,6 +164,7 @@
 		95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Libretrosnes9x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroNestopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CC82332C3D4136009FB8DD /* SynchronizationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationSettingsView.swift; sourceTree = "<group>"; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */,
 				95F0200A2C24B3F90087DAC2 /* AppIconView.swift */,
 				95F0200C2C24B4260087DAC2 /* ContributeView.swift */,
+				95CC82332C3D4136009FB8DD /* SynchronizationSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */,
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
 				955CC37C2BF7E47D00C930ED /* Trapezoid.swift in Sources */,
+				95CC82342C3D4136009FB8DD /* SynchronizationSettingsView.swift in Sources */,
 				95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */,
 				959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
@@ -775,7 +779,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -827,7 +831,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
