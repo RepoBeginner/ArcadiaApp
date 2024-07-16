@@ -31,12 +31,13 @@ import AppKit
     }
     
     var documentsMainDirectory: URL {
-        if UserDefaults.standard
-            .object(forKey: "iCloudSyncEnabled") as! Bool {
-            return iCloudDocumentsDirectory!.appendingPathComponent("Arcadia")
-        } else {
-            return documentsDirectory.appendingPathComponent("Arcadia")
+        if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+            if iCloudSyncEnabled {
+                return iCloudDocumentsDirectory!.appendingPathComponent("Arcadia")
+            }
         }
+        
+        return documentsDirectory.appendingPathComponent("Arcadia")
         
     }
     
