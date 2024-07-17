@@ -12,6 +12,7 @@ import ArcadiaGBACore
 import ArcadiaGBCCore
 import ArcadiaNESCore
 import ArcadiaSNESCore
+import ArcadiaAtari2600Core
 import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
@@ -24,6 +25,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
     case snesGame = "SNES"
+    case atari2600Game = "Atari 2600"
     
     var name: String {
         switch self {
@@ -35,6 +37,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return "NES"
         case .snesGame:
             return "SNES"
+        case .atari2600Game:
+            return "Atari 2600"
         }
     }
     
@@ -48,6 +52,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [UTType(filenameExtension: "nes")!]
         case .snesGame:
             return [UTType(filenameExtension: "smc")!, UTType(filenameExtension: "sfc")!]
+        case .atari2600Game:
+            return [UTType(filenameExtension: "a26")!]
         }
         
     }
@@ -62,6 +68,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ArcadiaNES()
         case .snesGame:
             return ArcadiaSNES()
+        case .atari2600Game:
+            return ArcadiaAtari2600()
         }
     }
     
@@ -74,6 +82,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .nesGame:
             return "srm"
         case .snesGame:
+            return "srm"
+        case .atari2600Game:
             return "srm"
         }
     }
@@ -97,6 +107,10 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [
                 .memorySaveRam : "srm"
             ]
+        case .atari2600Game:
+            return [
+                :
+            ]
         }
         
     }
@@ -111,6 +125,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return Image("nes_icon")
         case .snesGame:
             return Image("snes_icon")
+        case .atari2600Game:
+            return Image("atari_2600_icon")
         }
     }
     
@@ -124,6 +140,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayout()
         case .snesGame:
             SNESButtonLayout()
+        case .atari2600Game:
+            Atari2600ButtonLayout()
         }
     }
     
@@ -137,6 +155,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayoutLeft()
         case .snesGame:
             SNESButtonLayoutLeft()
+        case .atari2600Game:
+            Atari2600ButtonLayoutLeft()
         }
     }
     
@@ -150,6 +170,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayoutRight()
         case .snesGame:
             SNESButtonLayoutRight()
+        case .atari2600Game:
+            Atari2600ButtonLayoutRight()
         }
     }
     

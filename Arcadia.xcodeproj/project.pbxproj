@@ -62,6 +62,12 @@
 		95CC82312C3BE088009FB8DD /* ArcadiaSNESCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; };
 		95CC82322C3BE088009FB8DD /* ArcadiaSNESCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95F5BAD62C2D7BFF0034CAD7 /* ArcadiaSNESCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC82342C3D4136009FB8DD /* SynchronizationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC82332C3D4136009FB8DD /* SynchronizationSettingsView.swift */; };
+		95CC84BE2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC84BD2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework */; };
+		95CC84BF2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC84BD2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95CC86CC2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC86CB2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift */; };
+		95CC86CE2C47B54E009FB8DD /* BButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC86CD2C47B54E009FB8DD /* BButtonView.swift */; };
+		95CC86D02C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC86CF2C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift */; };
+		95CC86D22C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC86D12C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift */; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
@@ -97,6 +103,7 @@
 				95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */,
 				95CC7B492C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Embed Frameworks */,
 				95CC7A502C3BC597009FB8DD /* ArcadiaNESCore.framework in Embed Frameworks */,
+				95CC84BF2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework in Embed Frameworks */,
 				95CC82322C3BE088009FB8DD /* ArcadiaSNESCore.framework in Embed Frameworks */,
 				95CC74AC2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Embed Frameworks */,
 			);
@@ -165,6 +172,11 @@
 		95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroNestopia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGBCCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC82332C3D4136009FB8DD /* SynchronizationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynchronizationSettingsView.swift; sourceTree = "<group>"; };
+		95CC84BD2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaAtari2600Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95CC86CB2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari2600ButtonLayout.swift; sourceTree = "<group>"; };
+		95CC86CD2C47B54E009FB8DD /* BButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BButtonView.swift; sourceTree = "<group>"; };
+		95CC86CF2C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari2600ButtonLayoutLeft.swift; sourceTree = "<group>"; };
+		95CC86D12C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari2600ButtonLayoutRight.swift; sourceTree = "<group>"; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -183,6 +195,7 @@
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
 				95CC7B482C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Frameworks */,
 				95CC7A4F2C3BC597009FB8DD /* ArcadiaNESCore.framework in Frameworks */,
+				95CC84BE2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework in Frameworks */,
 				95CC82312C3BE088009FB8DD /* ArcadiaSNESCore.framework in Frameworks */,
 				95CC74AB2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Frameworks */,
 			);
@@ -315,6 +328,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95CC84BD2C4712CA009FB8DD /* ArcadiaAtari2600Core.framework */,
 				95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */,
 				95CC720B2C3AEF5B009FB8DD /* LibretroNestopia.framework */,
 				95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */,
@@ -353,6 +367,7 @@
 				955CC39F2BFB265C00C930ED /* TwoButtonsView.swift */,
 				95707CBB2C00ED7500217B82 /* ArrowButtonView.swift */,
 				95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */,
+				95CC86CD2C47B54E009FB8DD /* BButtonView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -386,6 +401,7 @@
 		95707CB42BFF4C2F00217B82 /* ButtonsLayout */ = {
 			isa = PBXGroup;
 			children = (
+				95CC86CA2C47B3C7009FB8DD /* Atari */,
 				95F5BAD92C2DB9A50034CAD7 /* SNES */,
 				959F81F72C1B15A3009EF53B /* GBA */,
 				959F81F42C1B155A009EF53B /* GBC */,
@@ -426,6 +442,16 @@
 				959F81EE2C1ACC10009EF53B /* GBAButtonLayoutLeft.swift */,
 			);
 			path = GBA;
+			sourceTree = "<group>";
+		};
+		95CC86CA2C47B3C7009FB8DD /* Atari */ = {
+			isa = PBXGroup;
+			children = (
+				95CC86CB2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift */,
+				95CC86CF2C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift */,
+				95CC86D12C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift */,
+			);
+			path = Atari;
 			sourceTree = "<group>";
 		};
 		95F5BAD92C2DB9A50034CAD7 /* SNES */ = {
@@ -570,6 +596,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95CC86CE2C47B54E009FB8DD /* BButtonView.swift in Sources */,
 				959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */,
 				95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */,
 				956F84022BEA75280025FC5F /* GameCollectionView.swift in Sources */,
@@ -591,6 +618,7 @@
 				959F81F12C1ACD64009EF53B /* GBAButtonLayoutRight.swift in Sources */,
 				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
+				95CC86D02C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
 				95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */,
 				955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */,
@@ -603,7 +631,9 @@
 				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
 				95707CBF2C01D77400217B82 /* HelpView.swift in Sources */,
 				955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */,
+				95CC86CC2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift in Sources */,
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
+				95CC86D22C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */,

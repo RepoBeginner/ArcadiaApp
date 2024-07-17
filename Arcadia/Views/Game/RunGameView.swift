@@ -82,7 +82,6 @@ struct RunGameView: View {
             }
         }
         .onAppear(perform: {
-            print(gameURL.lastPathComponent)
             //inputController.loadGameConfiguration()
             //TODO: Invece del gameURL mandare uno struct con tutte le informazioni
             var stateURLs: [Int : URL] = [:]

@@ -1,14 +1,15 @@
 //
-//  TwoButtonsView.swift
+//  BButtonView.swift
 //  Arcadia
 //
-//  Created by Davide Andreoli on 20/05/24.
+//  Created by Davide Andreoli on 17/07/24.
 //
 
 import SwiftUI
 import ArcadiaCore
 
-struct TwoButtonsView: View {
+
+struct BButtonView: View {
     var body: some View {
         VStack(spacing: -5) {
 
@@ -20,7 +21,8 @@ struct TwoButtonsView: View {
 
                         Spacer()
                             .frame(width: 50, height: 50)
-                        CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
+                        Spacer()
+                            .frame(width: 50, height: 50)
 
                     }
             CircleButtonView(arcadiaCoreButton: .joypadB, size:50)
@@ -28,8 +30,8 @@ struct TwoButtonsView: View {
     }
 }
 
+
 #Preview {
-    TwoButtonsView()
+    BButtonView()
         .environment(ArcadiaCoreEmulationState.sharedInstance)
-    
 }

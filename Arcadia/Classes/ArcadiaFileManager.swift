@@ -104,18 +104,11 @@ import AppKit
     
 
     private init() {
-                
-        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        print("Init file manager")
         let libraryDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
-        let documentsMainDirectory = documentsDirectory.appendingPathComponent("Arcadia")
-
         
-        let gamesDirectory = documentsMainDirectory.appendingPathComponent("Games")
-        let savesDirectory = documentsMainDirectory.appendingPathComponent("Saves")
-        let statesDirectory = documentsMainDirectory.appendingPathComponent("States")
-        let imagesDirectory = documentsMainDirectory.appendingPathComponent("Images")
-        let coresDirectory = documentsMainDirectory.appendingPathComponent("Cores")
-        
+        let documentsMainDirectory = documentsMainDirectory
+        //TODO: Force the local and cloud only if available
         for dir in [gamesDirectory, savesDirectory, statesDirectory, imagesDirectory, coresDirectory] {
             do {
                 if !FileManager.default.fileExists(atPath: dir.path) {
@@ -168,9 +161,10 @@ import AppKit
             do {
                 
                 let romFile = try Data(contentsOf: gameURL)
+                print("Got Content")
                 let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
+                try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
                 try romFile.write(to: savePath, options: .atomic)
-                
                 if let boxArtPath = getGameFromURL(gameURL: gameURL) {
                     guard let boxArtURL = URL(string: boxArtPath) else { return }
                     print("Got boxULR :\(boxArtURL)")
@@ -187,7 +181,7 @@ import AppKit
                 //To update the game list
                 getGamesURL(gameSystem: gameType)
             } catch {
-                print("couldn't save file")
+                print("couldn't save file \(error)")
             }
         
 
