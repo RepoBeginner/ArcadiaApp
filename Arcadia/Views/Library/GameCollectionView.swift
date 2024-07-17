@@ -37,56 +37,24 @@ struct GameCollectionView: View {
         @Bindable var inputController = inputController
         Group {
             if fileManager.currentGames.isEmpty {
-                Text("Your game collection is empty, add new games using the plus button at the top")
+                EmptyCollectionView(gameType: gameType)
             } else {
                 List {
                     ForEach(fileManager.currentGames, id: \.self) { file in
                         NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                         ) {
                             GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
-                                //.focused($selectedGameIndex, equals: fileManager.currentGames.firstIndex(where: { $0 == file}))
 
                         }
                     }
                 }
-                /*
-                .navigationDestination(isPresented: $goToGameView) {
-                    if let index = selectedGameIndex {
-                        RunGameView(gameURL: fileManager.currentGames[index], gameType: gameType)
-                    }
-                }
-                 */
                 .navigationDestination(for: URL.self) { selection in
                     RunGameView(gameURL: selection, gameType: gameType)
                 }
-                /*
-                .onChange(of: inputController.action) {oldValue, newValue in
-                    switch newValue {
-                    case .moveDown:
-                        if selectedGameIndex != fileManager.currentGames.count {
-                            selectedGameIndex? += 1
-                        }
-                    case .moveUp:
-                        if selectedGameIndex != 0 {
-                            selectedGameIndex? -= 1
-                        }
-                    case .enter:
-                        if let index = selectedGameIndex {
-                            print(fileManager.currentGames[index])
-                            goToGameView = true
-                            path.append(fileManager.currentGames[index])
-                        }
-                    default:
-                        return
-                    }
-                }
-                */
             }
         }
             .onAppear {
-                //selectedGameIndex = 0
                 fileManager.getGamesURL(gameSystem: gameType)
-
 
             }
             .navigationTitle("Game Collection")
@@ -120,5 +88,7 @@ struct GameCollectionView: View {
  #Preview {
      GameCollectionView(gameType: ArcadiaGameType.gameBoyGame, path: .constant(NavigationPath()))
  .environment(ArcadiaFileManager.shared)
+ .environment(ArcadiaCoreEmulationState.sharedInstance)
+ .environment(InputController.shared)
  }
  

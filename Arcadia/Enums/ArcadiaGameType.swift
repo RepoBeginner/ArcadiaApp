@@ -21,11 +21,12 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         return self
     }
     
+    case atari2600Game = "Atari 2600"
     case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
     case snesGame = "SNES"
-    case atari2600Game = "Atari 2600"
+    
     
     var name: String {
         switch self {
@@ -172,6 +173,21 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             SNESButtonLayoutRight()
         case .atari2600Game:
             Atari2600ButtonLayoutRight()
+        }
+    }
+    
+    var credits: AttributedString {
+        switch self {
+        case .gameBoyGame:
+            return try! AttributedString(markdown: "drhelius's [Gearboy](https://github.com/drhelius/Gearboy)")
+        case .gameBoyAdvanceGame:
+            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/vba-next) of VBA Next")
+        case .nesGame:
+            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/nestopia) of [Nestopia UE](https://github.com/0ldsk00l/nestopia)")
+        case .snesGame:
+            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/snes9x) of [snes9x](https://github.com/snes9xgit/snes9x)")
+        case .atari2600Game:
+            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/stella2014-libretro) of [Stella](https://github.com/stella-emu/stella)")
         }
     }
     

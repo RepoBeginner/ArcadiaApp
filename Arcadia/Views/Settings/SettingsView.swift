@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-
-
 struct SettingsView: View {
         
     var body: some View {
@@ -19,7 +16,8 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Input", systemImage: "gamecontroller")
                 }
-            SynchronizationSettingsView()
+            StorageSettingsView()
+                .frame(minWidth: 375, minHeight: 175)
                 .tabItem {
                     Label("Synchronization", systemImage: "cloud")
                 }
@@ -35,7 +33,6 @@ struct SettingsView: View {
 
         }
         .navigationTitle("Settings")
-        .frame(minWidth: 375, minHeight: 150)
         #else
         NavigationStack {
             Form {
@@ -43,8 +40,8 @@ struct SettingsView: View {
                     NavigationLink(destination: InputSettingsView()) {
                         Text("Input")
                     }
-                    NavigationLink(destination: SynchronizationSettingsView()) {
-                        Text("Synchronization")
+                    NavigationLink(destination: StorageSettingsView()) {
+                        Text("Storage")
                     }
                 }
                 #if os(iOS)
@@ -75,4 +72,5 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environment(InputController.shared)
 }

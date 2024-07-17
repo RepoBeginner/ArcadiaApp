@@ -18,12 +18,10 @@ struct CreditsView: View {
                     .font(.title)
                 Text("""
                 Arcadia is built on numerous cores developed by extraordinary developers who have made it possible to relive classic console experiences on other devices. In Arcadia, you will find the following cores:
-                
-                • GameBoy Advance: [Libretro version](https://github.com/libretro/vba-next) of VBA Next
-                • GameBoy (Color): drhelius's [Gearboy](https://github.com/drhelius/Gearboy)
-                • NES: [Libretro version](https://github.com/libretro/nestopia) of [Nestopia UE](https://github.com/0ldsk00l/nestopia)
-                • SNES: [Libretro version](https://github.com/libretro/snes9x) of [snes9x](https://github.com/snes9xgit/snes9x)
                 """)
+                ForEach(ArcadiaGameType.allCases) { gameType in
+                    Text("• \(gameType.name): \(gameType.credits)")
+                }
                 Text("Other")
                     .font(.title)
                 Text("""

@@ -53,6 +53,7 @@ struct ArcadiaApp: App {
                 .environment(InputController.shared)
                 .environment(ArcadiaFileManager.shared)
         }
+        .windowResizability(.contentSize)
         #endif
     }
 }
