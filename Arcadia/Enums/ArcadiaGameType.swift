@@ -13,6 +13,7 @@ import ArcadiaGBCCore
 import ArcadiaNESCore
 import ArcadiaSNESCore
 import ArcadiaAtari2600Core
+import ArcadiaAtari7800Core
 import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
@@ -22,6 +23,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     }
     
     case atari2600Game = "Atari 2600"
+    case atari7800Game = "Atari 7800"
     case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
@@ -40,6 +42,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return "SNES"
         case .atari2600Game:
             return "Atari 2600"
+        case .atari7800Game:
+            return "Atari 7800"
         }
     }
     
@@ -55,6 +59,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [UTType(filenameExtension: "smc")!, UTType(filenameExtension: "sfc")!]
         case .atari2600Game:
             return [UTType(filenameExtension: "a26")!]
+        case .atari7800Game:
+            return [UTType(filenameExtension: "a78")!]
         }
         
     }
@@ -71,6 +77,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ArcadiaSNES()
         case .atari2600Game:
             return ArcadiaAtari2600()
+        case .atari7800Game:
+            return ArcadiaAtari7800()
         }
     }
     
@@ -85,6 +93,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .snesGame:
             return "srm"
         case .atari2600Game:
+            return "srm"
+        case .atari7800Game:
             return "srm"
         }
     }
@@ -112,6 +122,10 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [
                 :
             ]
+        case .atari7800Game:
+            return [
+                :
+            ]
         }
         
     }
@@ -128,6 +142,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return Image("snes_icon")
         case .atari2600Game:
             return Image("atari_2600_icon")
+        case .atari7800Game:
+            return Image("atari_2600_icon")
         }
     }
     
@@ -142,6 +158,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .snesGame:
             SNESButtonLayout()
         case .atari2600Game:
+            Atari2600ButtonLayout()
+        case .atari7800Game:
             Atari2600ButtonLayout()
         }
     }
@@ -158,6 +176,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             SNESButtonLayoutLeft()
         case .atari2600Game:
             Atari2600ButtonLayoutLeft()
+        case .atari7800Game:
+            Atari2600ButtonLayoutLeft()
         }
     }
     
@@ -172,6 +192,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .snesGame:
             SNESButtonLayoutRight()
         case .atari2600Game:
+            Atari2600ButtonLayoutRight()
+        case .atari7800Game:
             Atari2600ButtonLayoutRight()
         }
     }
@@ -188,6 +210,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/snes9x) of [snes9x](https://github.com/snes9xgit/snes9x)")
         case .atari2600Game:
             return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/stella2014-libretro) of [Stella](https://github.com/stella-emu/stella)")
+        case .atari7800Game:
+                return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/prosystem-libretro) of [ProSystem](https://github.com/gstanton/ProSystem1_3)")
         }
     }
     
