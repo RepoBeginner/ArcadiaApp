@@ -143,7 +143,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari2600Game:
             return Image("atari_2600_icon")
         case .atari7800Game:
-            return Image("atari_2600_icon")
+            return Image("atari_7800_icon")
         }
     }
     
@@ -160,7 +160,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari2600Game:
             Atari2600ButtonLayout()
         case .atari7800Game:
-            Atari2600ButtonLayout()
+            Atari7800ButtonLayout()
         }
     }
     
@@ -194,7 +194,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari2600Game:
             Atari2600ButtonLayoutRight()
         case .atari7800Game:
-            Atari2600ButtonLayoutRight()
+            Atari7800ButtonLayoutRight()
         }
     }
     

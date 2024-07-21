@@ -72,6 +72,7 @@
 		95CC87EC2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC87EB2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework */; };
 		95CC87ED2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC87EB2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC87EF2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */; };
+		95CC87F12C48FF86009FB8DD /* Atari7800ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
@@ -185,6 +186,8 @@
 		95CC86D32C47E76E009FB8DD /* EmptyCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCollectionView.swift; sourceTree = "<group>"; };
 		95CC87EB2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaAtari7800Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayoutRight.swift; sourceTree = "<group>"; };
+		95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayout.swift; sourceTree = "<group>"; };
+		95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -273,6 +276,7 @@
 		95456BA92BE2ACA900113B8A = {
 			isa = PBXGroup;
 			children = (
+				95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */,
 				95707CB72C006F4100217B82 /* Assets.xcassets */,
 				956F84092BEBE9740025FC5F /* README.md */,
 				95456BB42BE2ACA900113B8A /* Arcadia */,
@@ -462,6 +466,7 @@
 				95CC86CF2C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift */,
 				95CC86D12C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift */,
 				95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */,
+				95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */,
 			);
 			path = Atari;
 			sourceTree = "<group>";
@@ -652,6 +657,7 @@
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */,
 				95F5BADF2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift in Sources */,
+				95CC87F12C48FF86009FB8DD /* Atari7800ButtonLayout.swift in Sources */,
 				959F81EF2C1ACC11009EF53B /* GBAButtonLayoutLeft.swift in Sources */,
 				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
@@ -823,7 +829,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -851,7 +857,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -875,7 +881,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -903,7 +909,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
