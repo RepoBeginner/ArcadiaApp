@@ -97,6 +97,11 @@ struct RunGameView: View {
         .onDisappear(perform: {
             //inputController.unloadGameConfiguration()
             emulationState.pauseEmulation()
+            if useiCloudSync {
+                for memoryType in gameType.supportedSaveFiles.keys {
+                    fileManager.createCloudCopy(of: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType))
+                }
+            }
 
         })
         .onChange(of: toDismiss) { oldValue, newValue in

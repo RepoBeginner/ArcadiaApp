@@ -14,6 +14,9 @@ struct OverlayView: View {
     @State private var stateSlot: Int = 1
     @Binding var dismissMainView: Bool
     @Environment(InputController.self) var inputController: InputController
+    @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
+    
+    @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     
     init(dismissMainView: Binding<Bool>) {
         self._dismissMainView = dismissMainView
@@ -32,6 +35,9 @@ struct OverlayView: View {
                         Button(
                             action: {
                                 ArcadiaCoreEmulationState.sharedInstance.currentCore?.saveState(saveFileURL: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!)
+                                if useiCloudSync {
+                                    fileManager.createCloudCopy(of: ArcadiaCoreEmulationState.sharedInstance.currentStateURL[stateSlot]!)
+                                }
                                 dismiss()
                             }) {
                             Text("Save State")

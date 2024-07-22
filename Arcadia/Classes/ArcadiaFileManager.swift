@@ -31,12 +31,13 @@ import AppKit
     }
     
     var documentsMainDirectory: URL {
+        /*
         if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
             if iCloudSyncEnabled {
                 return iCloudDocumentsDirectory!.appendingPathComponent("Arcadia")
             }
         }
-        
+        */
         return documentsDirectory.appendingPathComponent("Arcadia")
         
     }
@@ -108,6 +109,7 @@ import AppKit
         let libraryDirectory = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
         
         let documentsMainDirectory = documentsMainDirectory
+        var foldersToSync = [URL]()
         //TODO: Force the local and cloud only if available
         for dir in [gamesDirectory, savesDirectory, statesDirectory, imagesDirectory, coresDirectory] {
             do {
@@ -120,10 +122,19 @@ import AppKit
                     if !FileManager.default.fileExists(atPath: gameSystemFolder.path) {
                         try FileManager.default.createDirectory(at: gameSystemFolder, withIntermediateDirectories: true, attributes: nil)
                     }
+                    foldersToSync.append(gameSystemFolder)
                 }
                 
             } catch {
                 print("Error creating folder")
+            }
+        }
+        
+        if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+            if iCloudSyncEnabled {
+                DispatchQueue.global(qos: .userInteractive).async {
+                    self.syncDataToiCloud(in: foldersToSync)
+                }
             }
         }
         
@@ -165,6 +176,11 @@ import AppKit
                 let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
                 try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
                 try romFile.write(to: savePath, options: .atomic)
+                if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                    if iCloudSyncEnabled {
+                        createCloudCopy(of: savePath)
+                    }
+                }
                 if let boxArtPath = getGameFromURL(gameURL: gameURL) {
                     guard let boxArtURL = URL(string: boxArtPath) else { return }
                     print("Got boxULR :\(boxArtURL)")
@@ -263,6 +279,11 @@ import AppKit
             if FileManager.default.fileExists(atPath: fileURL.path) {
                 do {
                     try FileManager.default.removeItem(atPath: fileURL.path)
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            deleteCloudCopy(of: fileURL)
+                        }
+                    }
                 } catch {
                     print("Could not delete")
                 }
@@ -272,6 +293,11 @@ import AppKit
         if FileManager.default.fileExists(atPath: gameURL.path) {
             do {
                 try FileManager.default.removeItem(atPath: gameURL.path)
+                if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                    if iCloudSyncEnabled {
+                        deleteCloudCopy(of: gameURL)
+                    }
+                }
             } catch {
                 print("Could not delete")
             }
@@ -472,6 +498,11 @@ import AppKit
             do {
                 print("Writing to \(imageFileName)")
                 try jpegData.write(to: imageFileName)
+                if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                    if iCloudSyncEnabled {
+                        self.createCloudCopy(of: imageFileName)
+                    }
+                }
                 completion(nil)
             } catch {
                 completion(error)
@@ -582,7 +613,7 @@ import AppKit
     func syncFileTouCloud(localURL: URL) {
         guard let iCloudURL = iCloudDocumentsMainDirectory else { return }
         
-        let iCloudSubDirectory = iCloudURL.appendingPathComponent(localURL.pathComponents[localURL.pathComponents.index(localURL.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(localURL.pathComponents[localURL.pathComponents.index(localURL.pathComponents.endIndex, offsetBy: -2)])
+        let iCloudSubDirectory = iCloudURL.appendingPathComponent(localURL.pathComponents[localURL.pathComponents.index(localURL.pathComponents.endIndex, offsetBy: -2)])
         
         let iCloudFileURL = iCloudSubDirectory.appendingPathComponent(localURL.lastPathComponent)
         
@@ -752,14 +783,14 @@ import AppKit
             
     func syncDataToiCloud(in folders: [URL]) {
         guard
-            let iCloudURL = iCloudDocumentsMainDirectory,
-            let iCloudTrashURL = iCloudTrashDirectory
+            let iCloudURL = iCloudDocumentsMainDirectory
         else { return }
 
         let localURLs = folders
         for localURL in localURLs {
-            let iCloudSubDirectory = iCloudURL.appendingPathComponent(localURL.pathComponents[localURL.pathComponents.index(localURL.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(localURL.lastPathComponent)
-
+            let iCloudSubDirectory = iCloudURL
+                .appendingPathComponent(localURL.pathComponents[localURL.pathComponents.index(localURL.pathComponents.endIndex, offsetBy: -2)])
+                .appendingPathComponent(localURL.lastPathComponent)
             do {
                 try FileManager.default.createDirectory(at: iCloudSubDirectory, withIntermediateDirectories: true, attributes: nil)
   
@@ -803,8 +834,8 @@ import AppKit
                         }
                     } else {
                         // iCloud file doesn't exist, copy local file to iCloud
-                            print("Copying local file to iCloud \(iCloudFile)")
-                            try FileManager.default.copyItem(at: localFile, to: iCloudFile)
+                            //print("Copying local file to iCloud \(iCloudFile)")
+                            //try FileManager.default.copyItem(at: localFile, to: iCloudFile)
 
                     }
                 }
@@ -818,10 +849,63 @@ import AppKit
                     }
                 }
                 
+                
+                // Delete local files that do not exist in iCloud
+                for localFile in localContents {
+                    if iCloudFilesDict[localFile.lastPathComponent] == nil {
+                        print("Deleting local file \(localFile.lastPathComponent) in \(localContents) because it doesn't exist in iCloud")
+                        try FileManager.default.removeItem(at: localFile)
+                    }
+                }
+                
             } catch {
                 print("Error syncing data to iCloud: \(error)")
             }
         }
+    }
+    
+    func deleteCloudCopy(of file: URL) {
+        guard
+            let iCloudURL = iCloudDocumentsMainDirectory
+        else { return }
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            let iCloudFileURL = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(file.lastPathComponent)
+            print(iCloudFileURL)
+            
+            if FileManager.default.fileExists(atPath: iCloudFileURL.path) {
+                do {
+                    try FileManager.default.removeItem(at: iCloudFileURL)
+                } catch {
+                    print("Could not delete")
+                }
+            }
+        }
+        
+        
+    }
+    
+    func createCloudCopy(of file: URL) {
+        guard
+            let iCloudURL = iCloudDocumentsMainDirectory
+        else { return }
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            let iCloudSubDirectory = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)])
+            
+            let iCloudFileURL = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(file.lastPathComponent)
+            
+            do {
+                try FileManager.default.createDirectory(at: iCloudSubDirectory, withIntermediateDirectories: true, attributes: nil)
+                if FileManager.default.fileExists(atPath: iCloudFileURL.path) {
+                    try FileManager.default.removeItem(at: iCloudFileURL)
+                }
+                try FileManager.default.copyItem(at: file, to: iCloudFileURL)
+            } catch {
+                print("Could not copy \(error)")
+            }
+        }
+
     }
     
 

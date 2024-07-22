@@ -9,6 +9,9 @@
 
 
 - Per Sync:
-    - Avere un sistema di trash, dove vengono messi i file cancellati (da pulire ogni trenta giorni)
-        - se un file è in trash, cancellalo da tutti i device
     - Se l'utente attiva la sincronizzazione sul cloud, usare quello come master e triggerare la copia solo al momento dello switch a On
+    - Periodicamente triggerare la sincronizzazione --> la sincronizzazione non fa altro che scaricare i file dal cloud aggiornando il locale se la data di modifica è maggiore
+        - Ogni modifica dei file in locale deve essere mirrorata sul cloud:
+            - carico un gioco --> lo carico anche sul cloud
+            - salvo un gioco --> aggiorno il salvataggio sul cloud
+            - cancello un gioco --> cancello tutto anche dal cloud
