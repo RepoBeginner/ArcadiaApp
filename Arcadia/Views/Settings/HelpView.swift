@@ -49,9 +49,11 @@ struct HelpView: View {
                 Text("Synchronization")
                     .font(.title2)
                 Text("""
-                By default, iCloud synchronization is disabled, but you can enable it in the settings. Once activated, all your local content will be uploaded to iCloud. If the local files have a more recent modification date than the ones in iCloud, they will overwrite the existing files in the cloud. For example, if you have a recent save file for a game and enable iCloud sync, that save file will be uploaded and replace the file currently in iCloud.
+                By default, iCloud synchronization is disabled, but you can enable it in the settings. Once activated, all your local content will be uploaded to iCloud. If the local files have a more recent modification date than those in iCloud, they will overwrite the existing files in the cloud. For example, if you have a recent save file for a game and enable iCloud sync, that save file will be uploaded and replace the existing file in iCloud.
                 If you decide to turn off iCloud synchronization, all files stored in iCloud will be downloaded to your local folder.
-
+                When iCloud sync is enabled, the iCloud Drive Arcadia folder is updated through two processes: periodic syncs and specific actions.
+                During periodic syncs, the iCloud Drive Arcadia folder acts as the master. If the iCloud folder contains a file that the local folder does not, it will be downloaded. Conversely, if the local folder contains a file not present in the iCloud folder, it will be deleted. All files that exist in both locations will be kept in sync, with the most recent versions replacing older ones.
+                Specific actions, such as loading or deleting a game, will update the master reference each time they are performed.
                 """)
                 Text("Where to Find Games?")
                     .font(.title2)
