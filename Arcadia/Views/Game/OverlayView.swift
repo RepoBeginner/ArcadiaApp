@@ -56,7 +56,46 @@ struct OverlayView: View {
                     }
                 
                 PlayerSelectionView()
-                AttribitedScreenshotView(screenshotImage: emulationState.lastImage!)
+                Section {
+                    //emulationState.lastImage
+                    if let lastFrame = emulationState.currentFrame {
+                        let renderer = ImageRenderer(content: AttribitedScreenshotView(screenshotImage: lastFrame))
+                        #if os(iOS)
+                        if let uiImage = renderer.uiImage {
+                            let image = Image(uiImage: uiImage)
+                            ShareLink(item: image, preview: SharePreview("", image: image)) {
+                                Label("Share on social media", systemImage: "square.and.arrow.up")
+                            }
+                        }
+                        if let cgImage = emulationState.lastImage {
+                            let uiImage = UIImage(cgImage: cgImage)
+                            let image = Image(uiImage: uiImage)
+                            ShareLink(item: image, preview: SharePreview("", image: image)) {
+                                Label("Save screenshot", systemImage: "square.and.arrow.down")
+                            }
+                        }
+                        #elseif os(macOS)
+                        if let nsImage = renderer.nsImage {
+                            let image = Image(nsImage: nsImage)
+                            ShareLink(item: image, preview: SharePreview("", image: image)) {
+                                Label("Share on social media", systemImage: "square.and.arrow.up")
+                            }
+                        }
+                        if let cgImage = emulationState.lastImage {
+                            let nsImage = NSImage(cgImage: cgImage, size: NSSize(width: cgImage.width, height: cgImage.height))
+                            let image = Image(nsImage: nsImage)
+                            ShareLink(item: image, preview: SharePreview("", image: image)) {
+                                Label("Save screenshot", systemImage: "square.and.arrow.down")
+                            }
+                        }
+                        #endif
+                    } else {
+                        Text("There was an issue in loading the screenshot feature")
+                    }
+                }
+                Section {
+                    
+                }
 
             }
             .padding()

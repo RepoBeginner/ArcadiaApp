@@ -947,10 +947,23 @@ enum ArcadiaCloudSyncStatus {
             
             let iCloudFileURL = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(file.lastPathComponent)
             
+            
             do {
                 try FileManager.default.createDirectory(at: iCloudSubDirectory, withIntermediateDirectories: true, attributes: nil)
+                
                 if FileManager.default.fileExists(atPath: iCloudFileURL.path) {
-                    try FileManager.default.removeItem(at: iCloudFileURL)
+                    let localAttributes = try FileManager.default.attributesOfItem(atPath: file.path)
+                    let iCloudAttributes = try FileManager.default.attributesOfItem(atPath: iCloudFileURL.path)
+                    
+                    if let localDate = localAttributes[.modificationDate] as? Date,
+                       let iCloudDate = iCloudAttributes[.modificationDate] as? Date {
+                        if iCloudDate > localDate {
+                            print("Local file is less recent, skipping")
+                            return
+                        } else {
+                            try FileManager.default.removeItem(at: iCloudFileURL)
+                        }
+                    }
                 }
                 try FileManager.default.copyItem(at: file, to: iCloudFileURL)
             } catch {

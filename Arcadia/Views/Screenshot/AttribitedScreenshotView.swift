@@ -25,7 +25,7 @@ struct AttribitedScreenshotView: View {
             image
                 .resizable()
                 .scaledToFill()
-                .frame(width: 1080 / 4, height: 1920 / 4)
+                .frame(width: 1080, height: 1920)
                 .clipped()
                 .blur(radius: 15)
             VStack {
@@ -38,12 +38,19 @@ struct AttribitedScreenshotView: View {
                     Image("AppIcon_colored_asset")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 30, height: 30)
-                    Text("Playing with Arcadia")
+                        .frame(width: 120, height: 120)
+                    let text = Text("Playing with Arcadia").font(.system(size: 64, weight: .semibold))
+                    text
+                        .foregroundStyle(.white)
+                        .blendMode(.difference)
+                        .overlay(text.blendMode(.hue))
+                        .overlay(text.foregroundStyle(.white).blendMode(.overlay))
+                        .overlay(text.foregroundStyle(.black).blendMode(.overlay))
                     Spacer()
                 }
+                .padding()
             }
-            .frame(width: 1080 / 4, height: 1920 / 4)
+            .frame(width: 1080, height: 1920)
         }
     }
 }

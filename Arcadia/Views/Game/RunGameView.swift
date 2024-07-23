@@ -33,6 +33,8 @@ struct RunGameView: View {
     
     @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     init(gameURL: URL, gameType: ArcadiaGameType) {
         self.gameURL = gameURL
         self.gameType = gameType
@@ -104,6 +106,13 @@ struct RunGameView: View {
             }
 
         })
+        .onReceive(timer) { _ in
+            if useiCloudSync {
+                for memoryType in gameType.supportedSaveFiles.keys {
+                    fileManager.createCloudCopy(of: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType))
+                }
+            }
+        }
         .onChange(of: toDismiss) { oldValue, newValue in
             if newValue {
                 dismiss()
