@@ -33,6 +33,12 @@ struct StorageSettingsView: View {
                         showOverlay = false
                     }
                 }
+                Text("\(fileManager.lastSyncStatus.textToShow)")
+                Button(action : {
+                    fileManager.syncDataToiCloud()
+                }) {
+                    Text("Force sync")
+                }
             }
             Section {
                 Button(action: {

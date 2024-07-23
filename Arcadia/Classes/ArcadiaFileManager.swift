@@ -16,11 +16,31 @@ import UIKit
 import AppKit
 #endif
 
+enum ArcadiaCloudSyncStatus {
+    case syncing
+    case completed
+    case error
+    case notExecuted
+    
+    var textToShow: String {
+        switch self {
+        case .syncing:
+            return "Sync in progress"
+        case .completed:
+            return "Sync completed"
+        case .notExecuted:
+            return "Sync not yet executed"
+        case .error:
+            return "Error during last sync"
+        }
+    }
+}
 
 @Observable class ArcadiaFileManager {
     
     public static var shared = ArcadiaFileManager()
     public var currentGames: [URL] = []
+    public var lastSyncStatus: ArcadiaCloudSyncStatus = .notExecuted
     
     var documentsDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -89,6 +109,10 @@ import AppKit
     
     var coresDirectory: URL {
         return documentsMainDirectory.appendingPathComponent("Cores")
+    }
+    
+    var localCoresDirectory: URL {
+        return localDocumentsMainDirectory.appendingPathComponent("Images")
     }
     
     var iCloudDocumentsDirectory: URL? {
@@ -582,8 +606,12 @@ import AppKit
         }
     }
     
-    func getCoreDirectory(for gameSystem: ArcadiaGameType) -> URL {
-        return self.coresDirectory.appendingPathComponent(gameSystem.rawValue)
+    func getCoreDirectory(for gameSystem: ArcadiaGameType, forcedLocal: Bool = false) -> URL {
+        if !forcedLocal {
+            return self.coresDirectory.appendingPathComponent(gameSystem.rawValue)
+        } else {
+            return self.localCoresDirectory.appendingPathComponent(gameSystem.rawValue)
+        }
     }
     
     func syncGameSystemSavesAndStatesToiCloud(gameSystem: ArcadiaGameType) {
@@ -656,6 +684,7 @@ import AppKit
             localURLs.append(getSaveDirectory(for: gameSystem, forcedLocal: true))
             localURLs.append(getStateDirectory(for: gameSystem, forcedLocal: true))
             localURLs.append(getImageDirectory(for: gameSystem, forcedLocal: true))
+            localURLs.append(getCoreDirectory(for: gameSystem, forcedLocal: true))
         }
 
         uploadFilesToiCloud(in: localURLs)
@@ -721,6 +750,7 @@ import AppKit
             localURLs.append(getSaveDirectory(for: gameSystem, forcedLocal: true))
             localURLs.append(getStateDirectory(for: gameSystem, forcedLocal: true))
             localURLs.append(getImageDirectory(for: gameSystem, forcedLocal: true))
+            localURLs.append(getCoreDirectory(for: gameSystem, forcedLocal: true))
         }
 
         downloadDataFromiCloud(in: localURLs)
@@ -778,6 +808,20 @@ import AppKit
             }
         }
     }
+    
+    func syncDataToiCloud() {
+        var localURLs = [URL]()
+        for gameSystem in ArcadiaGameType.allCases {
+            localURLs.append(getGameDirectory(for: gameSystem, forcedLocal: true))
+            localURLs.append(getSaveDirectory(for: gameSystem, forcedLocal: true))
+            localURLs.append(getStateDirectory(for: gameSystem, forcedLocal: true))
+            localURLs.append(getImageDirectory(for: gameSystem, forcedLocal: true))
+            localURLs.append(getCoreDirectory(for: gameSystem, forcedLocal: true))
+        }
+
+        syncDataToiCloud(in: localURLs)
+        
+    }
 
 
             
@@ -785,7 +829,8 @@ import AppKit
         guard
             let iCloudURL = iCloudDocumentsMainDirectory
         else { return }
-
+        lastSyncStatus = .syncing
+        
         let localURLs = folders
         for localURL in localURLs {
             let iCloudSubDirectory = iCloudURL
@@ -859,9 +904,11 @@ import AppKit
                 }
                 
             } catch {
+                lastSyncStatus = .error
                 print("Error syncing data to iCloud: \(error)")
             }
         }
+        lastSyncStatus = .completed
     }
     
     func deleteCloudCopy(of file: URL) {
