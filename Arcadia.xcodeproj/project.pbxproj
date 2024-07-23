@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951088202C4F9EAE00F01C88 /* AttribitedScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510881F2C4F9EAE00F01C88 /* AttribitedScreenshotView.swift */; };
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
@@ -119,6 +120,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9510881F2C4F9EAE00F01C88 /* AttribitedScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttribitedScreenshotView.swift; sourceTree = "<group>"; };
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9510881E2C4F9E9300F01C88 /* Screenshot */ = {
+			isa = PBXGroup;
+			children = (
+				9510881F2C4F9EAE00F01C88 /* AttribitedScreenshotView.swift */,
+			);
+			path = Screenshot;
+			sourceTree = "<group>";
+		};
 		952C02222C088EA400DF2832 /* Experimental */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +371,7 @@
 		955CC3762BF7E3FF00C930ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9510881E2C4F9E9300F01C88 /* Screenshot */,
 				952C02242C088ECD00DF2832 /* Game */,
 				952C02232C088EB700DF2832 /* Library */,
 				952C02222C088EA400DF2832 /* Experimental */,
@@ -623,6 +634,7 @@
 				959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */,
 				95456BB82BE2ACA900113B8A /* RunGameView.swift in Sources */,
 				956F84292BF486E80025FC5F /* CurrentBufferMetalViewBinding.swift in Sources */,
+				951088202C4F9EAE00F01C88 /* AttribitedScreenshotView.swift in Sources */,
 				959F81F32C1B14ED009EF53B /* GBCButtonLayoutLeft.swift in Sources */,
 				95CC87EF2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift in Sources */,
 				95707CC12C01E38100217B82 /* CreditsView.swift in Sources */,

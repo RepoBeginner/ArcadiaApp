@@ -15,6 +15,7 @@ struct OverlayView: View {
     @Binding var dismissMainView: Bool
     @Environment(InputController.self) var inputController: InputController
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     
     @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     
@@ -55,6 +56,8 @@ struct OverlayView: View {
                     }
                 
                 PlayerSelectionView()
+                AttribitedScreenshotView(screenshotImage: emulationState.lastImage!)
+
             }
             .padding()
             .navigationTitle("Overlay")

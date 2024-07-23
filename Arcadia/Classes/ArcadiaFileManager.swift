@@ -938,6 +938,11 @@ enum ArcadiaCloudSyncStatus {
         else { return }
         
         DispatchQueue.global(qos: .userInteractive).async {
+            
+            if !FileManager.default.fileExists(atPath: file.path) {
+                return
+            }
+            
             let iCloudSubDirectory = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)])
             
             let iCloudFileURL = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(file.lastPathComponent)
