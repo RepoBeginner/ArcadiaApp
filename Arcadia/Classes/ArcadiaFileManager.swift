@@ -436,6 +436,66 @@ enum ArcadiaCloudSyncStatus {
             return db
         }
     }
+    
+    func gameMatchesDatabase(gameURL: URL) -> Bool {
+        guard let db = openDatabase() else { return false }
+        defer { sqlite3_close(db) }
+        
+        guard let gameHash = md5Hash(from: gameURL) else { return false }
+        
+        let queryStatementString = """
+        SELECT *
+        FROM ROMs
+        WHERE ROMs.romHashMD5 = '\(gameHash)'
+        LIMIT 1;
+        """
+        
+        var queryStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                return true
+            }
+            sqlite3_finalize(queryStatement)
+        } else {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("Error preparing SELECT statement: \(errmsg)")
+            return false
+        }
+        
+        return false
+        
+    }
+    
+    func md5OfMatchingGame(gameURL: URL) -> String? {
+        guard let db = openDatabase() else { return nil }
+        defer { sqlite3_close(db) }
+        
+        guard let gameHash = md5Hash(from: gameURL) else { return nil }
+        
+        let queryStatementString = """
+        SELECT *
+        FROM ROMs
+        WHERE ROMs.romHashMD5 = '\(gameHash)'
+        LIMIT 1;
+        """
+        
+        var queryStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            if sqlite3_step(queryStatement) == SQLITE_ROW {
+                return gameHash
+            }
+            sqlite3_finalize(queryStatement)
+        } else {
+            let errmsg = String(cString: sqlite3_errmsg(db))
+            print("Error preparing SELECT statement: \(errmsg)")
+            return nil
+        }
+        
+        return nil
+        
+    }
 
     func getGameFromURL(gameURL: URL) -> String? {
            guard let db = openDatabase() else { return nil }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		951088202C4F9EAE00F01C88 /* AttribitedScreenshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510881F2C4F9EAE00F01C88 /* AttribitedScreenshotView.swift */; };
+		951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951097842C518C8E00F01C88 /* RecommendationView.swift */; };
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
@@ -121,6 +122,7 @@
 
 /* Begin PBXFileReference section */
 		9510881F2C4F9EAE00F01C88 /* AttribitedScreenshotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttribitedScreenshotView.swift; sourceTree = "<group>"; };
+		951097842C518C8E00F01C88 /* RecommendationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationView.swift; sourceTree = "<group>"; };
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				95707CB42BFF4C2F00217B82 /* ButtonsLayout */,
 				955CC37A2BF7E47100C930ED /* Shapes */,
 				955CC3772BF7E40B00C930ED /* Buttons */,
+				951097842C518C8E00F01C88 /* RecommendationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -641,6 +644,7 @@
 				95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */,
 				95F5BAE12C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift in Sources */,
 				95CC86D42C47E76E009FB8DD /* EmptyCollectionView.swift in Sources */,
+				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
 				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
 				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,

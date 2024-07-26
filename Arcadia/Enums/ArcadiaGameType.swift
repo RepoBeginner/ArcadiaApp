@@ -47,6 +47,23 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         }
     }
     
+    var dbSystemId: [String] {
+        switch self {
+        case .gameBoyGame:
+            return ["CAST(19 AS INT)", "CAST(21 AS INT)"]
+        case .gameBoyAdvanceGame:
+            return ["CAST(20 AS INT)"]
+        case .nesGame:
+            return ["CAST(25 AS INT)"]
+        case .snesGame:
+            return ["CAST(26 AS INT)"]
+        case .atari2600Game:
+            return ["CAST(3 AS INT)"]
+        case .atari7800Game:
+            return ["CAST(5 AS INT)"]
+        }
+    }
+    
     var allowedExtensions: [UTType] {
         switch self {
         case .gameBoyGame:

@@ -14,6 +14,7 @@ struct GameCollectionView: View {
     
     @State private var gameType: ArcadiaGameType
     @State private var showingAddGameView: Bool = false
+    @State private var showingRecommendationView: Bool = false
     @State private var showingRenameAlert = false
     @State private var gameBeingRenamed : URL?
     @State private var goToGameView : Bool = false
@@ -60,6 +61,9 @@ struct GameCollectionView: View {
             }
             .navigationTitle("Game Collection")
                 .toolbar() {
+                    Button(action: { showingRecommendationView.toggle() }, label: {
+                        Image(systemName: "lightbulb")
+                    })
                     Button(action: { showingAddGameView.toggle() }, label: {
                         Image(systemName: "plus")
                     })
@@ -78,6 +82,9 @@ struct GameCollectionView: View {
                         }
                     }
                 })
+                .sheet(isPresented: $showingRecommendationView) {
+                    RecommendationView(gameSystem: gameType)
+                }
         #if os(iOS)
                 .navigationBarTitleDisplayMode(.inline)
         #endif
