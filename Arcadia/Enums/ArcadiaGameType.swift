@@ -14,6 +14,7 @@ import ArcadiaNESCore
 import ArcadiaSNESCore
 import ArcadiaAtari2600Core
 import ArcadiaAtari7800Core
+import ArcadiaNeoGeoPocketCore
 import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
@@ -27,6 +28,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
+    case neoGeoPocketGame = "Neo Geo Pocket (Color)"
     case snesGame = "SNES"
     
     
@@ -44,6 +46,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return "Atari 2600"
         case .atari7800Game:
             return "Atari 7800"
+        case .neoGeoPocketGame:
+            return "Neo Geo Pocket (Color)"
         }
     }
     
@@ -61,6 +65,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ["CAST(3 AS INT)"]
         case .atari7800Game:
             return ["CAST(5 AS INT)"]
+        case .neoGeoPocketGame:
+            return ["CAST(36 AS INT), CAST(37 AS INT)"]
         }
     }
     
@@ -78,6 +84,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [UTType(filenameExtension: "a26")!]
         case .atari7800Game:
             return [UTType(filenameExtension: "a78")!]
+        case .neoGeoPocketGame:
+            return [UTType(filenameExtension: "ngp")!, UTType(filenameExtension: "ngc")!]
         }
         
     }
@@ -96,6 +104,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ArcadiaAtari2600()
         case .atari7800Game:
             return ArcadiaAtari7800()
+        case .neoGeoPocketGame:
+            return ArcadiaNeoGeoPocket()
         }
     }
     
@@ -113,6 +123,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return "srm"
         case .atari7800Game:
             return "srm"
+        case .neoGeoPocketGame:
+            return "ngf"
         }
     }
     
@@ -143,6 +155,10 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [
                 :
             ]
+        case .neoGeoPocketGame:
+            return [
+                .memorySaveRam : "ngf"
+            ]
         }
         
     }
@@ -161,6 +177,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return Image("atari_2600_icon")
         case .atari7800Game:
             return Image("atari_7800_icon")
+        case .neoGeoPocketGame:
+            return Image("atari_7800_icon")
         }
     }
     
@@ -178,6 +196,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             Atari2600ButtonLayout()
         case .atari7800Game:
             Atari7800ButtonLayout()
+        case .neoGeoPocketGame:
+            GBCButtonLayout()
         }
     }
     
@@ -195,6 +215,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             Atari2600ButtonLayoutLeft()
         case .atari7800Game:
             Atari2600ButtonLayoutLeft()
+        case .neoGeoPocketGame:
+            GBCButtonLayoutLeft()
         }
     }
     
@@ -212,6 +234,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             Atari2600ButtonLayoutRight()
         case .atari7800Game:
             Atari7800ButtonLayoutRight()
+        case .neoGeoPocketGame:
+            GBCButtonLayoutLeft()
         }
     }
     
@@ -229,6 +253,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/stella2014-libretro) of [Stella](https://github.com/stella-emu/stella)")
         case .atari7800Game:
                 return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/prosystem-libretro) of [ProSystem](https://github.com/gstanton/ProSystem1_3)")
+        case .neoGeoPocketGame:
+                return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/RACE) of [RACE](https://github.com/alekmaul/race)")
         }
     }
     
