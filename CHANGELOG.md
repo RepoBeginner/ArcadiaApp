@@ -2,6 +2,8 @@
 
 ## Cores
 - NeoGeo Pocket (Color)
+- Sega MS - SG1000
+- Sega Game Gear
 
 ## Features
 - Added a share screenshot button in the overlay menu
