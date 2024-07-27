@@ -30,7 +30,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case gameBoyGame = "GameBoy (Color)"
     case nesGame = "NES"
     case neoGeoPocketGame = "Neo Geo Pocket (Color)"
-    case masterSystemGame = "Sega Master System"
+    case gameGearGame = "Sega Game Gear"
+    case masterSystemGame = "Sega Master System - SG 1000"
     case snesGame = "SNES"
     
     
@@ -51,7 +52,9 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .neoGeoPocketGame:
             return "Neo Geo Pocket (Color)"
         case .masterSystemGame:
-            return "Sega Master System"
+            return "Sega Master System - SG 1000"
+        case .gameGearGame:
+            return "Sega Game Gear"
         }
     }
     
@@ -70,9 +73,11 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari7800Game:
             return ["CAST(5 AS INT)"]
         case .neoGeoPocketGame:
-            return ["CAST(36 AS INT), CAST(37 AS INT)"]
+            return ["CAST(36 AS INT)", "CAST(37 AS INT)"]
         case .masterSystemGame:
-            return ["CAST(31 AS INT)"]
+            return ["CAST(31 AS INT)", "CAST(35 AS INT)"]
+        case .gameGearGame:
+            return ["CAST(30 AS INT)"]
         }
     }
     
@@ -93,7 +98,9 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .neoGeoPocketGame:
             return [UTType(filenameExtension: "ngp")!, UTType(filenameExtension: "ngc")!]
         case .masterSystemGame:
-            return [UTType(filenameExtension: "sms")!]
+            return [UTType(filenameExtension: "sms")!, UTType(filenameExtension: "sg")!]
+        case .gameGearGame:
+            return [UTType(filenameExtension: "gg")!]
         }
         
     }
@@ -116,6 +123,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ArcadiaNeoGeoPocket()
         case .masterSystemGame:
             return ArcadiaMasterSystem()
+        case .gameGearGame:
+            return ArcadiaMasterSystem()
         }
     }
     
@@ -136,6 +145,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .neoGeoPocketGame:
             return "ngf"
         case .masterSystemGame:
+            return "srm"
+        case .gameGearGame:
             return "srm"
         }
     }
@@ -175,6 +186,10 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [
                 .memorySaveRam : "srm"
             ]
+        case .gameGearGame:
+            return [
+                .memorySaveRam : "srm"
+            ]
         }
         
     }
@@ -197,6 +212,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return Image("atari_7800_icon")
         case .masterSystemGame:
             return Image("nes_icon")
+        case .gameGearGame:
+            return Image("nes_icon")
         }
     }
     
@@ -217,6 +234,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .neoGeoPocketGame:
             GBCButtonLayout()
         case .masterSystemGame:
+            GBCButtonLayout()
+        case .gameGearGame:
             GBCButtonLayout()
         }
     }
@@ -239,6 +258,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayoutLeft()
         case .masterSystemGame:
             GBCButtonLayoutLeft()
+        case .gameGearGame:
+            GBCButtonLayoutLeft()
         }
     }
     
@@ -260,6 +281,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             GBCButtonLayoutLeft()
         case .masterSystemGame:
             GBCButtonLayoutRight()
+        case .gameGearGame:
+            GBCButtonLayoutRight()
         }
     }
     
@@ -280,6 +303,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .neoGeoPocketGame:
                 return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/RACE) of [RACE](https://github.com/alekmaul/race)")
         case .masterSystemGame:
+            return try! AttributedString(markdown: "drhelius's [Gearsystem](https://github.com/drhelius/Gearsystem)")
+        case .gameGearGame:
             return try! AttributedString(markdown: "drhelius's [Gearsystem](https://github.com/drhelius/Gearsystem)")
         }
     }
