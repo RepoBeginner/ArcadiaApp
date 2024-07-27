@@ -211,9 +211,9 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .neoGeoPocketGame:
             return Image("atari_7800_icon")
         case .masterSystemGame:
-            return Image("nes_icon")
+            return Image("master_system_icon")
         case .gameGearGame:
-            return Image("nes_icon")
+            return Image("game_gear_icon")
         }
     }
     
