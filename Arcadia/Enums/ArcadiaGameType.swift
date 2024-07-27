@@ -232,11 +232,11 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari7800Game:
             Atari7800ButtonLayout()
         case .neoGeoPocketGame:
-            GBCButtonLayout()
+            GameGearButtonLayout()
         case .masterSystemGame:
-            GBCButtonLayout()
+            Atari7800ButtonLayout()
         case .gameGearGame:
-            GBCButtonLayout()
+            GameGearButtonLayout()
         }
     }
     
@@ -255,11 +255,11 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari7800Game:
             Atari2600ButtonLayoutLeft()
         case .neoGeoPocketGame:
-            GBCButtonLayoutLeft()
+            Atari2600ButtonLayoutLeft()
         case .masterSystemGame:
-            GBCButtonLayoutLeft()
+            Atari2600ButtonLayoutLeft()
         case .gameGearGame:
-            GBCButtonLayoutLeft()
+            Atari2600ButtonLayoutLeft()
         }
     }
     
@@ -278,9 +278,9 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .atari7800Game:
             Atari7800ButtonLayoutRight()
         case .neoGeoPocketGame:
-            GBCButtonLayoutLeft()
-        case .masterSystemGame:
             GBCButtonLayoutRight()
+        case .masterSystemGame:
+            Atari7800ButtonLayoutRight()
         case .gameGearGame:
             GBCButtonLayoutRight()
         }
