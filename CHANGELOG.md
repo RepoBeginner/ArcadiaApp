@@ -1,3 +1,8 @@
+# 1.2
+
+## Cores
+- Sega Genesis
+
 # 1.1
 
 ## Cores

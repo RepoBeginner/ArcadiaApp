@@ -14,6 +14,8 @@
 		9510F1E02C54F98300F01C88 /* ArcadiaMasterSystemCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */; };
 		9510F1E12C54F98300F01C88 /* ArcadiaMasterSystemCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9510F1E42C55230200F01C88 /* GameGearButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510F1E32C55230200F01C88 /* GameGearButtonLayout.swift */; };
+		9510FE0A2C57715500F01C88 /* ArcadiaGenesisCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */; };
+		9510FE0B2C57715500F01C88 /* ArcadiaGenesisCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
@@ -114,6 +116,7 @@
 			files = (
 				95CC87ED2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Embed Frameworks */,
 				95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */,
+				9510FE0B2C57715500F01C88 /* ArcadiaGenesisCore.framework in Embed Frameworks */,
 				951098992C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework in Embed Frameworks */,
 				95CC7B492C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Embed Frameworks */,
 				95CC7A502C3BC597009FB8DD /* ArcadiaNESCore.framework in Embed Frameworks */,
@@ -133,6 +136,7 @@
 		951098972C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaNeoGeoPocketCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaMasterSystemCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9510F1E32C55230200F01C88 /* GameGearButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGearButtonLayout.swift; sourceTree = "<group>"; };
+		9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGenesisCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 			files = (
 				95CC87EC2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
+				9510FE0A2C57715500F01C88 /* ArcadiaGenesisCore.framework in Frameworks */,
 				951098982C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework in Frameworks */,
 				95CC7B482C3BDA3F009FB8DD /* ArcadiaGBACore.framework in Frameworks */,
 				95CC7A4F2C3BC597009FB8DD /* ArcadiaNESCore.framework in Frameworks */,
@@ -374,6 +379,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */,
 				9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */,
 				951098972C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework */,
 				95CC87EB2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework */,
@@ -869,7 +875,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -921,7 +927,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;

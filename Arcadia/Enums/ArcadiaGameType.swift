@@ -16,6 +16,7 @@ import ArcadiaAtari2600Core
 import ArcadiaAtari7800Core
 import ArcadiaNeoGeoPocketCore
 import ArcadiaMasterSystemCore
+import ArcadiaGenesisCore
 import SwiftUI
 
 enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTypeProtocol {
@@ -28,6 +29,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case atari7800Game = "Atari 7800"
     case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
+    case genesisGame = "Sega Genesis"
     case nesGame = "NES"
     case neoGeoPocketGame = "Neo Geo Pocket (Color)"
     case gameGearGame = "Sega Game Gear"
@@ -55,6 +57,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return "Sega Master System - SG 1000"
         case .gameGearGame:
             return "Sega Game Gear"
+        case .genesisGame:
+            return "Sega Genesis"
         }
     }
     
@@ -78,6 +82,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ["CAST(31 AS INT)", "CAST(35 AS INT)"]
         case .gameGearGame:
             return ["CAST(30 AS INT)"]
+        case .genesisGame:
+            return ["CAST(33 AS INT)"]
         }
     }
     
@@ -101,6 +107,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [UTType(filenameExtension: "sms")!, UTType(filenameExtension: "sg")!]
         case .gameGearGame:
             return [UTType(filenameExtension: "gg")!]
+        case .genesisGame:
+            return [UTType(filenameExtension: "gen")!, UTType(filenameExtension: "md")!]
         }
         
     }
@@ -125,6 +133,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return ArcadiaMasterSystem()
         case .gameGearGame:
             return ArcadiaMasterSystem()
+        case .genesisGame:
+            return ArcadiaGenesis()
         }
     }
     
@@ -147,6 +157,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .masterSystemGame:
             return "srm"
         case .gameGearGame:
+            return "srm"
+        case .genesisGame:
             return "srm"
         }
     }
@@ -190,6 +202,10 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return [
                 .memorySaveRam : "srm"
             ]
+        case .genesisGame:
+            return [
+                .memorySaveRam : "srm"
+            ]
         }
         
     }
@@ -214,6 +230,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return Image("master_system_icon")
         case .gameGearGame:
             return Image("game_gear_icon")
+        case .genesisGame:
+            return Image("game_gear_icon")
         }
     }
     
@@ -237,6 +255,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             Atari7800ButtonLayout()
         case .gameGearGame:
             GameGearButtonLayout()
+        case .genesisGame:
+            GBCButtonLayout()
         }
     }
     
@@ -260,6 +280,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             Atari2600ButtonLayoutLeft()
         case .gameGearGame:
             Atari2600ButtonLayoutLeft()
+        case .genesisGame:
+            GBCButtonLayoutLeft()
         }
     }
     
@@ -282,6 +304,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .masterSystemGame:
             Atari7800ButtonLayoutRight()
         case .gameGearGame:
+            GBCButtonLayoutRight()
+        case .genesisGame:
             GBCButtonLayoutRight()
         }
     }
@@ -306,6 +330,8 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             return try! AttributedString(markdown: "drhelius's [Gearsystem](https://github.com/drhelius/Gearsystem)")
         case .gameGearGame:
             return try! AttributedString(markdown: "drhelius's [Gearsystem](https://github.com/drhelius/Gearsystem)")
+        case .genesisGame:
+            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/picodrive) of [picodrive](https://github.com/notaz/picodrive)")
         }
     }
     
