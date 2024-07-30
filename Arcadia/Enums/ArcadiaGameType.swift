@@ -29,10 +29,10 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     case atari7800Game = "Atari 7800"
     case gameBoyAdvanceGame = "GameBoy Advance"
     case gameBoyGame = "GameBoy (Color)"
-    case genesisGame = "Sega Genesis"
     case nesGame = "NES"
     case neoGeoPocketGame = "Neo Geo Pocket (Color)"
     case gameGearGame = "Sega Game Gear"
+    case genesisGame = "Sega Genesis"
     case masterSystemGame = "Sega Master System - SG 1000"
     case snesGame = "SNES"
     
@@ -231,7 +231,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameGearGame:
             return Image("game_gear_icon")
         case .genesisGame:
-            return Image("game_gear_icon")
+            return Image("sega_genesis_icon")
         }
     }
     
@@ -256,7 +256,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameGearGame:
             GameGearButtonLayout()
         case .genesisGame:
-            GBCButtonLayout()
+            SegaGenesisButtonLayout()
         }
     }
     
@@ -281,7 +281,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameGearGame:
             Atari2600ButtonLayoutLeft()
         case .genesisGame:
-            GBCButtonLayoutLeft()
+            Atari2600ButtonLayoutLeft()
         }
     }
     
@@ -306,7 +306,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameGearGame:
             GBCButtonLayoutRight()
         case .genesisGame:
-            GBCButtonLayoutRight()
+            SegaGenesisButtonLayoutRight()
         }
     }
     

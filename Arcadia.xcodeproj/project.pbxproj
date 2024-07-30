@@ -16,6 +16,9 @@
 		9510F1E42C55230200F01C88 /* GameGearButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510F1E32C55230200F01C88 /* GameGearButtonLayout.swift */; };
 		9510FE0A2C57715500F01C88 /* ArcadiaGenesisCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */; };
 		9510FE0B2C57715500F01C88 /* ArcadiaGenesisCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9510FE122C594BFE00F01C88 /* SegaGenesisButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE112C594BFE00F01C88 /* SegaGenesisButtonLayout.swift */; };
+		9510FE142C594C7000F01C88 /* ThreeButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE132C594C7000F01C88 /* ThreeButtonsView.swift */; };
+		9510FE162C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE152C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift */; };
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
@@ -137,6 +140,9 @@
 		9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaMasterSystemCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9510F1E32C55230200F01C88 /* GameGearButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameGearButtonLayout.swift; sourceTree = "<group>"; };
 		9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaGenesisCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9510FE112C594BFE00F01C88 /* SegaGenesisButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegaGenesisButtonLayout.swift; sourceTree = "<group>"; };
+		9510FE132C594C7000F01C88 /* ThreeButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeButtonsView.swift; sourceTree = "<group>"; };
+		9510FE152C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegaGenesisButtonLayoutRight.swift; sourceTree = "<group>"; };
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
@@ -263,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				9510F1E32C55230200F01C88 /* GameGearButtonLayout.swift */,
+				9510FE112C594BFE00F01C88 /* SegaGenesisButtonLayout.swift */,
+				9510FE152C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift */,
 			);
 			path = SEGA;
 			sourceTree = "<group>";
@@ -425,6 +433,7 @@
 				95707CBB2C00ED7500217B82 /* ArrowButtonView.swift */,
 				95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */,
 				95CC86CD2C47B54E009FB8DD /* BButtonView.swift */,
+				9510FE132C594C7000F01C88 /* ThreeButtonsView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -672,6 +681,7 @@
 				95707CC12C01E38100217B82 /* CreditsView.swift in Sources */,
 				95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */,
 				95F5BAE12C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift in Sources */,
+				9510FE122C594BFE00F01C88 /* SegaGenesisButtonLayout.swift in Sources */,
 				95CC86D42C47E76E009FB8DD /* EmptyCollectionView.swift in Sources */,
 				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
@@ -684,6 +694,7 @@
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
 				95CC86D02C47B63A009FB8DD /* Atari2600ButtonLayoutLeft.swift in Sources */,
 				95456BBA2BE2ACA900113B8A /* Item.swift in Sources */,
+				9510FE162C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift in Sources */,
 				95707CB62BFF4C4D00217B82 /* GBCButtonLayout.swift in Sources */,
 				9510F1E42C55230200F01C88 /* GameGearButtonLayout.swift in Sources */,
 				955CC3A02BFB265D00C930ED /* TwoButtonsView.swift in Sources */,
@@ -697,6 +708,7 @@
 				95707CBF2C01D77400217B82 /* HelpView.swift in Sources */,
 				955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */,
 				95CC86CC2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift in Sources */,
+				9510FE142C594C7000F01C88 /* ThreeButtonsView.swift in Sources */,
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
 				95CC86D22C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
