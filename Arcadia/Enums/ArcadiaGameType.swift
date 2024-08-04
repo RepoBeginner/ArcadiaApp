@@ -313,25 +313,25 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     var credits: AttributedString {
         switch self {
         case .gameBoyGame:
-            return try! AttributedString(markdown: "drhelius's [Gearboy](https://github.com/drhelius/Gearboy)")
+            return try! AttributedString(markdown: "[Gearboy](https://github.com/drhelius/Gearboy)")
         case .gameBoyAdvanceGame:
-            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/vba-next) of VBA Next")
+            return try! AttributedString(markdown: "[VBA Next](https://github.com/libretro/vba-next)")
         case .nesGame:
-            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/nestopia) of [Nestopia UE](https://github.com/0ldsk00l/nestopia)")
+            return try! AttributedString(markdown: "[Nestopia UE](https://github.com/libretro/nestopia)")
         case .snesGame:
-            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/snes9x) of [snes9x](https://github.com/snes9xgit/snes9x)")
+            return try! AttributedString(markdown: "[snes9x](https://github.com/libretro/snes9x)")
         case .atari2600Game:
-            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/stella2014-libretro) of [Stella](https://github.com/stella-emu/stella)")
+            return try! AttributedString(markdown: "[Stella](https://github.com/libretro/stella2014-libretro)")
         case .atari7800Game:
-                return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/prosystem-libretro) of [ProSystem](https://github.com/gstanton/ProSystem1_3)")
+                return try! AttributedString(markdown: "[ProSystem version](https://github.com/libretro/prosystem-libretro)")
         case .neoGeoPocketGame:
-                return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/RACE) of [RACE](https://github.com/alekmaul/race)")
+                return try! AttributedString(markdown: "[RACE](https://github.com/libretro/RACE)")
         case .masterSystemGame:
-            return try! AttributedString(markdown: "drhelius's [Gearsystem](https://github.com/drhelius/Gearsystem)")
+            return try! AttributedString(markdown: "[Gearsystem](https://github.com/drhelius/Gearsystem)")
         case .gameGearGame:
-            return try! AttributedString(markdown: "drhelius's [Gearsystem](https://github.com/drhelius/Gearsystem)")
+            return try! AttributedString(markdown: "[Gearsystem](https://github.com/drhelius/Gearsystem)")
         case .genesisGame:
-            return try! AttributedString(markdown: "[Libretro version](https://github.com/libretro/picodrive) of [picodrive](https://github.com/notaz/picodrive)")
+            return try! AttributedString(markdown: "[picodrive](https://github.com/libretro/picodrive)")
         }
     }
     

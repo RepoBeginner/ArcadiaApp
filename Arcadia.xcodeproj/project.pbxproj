@@ -19,6 +19,7 @@
 		9510FE122C594BFE00F01C88 /* SegaGenesisButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE112C594BFE00F01C88 /* SegaGenesisButtonLayout.swift */; };
 		9510FE142C594C7000F01C88 /* ThreeButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE132C594C7000F01C88 /* ThreeButtonsView.swift */; };
 		9510FE162C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE152C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift */; };
+		9510FE182C5FC26D00F01C88 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9510FE172C5FC26D00F01C88 /* Localizable.xcstrings */; };
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
@@ -143,6 +144,7 @@
 		9510FE112C594BFE00F01C88 /* SegaGenesisButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegaGenesisButtonLayout.swift; sourceTree = "<group>"; };
 		9510FE132C594C7000F01C88 /* ThreeButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeButtonsView.swift; sourceTree = "<group>"; };
 		9510FE152C594EA900F01C88 /* SegaGenesisButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegaGenesisButtonLayoutRight.swift; sourceTree = "<group>"; };
+		9510FE172C5FC26D00F01C88 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 		95456BA92BE2ACA900113B8A = {
 			isa = PBXGroup;
 			children = (
+				9510FE172C5FC26D00F01C88 /* Localizable.xcstrings */,
 				95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */,
 				95707CB72C006F4100217B82 /* Assets.xcassets */,
 				956F84092BEBE9740025FC5F /* README.md */,
@@ -620,6 +623,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = 95456BA92BE2ACA900113B8A;
 			productRefGroup = 95456BB32BE2ACA900113B8A /* Products */;
@@ -640,6 +644,7 @@
 			files = (
 				952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */,
 				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
+				9510FE182C5FC26D00F01C88 /* Localizable.xcstrings in Resources */,
 				95707CB82C006F4100217B82 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

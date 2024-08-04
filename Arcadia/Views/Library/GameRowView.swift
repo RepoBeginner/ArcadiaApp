@@ -102,7 +102,7 @@ struct GameRowView: View {
                 Label("Change image", systemImage: "photo.artframe")
             }
         })
-        .alert("Enter your name", isPresented: $showingRenameAlert) {
+        .alert("Enter the new name", isPresented: $showingRenameAlert) {
             TextField("Enter the new game name", text: $newGameName)
             Button("Confirm", action: {
                 fileManager.renameGame(gameURL: gameURL, newName: newGameName, gameType: gameType)

@@ -1,0 +1,1225 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    ".%@" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".%@"
+          }
+        }
+      }
+    },
+    "%@" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
+    },
+    "%lld" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
+    },
+    "• %@: %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "• %1$@: %2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• %1$@: %2$@"
+          }
+        }
+      }
+    },
+    "• Game matching and cover downloading are provided thanks to [OpenVGDB](https://github.com/OpenVGDB/OpenVGDB)" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "• Il matching dei giochi e il download delle copertine sono forniti grazie a [OpenVGDB](https://github.com/OpenVGDB/OpenVGDB)"
+          }
+        }
+      }
+    },
+    "A" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A"
+          }
+        }
+      }
+    },
+    "Arcadia and its emulators allow you to save your progress in two ways:\n\n• Saves: This is the standard way of saving your game progress, similar to the save files in game cartridges. These are generated and updated automatically by the app. Each game can have only one save file. This format is usually portable, and you can find these save files in Arcadia/Saves if you want to switch emulator apps.\n• States: This is a non-standard way of saving your game progress, enabled by the emulation process. It creates a snapshot of the game's exact state when you hit the save button. Each game can have up to three state files. This format is usually not portable as it depends on the emulator, but you can find these state files in Arcadia/States." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcadia e i suoi emulatori ti permettono di salvare i tuoi progressi in due modi:\n\n• Salvataggi: Questo è il modo standard di salvare i progressi di gioco, simile ai file di salvataggio nelle cartucce dei giochi, vengono generati e aggiornati automaticamente dall'app. Ogni gioco può avere un solo file di salvataggio. Questo formato è solitamente compatibile con altre applicazioni simili, li puoi trovare in Arcadia/Saves se desideri cambiare applicazione.\n• Stati: Questo è un modo non standard di salvare i progressi di gioco, abilitato dal processo di emulazione. Consiste nel creare uno snapshot dello stato esatto del gioco quando premi il pulsante di salvataggio. Ogni gioco può avere fino a tre file di stato. Questo formato può non essere compatibile al 100% poiché dipende dall'emulatore, ma li puoi trovare in Arcadia/States."
+          }
+        }
+      }
+    },
+    "Arcadia cannot include games due to legal reasons, but there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.\n" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per questioni legali, non possono includere giochi all'interno di Arcadia. Online si possono però trovare diverse risorse che vi guideranno al dumping delle cartucce in ROMs, a trovare ROMs o a trovare giochi homebrew."
+          }
+        }
+      }
+    },
+    "Arcadia is a frontend for multiple emulators (also called cores), each corresponding to a different game system. Specifically, Arcadia is a frontend for the Libretro API, using the libretro versions of the cores. It aims to provide a simple and accessible way to enjoy retro game systems, not to replace RetroArch. If you are tech-savvy and want more control, consider using the RetroArch app.\n\nIn Arcadia, you'll find only one core per game system, selected by me based on various criteria. Customization of core options is not available (though this may change in future versions).\n" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcadia è un frontend per diversi emulatori (chiamati anche core), ognuno corrispondente a un diverso sistema di gioco. In particolare, Arcadia è un frontend per l'API Libretro, utilizzando le versioni Libretro dei core. Il suo obiettivo è fornire un modo semplice e accessibile per godersi i sistemi di gioco retro, non sostituire RetroArch. Se sei esperto di tecnologia e vuoi avere più controllo, considera l'uso dell'app RetroArch.\n\nIn Arcadia troverai solo un core per ogni sistema di gioco, selezionato da me in base a vari criteri. La personalizzazione delle opzioni del core non è disponibile (anche se questo potrebbe cambiare nelle future versioni)."
+          }
+        }
+      }
+    },
+    "Arcadia is a labor of love, born from my passion for Apple and my desire to learn new things. As such, it is an imperfect product developed in my free time. If you enjoy the app and would like to contribute to its development, here are some ways you can help:\n• Report any bugs you find, including steps to reproduce them.\n• Share any ideas for new features or improvements to enhance the user experience.\n• I am not a designer, so if you'd like to submit a custom app icon, I would love to include it in the app with credits to you.\n• Currently, Arcadia is closed source, but I plan to make it open source once I organize the repository better. When that happens, you'll be able to contribute directly to the code if you wish." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcadia nasce dalla mia passione per i prodotti Apple e dal desiderio di imparare cose nuove. Pertanto, è un prodotto imperfetto sviluppato nel mio tempo libero. Se ti piace l'app e desideri contribuire al suo sviluppo, ecco alcuni modi in cui puoi aiutare:\n• Segnala eventuali bug che trovi, includendo i passaggi per riprodurli.\n• Condividi qualsiasi idea per nuove funzionalità o miglioramenti per migliorare l'esperienza dell'utente.\n• Non sono un designer, quindi se desideri inviare un'icona personalizzata per l'app, mi piacerebbe includerla nell'app con i dovuti crediti.\n• Attualmente, Arcadia è a codice chiuso, ma ho intenzione di renderlo open source una volta organizzato meglio il repository. Quando ciò accadrà, potrai contribuire direttamente al codice, se lo desideri."
+          }
+        }
+      }
+    },
+    "Arcadia is built on numerous cores developed by extraordinary developers who have made it possible to relive classic console experiences on other devices. In Arcadia, you will find the following cores:" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arcadia è costruita su numerosi core sviluppati da straordinari sviluppatori che hanno reso possibile rivivere le esperienze delle console classiche su altri dispositivi. In Arcadia troverai i seguenti core:"
+          }
+        }
+      }
+    },
+    "B" : {
+
+    },
+    "Button Image" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Immagine"
+          }
+        }
+      }
+    },
+    "By default, iCloud synchronization is disabled, but you can enable it in the settings. Once activated, all your local content will be uploaded to iCloud. If the local files have a more recent modification date than those in iCloud, they will overwrite the existing files in the cloud. For example, if you have a recent save file for a game and enable iCloud sync, that save file will be uploaded and replace the existing file in iCloud.\nIf you decide to turn off iCloud synchronization, all files stored in iCloud will be downloaded to your local folder.\nWhen iCloud sync is enabled, the iCloud Drive Arcadia folder is updated through two processes: periodic syncs and specific actions.\nDuring periodic syncs, the iCloud Drive Arcadia folder acts as the master. If the iCloud folder contains a file that the local folder does not, it will be downloaded. Conversely, if the local folder contains a file not present in the iCloud folder, it will be deleted. All files that exist in both locations will be kept in sync, with the most recent versions replacing older ones.\nSpecific actions, such as loading or deleting a game, will update the master reference each time they are performed." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per impostazione predefinita, la sincronizzazione con iCloud è disattivata, ma puoi abilitarla nelle impostazioni. Una volta attivata, tutto il tuo contenuto locale verrà caricato su iCloud. Se i file locali hanno una data di modifica più recente rispetto a quelli presenti su iCloud, sostituiranno i file esistenti nel cloud. Ad esempio, se hai un file di salvataggio recente per un gioco e abiliti la sincronizzazione con iCloud, quel file di salvataggio verrà caricato e sostituirà il file esistente su iCloud."
+          }
+        }
+      }
+    },
+    "C" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annulla"
+          }
+        }
+      }
+    },
+    "Change image" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambia immagine"
+          }
+        }
+      }
+    },
+    "Clear saves and states" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina salvataggi e stati"
+          }
+        }
+      }
+    },
+    "Confirm" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conferma"
+          }
+        }
+      }
+    },
+    "Contribute" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contribuisci"
+          }
+        }
+      }
+    },
+    "Controls" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Controlli"
+          }
+        }
+      }
+    },
+    "Copying data to iCloud folder" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copio i dati nella cartella di iCloud"
+          }
+        }
+      }
+    },
+    "Cores" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cores"
+          }
+        }
+      }
+    },
+    "Credits" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crediti"
+          }
+        }
+      }
+    },
+    "D" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella"
+          }
+        }
+      }
+    },
+    "Dismiss" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nascondi"
+          }
+        }
+      }
+    },
+    "Down arrow" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freccia giù"
+          }
+        }
+      }
+    },
+    "E" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E"
+          }
+        }
+      }
+    },
+    "Enter" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Invio"
+          }
+        }
+      }
+    },
+    "Enter the new game name" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci il nuovo nome del gioco"
+          }
+        }
+      }
+    },
+    "Enter the new name" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci il nuovo nome del gioco."
+          }
+        }
+      }
+    },
+    "Enter the new name for the game." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci il nuovo nome del gioco."
+          }
+        }
+      }
+    },
+    "Export save" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esporta salvataggio"
+          }
+        }
+      }
+    },
+    "F" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "F"
+          }
+        }
+      }
+    },
+    "Force sync" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forza la sincronizzazione"
+          }
+        }
+      }
+    },
+    "G" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "G"
+          }
+        }
+      }
+    },
+    "Game Collection" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collezione"
+          }
+        }
+      }
+    },
+    "Game Consoles" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Consoles"
+          }
+        }
+      }
+    },
+    "Games" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giochi"
+          }
+        }
+      }
+    },
+    "H" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "H"
+          }
+        }
+      }
+    },
+    "Help" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aiuto"
+          }
+        }
+      }
+    },
+    "I" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I"
+          }
+        }
+      }
+    },
+    "I considered whether to create a customized interface for each system, mimicking the original buttons, or to use a standard interface common to all cores. I chose the latter for two reasons:\n\n• Developing a custom interface for each system is time-consuming, as each asset would need to be manually created in Inkscape or SwiftUI.\n• A standardized button appearance makes the app more cohesive and easier to adapt to different systems.\n\nThis choice required some general decisions for button appearance. Below are the mappings for all systems." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ho valutato se creare un'interfaccia personalizzata per ogni sistema, imitando i pulsanti originali, oppure utilizzare un'interfaccia standard comune a tutti i core. Ho scelto la seconda opzione per due motivi:\n\n• Sviluppare un'interfaccia personalizzata per ogni sistema richiede molto tempo, poiché ogni risorsa dovrebbe essere creata manualmente in Inkscape o SwiftUI.\n• Un aspetto standardizzato dei pulsanti rende l'app più coerente e più facile da adattare a diversi sistemi.\n\nQuesta scelta ha richiesto alcune decisioni generali per l'aspetto dei pulsanti. Di seguito sono riportati i mapping per tutti i sistemi."
+          }
+        }
+      }
+    },
+    "I might explore custom interfaces in the future, but not right now.\n\nArcadia supports local multiplayer for games designed for more than two players. In the settings or from the in-game menu (accessible by clicking the Arcadia button), you can see the player mapped for touch input and each game controller, if connected. By default, touch input controls player one, the first controller controls player one, and each additional controller controls the next available player.\n" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Potrei esplorare interfacce personalizzate in futuro, ma non al momento.\n\nArcadia supporta il multiplayer locale per i giochi progettati per più di due giocatori. Nelle impostazioni o dal menu di gioco (accessibile cliccando sul pulsante Arcadia), puoi vedere i giocatori associati al controllo touch e a ciascun controller di gioco, se collegato. Per impostazione predefinita, i controlli touch gestiscono il giocatore uno, il primo controller gestisce il giocatore uno e ogni controller aggiuntivo gestisce il giocatore successivo disponibile."
+          }
+        }
+      }
+    },
+    "In this section, you'll find various tips to help you navigate the interface and make the most of the app.\n" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In questa sezione troverai vari suggerimenti per aiutarti a navigare nell'interfaccia e sfruttare al meglio l'app."
+          }
+        }
+      }
+    },
+    "Input" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Input"
+          }
+        }
+      }
+    },
+    "Input settings" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni di input"
+          }
+        }
+      }
+    },
+    "Introduction" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Introduzione"
+          }
+        }
+      }
+    },
+    "J" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J"
+          }
+        }
+      }
+    },
+    "K" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K"
+          }
+        }
+      }
+    },
+    "Keyboard mapping" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappatura tastiera"
+          }
+        }
+      }
+    },
+    "L" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L"
+          }
+        }
+      }
+    },
+    "Left Alt" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alt Sinistro"
+          }
+        }
+      }
+    },
+    "Left arrow" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freccia Sinistra"
+          }
+        }
+      }
+    },
+    "Left Ctrl" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ctrl Sinistro"
+          }
+        }
+      }
+    },
+    "Left Shift" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shift Sinistro"
+          }
+        }
+      }
+    },
+    "Load State" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carica Stato"
+          }
+        }
+      }
+    },
+    "M" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "M"
+          }
+        }
+      }
+    },
+    "Mapping" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mappatura"
+          }
+        }
+      }
+    },
+    "N" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome"
+          }
+        }
+      }
+    },
+    "No controller connected" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessun controller collegato"
+          }
+        }
+      }
+    },
+    "No Image" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna immagine"
+          }
+        }
+      }
+    },
+    "No keyboard connected" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna tastiera connessa"
+          }
+        }
+      }
+    },
+    "No recommendation found. Keep in mind that for recommendations to be found your games have to match the internal database, this won't work with homebrew games unfortunately." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna raccomandazione trovata. Tieni presente che affinché vengano trovate raccomandazioni, almeno uno dei tuoi giochi deve corrispondere al database interno; purtroppo, questo non funzionerà con i giochi homebrew."
+          }
+        }
+      }
+    },
+    "Numpad 0" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 0"
+          }
+        }
+      }
+    },
+    "Numpad 1" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 1"
+          }
+        }
+      }
+    },
+    "Numpad 2" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 2"
+          }
+        }
+      }
+    },
+    "Numpad 3" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 3"
+          }
+        }
+      }
+    },
+    "Numpad 4" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 4"
+          }
+        }
+      }
+    },
+    "Numpad 5" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 5"
+          }
+        }
+      }
+    },
+    "Numpad 6" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 6"
+          }
+        }
+      }
+    },
+    "Numpad 7" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 7"
+          }
+        }
+      }
+    },
+    "Numpad 8" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 8"
+          }
+        }
+      }
+    },
+    "Numpad 9" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tastierino 9"
+          }
+        }
+      }
+    },
+    "O" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O"
+          }
+        }
+      }
+    },
+    "Open storage directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella di archiviazione"
+          }
+        }
+      }
+    },
+    "Organization" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organizzazione"
+          }
+        }
+      }
+    },
+    "Other" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Altro"
+          }
+        }
+      }
+    },
+    "Overlay" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Overlay"
+          }
+        }
+      }
+    },
+    "P" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "P"
+          }
+        }
+      }
+    },
+    "Player 1" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giocatore 1"
+          }
+        }
+      }
+    },
+    "Player 2" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giocatore 2"
+          }
+        }
+      }
+    },
+    "Player 3" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giocatore 3"
+          }
+        }
+      }
+    },
+    "Player 4" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giocatore 4"
+          }
+        }
+      }
+    },
+    "Player selection" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selezione giocatore"
+          }
+        }
+      }
+    },
+    "Playing with Arcadia" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Playing with Arcadia"
+          }
+        }
+      }
+    },
+    "Q" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Q"
+          }
+        }
+      }
+    },
+    "R" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "R"
+          }
+        }
+      }
+    },
+    "Recommendation" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggerimenti"
+          }
+        }
+      }
+    },
+    "Rename" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rinomina"
+          }
+        }
+      }
+    },
+    "Right Alt" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alt Destro"
+          }
+        }
+      }
+    },
+    "Right arrow" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freccia Destra"
+          }
+        }
+      }
+    },
+    "Right Shift" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shift Destro"
+          }
+        }
+      }
+    },
+    "S" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S"
+          }
+        }
+      }
+    },
+    "Save screenshot" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva screenshot"
+          }
+        }
+      }
+    },
+    "Save State" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva stato"
+          }
+        }
+      }
+    },
+    "Save states" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salva stati"
+          }
+        }
+      }
+    },
+    "Saves and States" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvataggi e Stati"
+          }
+        }
+      }
+    },
+    "Select a game console using the sidebar" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona una console usando la barra laterale"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impostazioni"
+          }
+        }
+      }
+    },
+    "Share on social media" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi sui social media"
+          }
+        }
+      }
+    },
+    "Storage" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archiviazione"
+          }
+        }
+      }
+    },
+    "Sync data to iCloud" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizza con iCloud"
+          }
+        }
+      }
+    },
+    "Synchronization" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sincronizzazione"
+          }
+        }
+      }
+    },
+    "T" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "T"
+          }
+        }
+      }
+    },
+    "The first time Arcadia starts, it will create a folder to store all documents. On a Mac, you can find this inside the Documents folder, and on an iPhone, in the Files app.\n\nInside, you'll find a Games folder, a Saves folder, and a States folder. The app's game library will display all files in the Games folder with their respective names. Each game has one save and one state, and all files should share the same name. If you rename the games through the app, everything will be managed for you. If you rename them manually, ensure you also rename the saves and states.\n" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La prima volta che Arcadia viene avviata, creerà una cartella per memorizzare tutti i documenti. Su un Mac, puoi trovarla all'interno della cartella Documenti, e su un iPhone, nell'app File.\n\nAll'interno, troverai una cartella Giochi, una cartella Salvataggi e una cartella Stati. La libreria di giochi dell'app mostrerà tutti i file nella cartella Giochi con i rispettivi nomi. Ogni gioco ha un salvataggio e uno stato, e tutti i file devono avere lo stesso nome. Se rinomini i giochi tramite l'app, tutto sarà gestito automaticamente. Se li rinomini manualmente, assicurati di rinominare anche i salvataggi e gli stati."
+          }
+        }
+      }
+    },
+    "There was an issue in loading the screenshot feature" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C'è stato un problema nel caricare lo screenshot."
+          }
+        }
+      }
+    },
+    "This application is merely a frontend to the Libretro API, and it wouldn't be possible without the incredible work done by the [Libretro Team](https://www.libretro.com). Special thanks also go to [Retroreversing](https://www.retroreversing.com) for their invaluable resources, which have made the entire process much easier." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa applicazione è semplicemente un frontend per l'API Libretro, e non sarebbe possibile senza il lavoro straordinario svolto dal [Libretro Team](https://www.libretro.com). Un ringraziamento speciale va anche a [Retroreversing](https://www.retroreversing.com) per le loro risorse preziose, che hanno reso l'intero processo molto più semplice."
+          }
+        }
+      }
+    },
+    "Touch input" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch Input"
+          }
+        }
+      }
+    },
+    "U" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "U"
+          }
+        }
+      }
+    },
+    "Up arrow" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freccia Su"
+          }
+        }
+      }
+    },
+    "V" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "V"
+          }
+        }
+      }
+    },
+    "W" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W"
+          }
+        }
+      }
+    },
+    "Where to Find Games?" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dove trovare i giochi?"
+          }
+        }
+      }
+    },
+    "With this console you can open games in the following formats:" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Con questa console puoi aprire file di gioco nei seguenti formati:"
+          }
+        }
+      }
+    },
+    "X" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X"
+          }
+        }
+      }
+    },
+    "Y" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Y"
+          }
+        }
+      }
+    },
+    "Your game collection is empty, add new games using the plus button at the top" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tua collezione è vuota, aggiungi nuovi giochi usando il bottone + in alto."
+          }
+        }
+      }
+    },
+    "Z" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
