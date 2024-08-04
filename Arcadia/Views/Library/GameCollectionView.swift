@@ -45,6 +45,7 @@ struct GameCollectionView: View {
                         NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                         ) {
                             GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
+                                .accessibilityHint("Play this game")
 
                         }
                     }
@@ -64,9 +65,12 @@ struct GameCollectionView: View {
                     Button(action: { showingRecommendationView.toggle() }, label: {
                         Image(systemName: "lightbulb")
                     })
+                    .accessibilityLabel("Recommendation")
+                    .accessibilityHint("Get new games reccomendation")
                     Button(action: { showingAddGameView.toggle() }, label: {
                         Image(systemName: "plus")
                     })
+                    .accessibilityLabel("Add new game")
                 }
                 .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: gameType.allowedExtensions, allowsMultipleSelection: true, onCompletion: { result in
                     DispatchQueue.global(qos: .userInteractive).async {

@@ -19,6 +19,7 @@ struct GameLibraryView: View {
                 NavigationLink(value: gameType) {
                     GameSystemRowView(gameSystem: gameType)
                         .focusable()
+                        .accessibilityHint("Open this console's collection")
                 }
             }
             .navigationTitle("Game Consoles")

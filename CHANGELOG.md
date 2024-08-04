@@ -3,6 +3,12 @@
 ## Cores
 - Sega Genesis
 
+## Localization
+- Added Italian localization
+
+## Accessibility
+- Improved accessibility
+
 # 1.1
 
 ## Cores

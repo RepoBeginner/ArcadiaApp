@@ -46,6 +46,7 @@ struct CircleButtonView: View {
                 .foregroundStyle(color)
             #endif
         }
+        .accessibilityLabel(arcadiaCoreButton.buttonName)
         #if os(iOS)
         //TODO: Understand why this does not work on macOS
         .simultaneousGesture(

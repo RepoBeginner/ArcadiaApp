@@ -77,6 +77,26 @@
         }
       }
     },
+    "Add new game" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi un nuovo gioco"
+          }
+        }
+      }
+    },
+    "App Icon" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icona dell'app"
+          }
+        }
+      }
+    },
     "Arcadia and its emulators allow you to save your progress in two ways:\n\n• Saves: This is the standard way of saving your game progress, similar to the save files in game cartridges. These are generated and updated automatically by the app. Each game can have only one save file. This format is usually portable, and you can find these save files in Arcadia/Saves if you want to switch emulator apps.\n• States: This is a non-standard way of saving your game progress, enabled by the emulation process. It creates a snapshot of the game's exact state when you hit the save button. Each game can have up to three state files. This format is usually not portable as it depends on the emulator, but you can find these state files in Arcadia/States." : {
       "localizations" : {
         "it" : {
@@ -128,7 +148,14 @@
       }
     },
     "B" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "B"
+          }
+        }
+      }
     },
     "Button Image" : {
       "localizations" : {
@@ -400,6 +427,16 @@
         }
       }
     },
+    "Game Systems" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sistemi di gioco"
+          }
+        }
+      }
+    },
     "Games" : {
       "localizations" : {
         "it" : {
@@ -410,12 +447,32 @@
         }
       }
     },
+    "Get new games reccomendation" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ricevi raccomandazioni per nuovi giochi"
+          }
+        }
+      }
+    },
     "H" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "H"
+          }
+        }
+      }
+    },
+    "Haptic Feedback" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Feedback Aptico"
           }
         }
       }
@@ -790,6 +847,16 @@
         }
       }
     },
+    "Open this console's collection" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la collezione di questa console"
+          }
+        }
+      }
+    },
     "Organization" : {
       "localizations" : {
         "it" : {
@@ -826,6 +893,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "P"
+          }
+        }
+      }
+    },
+    "Play this game" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioca a questo gioco"
           }
         }
       }
