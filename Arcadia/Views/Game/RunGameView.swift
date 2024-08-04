@@ -32,6 +32,7 @@ struct RunGameView: View {
     @Environment(InputController.self) var inputController: InputController
     
     @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
+    @AppStorage("hideButtons") private var hideButtons = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -49,21 +50,32 @@ struct RunGameView: View {
                     CurrentBufferMetalView()
                         .scaledToFit()
                     Spacer()
-                    gameType.portraitButtonLayout
+                    if !hideButtons {
+                        gameType.portraitButtonLayout
+                    } else {
+                        ArcadiaButtonLayout()
+                    }
 
                 }
             }
             else if horizontalSizeClass == .regular && verticalSizeClass == .compact {
                 //iPhone landscape
                 HStack {
-                    gameType.landscapeButtonLayoutLeft
+                    if !hideButtons {
+                        gameType.landscapeButtonLayoutLeft
+                    } else {
+                        ArcadiaButtonLayout()
+                    }
                     Spacer()
                     CurrentBufferMetalView()
                         .scaledToFit()
                         .layoutPriority(1)
                     Spacer()
-                    gameType.landscapeButtonLayoutRight
-
+                    if !hideButtons {
+                        gameType.landscapeButtonLayoutRight
+                    } else {
+                        
+                    }
                 }
             }
             else {
@@ -74,7 +86,11 @@ struct RunGameView: View {
                     //Spacer()
                     VStack {
                         Spacer()
-                        gameType.portraitButtonLayout
+                        if !hideButtons {
+                            gameType.portraitButtonLayout
+                        } else {
+                            ArcadiaButtonLayout()
+                        }
                             
                     }
 

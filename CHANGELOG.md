@@ -3,6 +3,9 @@
 ## Cores
 - Sega Genesis
 
+## Features
+- Added the possibility to hide buttons
+
 ## Localization
 - Added Italian localization
 

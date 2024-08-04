@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerSelectionView: View {
     @Environment(InputController.self) var inputController: InputController
+    @AppStorage("hideButtons") private var hideButtons = false
     
     var body: some View {
         @Bindable var inputController = inputController
@@ -36,6 +37,12 @@ struct PlayerSelectionView: View {
                 Text("No controller connected")
             }
 
+        }
+        
+        Section(header: Text("Hide buttons")) {
+            Toggle(isOn: $hideButtons) {
+                Text("Hide buttons")
+            }
         }
     }
 }
