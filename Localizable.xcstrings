@@ -388,6 +388,7 @@
       }
     },
     "Export save" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {

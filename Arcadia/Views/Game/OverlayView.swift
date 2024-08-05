@@ -67,7 +67,7 @@ struct OverlayView: View {
                                 Label("Share on social media", systemImage: "square.and.arrow.up")
                             }
                         }
-                        if let cgImage = emulationState.lastImage {
+                        if let cgImage = emulationState.currentFrame {
                             let uiImage = UIImage(cgImage: cgImage)
                             let image = Image(uiImage: uiImage)
                             ShareLink(item: image, preview: SharePreview("", image: image)) {
@@ -81,7 +81,7 @@ struct OverlayView: View {
                                 Label("Share on social media", systemImage: "square.and.arrow.up")
                             }
                         }
-                        if let cgImage = emulationState.lastImage {
+                        if let cgImage = emulationState.currentFrame {
                             let nsImage = NSImage(cgImage: cgImage, size: NSSize(width: cgImage.width, height: cgImage.height))
                             let image = Image(nsImage: nsImage)
                             ShareLink(item: image, preview: SharePreview("", image: image)) {

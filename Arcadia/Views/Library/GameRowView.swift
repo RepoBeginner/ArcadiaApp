@@ -62,7 +62,7 @@ struct GameRowView: View {
             }
              */
         }
-        .swipeActions(allowsFullSwipe: false) {
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
             Button(role: .destructive) {
                 fileManager.deleteGame(gameURL: gameURL, gameType: gameType)
             } label: {
@@ -73,10 +73,17 @@ struct GameRowView: View {
             } label: {
                 Label("Rename", systemImage: "square.and.pencil")
             }
-            Button {
-                showingSaveExporter.toggle()
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+            Button(role: .destructive) {
+                fileManager.clearSavesAndStates(gameURL: gameURL, gameType: gameType)
             } label: {
-                Label("Export save", systemImage: "square.and.arrow.up")
+                Label("Clear saves and states", systemImage: "clear")
+            }
+            Button {
+                showingChangeImage.toggle()
+            } label: {
+                Label("Change image", systemImage: "photo.artframe")
             }
         }
         .contextMenu(menuItems: {

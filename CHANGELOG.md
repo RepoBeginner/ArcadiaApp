@@ -7,11 +7,18 @@
 - Added the possibility to hide buttons
 - Added an Advanced DPad option with diagonal movements
 
+## Improvements
+- Updated button spacing
+
 ## Localization
 - Added Italian localization
 
 ## Accessibility
 - Improved accessibility
+
+## Bug fixes
+- Fixed screenshot feature not working on some cores
+- Removed the export save button from swiping on the game list. The button was not triggering anything, the function will come but as of right now you can find all the save files in the storage folder (you can access it from the Files app or from Arcadia's storage settings)
 
 # 1.1
 
