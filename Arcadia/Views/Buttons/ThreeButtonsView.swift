@@ -10,9 +10,9 @@ import ArcadiaCore
 
 struct ThreeButtonsView: View {
     var body: some View {
-        VStack(spacing: -5) {
+        VStack(spacing: 5) {
 
-            HStack(spacing: -0) {
+            HStack {
                 Spacer()
                     .frame(width: 50, height: 50)
 
@@ -21,7 +21,7 @@ struct ThreeButtonsView: View {
                 CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
 
             }
-                    HStack(spacing: -0) {
+                    HStack {
                         Spacer()
                             .frame(width: 50, height: 50)
 

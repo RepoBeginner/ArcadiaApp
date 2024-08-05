@@ -10,6 +10,7 @@ import SwiftUI
 struct PlayerSelectionView: View {
     @Environment(InputController.self) var inputController: InputController
     @AppStorage("hideButtons") private var hideButtons = false
+    @AppStorage("useAdvancedDPad") private var useAdvancedDPad = false
     
     var body: some View {
         @Bindable var inputController = inputController
@@ -39,9 +40,12 @@ struct PlayerSelectionView: View {
 
         }
         
-        Section(header: Text("Hide buttons")) {
+        Section(header: Text("Buttons")) {
             Toggle(isOn: $hideButtons) {
                 Text("Hide buttons")
+            }
+            Toggle(isOn: $useAdvancedDPad) {
+                Text("Advanced DPad")
             }
         }
     }

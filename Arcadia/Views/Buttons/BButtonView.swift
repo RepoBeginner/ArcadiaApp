@@ -11,11 +11,11 @@ import ArcadiaCore
 
 struct BButtonView: View {
     var body: some View {
-        VStack(spacing: -5) {
+        VStack(spacing: 5) {
 
             Spacer()
                 .frame(width: 50, height: 50)
-                    HStack(spacing: -0) {
+                    HStack {
                         Spacer()
                             .frame(width: 50, height: 50)
 
@@ -34,4 +34,5 @@ struct BButtonView: View {
 #Preview {
     BButtonView()
         .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
 }

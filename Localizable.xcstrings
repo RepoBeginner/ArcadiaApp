@@ -87,6 +87,16 @@
         }
       }
     },
+    "Advanced DPad" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DPad Avanzato"
+          }
+        }
+      }
+    },
     "App Icon" : {
       "localizations" : {
         "it" : {
@@ -163,6 +173,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Immagine"
+          }
+        }
+      }
+    },
+    "Buttons" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottoni"
           }
         }
       }
@@ -488,7 +508,14 @@
       }
     },
     "Hide buttons" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nascondi bottoni"
+          }
+        }
+      }
     },
     "I" : {
       "localizations" : {

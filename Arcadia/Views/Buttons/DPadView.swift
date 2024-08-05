@@ -10,21 +10,44 @@ import ArcadiaCore
 
 struct DPadView: View {
     
+    @AppStorage("useAdvancedDPad") private var useAdvancedDPad = false
+    
     var body: some View {
-        VStack(spacing: -5) {
-                    //DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
-            CircleButtonView(arcadiaCoreButton: .joypadUp, size:50)
-                    HStack(spacing: -0) {
-                        CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
-                        //DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
-                        Spacer()
-                            .frame(width: 50, height: 50)
-                        CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
-                        //DPadButtonView(arcadiaCoreButton: .joypadRight, rotationAngle: 90)
-                    }
-                    //DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
-            CircleButtonView(arcadiaCoreButton: .joypadDown, size:50)
+        if useAdvancedDPad {
+            VStack(spacing: 5) {
+            
+                HStack {
+                    CircleButtonView(arcadiaCoreButton: .joypadUpLeft, size:50)
+                    CircleButtonView(arcadiaCoreButton: .joypadUp, size:50)
+                    CircleButtonView(arcadiaCoreButton: .joypadUpRight, size:50)
                 }
+                        HStack {
+                            CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
+                            Spacer()
+                                .frame(width: 65, height: 50)
+                            CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
+                            
+                        }
+                HStack {
+                    CircleButtonView(arcadiaCoreButton: .joypadDownLeft, size:50)
+                    CircleButtonView(arcadiaCoreButton: .joypadDown, size:50)
+                    CircleButtonView(arcadiaCoreButton: .joypadDownRight, size:50)
+                }
+                    }
+        } else {
+            VStack(spacing: 5) {
+            
+                CircleButtonView(arcadiaCoreButton: .joypadUp, size:50)
+                        HStack {
+                            CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
+                            Spacer()
+                                .frame(width: 65, height: 50)
+                            CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
+                            
+                        }
+                CircleButtonView(arcadiaCoreButton: .joypadDown, size:50)
+                    }
+        }
  
     }
 }
@@ -32,5 +55,6 @@ struct DPadView: View {
 #Preview {
     DPadView()
         .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
 }
 

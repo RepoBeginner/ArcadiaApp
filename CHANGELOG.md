@@ -5,6 +5,7 @@
 
 ## Features
 - Added the possibility to hide buttons
+- Added an Advanced DPad option with diagonal movements
 
 ## Localization
 - Added Italian localization

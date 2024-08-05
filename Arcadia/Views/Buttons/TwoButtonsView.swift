@@ -10,7 +10,7 @@ import ArcadiaCore
 
 struct TwoButtonsView: View {
     var body: some View {
-        VStack(spacing: -5) {
+        VStack(spacing: 5) {
 
             Spacer()
                 .frame(width: 50, height: 50)
@@ -31,5 +31,6 @@ struct TwoButtonsView: View {
 #Preview {
     TwoButtonsView()
         .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
     
 }

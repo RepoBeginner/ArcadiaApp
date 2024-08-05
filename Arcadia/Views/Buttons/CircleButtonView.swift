@@ -32,7 +32,7 @@ struct CircleButtonView: View {
             #elseif os(macOS)
             //Second action that gets called
             if arcadiaCoreButton != .arcadiaButton {
-                emulationState.unpressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                emulationState.unpressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton)
             } else {
                 emulationState.pauseEmulation()
                 emulationState.showOverlay.toggle()
@@ -53,14 +53,14 @@ struct CircleButtonView: View {
             DragGesture(minimumDistance: 0)
                 .onChanged({ _ in
                     if arcadiaCoreButton != .arcadiaButton {
-                        emulationState.pressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                        emulationState.pressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton)
                     } else {
                         
                     }
                 })
                 .onEnded({ _ in
                     if arcadiaCoreButton != .arcadiaButton {
-                        emulationState.unpressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                        emulationState.unpressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton)
                     } else {
                         emulationState.pauseEmulation()
                         emulationState.showOverlay.toggle()
@@ -71,7 +71,7 @@ struct CircleButtonView: View {
         .buttonStyle(ButtonPressHandler(color: color) {
             //First action that gets called
             if arcadiaCoreButton != .arcadiaButton {
-                emulationState.pressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton.rawValue)
+                emulationState.pressButton(port: inputController.mainInputPortID, device: 1, index: 0, button: arcadiaCoreButton)
             } else {
                 
             }
@@ -112,5 +112,6 @@ struct ButtonPressHandler: ButtonStyle {
 #Preview {
     CircleButtonView(arcadiaCoreButton: .joypadA, size: 50)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
 }
 

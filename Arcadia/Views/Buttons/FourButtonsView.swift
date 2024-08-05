@@ -10,18 +10,15 @@ import ArcadiaCore
 
 struct FourButtonsView: View {
     var body: some View {
-        VStack(spacing: -5) {
-                    //DPadButtonView(arcadiaCoreButton: .joypadUp, rotationAngle: 0)
+        VStack(spacing: 5) {
+
             CircleButtonView(arcadiaCoreButton: .joypadX, size:50)
-                    HStack(spacing: -0) {
+                    HStack {
                         CircleButtonView(arcadiaCoreButton: .joypadY, size:50)
-                        //DPadButtonView(arcadiaCoreButton: .joypadLeft, rotationAngle: 270)
                         Spacer()
                             .frame(width: 50, height: 50)
                         CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
-                        //DPadButtonView(arcadiaCoreButton: .joypadRight, rotationAngle: 90)
                     }
-                    //DPadButtonView(arcadiaCoreButton: .joypadDown, rotationAngle: 180)
             CircleButtonView(arcadiaCoreButton: .joypadB, size:50)
                 }
     }
@@ -29,4 +26,6 @@ struct FourButtonsView: View {
 
 #Preview {
     FourButtonsView()
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
+        .environment(InputController.shared)
 }
