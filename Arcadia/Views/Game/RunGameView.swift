@@ -51,9 +51,10 @@ struct RunGameView: View {
                         .scaledToFit()
                     Spacer()
                     if !hideButtons {
-                        gameType.portraitButtonLayout
+                        ArcadiaButtonLayout(layoutElements: gameType.buttonLayoutElements)
+                        
                     } else {
-                        ArcadiaButtonLayout()
+                        ArcadiaButtonOnlyLayout()
                     }
 
                 }
@@ -62,9 +63,9 @@ struct RunGameView: View {
                 //iPhone landscape
                 HStack {
                     if !hideButtons {
-                        gameType.landscapeButtonLayoutLeft
+                        ArcadiaButtonLayoutLeft(layoutElements: gameType.buttonLayoutElements)
                     } else {
-                        ArcadiaButtonLayout()
+                        ArcadiaButtonOnlyLayout()
                     }
                     Spacer()
                     CurrentBufferMetalView()
@@ -72,7 +73,7 @@ struct RunGameView: View {
                         .layoutPriority(1)
                     Spacer()
                     if !hideButtons {
-                        gameType.landscapeButtonLayoutRight
+                        ArcadiaButtonLayoutRight(layoutElements: gameType.buttonLayoutElements)
                     } else {
                         
                     }
@@ -87,9 +88,9 @@ struct RunGameView: View {
                     VStack {
                         Spacer()
                         if !hideButtons {
-                            gameType.portraitButtonLayout
+                            ArcadiaButtonLayout(layoutElements: gameType.buttonLayoutElements)
                         } else {
-                            ArcadiaButtonLayout()
+                            ArcadiaButtonOnlyLayout()
                         }
                             
                     }

@@ -15,7 +15,7 @@ struct Atari2600ButtonLayoutRight: View {
             .padding()
 
             HStack {
-                BButtonView()
+                ActionButtonsView(numberOfButtons: 1)
             }
             .padding()
         }

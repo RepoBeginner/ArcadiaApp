@@ -31,7 +31,7 @@ struct SNESButtonLayout: View {
                 CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
             }
             Spacer()
-            FourButtonsView()
+            ActionButtonsView(numberOfButtons: 4)
         }
         .padding()
     }

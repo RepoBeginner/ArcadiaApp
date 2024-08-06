@@ -16,7 +16,7 @@ struct FourButtonsView: View {
                     HStack {
                         CircleButtonView(arcadiaCoreButton: .joypadY, size:50)
                         Spacer()
-                            .frame(width: 50, height: 50)
+                            .frame(width: 65, height: 50)
                         CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
                     }
             CircleButtonView(arcadiaCoreButton: .joypadB, size:50)

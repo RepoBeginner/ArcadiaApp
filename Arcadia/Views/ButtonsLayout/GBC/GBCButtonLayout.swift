@@ -25,7 +25,7 @@ struct GBCButtonLayout: View {
                 CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
             }
             Spacer()
-            TwoButtonsView()
+            ActionButtonsView(numberOfButtons: 2)
         }
         .padding()
 

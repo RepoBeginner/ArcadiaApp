@@ -18,7 +18,7 @@ struct Atari2600ButtonLayout: View {
                 CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
             }
             Spacer()
-            BButtonView()
+            ActionButtonsView(numberOfButtons: 1)
         }
         .padding()
 

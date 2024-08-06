@@ -20,6 +20,10 @@
 - Fixed screenshot feature not working on some cores
 - Removed the export save button from swiping on the game list. The button was not triggering anything, the function will come but as of right now you can find all the save files in the storage folder (you can access it from the Files app or from Arcadia's storage settings)
 
+## Internals
+- Code refactoring to help in interface modifications
+- Minor adjustments in SNES core compilation
+
 # 1.1
 
 ## Cores

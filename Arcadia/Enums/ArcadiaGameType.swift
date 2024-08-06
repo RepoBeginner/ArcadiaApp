@@ -235,6 +235,31 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         }
     }
     
+    var buttonLayoutElements: [ArcadiaButtonLayoutElements] {
+        switch self {
+        case .gameBoyAdvanceGame:
+            return [.dPad, .twoActionButtons, .start, .select, .backButtonsFirstRow]
+        case .gameBoyGame:
+            return [.dPad, .twoActionButtons, .start, .select]
+        case .nesGame:
+            return [.dPad, .twoActionButtons, .start, .select]
+        case .snesGame:
+            return [.dPad, .fourActionButtons, .start, .select, .backButtonsFirstRow]
+        case .atari2600Game:
+            return [.dPad, .oneActionButton]
+        case .atari7800Game:
+            return [.dPad, .twoActionButtons]
+        case .neoGeoPocketGame:
+            return [.dPad, .twoActionButtons, .start]
+        case .masterSystemGame:
+            return [.dPad, .twoActionButtons]
+        case .gameGearGame:
+            return [.dPad, .twoActionButtons, .start]
+        case .genesisGame:
+            return [.dPad, .threeActionButtons, .start]
+        }
+    }
+    
     @ViewBuilder var portraitButtonLayout: some View {
         switch self {
         case .gameBoyAdvanceGame:

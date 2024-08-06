@@ -20,7 +20,7 @@ struct GBAButtonLayoutRight: View {
             .padding()
 
             HStack {
-                TwoButtonsView()
+                ActionButtonsView(numberOfButtons: 2)
             }
             .padding()
         }

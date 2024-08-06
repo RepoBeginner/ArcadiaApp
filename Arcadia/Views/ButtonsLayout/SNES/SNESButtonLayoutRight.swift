@@ -20,7 +20,7 @@ struct SNESButtonLayoutRight: View {
             .padding()
 
             HStack {
-                FourButtonsView()
+                ActionButtonsView(numberOfButtons: 4)
             }
             .padding()
         }

@@ -24,7 +24,7 @@ struct SegaGenesisButtonLayout: View {
                 CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
             }
             Spacer()
-            ThreeButtonsView()
+            ActionButtonsView(numberOfButtons: 3)
         }
         .padding()
 

@@ -20,7 +20,7 @@ struct SegaGenesisButtonLayoutRight: View {
             .padding()
 
             HStack {
-                ThreeButtonsView()
+                ActionButtonsView(numberOfButtons: 3)
             }
             .padding()
         }

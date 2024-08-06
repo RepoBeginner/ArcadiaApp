@@ -10,7 +10,7 @@ import ArcadiaCore
 
 struct DPadView: View {
     
-    @AppStorage("useAdvancedDPad") private var useAdvancedDPad = false
+    @AppStorage("useAdvancedDPad") private var useAdvancedDPad = true
     
     var body: some View {
         if useAdvancedDPad {
@@ -23,8 +23,10 @@ struct DPadView: View {
                 }
                         HStack {
                             CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
-                            Spacer()
-                                .frame(width: 65, height: 50)
+                            Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .opacity(0)
                             CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
                             
                         }
@@ -40,8 +42,10 @@ struct DPadView: View {
                 CircleButtonView(arcadiaCoreButton: .joypadUp, size:50)
                         HStack {
                             CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
-                            Spacer()
-                                .frame(width: 65, height: 50)
+                            Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .opacity(0)
                             CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
                             
                         }
@@ -53,8 +57,13 @@ struct DPadView: View {
 }
 
 #Preview {
-    DPadView()
-        .environment(ArcadiaCoreEmulationState.sharedInstance)
-        .environment(InputController.shared)
+    HStack {
+        Spacer()
+        DPadView()
+            .environment(ArcadiaCoreEmulationState.sharedInstance)
+            .environment(InputController.shared)
+        Spacer()
+    }
+    .frame(width: 50, height: 300)
 }
 

@@ -1,32 +1,31 @@
 //
-//  Atari7800ButtonLayout.swift
+//  ArcadiaButtonLayout.swift
 //  Arcadia
 //
-//  Created by Davide Andreoli on 18/07/24.
+//  Created by Davide Andreoli on 04/08/24.
 //
 
 import SwiftUI
 import ArcadiaCore
 
-struct Atari7800ButtonLayout: View {
+struct ArcadiaButtonOnlyLayout: View {
+    
     var body: some View {
         HStack {
-            DPadView()
             VStack {
                 Spacer()
-                    .frame(maxHeight: 100)
                 CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35)
             }
+            .padding()
             Spacer()
-            ActionButtonsView(numberOfButtons: 2)
         }
-        .padding()
 
-    }
+            
+        }
 }
 
 #Preview {
-    Atari7800ButtonLayout()
+    ArcadiaButtonOnlyLayout()
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
 }
