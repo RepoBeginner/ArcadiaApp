@@ -25,6 +25,7 @@
 		9510FE202C61FE5300F01C88 /* ArcadiaButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE1F2C61FE5300F01C88 /* ArcadiaButtonLayout.swift */; };
 		9510FE222C62089D00F01C88 /* ArcadiaButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE212C62089D00F01C88 /* ArcadiaButtonLayoutLeft.swift */; };
 		9510FE242C6208AD00F01C88 /* ArcadiaButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE232C6208AD00F01C88 /* ArcadiaButtonLayoutRight.swift */; };
+		9510FE272C62480300F01C88 /* EmptyButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510FE262C62480300F01C88 /* EmptyButtonView.swift */; };
 		9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */; };
 		9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9528F7862BF4E52400E2CEC6 /* InputController.swift */; };
 		952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */; };
@@ -155,6 +156,7 @@
 		9510FE1F2C61FE5300F01C88 /* ArcadiaButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaButtonLayout.swift; sourceTree = "<group>"; };
 		9510FE212C62089D00F01C88 /* ArcadiaButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaButtonLayoutLeft.swift; sourceTree = "<group>"; };
 		9510FE232C6208AD00F01C88 /* ArcadiaButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaButtonLayoutRight.swift; sourceTree = "<group>"; };
+		9510FE262C62480300F01C88 /* EmptyButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyButtonView.swift; sourceTree = "<group>"; };
 		9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalRenderer.swift; sourceTree = "<group>"; };
 		9528F7862BF4E52400E2CEC6 /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
 		952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = openvgdb.sqlite; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				95CC86CD2C47B54E009FB8DD /* BButtonView.swift */,
 				9510FE132C594C7000F01C88 /* ThreeButtonsView.swift */,
 				9510FE1D2C61FC1100F01C88 /* ActionButtonsView.swift */,
+				9510FE262C62480300F01C88 /* EmptyButtonView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				95CC86D42C47E76E009FB8DD /* EmptyCollectionView.swift in Sources */,
 				9510FE202C61FE5300F01C88 /* ArcadiaButtonLayout.swift in Sources */,
 				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,
+				9510FE272C62480300F01C88 /* EmptyButtonView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,
 				9528F7802BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift in Sources */,
 				9510FE242C6208AD00F01C88 /* ArcadiaButtonLayoutRight.swift in Sources */,

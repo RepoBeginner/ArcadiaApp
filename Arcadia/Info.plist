@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Arcadia Game File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Owner</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.davideandreoli.Arcadia.gameFile</string>
+			</array>
+		</dict>
+	</array>
 	<key>GCSupportedGameControllers</key>
 	<array>
 		<dict>
@@ -33,19 +48,38 @@
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.data</string>
-				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>GBA Game</string>
+			<string>Arcadia Game File</string>
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.gbagame</string>
+			<string>com.davideandreoli.Arcadia.gameFile</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
+					<string>gb</string>
+					<string>gbc</string>
+					<string>sgb</string>
+					<string>cgb</string>
 					<string>gba</string>
+					<string>nes</string>
+					<string>smc</string>
+					<string>sfc</string>
+					<string>a26</string>
+					<string>a78</string>
+					<string>ngp</string>
+					<string>ngc</string>
+					<string>sms</string>
+					<string>sg</string>
+					<string>gg</string>
+					<string>gen</string>
+					<string>md</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>com.davideandreoli.Arcadia.gameFile</string>
 				</array>
 			</dict>
 		</dict>

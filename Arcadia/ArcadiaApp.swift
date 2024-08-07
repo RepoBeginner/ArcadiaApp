@@ -26,9 +26,13 @@ struct ArcadiaApp: App {
     }()
 */
     var body: some Scene {
+        @Bindable var fileManager = ArcadiaFileManager.shared
         WindowGroup {
             #if os(macOS)
             GameLibraryView()
+                .onOpenURL { url in
+                    ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
+                }
             #elseif os(iOS)
             TabView {
                 GameLibraryView()
@@ -40,6 +44,14 @@ struct ArcadiaApp: App {
                                 Label("Settings", systemImage: "gear")
                             }
             }
+            .alert("Game loaded!", isPresented: $fileManager.showAlert) {
+                Button("Ok", action: {})
+            } message: {
+                Text("You will find the game in the console's collection.")
+            }
+            .onOpenURL { url in
+                ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
+            }
             #endif
                 
         }
@@ -47,6 +59,7 @@ struct ArcadiaApp: App {
         .environment(ArcadiaFileManager.shared)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
+
         #if os(macOS)
         Settings {
             SettingsView()

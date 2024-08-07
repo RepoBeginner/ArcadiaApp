@@ -21,31 +21,19 @@ struct ActionButtonsView: View {
             if numberOfButtons == 4 {
                 CircleButtonView(arcadiaCoreButton: .joypadX, size:50)
             } else {
-                Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .opacity(0)
+                EmptyButtonView(size: 50)
             }
                     HStack {
                         if numberOfButtons >= 3 {
                             CircleButtonView(arcadiaCoreButton: .joypadY, size:50)
                         } else {
-                            Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .opacity(0)
+                            EmptyButtonView(size: 50)
                         }
-                        Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                            .opacity(0)
+                        EmptyButtonView(size: 50)
                         if numberOfButtons >= 2 {
                             CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
                         } else {
-                            Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .opacity(0)
+                            EmptyButtonView(size: 50)
                         }
                         
                     }

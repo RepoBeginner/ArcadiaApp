@@ -448,6 +448,9 @@
         }
       }
     },
+    "Game loaded!" : {
+
+    },
     "Game Systems" : {
       "localizations" : {
         "it" : {
@@ -867,6 +870,9 @@
           }
         }
       }
+    },
+    "Ok" : {
+
     },
     "Open storage directory" : {
       "localizations" : {
@@ -1307,6 +1313,9 @@
           }
         }
       }
+    },
+    "You will find the game in the console's collection." : {
+
     },
     "Your game collection is empty, add new games using the plus button at the top" : {
       "localizations" : {

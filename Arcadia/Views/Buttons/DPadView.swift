@@ -23,10 +23,7 @@ struct DPadView: View {
                 }
                         HStack {
                             CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
-                            Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .opacity(0)
+                            EmptyButtonView(size: 50)
                             CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
                             
                         }
@@ -42,10 +39,7 @@ struct DPadView: View {
                 CircleButtonView(arcadiaCoreButton: .joypadUp, size:50)
                         HStack {
                             CircleButtonView(arcadiaCoreButton: .joypadLeft, size:50)
-                            Image(systemName: "arrow.up.backward.and.arrow.down.forward.circle.fill")
-                                .resizable()
-                                .frame(width: 50, height: 50)
-                                .opacity(0)
+                            EmptyButtonView(size: 50)
                             CircleButtonView(arcadiaCoreButton: .joypadRight, size:50)
                             
                         }

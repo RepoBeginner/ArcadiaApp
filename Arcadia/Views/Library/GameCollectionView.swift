@@ -57,8 +57,9 @@ struct GameCollectionView: View {
         }
             .onAppear {
                 fileManager.getGamesURL(gameSystem: gameType)
-                fileManager.syncDataToiCloud()
-
+                if useiCloudSync {
+                    fileManager.syncDataToiCloud()
+                }
             }
             .navigationTitle("Game Collection")
                 .toolbar() {

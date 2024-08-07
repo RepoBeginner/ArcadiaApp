@@ -41,6 +41,7 @@ enum ArcadiaCloudSyncStatus {
     public static var shared = ArcadiaFileManager()
     public var currentGames: [URL] = []
     public var lastSyncStatus: ArcadiaCloudSyncStatus = .notExecuted
+    public var showAlert: Bool = false
     
     var documentsDirectory: URL {
         return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -83,6 +84,10 @@ enum ArcadiaCloudSyncStatus {
         return localDocumentsMainDirectory.appendingPathComponent("Games")
     }
     
+    var iCloudGamesDirectory: URL? {
+        return cloudDocumentsMainDirectory.appendingPathComponent("Games")
+    }
+    
     var savesDirectory: URL {
         return documentsMainDirectory.appendingPathComponent("Saves")
     }
@@ -90,6 +95,11 @@ enum ArcadiaCloudSyncStatus {
     var localSavesDirectory: URL {
         return localDocumentsMainDirectory.appendingPathComponent("Saves")
     }
+    
+    var iCloudSavesDirectory: URL? {
+        return cloudDocumentsMainDirectory.appendingPathComponent("Saves")
+    }
+    
     
     var statesDirectory: URL {
         return documentsMainDirectory.appendingPathComponent("States")
@@ -99,8 +109,16 @@ enum ArcadiaCloudSyncStatus {
         return localDocumentsMainDirectory.appendingPathComponent("States")
     }
     
+    var iCloudStatesDirectory: URL? {
+        return cloudDocumentsMainDirectory.appendingPathComponent("States")
+    }
+    
     var imagesDirectory: URL {
         return documentsMainDirectory.appendingPathComponent("Images")
+    }
+    
+    var iCloudImagesDirectory: URL? {
+        return cloudDocumentsMainDirectory.appendingPathComponent("Images")
     }
     
     var localImagesDirectory: URL {
@@ -186,13 +204,47 @@ enum ArcadiaCloudSyncStatus {
         }
     }
     
-    func saveGame(gameURL: URL, gameType: ArcadiaGameType) {
-        if  gameURL.startAccessingSecurityScopedResource() {
-            
-            defer {
-                gameURL.stopAccessingSecurityScopedResource()
+    func saveGame(gameURL: URL, gameType: ArcadiaGameType, needScope: Bool = true) {
+        if needScope {
+            if gameURL.startAccessingSecurityScopedResource()  {
+                
+                defer {
+                    gameURL.stopAccessingSecurityScopedResource()
+                }
+                
+                do {
+                    
+                    let romFile = try Data(contentsOf: gameURL)
+                    print("Got Content")
+                    let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
+                    try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
+                    try romFile.write(to: savePath, options: .atomic)
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            createCloudCopy(of: savePath)
+                        }
+                    }
+                    if let boxArtPath = getGameFromURL(gameURL: gameURL) {
+                        guard let boxArtURL = URL(string: boxArtPath) else { return }
+                        print("Got boxULR :\(boxArtURL)")
+                        downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
+                            DispatchQueue.main.async {
+                                if let error = error {
+                                    print("Error: \(error.localizedDescription)")
+                                } else {
+                                    print("Image saved successfully")
+                                }
+                            }
+                        }
+                    }
+                    //To update the game list
+                    getGamesURL(gameSystem: gameType)
+                } catch {
+                    print("couldn't save file \(error)")
+                }
             }
-            
+
+        } else if !needScope {
             do {
                 
                 let romFile = try Data(contentsOf: gameURL)
@@ -223,27 +275,57 @@ enum ArcadiaCloudSyncStatus {
             } catch {
                 print("couldn't save file \(error)")
             }
-        
-
         }
-
+    }
+    
+    func importGameFromShare(gameURL : URL) {
+        print(gameURL)
+        let gameExtension = gameURL.pathExtension
         
+        for gameType in ArcadiaGameType.allCases {
+            if gameType.allowedExtensions.contains(UTType(filenameExtension: gameExtension)!) {
+                self.saveGame(gameURL: gameURL, gameType: gameType, needScope: false)
+                self.showAlert = true
+            }
+        }
     }
     
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
         return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("srm")
     }
     
-    func getSaveURL(gameURL: URL, gameType: ArcadiaGameType, memoryType: ArcadiaCoreMemoryType) -> URL {
-        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[memoryType]!)
+    func getGameURL(gameURL: URL, gameType: ArcadiaGameType, onCloud: Bool = false) -> URL {
+        if onCloud {
+            return (self.iCloudGamesDirectory?.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameURL.pathExtension))!
+        } else {
+            return gameURL
+        }
     }
     
-    func getStateURL(gameURL: URL, gameType: ArcadiaGameType, slot: Int) -> URL {
-        return self.statesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent("\(gameURL.deletingPathExtension().lastPathComponent)_\(slot)").appendingPathExtension("state")
+    func getSaveURL(gameURL: URL, gameType: ArcadiaGameType, memoryType: ArcadiaCoreMemoryType, onCloud: Bool = false) -> URL {
+        if onCloud {
+            return (self.iCloudSavesDirectory?.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[memoryType]!))!
+        } else {
+            return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[memoryType]!)
+        }
+        
     }
     
-    func getImageURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
-        return self.imagesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("jpg")
+    func getStateURL(gameURL: URL, gameType: ArcadiaGameType, slot: Int, onCloud: Bool = false) -> URL {
+        if onCloud {
+            return (self.iCloudStatesDirectory?.appendingPathComponent(gameType.rawValue).appendingPathComponent("\(gameURL.deletingPathExtension().lastPathComponent)_\(slot)").appendingPathExtension("state"))!
+        } else {
+            return self.statesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent("\(gameURL.deletingPathExtension().lastPathComponent)_\(slot)").appendingPathExtension("state")
+        }
+        
+    }
+    
+    func getImageURL(gameURL: URL, gameType: ArcadiaGameType, onCloud: Bool = false) -> URL {
+        if onCloud {
+            return (self.iCloudImagesDirectory?.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("jpg"))!
+        } else {
+            return self.imagesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("jpg")
+        }
     }
     
     func getImageData(gameURL: URL, gameType: ArcadiaGameType) -> Data? {
@@ -386,7 +468,15 @@ enum ArcadiaCloudSyncStatus {
         for (oldURL, newURL) in fileURLs {
             if FileManager.default.fileExists(atPath: oldURL.path) {
                 do {
+                    print("Renaming \(oldURL.lastPathComponent) to \(newURL.lastPathComponent)")
                     try FileManager.default.moveItem(at: oldURL, to: newURL)
+                    
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            self.renameCloudCopy(of: oldURL, to: newURL)
+                        }
+                    }
+                    
                 } catch {
                     print("Could not rename \(oldURL.lastPathComponent) to \(newURL.lastPathComponent)")
                 }
@@ -395,11 +485,21 @@ enum ArcadiaCloudSyncStatus {
         
         if FileManager.default.fileExists(atPath: gameURL.path) {
             do {
+                print("Renaming \(gameURL.lastPathComponent) to \(newGameURL.lastPathComponent)")
                 try FileManager.default.moveItem(at: gameURL, to: newGameURL)
+                
+                if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                    if iCloudSyncEnabled {
+                        self.renameCloudCopy(of: gameURL, to: newGameURL)
+                    }
+                }
+                
             } catch {
                 print("Could not rename \(gameURL.lastPathComponent) to \(newGameURL.lastPathComponent)")
             }
         }
+        
+
         // To update the list
         getGamesURL(gameSystem: gameType)
         
@@ -958,7 +1058,7 @@ enum ArcadiaCloudSyncStatus {
                 // Delete local files that do not exist in iCloud
                 for localFile in localContents {
                     if iCloudFilesDict[localFile.lastPathComponent] == nil {
-                        print("Deleting local file \(localFile.lastPathComponent) in \(localContents) because it doesn't exist in iCloud")
+                        print("Deleting local file \(localFile.lastPathComponent) because it doesn't exist in iCloud")
                         try FileManager.default.removeItem(at: localFile)
                     }
                 }
@@ -1031,6 +1131,32 @@ enum ArcadiaCloudSyncStatus {
             }
         }
 
+    }
+    
+    func renameCloudCopy(of file: URL, to newFile: URL) {
+        guard
+            let iCloudURL = iCloudDocumentsMainDirectory
+        else { return }
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+                                    
+            let iCloudOldFileURL = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(file.lastPathComponent)
+            
+            let iCloudNewFileURL = iCloudURL.appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -3)]).appendingPathComponent(file.pathComponents[file.pathComponents.index(file.pathComponents.endIndex, offsetBy: -2)]).appendingPathComponent(newFile.lastPathComponent)
+            
+            if !FileManager.default.fileExists(atPath: iCloudOldFileURL.path) {
+                return
+            }
+            
+            do {
+                print("Cloud renaming \(iCloudOldFileURL.lastPathComponent) to \(iCloudNewFileURL.lastPathComponent)")
+                try FileManager.default.moveItem(at: iCloudOldFileURL, to: iCloudNewFileURL)
+                
+            } catch {
+                print("Could not rename \(error)")
+            }
+        }
+        
     }
     
 
