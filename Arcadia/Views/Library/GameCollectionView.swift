@@ -61,6 +61,12 @@ struct GameCollectionView: View {
                     fileManager.syncDataToiCloud()
                 }
             }
+            .refreshable {
+                fileManager.getGamesURL(gameSystem: gameType)
+                if useiCloudSync {
+                    fileManager.syncDataToiCloud()
+                }
+            }
             .navigationTitle("Game Collection")
                 .toolbar() {
                     Button(action: { showingRecommendationView.toggle() }, label: {

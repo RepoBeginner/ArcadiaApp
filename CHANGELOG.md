@@ -7,6 +7,7 @@
 - Added the possibility to hide buttons
 - Added an Advanced DPad option with diagonal movements
 - Added the possibility to open game files from the Files app or from the share sheet, to import them directly into the game library
+- Added the possibility to pull to refresh the game collection
 
 ## Improvements
 - Updated button spacing
@@ -22,6 +23,7 @@
 - Removed the export save button from swiping on the game list. The button was not triggering anything, the function will come but as of right now you can find all the save files in the storage folder (you can access it from the Files app or from Arcadia's storage settings)
 - Fixed iCloud Sync being triggered also when not enabled in some cases
 - Fixed renaming being prevented on some cases when iCloud Sync is enabled
+- Cloud Sync button is now disabled if Cloud Sync is disabled
 
 ## Internals
 - Code refactoring to help in interface modifications

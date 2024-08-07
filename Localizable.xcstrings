@@ -387,17 +387,6 @@
         }
       }
     },
-    "Export save" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Esporta salvataggio"
-          }
-        }
-      }
-    },
     "F" : {
       "localizations" : {
         "it" : {
@@ -449,7 +438,14 @@
       }
     },
     "Game loaded!" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioco importato!"
+          }
+        }
+      }
     },
     "Game Systems" : {
       "localizations" : {
@@ -872,7 +868,14 @@
       }
     },
     "Ok" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ok"
+          }
+        }
+      }
     },
     "Open storage directory" : {
       "localizations" : {
@@ -1315,7 +1318,14 @@
       }
     },
     "You will find the game in the console's collection." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Troverai il gioco nella collezione della console."
+          }
+        }
+      }
     },
     "Your game collection is empty, add new games using the plus button at the top" : {
       "localizations" : {
