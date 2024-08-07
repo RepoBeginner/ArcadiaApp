@@ -25,6 +25,7 @@
 
 ## Internals
 - Code refactoring to help in interface modifications
+- Code refactoring for file management
 - Minor adjustments in SNES core compilation
 
 # 1.1

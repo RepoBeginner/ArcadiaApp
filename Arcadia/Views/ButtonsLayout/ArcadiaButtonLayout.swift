@@ -75,7 +75,7 @@ struct ArcadiaButtonLayout: View {
 }
 
 #Preview {
-    ArcadiaButtonLayout(layoutElements: [.select, .start, .dPad, .fourActionButtons, .backButtonsFirstRow])
+    ArcadiaButtonLayout(layoutElements: [.start])
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
 }
