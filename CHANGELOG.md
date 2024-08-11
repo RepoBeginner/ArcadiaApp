@@ -6,7 +6,6 @@
 ## Features
 - Added the possibility to hide buttons
 - Added an Advanced DPad option with diagonal movements
-- Added the possibility to open game files from the Files app or from the share sheet, to import them directly into the game library
 - Added the possibility to pull to refresh the game collection
 
 ## Improvements
