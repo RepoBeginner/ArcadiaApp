@@ -120,8 +120,10 @@ struct RecommendationView: View {
                     var descriptionEmbeddings = Column<[Double]>(name: "descriptionEmbeddings", contents: Array(repeating: [Double](), count: dataFrame.rows.count))
                     var genresEmbedding = Column<[Double]>(name: "genresEmbedding", contents: Array(repeating: [Double](), count: dataFrame.rows.count))
                     
+                    let embedding = try! NLEmbedding.init(contentsOf: Bundle.main.url(forResource: "WordEmbedding", withExtension: "mlmodelc")!)
+                    
                     DispatchQueue.concurrentPerform(iterations: dataFrame.rows.count) { index in
-                        let embedding = try! NLEmbedding.init(contentsOf: Bundle.main.url(forResource: "WordEmbedding", withExtension: "mlmodelc")!)
+                        
                             if let value = dataFrame["releaseDescription"][index] as? String {
                                     if let vector = embedding.vector(for: value) {
                                         descriptionEmbeddings[index] = vector
@@ -138,8 +140,8 @@ struct RecommendationView: View {
                     
                     dataFrame.append(column: genresEmbedding)
                     dataFrame.append(column: descriptionEmbeddings)
-                    dataFrame.removeColumn(ColumnID("releaseGenre", String.self))
-                    dataFrame.removeColumn(ColumnID("releaseDescription", String.self))
+                    //dataFrame.removeColumn(ColumnID("releaseGenre", String.self))
+                    //dataFrame.removeColumn(ColumnID("releaseDescription", String.self))
 
                     let matchingFrameSlice = dataFrame.filter{ row in
                         if let md5 = row["romhashmd5"] as? String, let titleName = row["releastTitleName"] as? String {
@@ -169,26 +171,39 @@ struct RecommendationView: View {
                     filteredFrame = removeDuplicates(from: filteredFrame, basedOn: "releastTitleName")
                     
                     let distance = Column<Double>(name: "similarityColumn", contents: Array(repeating: 0.0, count: filteredFrame.rows.count))
-                                    filteredFrame.append(column: distance)
+                    filteredFrame.append(column: distance)
                     
                     loadingState = .calculatingSimilarity
                     for row in matchingFrame.rows {
-                        if let mainGenre = row["genresEmbedding"] as? [Double], let mainDescription = row["descriptionEmbeddings"] as? [Double] {
+                        
+                        if let mainGenre = row["releaseGenre"] as? String, let mainDescription = row["releaseDescription"] as? String {
                             for index in 0..<filteredFrame.rows.count {
-                                if let filteredGenre = filteredFrame["genresEmbedding"][index] as? [Double], let filteredDescription = filteredFrame["descriptionEmbeddings"][index] as? [Double] {
-                                    let genreSimilarity = cosineSimilarity(rowA: mainGenre, rowB: filteredGenre)
-                                    let descriptionSimilarity = cosineSimilarity(rowA: mainDescription, rowB: filteredDescription)
+                                if let filteredGenre = filteredFrame["releaseGenre"][index] as? String, let filteredDescription = filteredFrame["releaseDescription"][index] as? String {
                                     
-                                    filteredFrame["similarityColumn"][index] = (filteredFrame["similarityColumn"][index] as! Double) + genreSimilarity + descriptionSimilarity
+                                    let genreDistance = embedding.distance(between: mainGenre, and: filteredGenre)
+                                    let descriptionDistance = embedding.distance(between: mainDescription, and: filteredDescription)
                                     
-                                   
+                                    let averageDistance = (genreDistance + descriptionDistance) / 2.0
+                                    
+                                    // Add the averageDistance to the current sum in similarityColumn
+                                    filteredFrame["similarityColumn"][index] = (filteredFrame["similarityColumn"][index] as! Double) + averageDistance
                                 }
                             }
                         }
                     }
+
+                    // Calculate the average of the averages
+                    let totalIterations = matchingFrame.rows.count
+
+                    for index in 0..<filteredFrame.rows.count {
+                        if totalIterations > 0 {
+                            filteredFrame["similarityColumn"][index] = (filteredFrame["similarityColumn"][index] as! Double) / Double(totalIterations)
+                        }
+                    }
+
                     
                     let sortedFrame = filteredFrame.sorted(on: ColumnID("similarityColumn", Double.self)) { firstElement, secondElement in
-                        firstElement > secondElement
+                        secondElement > firstElement
                         
                     }
                     
