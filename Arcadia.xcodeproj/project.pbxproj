@@ -98,6 +98,7 @@
 		95F5BADD2C2DBC080034CAD7 /* FourButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */; };
 		95F5BADF2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADE2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift */; };
 		95F5BAE12C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BAE02C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift */; };
+		95FAC8692C7CDD720071DC12 /* WordEmbedding.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 95FAC8682C7CDD720071DC12 /* WordEmbedding.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,7 @@
 		95F5BADC2C2DBC080034CAD7 /* FourButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourButtonsView.swift; sourceTree = "<group>"; };
 		95F5BADE2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNESButtonLayoutLeft.swift; sourceTree = "<group>"; };
 		95F5BAE02C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SNESButtonLayoutRight.swift; sourceTree = "<group>"; };
+		95FAC8682C7CDD720071DC12 /* WordEmbedding.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WordEmbedding.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +362,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				95FAC8672C7CDD4B0071DC12 /* MLModels */,
 				95F0200F2C25EA060087DAC2 /* Info.plist */,
 				952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */,
 				952C02252C088EF200DF2832 /* Classes */,
@@ -554,6 +557,14 @@
 			path = SNES;
 			sourceTree = "<group>";
 		};
+		95FAC8672C7CDD4B0071DC12 /* MLModels */ = {
+			isa = PBXGroup;
+			children = (
+				95FAC8682C7CDD720071DC12 /* WordEmbedding.mlmodel */,
+			);
+			path = MLModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -707,6 +718,7 @@
 				95707CBA2C00E67100217B82 /* GameSystemRowView.swift in Sources */,
 				95F5BAE12C2DBCCA0034CAD7 /* SNESButtonLayoutRight.swift in Sources */,
 				9510FE122C594BFE00F01C88 /* SegaGenesisButtonLayout.swift in Sources */,
+				95FAC8692C7CDD720071DC12 /* WordEmbedding.mlmodel in Sources */,
 				95CC86D42C47E76E009FB8DD /* EmptyCollectionView.swift in Sources */,
 				9510FE202C61FE5300F01C88 /* ArcadiaButtonLayout.swift in Sources */,
 				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,

@@ -121,7 +121,7 @@ struct RecommendationView: View {
                     var genresEmbedding = Column<[Double]>(name: "genresEmbedding", contents: Array(repeating: [Double](), count: dataFrame.rows.count))
                     
                     DispatchQueue.concurrentPerform(iterations: dataFrame.rows.count) { index in
-                        if let embedding = NLEmbedding.sentenceEmbedding(for: .english) {
+                        let embedding = try! NLEmbedding.init(contentsOf: Bundle.main.url(forResource: "WordEmbedding", withExtension: "mlmodelc")!)
                             if let value = dataFrame["releaseDescription"][index] as? String {
                                     if let vector = embedding.vector(for: value) {
                                         descriptionEmbeddings[index] = vector
@@ -129,12 +129,11 @@ struct RecommendationView: View {
                             }
                             
                             if let value = dataFrame["releaseGenre"][index] as? String {
-
                                     if let vector = embedding.vector(for: value) {
                                         genresEmbedding[index] = vector
                                     }
                             }
-                        }
+                        
                     }
                     
                     dataFrame.append(column: genresEmbedding)
