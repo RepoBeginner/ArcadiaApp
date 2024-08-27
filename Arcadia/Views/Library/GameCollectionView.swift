@@ -18,6 +18,7 @@ struct GameCollectionView: View {
     @State private var showingRenameAlert = false
     @State private var gameBeingRenamed : URL?
     @State private var goToGameView : Bool = false
+    @State private var searchText: String = ""
     @Binding private var path: NavigationPath
     @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     @FocusState private var selectedGame: URL?
@@ -36,12 +37,20 @@ struct GameCollectionView: View {
     
     var body: some View {
         @Bindable var inputController = inputController
+        var searchResults: [URL] {
+            if searchText.isEmpty {
+                return fileManager.currentGames
+            } else {
+                return fileManager.currentGames.filter { $0.lastPathComponent.lowercased().contains(searchText.lowercased()) }
+            }
+        }
+        
         Group {
             if fileManager.currentGames.isEmpty {
                 EmptyCollectionView(gameType: gameType)
             } else {
                 List {
-                    ForEach(fileManager.currentGames, id: \.self) { file in
+                    ForEach(searchResults, id: \.self) { file in
                         NavigationLink(destination: RunGameView(gameURL: file, gameType: gameType)
                         ) {
                             GameRowView(gameTitle: file.deletingPathExtension().lastPathComponent, gameURL: file, gameType: gameType)
@@ -53,6 +62,7 @@ struct GameCollectionView: View {
                 .navigationDestination(for: URL.self) { selection in
                     RunGameView(gameURL: selection, gameType: gameType)
                 }
+                .searchable(text: $searchText)
             }
         }
             .onAppear {

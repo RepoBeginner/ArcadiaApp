@@ -18,7 +18,6 @@ struct GameLibraryView: View {
             List(ArcadiaGameType.allCases, selection: $system) { gameType in
                 NavigationLink(value: gameType) {
                     GameSystemRowView(gameSystem: gameType)
-                        .focusable()
                         .accessibilityHint("Open this console's collection")
                 }
             }

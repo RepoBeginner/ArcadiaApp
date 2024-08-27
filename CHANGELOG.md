@@ -1,3 +1,12 @@
+# 1.3
+
+## Features
+- Added search bar in game list
+
+## Improvements
+- Improved recommendation results retrieval speed
+
+
 # 1.2
 
 ## Cores
