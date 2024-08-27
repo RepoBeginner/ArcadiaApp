@@ -23,6 +23,7 @@ struct RunGameView: View {
     @State private var gameURL: URL
     @State private var gameType: ArcadiaGameType
     @State private var toDismiss: Bool = false
+    @State private var showWrongGameAlert: Bool = false
 
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
@@ -135,6 +136,17 @@ struct RunGameView: View {
                 dismiss()
             }
             
+        }
+        .onChange(of: emulationState.gameLoadingError) { oldValue, newValue in
+            if newValue {
+                showWrongGameAlert.toggle()
+            }
+            
+        }
+        .alert("Incorrect game loaded", isPresented: $showWrongGameAlert) {
+            Button("Dismiss", action: { dismiss() })
+        } message: {
+            Text("It seems like you loaded an incompatible game file.")
         }
         .sheet(isPresented: $emulationState.showOverlay, content: {
             OverlayView(dismissMainView: $toDismiss)

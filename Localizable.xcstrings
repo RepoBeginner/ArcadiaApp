@@ -557,6 +557,9 @@
         }
       }
     },
+    "Incorrect game loaded" : {
+
+    },
     "Input" : {
       "localizations" : {
         "it" : {
@@ -586,6 +589,9 @@
           }
         }
       }
+    },
+    "It seems like you loaded an incompatible game file." : {
+
     },
     "J" : {
       "localizations" : {
