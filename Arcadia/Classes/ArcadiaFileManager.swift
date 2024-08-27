@@ -307,6 +307,22 @@ enum ArcadiaCloudSyncStatus {
 
     }
     
+    func redownloadDefaultImage(gameURL: URL, gameType: ArcadiaGameType) {
+        if let boxArtPath = getGameFromURL(gameURL: gameURL) {
+            guard let boxArtURL = URL(string: boxArtPath) else { return }
+            print("Got boxULR :\(boxArtURL)")
+            downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
+                DispatchQueue.main.async {
+                    if let error = error {
+                        print("Error: \(error.localizedDescription)")
+                    } else {
+                        print("Image saved successfully")
+                    }
+                }
+            }
+        }
+    }
+    
     func deleteGame(gameURL: URL, gameType: ArcadiaGameType) {
         let imageURL = getImageURL(gameURL: gameURL, gameType: gameType)
         let saveURL = getSaveURL(gameURL: gameURL, gameType: gameType)

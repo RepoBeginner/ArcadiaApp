@@ -108,6 +108,11 @@ struct GameRowView: View {
             } label: {
                 Label("Change image", systemImage: "photo.artframe")
             }
+            Button {
+                fileManager.redownloadDefaultImage(gameURL: gameURL, gameType: gameType)
+            } label: {
+                Label("Redownload default image", systemImage: "arrow.2.squarepath")
+            }
         })
         .alert("Enter the new name", isPresented: $showingRenameAlert) {
             TextField("Enter the new game name", text: $newGameName)

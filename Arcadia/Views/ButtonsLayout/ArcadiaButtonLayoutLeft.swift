@@ -21,7 +21,7 @@ struct ArcadiaButtonLayoutLeft: View {
             Spacer()
             HStack {
                 if layoutElements.contains(.backButtonsFirstRow) {
-                    CircleButtonView(arcadiaCoreButton: .joypadL, size: 50)
+                    CircleButtonView(arcadiaCoreButton: .joypadL, height: 40, width: 70)
                     Spacer()
                 }
                 if layoutElements.contains(.select) {

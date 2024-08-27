@@ -188,6 +188,38 @@ enum MenuMovementAction {
             }
         }
         
+        extendedGamepad.leftShoulder.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadL)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadL)
+            }
+        }
+        
+        extendedGamepad.leftTrigger.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadL2)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadL2)
+            }
+        }
+        
+        extendedGamepad.rightShoulder.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadR)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadR)
+            }
+        }
+        
+        extendedGamepad.rightTrigger.pressedChangedHandler = { button, value, pressed in
+            if pressed {
+                ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadR2)
+            } else {
+                ArcadiaCoreEmulationState.sharedInstance.unpressButton(port: device, device: 1, index: 0, button: .joypadR2)
+            }
+        }
+        
         extendedGamepad.buttonOptions?.pressedChangedHandler = { button, value, pressed in
             if pressed {
                 ArcadiaCoreEmulationState.sharedInstance.pressButton(port: device, device: 1, index: 0, button: .joypadSelect)

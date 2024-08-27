@@ -25,7 +25,7 @@ struct ArcadiaButtonLayoutRight: View {
                 }
                 if layoutElements.contains(.backButtonsFirstRow) {
                     Spacer()
-                    CircleButtonView(arcadiaCoreButton: .joypadR, size: 50)
+                    CircleButtonView(arcadiaCoreButton: .joypadR, height: 40, width: 70)
                 }
                 
             }
@@ -48,7 +48,7 @@ struct ArcadiaButtonLayoutRight: View {
 }
 
 #Preview {
-    ArcadiaButtonLayoutRight(layoutElements: [])
+    ArcadiaButtonLayoutRight(layoutElements: [.backButtonsFirstRow])
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
 }

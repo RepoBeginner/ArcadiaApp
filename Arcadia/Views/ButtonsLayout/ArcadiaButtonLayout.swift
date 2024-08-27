@@ -30,7 +30,7 @@ struct ArcadiaButtonLayout: View {
     var body: some View {
         HStack {
             if layoutElements.contains(.backButtonsFirstRow) {
-                CircleButtonView(arcadiaCoreButton: .joypadL, size: 50)
+                CircleButtonView(arcadiaCoreButton: .joypadL, height: 40, width: 70)
                 Spacer()
                     .frame(width: 50)
             }
@@ -44,7 +44,7 @@ struct ArcadiaButtonLayout: View {
             if layoutElements.contains(.backButtonsFirstRow) {
                 Spacer()
                     .frame(width: 50)
-                CircleButtonView(arcadiaCoreButton: .joypadR, size: 50)
+                CircleButtonView(arcadiaCoreButton: .joypadR, height: 40, width: 70)
             }
         }
         .padding()
@@ -75,7 +75,7 @@ struct ArcadiaButtonLayout: View {
 }
 
 #Preview {
-    ArcadiaButtonLayout(layoutElements: [.start])
+    ArcadiaButtonLayout(layoutElements: [.start, .backButtonsFirstRow, .dPad, .select, .fourActionButtons])
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
 }

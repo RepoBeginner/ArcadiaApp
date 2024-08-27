@@ -12,6 +12,8 @@ struct CircleButtonView: View {
     private var arcadiaCoreButton: ArcadiaCoreButton
     private var color: Color
     private var size: CGFloat
+    private var width: CGFloat
+    private var height: CGFloat
     @AppStorage("hapticFeedback") private var useHapticFeedback = true
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     @Environment(InputController.self) var inputController: InputController
@@ -19,7 +21,18 @@ struct CircleButtonView: View {
     init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray, size: CGFloat) {
         self.arcadiaCoreButton = arcadiaCoreButton
         self.color = color
+        self.width = size
+        self.height = size
         self.size = size
+    }
+    
+    init(arcadiaCoreButton: ArcadiaCoreButton, color: Color = .gray, height: CGFloat, width: CGFloat) {
+        self.arcadiaCoreButton = arcadiaCoreButton
+        self.color = color
+        self.width = width
+        self.height = height
+        self.size = width
+
     }
     
     var body: some View {
@@ -41,7 +54,7 @@ struct CircleButtonView: View {
         }) {
             Image(systemName: arcadiaCoreButton.systemImageName)
                 .resizable()
-                .frame(width: size, height: size)
+                .frame(width: width, height: height)
 #if os(iOS)
                 .foregroundStyle(color)
             #endif
@@ -110,7 +123,7 @@ struct ButtonPressHandler: ButtonStyle {
 }
 
 #Preview {
-    CircleButtonView(arcadiaCoreButton: .joypadA, size: 50)
+    CircleButtonView(arcadiaCoreButton: .joypadL, size: 50)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
 }

@@ -92,6 +92,7 @@
 		95CC87ED2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC87EB2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC87EF2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */; };
 		95CC87F12C48FF86009FB8DD /* Atari7800ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */; };
+		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
@@ -227,6 +228,7 @@
 		95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayoutRight.swift; sourceTree = "<group>"; };
 		95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayout.swift; sourceTree = "<group>"; };
 		95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				955CC37A2BF7E47100C930ED /* Shapes */,
 				955CC3772BF7E40B00C930ED /* Buttons */,
 				951097842C518C8E00F01C88 /* RecommendationView.swift */,
+				95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -764,6 +767,7 @@
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
 				959F81ED2C1A2BB1009EF53B /* InputSettingsView.swift in Sources */,
 				955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */,
+				95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
