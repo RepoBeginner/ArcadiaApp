@@ -93,6 +93,13 @@
 		95CC87EF2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */; };
 		95CC87F12C48FF86009FB8DD /* Atari7800ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */; };
 		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
+		95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */; };
+		95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */; };
+		95E3C48A2C80D1FC0060AC81 /* ArcadiaFeaturedDevelopers.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E3C4892C80D1FC0060AC81 /* ArcadiaFeaturedDevelopers.plist */; };
+		95E3C48C2C80D2CB0060AC81 /* ArcadiaFeaturedGames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95E3C48B2C80D2CB0060AC81 /* ArcadiaFeaturedGames.plist */; };
+		95E3C48E2C8195920060AC81 /* ArcadiaGameDeveloper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C48D2C8195920060AC81 /* ArcadiaGameDeveloper.swift */; };
+		95E3C4902C8195B30060AC81 /* ArcadiaFeaturedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C48F2C8195B30060AC81 /* ArcadiaFeaturedGame.swift */; };
+		95E3C4922C8195CD0060AC81 /* ArcadiaFeaturedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4912C8195CD0060AC81 /* ArcadiaFeaturedContent.swift */; };
 		95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200A2C24B3F90087DAC2 /* AppIconView.swift */; };
 		95F0200D2C24B4260087DAC2 /* ContributeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0200C2C24B4260087DAC2 /* ContributeView.swift */; };
 		95F5BADB2C2DBBBD0034CAD7 /* SNESButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F5BADA2C2DBBBD0034CAD7 /* SNESButtonLayout.swift */; };
@@ -229,6 +236,13 @@
 		95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayout.swift; sourceTree = "<group>"; };
 		95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
+		95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameRowView.swift; sourceTree = "<group>"; };
+		95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameDetailView.swift; sourceTree = "<group>"; };
+		95E3C4892C80D1FC0060AC81 /* ArcadiaFeaturedDevelopers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ArcadiaFeaturedDevelopers.plist; sourceTree = "<group>"; };
+		95E3C48B2C80D2CB0060AC81 /* ArcadiaFeaturedGames.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ArcadiaFeaturedGames.plist; sourceTree = "<group>"; };
+		95E3C48D2C8195920060AC81 /* ArcadiaGameDeveloper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGameDeveloper.swift; sourceTree = "<group>"; };
+		95E3C48F2C8195B30060AC81 /* ArcadiaFeaturedGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaFeaturedGame.swift; sourceTree = "<group>"; };
+		95E3C4912C8195CD0060AC81 /* ArcadiaFeaturedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaFeaturedContent.swift; sourceTree = "<group>"; };
 		95F0200A2C24B3F90087DAC2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
 		95F0200C2C24B4260087DAC2 /* ContributeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributeView.swift; sourceTree = "<group>"; };
 		95F0200F2C25EA060087DAC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -339,6 +353,8 @@
 		95456BA92BE2ACA900113B8A = {
 			isa = PBXGroup;
 			children = (
+				95E3C4892C80D1FC0060AC81 /* ArcadiaFeaturedDevelopers.plist */,
+				95E3C48B2C80D2CB0060AC81 /* ArcadiaFeaturedGames.plist */,
 				9510FE172C5FC26D00F01C88 /* Localizable.xcstrings */,
 				95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */,
 				95707CB72C006F4100217B82 /* Assets.xcassets */,
@@ -429,6 +445,7 @@
 		955CC3762BF7E3FF00C930ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95E3C4802C7F07EF0060AC81 /* Discover */,
 				9510881E2C4F9E9300F01C88 /* Screenshot */,
 				952C02242C088ECD00DF2832 /* Game */,
 				952C02232C088EB700DF2832 /* Library */,
@@ -438,7 +455,6 @@
 				955CC37A2BF7E47100C930ED /* Shapes */,
 				955CC3772BF7E40B00C930ED /* Buttons */,
 				951097842C518C8E00F01C88 /* RecommendationView.swift */,
-				95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -483,6 +499,9 @@
 			children = (
 				95456BB92BE2ACA900113B8A /* Item.swift */,
 				956F83FF2BEA70970025FC5F /* ArcadiaGame.swift */,
+				95E3C48D2C8195920060AC81 /* ArcadiaGameDeveloper.swift */,
+				95E3C48F2C8195B30060AC81 /* ArcadiaFeaturedGame.swift */,
+				95E3C4912C8195CD0060AC81 /* ArcadiaFeaturedContent.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -548,6 +567,16 @@
 				95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */,
 			);
 			path = Atari;
+			sourceTree = "<group>";
+		};
+		95E3C4802C7F07EF0060AC81 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */,
+				95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */,
+				95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */,
+			);
+			path = Discover;
 			sourceTree = "<group>";
 		};
 		95F5BAD92C2DB9A50034CAD7 /* SNES */ = {
@@ -676,7 +705,9 @@
 			files = (
 				952C3A7D2C0BDC5C00DF2832 /* openvgdb.sqlite in Resources */,
 				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
+				95E3C48C2C80D2CB0060AC81 /* ArcadiaFeaturedGames.plist in Resources */,
 				9510FE182C5FC26D00F01C88 /* Localizable.xcstrings in Resources */,
+				95E3C48A2C80D1FC0060AC81 /* ArcadiaFeaturedDevelopers.plist in Resources */,
 				95707CB82C006F4100217B82 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,6 +754,7 @@
 				9510FE122C594BFE00F01C88 /* SegaGenesisButtonLayout.swift in Sources */,
 				95FAC8692C7CDD720071DC12 /* WordEmbedding.mlmodel in Sources */,
 				95CC86D42C47E76E009FB8DD /* EmptyCollectionView.swift in Sources */,
+				95E3C4902C8195B30060AC81 /* ArcadiaFeaturedGame.swift in Sources */,
 				9510FE202C61FE5300F01C88 /* ArcadiaButtonLayout.swift in Sources */,
 				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,
 				9510FE272C62480300F01C88 /* EmptyButtonView.swift in Sources */,
@@ -732,6 +764,7 @@
 				955CC3732BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift in Sources */,
 				959F3BA72C10DE2F009EF53B /* GBAButtonLayout.swift in Sources */,
 				95707CC32C020F7200217B82 /* OverlayView.swift in Sources */,
+				95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */,
 				959F81F12C1ACD64009EF53B /* GBAButtonLayoutRight.swift in Sources */,
 				955CC39B2BFA0D9B00C930ED /* Triangle.swift in Sources */,
 				955CC3752BF7C74E00C930ED /* DPadView.swift in Sources */,
@@ -744,6 +777,7 @@
 				9510FE222C62089D00F01C88 /* ArcadiaButtonLayoutLeft.swift in Sources */,
 				95F0200B2C24B3F90087DAC2 /* AppIconView.swift in Sources */,
 				956F840B2BEBED810025FC5F /* GameRowView.swift in Sources */,
+				95E3C48E2C8195920060AC81 /* ArcadiaGameDeveloper.swift in Sources */,
 				95F5BADD2C2DBC080034CAD7 /* FourButtonsView.swift in Sources */,
 				959F81F62C1B1582009EF53B /* GBCButtonLayoutRight.swift in Sources */,
 				95707CBC2C00ED7500217B82 /* ArrowButtonView.swift in Sources */,
@@ -753,12 +787,14 @@
 				955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */,
 				95CC86CC2C47B3DC009FB8DD /* Atari2600ButtonLayout.swift in Sources */,
 				9510FE142C594C7000F01C88 /* ThreeButtonsView.swift in Sources */,
+				95E3C4922C8195CD0060AC81 /* ArcadiaFeaturedContent.swift in Sources */,
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
 				95CC86D22C47B737009FB8DD /* Atari2600ButtonLayoutRight.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */,
 				95F5BADF2C2DBC8D0034CAD7 /* SNESButtonLayoutLeft.swift in Sources */,
+				95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */,
 				95CC87F12C48FF86009FB8DD /* Atari7800ButtonLayout.swift in Sources */,
 				959F81EF2C1ACC11009EF53B /* GBAButtonLayoutLeft.swift in Sources */,
 				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,

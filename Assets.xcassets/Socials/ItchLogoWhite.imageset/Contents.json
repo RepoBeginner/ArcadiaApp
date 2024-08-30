@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "itchio-logo-textless-white.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

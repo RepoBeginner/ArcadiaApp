@@ -29,7 +29,17 @@ struct ArcadiaApp: App {
         @Bindable var fileManager = ArcadiaFileManager.shared
         WindowGroup {
             #if os(macOS)
-            GameLibraryView()
+            TabView {
+                GameLibraryView()
+                    .tabItem {
+                            Label("Game Systems", systemImage: "gamecontroller")
+                        }
+                DiscoverGameListView()
+                    .tabItem {
+                            Label("Game Systems", systemImage: "gamecontroller")
+                        }
+            }
+            
                 .onOpenURL { url in
                     ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
                 }

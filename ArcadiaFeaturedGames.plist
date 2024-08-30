@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<integer>0</integer>
+		<key>name</key>
+		<string>Bubble Frog</string>
+		<key>shortDescription</key>
+		<string>Join Bubble Frog on his adventure!</string>
+		<key>longDescription</key>
+		<string>Join Bubble Frog on his adventure to save all the Onigiri that poor little OniGary has lost! Travel dangerous places, from Pink Zone  to Blue Zone and then all the way to Yellow Zone and now the terrifying GREEN ZONE!</string>
+		<key>developerId</key>
+		<integer>0</integer>
+		<key>coverImageAssetName</key>
+		<string></string>
+		<key>itchURL</key>
+		<string>https://timbojay.itch.io/bubblefrog</string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string></string>
+			<string></string>
+			<string></string>
+		</array>
+	</dict>
+</array>
+</plist>

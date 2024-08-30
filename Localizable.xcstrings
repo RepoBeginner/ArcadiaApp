@@ -87,6 +87,9 @@
         }
       }
     },
+    "Add to library" : {
+
+    },
     "Advanced DPad" : {
       "localizations" : {
         "it" : {
@@ -307,9 +310,6 @@
         }
       }
     },
-    "Default image" : {
-
-    },
     "Delete" : {
       "localizations" : {
         "it" : {
@@ -319,6 +319,12 @@
           }
         }
       }
+    },
+    "Developer" : {
+
+    },
+    "Developer name" : {
+
     },
     "Dismiss" : {
       "localizations" : {
@@ -400,6 +406,9 @@
         }
       }
     },
+    "Find out more on the game's page" : {
+
+    },
     "Force sync" : {
       "localizations" : {
         "it" : {
@@ -459,6 +468,9 @@
           }
         }
       }
+    },
+    "game.author.name" : {
+
     },
     "Games" : {
       "localizations" : {
@@ -1046,6 +1058,9 @@
         }
       }
     },
+    "Redownload default image" : {
+
+    },
     "Rename" : {
       "localizations" : {
         "it" : {
@@ -1235,6 +1250,9 @@
           }
         }
       }
+    },
+    "This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page." : {
+
     },
     "Touch input" : {
       "localizations" : {
