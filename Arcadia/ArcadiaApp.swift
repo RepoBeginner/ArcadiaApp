@@ -29,17 +29,7 @@ struct ArcadiaApp: App {
         @Bindable var fileManager = ArcadiaFileManager.shared
         WindowGroup {
             #if os(macOS)
-            TabView {
-                GameLibraryView()
-                    .tabItem {
-                            Label("Game Systems", systemImage: "gamecontroller")
-                        }
-                DiscoverGameListView()
-                    .tabItem {
-                            Label("Game Systems", systemImage: "gamecontroller")
-                        }
-            }
-            
+            GameLibraryView()
                 .onOpenURL { url in
                     ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
                 }
@@ -48,6 +38,10 @@ struct ArcadiaApp: App {
                 GameLibraryView()
                     .tabItem {
                             Label("Game Systems", systemImage: "gamecontroller")
+                        }
+                DiscoverGameListView()
+                    .tabItem {
+                            Label("Discover", systemImage: "star")
                         }
                 SettingsView()
                     .tabItem {
@@ -77,6 +71,9 @@ struct ArcadiaApp: App {
                 .environment(ArcadiaFileManager.shared)
         }
         .windowResizability(.contentSize)
+        Window("Discover", id: "discover") {
+            DiscoverGameListView()
+        }
         #endif
     }
 }
