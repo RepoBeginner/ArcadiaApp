@@ -8,15 +8,34 @@
 		<key>name</key>
 		<string>Timbo Johnson</string>
 		<key>bio</key>
-		<string></string>
-		<key>itchURL</key>
-		<string>https://timbojay.itch.io</string>
-		<key>instagramURL</key>
-		<string>https://instagram.com/timbojay</string>
-		<key>threadsURL</key>
-		<string>https://threads.net/@timbojay</string>
-		<key>twitterURL</key>
-		<string>https://twitter.com/timbo_jay</string>
+		<string>Bio?</string>
+		<key>socials</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Itch</string>
+				<key>URL</key>
+				<string>https://timbojay.itch.io</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Instagram</string>
+				<key>URL</key>
+				<string>https://instagram.com/timbojay</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Threads</string>
+				<key>URL</key>
+				<string>https://threads.net/@timbojay</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>X</string>
+				<key>URL</key>
+				<string>https://x.com/timbo_jay</string>
+			</dict>
+		</array>
 	</dict>
 </array>
 </plist>

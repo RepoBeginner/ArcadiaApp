@@ -25,7 +25,6 @@ struct DiscoverGameListView: View {
                 
                 for game in games {
                     if let developer = developers.first(where: { $0.id == game.developerId }) {
-                        print(developer)
                         content.append(ArcadiaFeaturedContent(game: game, author: developer))
                     }
                     
@@ -42,17 +41,26 @@ struct DiscoverGameListView: View {
             self.gameList = []
         }
         
-        print(self.gameList)
     }
     
     var body: some View {
         NavigationStack {
-            List(gameList, id: \.self) { content in
-                NavigationLink(destination: DiscoverGameDetailView(game: content)) {
-                    DiscoverGameRowView(game: content)
+            List {
+                ForEach(ArcadiaGameType.allCases, id: \.self) { section in
+                    if !gameList.filter({ $0.game.gameType == section }).isEmpty {
+                        Section(section.name) {
+                            ForEach(gameList.filter({ $0.game.gameType == section }), id: \.self) { content in
+                                NavigationLink(destination: DiscoverGameDetailView(game: content)) {
+                                    DiscoverGameRowView(game: content)
+                                }
+                                
+                            }
+                        }
+                    }
+                    
                 }
-                
             }
+            .navigationTitle("Featured Games")
         }
     }
 }

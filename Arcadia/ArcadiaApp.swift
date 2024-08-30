@@ -41,7 +41,7 @@ struct ArcadiaApp: App {
                         }
                 DiscoverGameListView()
                     .tabItem {
-                            Label("Discover", systemImage: "star")
+                            Label("Featured Games", systemImage: "star")
                         }
                 SettingsView()
                     .tabItem {
@@ -71,8 +71,9 @@ struct ArcadiaApp: App {
                 .environment(ArcadiaFileManager.shared)
         }
         .windowResizability(.contentSize)
-        Window("Discover", id: "discover") {
+        Window("Featured Games", id: "featured-games") {
             DiscoverGameListView()
+                .environment(ArcadiaFileManager.shared)
         }
         #endif
     }

@@ -323,9 +323,6 @@
     "Developer" : {
 
     },
-    "Discover" : {
-
-    },
     "Dismiss" : {
       "localizations" : {
         "it" : {
@@ -406,6 +403,9 @@
         }
       }
     },
+    "Featured Games" : {
+
+    },
     "Find out more on the game's page" : {
 
     },
@@ -428,6 +428,9 @@
           }
         }
       }
+    },
+    "Game" : {
+
     },
     "Game Collection" : {
       "localizations" : {
@@ -592,9 +595,6 @@
         }
       }
     },
-    "Instagram" : {
-
-    },
     "Introduction" : {
       "localizations" : {
         "it" : {
@@ -606,9 +606,6 @@
       }
     },
     "It seems like you loaded an incompatible game file." : {
-
-    },
-    "Itch.io" : {
 
     },
     "J" : {
@@ -901,6 +898,9 @@
         }
       }
     },
+    "Open featured games window" : {
+
+    },
     "Open storage directory" : {
       "localizations" : {
         "it" : {
@@ -1187,6 +1187,9 @@
         }
       }
     },
+    "Socials" : {
+
+    },
     "Storage" : {
       "localizations" : {
         "it" : {
@@ -1256,6 +1259,9 @@
           }
         }
       }
+    },
+    "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
+
     },
     "This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page." : {
 

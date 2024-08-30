@@ -7,29 +7,23 @@
 
 import Foundation
 
-struct ArcadiaGameDeveloper: Hashable, Codable {
+struct ArcadiaGameDeveloper: Hashable, Decodable {
     
     let id: Int
     let name: String
     let bio: String
     
-    let instagramURL: URL?
-    let itchURL: URL?
-    let threadsURL: URL?
-    let twitterURL: URL?
+    let socials: [ArcadiaDeveloperSocialLink]
     
-    init(id: Int, name: String, bio: String, instagramURL: URL?, itchURL: URL?, threadsURL: URL?, twitterURL: URL?) {
+    init(id: Int, name: String, bio: String, socials: [ArcadiaDeveloperSocialLink]) {
         self.id = id
         self.name = name
         self.bio = bio
-        self.instagramURL = instagramURL
-        self.itchURL = itchURL
-        self.threadsURL = threadsURL
-        self.twitterURL = twitterURL
+        self.socials = socials
     }
     
     enum CodingKeys: String, CodingKey {
-        case id, name, bio, instagramURL, itchURL, threadsURL, twitterURL
+        case id, name, bio, socials
     }
     
     init(from decoder: Decoder) throws {
@@ -38,17 +32,12 @@ struct ArcadiaGameDeveloper: Hashable, Codable {
         name = try container.decode(String.self, forKey: .name)
         bio = try container.decode(String.self, forKey: .bio)
         
-        let itchURLString = try container.decode(String.self, forKey: .itchURL)
-        itchURL = URL(string: itchURLString)
-        
-        let instagramURLString = try container.decode(String.self, forKey: .instagramURL)
-        instagramURL = URL(string: instagramURLString)
-        
-        let threadsURLString = try container.decode(String.self, forKey: .threadsURL)
-        threadsURL = URL(string: threadsURLString)
-        
-        let twitterURLString = try container.decode(String.self, forKey: .twitterURL)
-        twitterURL = URL(string: twitterURLString)
+        let socialsArray = try container.decode([[String : String]].self, forKey: .socials)
+        var socialsList = [ArcadiaDeveloperSocialLink]()
+        for social in socialsArray {
+            socialsList.append(ArcadiaDeveloperSocialLink(name: social["name"]!, link: URL(string: social["URL"]!)))
+        }
+        socials = socialsList
         
     }
 }

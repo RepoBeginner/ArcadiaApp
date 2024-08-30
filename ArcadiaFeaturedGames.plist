@@ -7,12 +7,18 @@
 		<integer>0</integer>
 		<key>name</key>
 		<string>Bubble Frog</string>
+		<key>bundledFileExtension</key>
+		<string>gb</string>
 		<key>gameType</key>
 		<string>GameBoy (Color)</string>
 		<key>shortDescription</key>
 		<string>Join Bubble Frog on his adventure!</string>
 		<key>longDescription</key>
 		<string>Join Bubble Frog on his adventure to save all the Onigiri that poor little OniGary has lost! Travel dangerous places, from Pink Zone  to Blue Zone and then all the way to Yellow Zone and now the terrifying GREEN ZONE!</string>
+		<key>genres</key>
+		<array>
+			<string>Platformer</string>
+		</array>
 		<key>developerId</key>
 		<integer>0</integer>
 		<key>coverImageAssetName</key>

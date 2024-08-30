@@ -28,6 +28,7 @@ struct GameCollectionView: View {
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     @Environment(InputController.self) var inputController: InputController
+    @Environment(\.openWindow) var openWindow
     
     init(gameType: ArcadiaGameType, path: Binding<NavigationPath>) {
         self.gameType = gameType
@@ -84,10 +85,17 @@ struct GameCollectionView: View {
                     })
                     .accessibilityLabel("Recommendation")
                     .accessibilityHint("Get new games reccomendation")
+                    #if os(macOS)
+                    Button(action: { openWindow(id: "featured-games") }, label: {
+                        Image(systemName: "star")
+                    })
+                    .accessibilityLabel("Open featured games window")
+                    #endif
                     Button(action: { showingAddGameView.toggle() }, label: {
                         Image(systemName: "plus")
                     })
                     .accessibilityLabel("Add new game")
+
                 }
                 .fileImporter(isPresented: $showingAddGameView, allowedContentTypes: gameType.allowedExtensions, allowsMultipleSelection: true, onCompletion: { result in
                     DispatchQueue.global(qos: .userInteractive).async {
