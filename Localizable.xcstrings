@@ -323,9 +323,6 @@
     "Developer" : {
 
     },
-    "Developer name" : {
-
-    },
     "Dismiss" : {
       "localizations" : {
         "it" : {
@@ -469,9 +466,6 @@
         }
       }
     },
-    "game.author.name" : {
-
-    },
     "Games" : {
       "localizations" : {
         "it" : {
@@ -595,6 +589,9 @@
         }
       }
     },
+    "Instagram" : {
+
+    },
     "Introduction" : {
       "localizations" : {
         "it" : {
@@ -606,6 +603,9 @@
       }
     },
     "It seems like you loaded an incompatible game file." : {
+
+    },
+    "Itch.io" : {
 
     },
     "J" : {
@@ -1100,6 +1100,9 @@
           }
         }
       }
+    },
+    "s" : {
+
     },
     "S" : {
       "localizations" : {

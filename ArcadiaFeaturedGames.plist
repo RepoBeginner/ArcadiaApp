@@ -7,6 +7,8 @@
 		<integer>0</integer>
 		<key>name</key>
 		<string>Bubble Frog</string>
+		<key>gameType</key>
+		<string>GameBoy (Color)</string>
 		<key>shortDescription</key>
 		<string>Join Bubble Frog on his adventure!</string>
 		<key>longDescription</key>
@@ -14,14 +16,16 @@
 		<key>developerId</key>
 		<integer>0</integer>
 		<key>coverImageAssetName</key>
-		<string></string>
+		<string>BubbleFrogCover</string>
 		<key>itchURL</key>
 		<string>https://timbojay.itch.io/bubblefrog</string>
 		<key>screenshotsAssetName</key>
 		<array>
-			<string></string>
-			<string></string>
-			<string></string>
+			<string>BubbleFrogScreenshot0</string>
+			<string>BubbleFrogScreenshot1</string>
+			<string>BubbleFrogScreenshot2</string>
+			<string>BubbleFrogScreenshot3</string>
+			<string>BubbleFrogScreenshot4</string>
 		</array>
 	</dict>
 </array>

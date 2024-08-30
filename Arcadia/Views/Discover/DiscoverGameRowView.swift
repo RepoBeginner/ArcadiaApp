@@ -9,18 +9,27 @@ import SwiftUI
 
 struct DiscoverGameRowView: View {
     
-    private var game: ArcadiaFeaturedGame
-    init(game: ArcadiaFeaturedGame) {
+    private var game: ArcadiaFeaturedContent
+    init(game: ArcadiaFeaturedContent) {
         self.game = game
     }
     
     var body: some View {
         HStack {
-            Image(game.coverImageAssetName)
+            if game.game.coverImageAssetName == "" {
+                game.game.gameType.defaultCollectionImage
+                    .resizable()
+                    .frame(width: 80, height: 80)
+            } else {
+                Image(game.game.coverImageAssetName)
+                    .resizable()
+                    .frame(width: 80, height: 80)
+            }
+            
             VStack(alignment: .leading) {
-                Text(game.name)
+                Text(game.game.name)
                     .font(.headline)
-                Text("Developer name")
+                Text(game.author.name)
                     .font(.subheadline)
             }
         }
@@ -28,5 +37,5 @@ struct DiscoverGameRowView: View {
 }
 
 #Preview {
-    DiscoverGameRowView(game: ArcadiaFeaturedGame(id: 0, name: "Awesome game", shortDescription: "This game is awesome", longDescription: "Very long text", developerId: 0, coverImageAssetName: "gbc_icon", itchURL: nil, screenshotsAssetName: []))
+    DiscoverGameRowView(game: ArcadiaFeaturedContent(game: ArcadiaFeaturedGame(id: 0, name: "Awesome game", gameType: .gameBoyGame, shortDescription: "This game is awesome", longDescription: "Very long text", developerId: 0, coverImageAssetName: "gbc_icon", itchURL: nil, screenshotsAssetName: []), author: ArcadiaGameDeveloper(id: 0, name: "Awesome developer", bio: "", instagramURL: nil, itchURL: nil, threadsURL: nil, twitterURL: nil)))
 }

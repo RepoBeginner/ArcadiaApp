@@ -11,6 +11,7 @@ struct ArcadiaFeaturedGame: Hashable, Codable {
     
     let id: Int
     let name: String
+    let gameType: ArcadiaGameType
     let shortDescription: String
     let longDescription: String
     let developerId: Int
@@ -19,12 +20,13 @@ struct ArcadiaFeaturedGame: Hashable, Codable {
     let screenshotsAssetName: [String]
     
     enum CodingKeys: String, CodingKey {
-        case id, name, shortDescription, longDescription, developerId, coverImageAssetName, itchURL, screenshotsAssetName
+        case id, name, gameType, shortDescription, longDescription, developerId, coverImageAssetName, itchURL, screenshotsAssetName
     }
     
-    init(id: Int, name: String, shortDescription: String, longDescription: String, developerId: Int, coverImageAssetName: String, itchURL: URL?, screenshotsAssetName: [String]) {
+    init(id: Int, name: String, gameType: ArcadiaGameType, shortDescription: String, longDescription: String, developerId: Int, coverImageAssetName: String, itchURL: URL?, screenshotsAssetName: [String]) {
         self.id = id
         self.name = name
+        self.gameType = gameType
         self.shortDescription = shortDescription
         self.longDescription = longDescription
         self.developerId = developerId
@@ -41,6 +43,9 @@ struct ArcadiaFeaturedGame: Hashable, Codable {
         longDescription = try container.decode(String.self, forKey: .longDescription)
         developerId = try container.decode(Int.self, forKey: .developerId)
         coverImageAssetName = try container.decode(String.self, forKey: .coverImageAssetName)
+        
+        let gameTypeString = try container.decode(String.self, forKey: .gameType)
+        gameType = ArcadiaGameType(rawValue: gameTypeString)!
         
         let itchURLString = try container.decode(String.self, forKey: .itchURL)
         itchURL = URL(string: itchURLString)

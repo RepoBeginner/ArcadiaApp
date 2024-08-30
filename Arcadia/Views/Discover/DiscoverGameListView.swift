@@ -48,8 +48,8 @@ struct DiscoverGameListView: View {
     var body: some View {
         NavigationStack {
             List(gameList, id: \.self) { content in
-                NavigationLink(destination: DiscoverGameDetailView(game: content.game)) {
-                    DiscoverGameRowView(game: content.game)
+                NavigationLink(destination: DiscoverGameDetailView(game: content)) {
+                    DiscoverGameRowView(game: content)
                 }
                 
             }
