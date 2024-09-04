@@ -37,5 +37,34 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>Dr. Ludos</string>
+		<key>bio</key>
+		<string>Bio?</string>
+		<key>socials</key>
+		<array>
+			<dict>
+				<key>name</key>
+				<string>Patreon</string>
+				<key>URL</key>
+				<string>https://www.patreon.com/drludos</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>Itch</string>
+				<key>URL</key>
+				<string>https://drludos.itch.io</string>
+			</dict>
+			<dict>
+				<key>name</key>
+				<string>X</string>
+				<key>URL</key>
+				<string>https://x.com/ludoscience</string>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>

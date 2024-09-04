@@ -19,13 +19,14 @@ struct ArcadiaFeaturedGame: Hashable, Codable {
     let developerId: Int
     let coverImageAssetName: String
     let itchURL: URL?
+    let githubURL: URL?
     let screenshotsAssetName: [String]
     
     enum CodingKeys: String, CodingKey {
-        case id, name, bundledFileExtension, gameType, shortDescription, genres, longDescription, developerId, coverImageAssetName, itchURL, screenshotsAssetName
+        case id, name, bundledFileExtension, gameType, shortDescription, genres, longDescription, developerId, coverImageAssetName, itchURL, githubURL, screenshotsAssetName
     }
     
-    init(id: Int, name: String, bundledFileExtension: String, gameType: ArcadiaGameType, shortDescription: String, genres: [String], longDescription: String, developerId: Int, coverImageAssetName: String, itchURL: URL?, screenshotsAssetName: [String]) {
+    init(id: Int, name: String, bundledFileExtension: String, gameType: ArcadiaGameType, shortDescription: String, genres: [String], longDescription: String, developerId: Int, coverImageAssetName: String, itchURL: URL?, githubURL: URL?, screenshotsAssetName: [String]) {
         self.id = id
         self.name = name
         self.bundledFileExtension = bundledFileExtension
@@ -36,6 +37,7 @@ struct ArcadiaFeaturedGame: Hashable, Codable {
         self.developerId = developerId
         self.coverImageAssetName = coverImageAssetName
         self.itchURL = itchURL
+        self.githubURL = githubURL
         self.screenshotsAssetName = screenshotsAssetName
     }
     
@@ -55,6 +57,9 @@ struct ArcadiaFeaturedGame: Hashable, Codable {
         
         let itchURLString = try container.decode(String.self, forKey: .itchURL)
         itchURL = URL(string: itchURLString)
+        
+        let githubURLString = try container.decode(String.self, forKey: .githubURL)
+        githubURL = URL(string: githubURLString)
         
         screenshotsAssetName = try container.decode([String].self, forKey: .screenshotsAssetName)
     }

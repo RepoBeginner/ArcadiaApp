@@ -170,6 +170,9 @@
         }
       }
     },
+    "Bio" : {
+
+    },
     "Button Image" : {
       "localizations" : {
         "it" : {
@@ -778,6 +781,9 @@
         }
       }
     },
+    "No screenshots available" : {
+
+    },
     "Numpad 0" : {
       "localizations" : {
         "it" : {
@@ -1104,9 +1110,6 @@
         }
       }
     },
-    "s" : {
-
-    },
     "S" : {
       "localizations" : {
         "it" : {
@@ -1261,6 +1264,9 @@
       }
     },
     "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
+
+    },
+    "This game is open source, if you're interested you can find the game's code in its repository" : {
 
     },
     "This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page." : {

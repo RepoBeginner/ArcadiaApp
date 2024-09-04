@@ -110,6 +110,18 @@ struct DiscoverGameDetailView: View {
                     }
                     .foregroundStyle(.foreground)
                 }
+                if let githubURL = game.game.githubURL {
+                    Divider()
+                    Link(destination: githubURL) {
+                        VStack(alignment: .leading) {
+                            Text("This game is open source, if you're interested you can find the game's code in its repository")
+                            Image(colorScheme == .dark ? "GitHubLogoTextWhite" : "GitHubLogoTextBlack")
+                                .resizable()
+                                .frame(width: 100, height: 25)
+                        }
+                    }
+                    .foregroundStyle(.foreground)
+                }
                 Divider()
                 Text("This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page.")
             }
@@ -134,7 +146,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac dolor luctu
 
         Donec nisl mi, pharetra sit amet lacinia quis, efficitur in dui. Suspendisse consequat id nisl id luctus. Maecenas vitae sem laoreet, cursus sapien a, condimentum ligula. In eu volutpat arcu. Pellentesque egestas quam sed urna aliquam pellentesque. Donec metus tortor, varius vel tortor nec, bibendum pulvinar ante. Ut posuere lacinia risus non cursus. Morbi viverra, nunc sit amet sodales vehicula, ex leo dignissim risus, venenatis pharetra tellus sapien varius tortor. Sed felis sem, elementum quis turpis id, ullamcorper posuere velit. Praesent id pharetra massa. Curabitur vitae urna vel orci malesuada molestie sit amet sit amet nunc.
 
-""", developerId: 0, coverImageAssetName: "gbc_icon", itchURL: URL(string: "http://instagram.com")!, screenshotsAssetName: []), author: ArcadiaGameDeveloper(id: 0, name: "Awesome developer", bio: "", socials: [ArcadiaDeveloperSocialLink(name: "Instagram", link: URL(string: "http://")), ArcadiaDeveloperSocialLink(name: "Itch", link: URL(string: "http://")), ArcadiaDeveloperSocialLink(name: "X", link: URL(string: "http://")), ArcadiaDeveloperSocialLink(name: "Threads", link: URL(string: "http://"))])))
+""", developerId: 0, coverImageAssetName: "gbc_icon", itchURL: URL(string: "http://instagram.com")!, githubURL: URL(string: "http://instagram.com")!, screenshotsAssetName: []), author: ArcadiaGameDeveloper(id: 0, name: "Awesome developer", bio: "", socials: [ArcadiaDeveloperSocialLink(name: "Instagram", link: URL(string: "http://")), ArcadiaDeveloperSocialLink(name: "Itch", link: URL(string: "http://")), ArcadiaDeveloperSocialLink(name: "X", link: URL(string: "http://")), ArcadiaDeveloperSocialLink(name: "Threads", link: URL(string: "http://"))])))
     .environment(ArcadiaFileManager.shared)
     .frame(height: 700)
 }

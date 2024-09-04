@@ -37,5 +37,5 @@ struct DiscoverGameRowView: View {
 }
 
 #Preview {
-    DiscoverGameRowView(game: ArcadiaFeaturedContent(game: ArcadiaFeaturedGame(id: 0, name: "Awesome game", bundledFileExtension: "", gameType: .gameBoyGame, shortDescription: "This game is awesome", genres: [], longDescription: "Very long text", developerId: 0, coverImageAssetName: "gbc_icon", itchURL: nil, screenshotsAssetName: []), author: ArcadiaGameDeveloper(id: 0, name: "Awesome developer", bio: "", socials: [])))
+    DiscoverGameRowView(game: ArcadiaFeaturedContent(game: ArcadiaFeaturedGame(id: 0, name: "Awesome game", bundledFileExtension: "", gameType: .gameBoyGame, shortDescription: "This game is awesome", genres: [], longDescription: "Very long text", developerId: 0, coverImageAssetName: "gbc_icon", itchURL: nil, githubURL: nil, screenshotsAssetName: []), author: ArcadiaGameDeveloper(id: 0, name: "Awesome developer", bio: "", socials: [])))
 }

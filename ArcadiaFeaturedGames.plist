@@ -25,6 +25,8 @@
 		<string>BubbleFrogCover</string>
 		<key>itchURL</key>
 		<string>https://timbojay.itch.io/bubblefrog</string>
+		<key>githubURL</key>
+		<string></string>
 		<key>screenshotsAssetName</key>
 		<array>
 			<string>BubbleFrogScreenshot0</string>
@@ -32,6 +34,114 @@
 			<string>BubbleFrogScreenshot2</string>
 			<string>BubbleFrogScreenshot3</string>
 			<string>BubbleFrogScreenshot4</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>1</integer>
+		<key>name</key>
+		<string>Chumbles Bumbles</string>
+		<key>bundledFileExtension</key>
+		<string>gb</string>
+		<key>gameType</key>
+		<string>GameBoy (Color)</string>
+		<key>shortDescription</key>
+		<string>Chumbles Bumbles his way through 6 short levels!</string>
+		<key>longDescription</key>
+		<string>Welcome to my dumb little Gameboy game! You play Chumbles as he Bumbles (get it?) his way through 6 short levels. It&apos;s not a long game although there are 18 Gems to find! 3 in each level, some hidden, some not. See if you can find them all! :D (I&apos;ll warn you, one is mean).
+
+Please feel free to let me know what you think of the game in the comments, this is my second ever finished project (although I may return to this one to make a longer game in the future) and first GB Studio game so I&apos;m curious to hear what people think! :)
+
+Thanks to Yogi (Tronimal) and TipTopTomCat for SFX and Music!</string>
+		<key>genres</key>
+		<array>
+			<string>Platformer</string>
+		</array>
+		<key>developerId</key>
+		<integer>0</integer>
+		<key>coverImageAssetName</key>
+		<string>ChumblesBumblesCover</string>
+		<key>itchURL</key>
+		<string>https://timbojay.itch.io/chumbles-bumbles</string>
+		<key>githubURL</key>
+		<string></string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>ChumblesBumblesScreenshot0</string>
+			<string>ChumblesBumblesScreenshot1</string>
+			<string>ChumblesBumblesScreenshot2</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>Minigun Miner</string>
+		<key>bundledFileExtension</key>
+		<string>a26</string>
+		<key>gameType</key>
+		<string>Atari 2600</string>
+		<key>shortDescription</key>
+		<string>A unique digging game for the Atari 2600 (VCS) home console.</string>
+		<key>longDescription</key>
+		<string>Using a minigun, dig holes to collect buried treasures (coins, diamonds, rubies, etc.). But be careful to never touch the ground, or you&apos;ll explode! Thankfully, each time you fire your minigun, the recoil will send you flying in the air.
+How to Play
+- Hold Fire to shoot to fly up and dig holes. Move the joystick while holding the fire button to aim in any direction.
+- Move joystick Left and Right while Fire button is released to move left and right.
+- There are items to collect (earn points), and enemies to avoid (loose game).
+About
+This game was created for the Retro Platform Jam #6 in about 3 weeks. It uses a 8K cart with SuperChip RAM to display a 32x32 destructible playfield. Programmed with the wonderful batari Basic and its in-depth documentation by Random Terrain.</string>
+		<key>genres</key>
+		<array>
+			<string>Action</string>
+		</array>
+		<key>developerId</key>
+		<integer>1</integer>
+		<key>coverImageAssetName</key>
+		<string>MinigunMinerCover</string>
+		<key>itchURL</key>
+		<string>https://drludos.itch.io/minigun-miner</string>
+		<key>githubURL</key>
+		<string></string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>MinigunMinerScreenshot0</string>
+			<string>MinigunMinerScreenshot1</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>2</integer>
+		<key>name</key>
+		<string>MeteoRain</string>
+		<key>bundledFileExtension</key>
+		<string>gba</string>
+		<key>gameType</key>
+		<string>GameBoy Advance</string>
+		<key>shortDescription</key>
+		<string>Meteors are falling from the sky! Avoid them as long as possible to make an high score!</string>
+		<key>longDescription</key>
+		<string>This game is my entry for the GBA Jam 2021: https://itch.io/jam/gbajam21
+This is a port/remake of a previous homebrew game I did for the SEGA Mega Drive / Genesis. But for the GBA Jam, I programmed this version from scratch as it&apos;s 100% made in Lua! Indeed, I used the wonderful BPCore-Engine by Evan Bowman that allows to create a GBA games in Lua. If you ever used a fantasy console like PICO-8 or TIC-80, it&apos;s a very similar tool, but the resulting game will run on a actual console, our beloved Game Boy Advance!
+If you want to try your hand at making GBA games, I really recommend you BPCore-Engine: it&apos;s a real pleasure to make games with it. And I&apos;m also sharing the heavily commented code source of my game if it can help you making your own GBA games in Lua: https://github.com/drludos/meteorain-gba
+Music credits
+Ingame music: &quot;Overmode&quot; by Warlord, used under a CC-BY-NC-SA licence: http://battleofthebits.org/arena/Entry/Overmode/7738/</string>
+		<key>genres</key>
+		<array>
+			<string>Action</string>
+		</array>
+		<key>developerId</key>
+		<integer>1</integer>
+		<key>coverImageAssetName</key>
+		<string></string>
+		<key>itchURL</key>
+		<string>https://drludos.itch.io/meteorain-gba-jam-2021</string>
+		<key>githubURL</key>
+		<string>https://github.com/drludos/meteorain-gba</string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>MeteoRainScreenshot0</string>
+			<string>MeteoRainScreenshot1</string>
 		</array>
 	</dict>
 </array>
