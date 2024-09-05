@@ -111,7 +111,7 @@ This game was created for the Retro Platform Jam #6 in about 3 weeks. It uses a 
 	</dict>
 	<dict>
 		<key>id</key>
-		<integer>2</integer>
+		<integer>3</integer>
 		<key>name</key>
 		<string>MeteoRain</string>
 		<key>bundledFileExtension</key>
@@ -143,6 +143,148 @@ Ingame music: &quot;Overmode&quot; by Warlord, used under a CC-BY-NC-SA licence:
 			<string>MeteoRainScreenshot0</string>
 			<string>MeteoRainScreenshot1</string>
 			<string>MeteoRainScreenshot2</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>4</integer>
+		<key>name</key>
+		<string>The Last Super</string>
+		<key>bundledFileExtension</key>
+		<string>sfc</string>
+		<key>gameType</key>
+		<string>SNES</string>
+		<key>shortDescription</key>
+		<string>&quot;November 21st, 2020. The SNES turns 30 years old: it&apos;s time to celebrate!
+Sadly, there is only one SNES cartridge left on Earth...&quot;</string>
+		<key>longDescription</key>
+		<string>The Last Super is brand new Super Nintendo (SNES) game created to celebrate the 30th birthday of the console!
+As the last SNES cartridge on Earth, you&apos;ll have to move and jump around in each of the 20 levels of the game so every SNES can play you! But don&apos;t let a SNES without cartridge for too long...</string>
+		<key>genres</key>
+		<array>
+			<string>Platformer</string>
+		</array>
+		<key>developerId</key>
+		<integer>1</integer>
+		<key>coverImageAssetName</key>
+		<string></string>
+		<key>itchURL</key>
+		<string>https://drludos.itch.io/the-last-super</string>
+		<key>githubURL</key>
+		<string></string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>TheLastSuperScreenshot0</string>
+			<string>TheLastSuperScreenshot1</string>
+			<string>TheLastSuperScreenshot2</string>
+			<string>TheLastSuperScreenshot3</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>5</integer>
+		<key>name</key>
+		<string>Keeping SNES Alive</string>
+		<key>bundledFileExtension</key>
+		<string>sfc</string>
+		<key>gameType</key>
+		<string>SNES</string>
+		<key>shortDescription</key>
+		<string>Making new games for retro consoles is the best way to keep them alive.</string>
+		<key>longDescription</key>
+		<string>This game was created for the Ludum Dare 46 game jam event on the theme &quot;Keep It Alive.&quot; For me, making new games for retro consoles is the best way to keep them alive! So, for this Ludum Dare, I choose to create a brand new game for my favorite console: the Super Nintendo (SNES). You can play the game above through an online emulator. Of course you can also download the ROM file to play it with any SNES emulator you want, and even on a real console if you have a Flash Cart at home!
+The game itself is quite simple: 4 SNES are laying around, with only 1 cartridge of a homebrew SNES game for them to play with (the game is Yo-Yo Shuriken, a SNES game I made in 2019 that was released on cartridge like the old days). Using any button you can make the cartridge &quot;jump&quot; so you can move from one console to another. Be careful not to miss the cartridge slot, else it&apos;s a game over. And don&apos;t let any SNES without a game play session for too long either, or it&apos;s a game over too!
+The game was programmed in C using the wonderful PVSNESlib by Alekmaul.  The music was composed by XRACECAR. The track is titled &quot;7049 Bytes of Memories&quot; and is used under a Creative Commons CC-BY-NS-SA license: http://battleofthebits.org/arena/Entry/7049+Bytes+of+Memories/25393/
+A fun fact about the audio: the &quot;shlack&quot; sound that you hear when the cartridge enters a console is an actual recording of the noise made by my SNES power button (recorded directly from my childhood console, still alive and kicking after 30 years!)
+Besides music and a couple of sound effects coming from my previous games, all the others parts of this game where created by me from scratch during the event! All in all, I spent about 10 hours in total making the game (I wish I could have more time, but real life isn&apos;t always as you hoped ;)).
+Last but not the least, the full source code is included. I spent about 2 additional hours cleaning up and commenting the code, as I hope it&apos;ll help and motivate you to start making new SNES games too!
+Enjoy!</string>
+		<key>genres</key>
+		<array>
+			<string>Platformer</string>
+		</array>
+		<key>developerId</key>
+		<integer>1</integer>
+		<key>coverImageAssetName</key>
+		<string></string>
+		<key>itchURL</key>
+		<string>https://drludos.itch.io/keeping-snes-alive</string>
+		<key>githubURL</key>
+		<string></string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>KeepingSNESAliveScreenshot0</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>6</integer>
+		<key>name</key>
+		<string>DMG Deals Damage</string>
+		<key>bundledFileExtension</key>
+		<string>gb</string>
+		<key>gameType</key>
+		<string>GameBoy (Color)</string>
+		<key>shortDescription</key>
+		<string>April, 21th, 2019. Today, the Game Boy turns 30 years old!</string>
+		<key>longDescription</key>
+		<string>April, 21th, 2019. Today, the Game Boy turns 30 years old!
+But every other mobile gaming device is jealous of Game Boy timeless success. So they decide to team up to ruin the party. They came by and stole the cake! DMG, the first Game Boy model, must save the day!
+
+Use your hands to catch enemies and to smash them on the walls. You can also smash them together!
+
+Can you fight your way up to room #30 to retrieve your 30th birthday cake?</string>
+		<key>genres</key>
+		<array>
+			<string>Action</string>
+		</array>
+		<key>developerId</key>
+		<integer>1</integer>
+		<key>coverImageAssetName</key>
+		<string></string>
+		<key>itchURL</key>
+		<string>https://drludos.itch.io/dmg-deals-damage</string>
+		<key>githubURL</key>
+		<string></string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>DMGDealsDamageScreenshot0</string>
+			<string>DMGDealsDamageScreenshot1</string>
+			<string>DMGDealsDamageScreenshot2</string>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>7</integer>
+		<key>name</key>
+		<string>Break An Egg</string>
+		<key>bundledFileExtension</key>
+		<string>md</string>
+		<key>gameType</key>
+		<string>Sega Genesis</string>
+		<key>shortDescription</key>
+		<string>Break An Egg is a cute arcade game for the SEGA Megadrive / Genesis home console.</string>
+		<key>longDescription</key>
+		<string>Eggs are falling from the sky!
+Move your chicken to make them bounce into the basket.
+If an egg touches the ground, you loose!
+
+How many eggs can you rescue?</string>
+		<key>genres</key>
+		<array>
+			<string>Action</string>
+		</array>
+		<key>developerId</key>
+		<integer>1</integer>
+		<key>coverImageAssetName</key>
+		<string></string>
+		<key>itchURL</key>
+		<string>https://drludos.itch.io/breakanegg</string>
+		<key>githubURL</key>
+		<string></string>
+		<key>screenshotsAssetName</key>
+		<array>
+			<string>BreakAnEggScreenshot0</string>
 		</array>
 	</dict>
 </array>

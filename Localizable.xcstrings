@@ -88,7 +88,14 @@
       }
     },
     "Add to library" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi"
+          }
+        }
+      }
     },
     "Advanced DPad" : {
       "localizations" : {
@@ -121,6 +128,7 @@
       }
     },
     "Arcadia cannot include games due to legal reasons, but there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.\n" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -140,12 +148,12 @@
         }
       }
     },
-    "Arcadia is a labor of love, born from my passion for Apple and my desire to learn new things. As such, it is an imperfect product developed in my free time. If you enjoy the app and would like to contribute to its development, here are some ways you can help:\n• Report any bugs you find, including steps to reproduce them.\n• Share any ideas for new features or improvements to enhance the user experience.\n• I am not a designer, so if you'd like to submit a custom app icon, I would love to include it in the app with credits to you.\n• Currently, Arcadia is closed source, but I plan to make it open source once I organize the repository better. When that happens, you'll be able to contribute directly to the code if you wish." : {
+    "Arcadia is a labor of love, born from my passion for Apple and my desire to learn new things. As such, it is an imperfect product developed in my free time. If you enjoy the app and would like to contribute to its development, here are some ways you can help:\n• Report any bugs you find, including steps to reproduce them.\n• Share any ideas for new features or improvements to enhance the user experience.\n• I am not a designer, so if you'd like to submit a custom app icon, I would love to include it in the app with credits to you.\n• If you are a retro game developer and would like for your game to be featured in the app, I'd love to include it.\n• Currently, Arcadia is closed source, but I plan to make it open source once I organize the repository better. When that happens, you'll be able to contribute directly to the code if you wish." : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arcadia nasce dalla mia passione per i prodotti Apple e dal desiderio di imparare cose nuove. Pertanto, è un prodotto imperfetto sviluppato nel mio tempo libero. Se ti piace l'app e desideri contribuire al suo sviluppo, ecco alcuni modi in cui puoi aiutare:\n• Segnala eventuali bug che trovi, includendo i passaggi per riprodurli.\n• Condividi qualsiasi idea per nuove funzionalità o miglioramenti per migliorare l'esperienza dell'utente.\n• Non sono un designer, quindi se desideri inviare un'icona personalizzata per l'app, mi piacerebbe includerla nell'app con i dovuti crediti.\n• Attualmente, Arcadia è a codice chiuso, ma ho intenzione di renderlo open source una volta organizzato meglio il repository. Quando ciò accadrà, potrai contribuire direttamente al codice, se lo desideri."
+            "value" : "Arcadia nasce dalla mia passione per i prodotti Apple e dal desiderio di imparare cose nuove.\nPertanto, è un prodotto imperfetto sviluppato nel mio tempo libero. Se ti piace l'app e desideri contribuire al suo sviluppo, ecco alcuni modi in cui puoi aiutare:\n• Segnala eventuali bug che trovi, includendo i passaggi per riprodurli.\n• Condividi qualsiasi idea per nuove funzionalità o miglioramenti per migliorare l'esperienza dell'utente.\n• Non sono un designer, quindi se desideri inviare un'icona personalizzata per l'app, mi piacerebbe includerla nell'app con i dovuti crediti.\n• Se sei uno sviluppatore di giochi retrò e ti piacerebbe che il tuo gioco fosse incluso nell'app, mi farebbe piacere aggiungerlo.\n• Attualmente, Arcadia è a codice chiuso, ma ho intenzione di renderlo open source una volta organizzato meglio il repository. Quando ciò accadrà, potrai contribuire direttamente al codice, se lo desideri."
           }
         }
       }
@@ -171,7 +179,14 @@
       }
     },
     "Bio" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bio"
+          }
+        }
+      }
     },
     "Button Image" : {
       "localizations" : {
@@ -324,7 +339,14 @@
       }
     },
     "Developer" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sviluppatore"
+          }
+        }
+      }
     },
     "Dismiss" : {
       "localizations" : {
@@ -407,10 +429,24 @@
       }
     },
     "Featured Games" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Giochi Consigliati"
+          }
+        }
+      }
     },
     "Find out more on the game's page" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scopri di più nella pagina del gioco"
+          }
+        }
+      }
     },
     "Force sync" : {
       "localizations" : {
@@ -433,7 +469,14 @@
       }
     },
     "Game" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gioco"
+          }
+        }
+      }
     },
     "Game Collection" : {
       "localizations" : {
@@ -565,6 +608,16 @@
         }
       }
     },
+    "In the featured games section you'll find some game provided by some developers who decided to partner with Arcadia to distribute their games through the app.\nAside from those, there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.\n" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nella sezione dei giochi in evidenza troverai alcuni titoli forniti da sviluppatori che hanno deciso di collaborare con Arcadia per distribuire i loro giochi tramite l'app.  \nOltre a questi, esistono molte risorse online che ti possono guidare nel trasferimento delle cartucce di gioco in ROM, nell'acquisizione di ROM o nel trovare giochi homebrew."
+          }
+        }
+      }
+    },
     "In this section, you'll find various tips to help you navigate the interface and make the most of the app.\n" : {
       "localizations" : {
         "it" : {
@@ -576,7 +629,14 @@
       }
     },
     "Incorrect game loaded" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Caricato un gioco scorretto"
+          }
+        }
+      }
     },
     "Input" : {
       "localizations" : {
@@ -609,7 +669,14 @@
       }
     },
     "It seems like you loaded an incompatible game file." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sembra che tu abbia caricato un file di gioco incompatibile."
+          }
+        }
+      }
     },
     "J" : {
       "localizations" : {
@@ -782,7 +849,14 @@
       }
     },
     "No screenshots available" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuno screenshot"
+          }
+        }
+      }
     },
     "Numpad 0" : {
       "localizations" : {
@@ -903,9 +977,6 @@
           }
         }
       }
-    },
-    "Open featured games window" : {
-
     },
     "Open storage directory" : {
       "localizations" : {
@@ -1068,7 +1139,14 @@
       }
     },
     "Redownload default image" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Riscarica immagine di default"
+          }
+        }
+      }
     },
     "Rename" : {
       "localizations" : {
@@ -1191,7 +1269,14 @@
       }
     },
     "Socials" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Social"
+          }
+        }
+      }
     },
     "Storage" : {
       "localizations" : {
@@ -1264,13 +1349,34 @@
       }
     },
     "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo sviluppatore ha generosamente reso i suoi giochi disponibili gratuitamente, permettendo a più persone di godersi i giochi retrò con facilità. Se apprezzi il loro lavoro, prendi in considerazione l'idea di mostrare il tuo supporto attraverso i link qui sopra."
+          }
+        }
+      }
     },
     "This game is open source, if you're interested you can find the game's code in its repository" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo gioco è open source, se sei interessato puoi trovare il codice del gioco nel suo repository."
+          }
+        }
+      }
     },
     "This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questo gioco è stato reso disponibile gratuitamente dal suo autore, ma se vuoi supportare il suo lavoro, considera di seguirlo sui social media e di fare una donazione tramite i link presenti su questa pagina."
+          }
+        }
+      }
     },
     "Touch input" : {
       "localizations" : {

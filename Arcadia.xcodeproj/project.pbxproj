@@ -92,6 +92,10 @@
 		95CC87ED2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC87EB2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC87EF2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */; };
 		95CC87F12C48FF86009FB8DD /* Atari7800ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */; };
+		95CE66C42C8A17B9005BAF8B /* The Last Super.sfc in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C32C8A17B9005BAF8B /* The Last Super.sfc */; };
+		95CE66C62C8A18A4005BAF8B /* Keeping SNES Alive.sfc in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C52C8A18A4005BAF8B /* Keeping SNES Alive.sfc */; };
+		95CE66C82C8A1E78005BAF8B /* DMG Deals Damage.gb in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C72C8A1E78005BAF8B /* DMG Deals Damage.gb */; };
+		95CE66CA2C8A1FAC005BAF8B /* Break An Egg.md in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C92C8A1FAC005BAF8B /* Break An Egg.md */; };
 		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
 		95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */; };
 		95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */; };
@@ -241,6 +245,10 @@
 		95CC87EE2C48F02C009FB8DD /* Atari7800ButtonLayoutRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayoutRight.swift; sourceTree = "<group>"; };
 		95CC87F02C48FF86009FB8DD /* Atari7800ButtonLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Atari7800ButtonLayout.swift; sourceTree = "<group>"; };
 		95CC87F22C4D75AF009FB8DD /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		95CE66C32C8A17B9005BAF8B /* The Last Super.sfc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Last Super.sfc"; sourceTree = "<group>"; };
+		95CE66C52C8A18A4005BAF8B /* Keeping SNES Alive.sfc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Keeping SNES Alive.sfc"; sourceTree = "<group>"; };
+		95CE66C72C8A1E78005BAF8B /* DMG Deals Damage.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMG Deals Damage.gb"; sourceTree = "<group>"; };
+		95CE66C92C8A1FAC005BAF8B /* Break An Egg.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Break An Egg.md"; sourceTree = "<group>"; };
 		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
 		95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameRowView.swift; sourceTree = "<group>"; };
 		95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameDetailView.swift; sourceTree = "<group>"; };
@@ -597,9 +605,13 @@
 		95E3C4972C81E9A30060AC81 /* FeaturedGames */ = {
 			isa = PBXGroup;
 			children = (
+				95CE66C52C8A18A4005BAF8B /* Keeping SNES Alive.sfc */,
+				95CE66C72C8A1E78005BAF8B /* DMG Deals Damage.gb */,
 				95E3C4982C81E9B60060AC81 /* Bubble Frog.gb */,
 				95E3C49E2C88C5070060AC81 /* Chumbles Bumbles.gb */,
 				95E3C49C2C88C4680060AC81 /* MeteoRain.gba */,
+				95CE66C92C8A1FAC005BAF8B /* Break An Egg.md */,
+				95CE66C32C8A17B9005BAF8B /* The Last Super.sfc */,
 				95E3C49A2C88C4270060AC81 /* Minigun Miner.a26 */,
 			);
 			path = FeaturedGames;
@@ -733,12 +745,16 @@
 				95E3C4992C81E9B60060AC81 /* Bubble Frog.gb in Resources */,
 				95E3C49B2C88C4280060AC81 /* Minigun Miner.a26 in Resources */,
 				95456BC02BE2ACAC00113B8A /* Preview Assets.xcassets in Resources */,
+				95CE66C42C8A17B9005BAF8B /* The Last Super.sfc in Resources */,
 				95E3C49D2C88C4680060AC81 /* MeteoRain.gba in Resources */,
 				95E3C49F2C88C5080060AC81 /* Chumbles Bumbles.gb in Resources */,
 				95E3C48C2C80D2CB0060AC81 /* ArcadiaFeaturedGames.plist in Resources */,
 				9510FE182C5FC26D00F01C88 /* Localizable.xcstrings in Resources */,
+				95CE66C82C8A1E78005BAF8B /* DMG Deals Damage.gb in Resources */,
 				95E3C48A2C80D1FC0060AC81 /* ArcadiaFeaturedDevelopers.plist in Resources */,
+				95CE66CA2C8A1FAC005BAF8B /* Break An Egg.md in Resources */,
 				95707CB82C006F4100217B82 /* Assets.xcassets in Resources */,
+				95CE66C62C8A18A4005BAF8B /* Keeping SNES Alive.sfc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1000,7 +1016,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1028,7 +1044,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1052,7 +1068,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 14;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1080,7 +1096,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

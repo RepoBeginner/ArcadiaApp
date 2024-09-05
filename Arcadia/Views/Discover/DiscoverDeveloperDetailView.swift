@@ -48,10 +48,12 @@ struct DiscoverDeveloperDetailView: View {
                     }
                     .padding()
                 }
-                Divider()
-                Text("Bio")
-                    .font(.headline)
-                Text(developer.bio)
+                if developer.bio != "" {
+                    Divider()
+                    Text("Bio")
+                        .font(.headline)
+                    Text(developer.bio)
+                }
                 Divider()
                 Text("This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above.")
                 Spacer()

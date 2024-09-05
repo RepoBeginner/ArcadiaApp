@@ -1,6 +1,7 @@
 # 1.3
 
 ## Features
+- Added a featured games section
 - Added search bar in game list
 - Added game validity check: if you somehow manage to load a game that is not compatible with the system you are loading it in, you get an alert and the game view is dismissed
 - Added the possibility to redownload the default cover image

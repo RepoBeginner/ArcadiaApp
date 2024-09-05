@@ -22,9 +22,15 @@ struct DiscoverGameDetailView: View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
-                    Image(game.game.coverImageAssetName)
-                        .resizable()
-                        .frame(width: 80, height: 80)
+                    if game.game.coverImageAssetName != "" {
+                        Image(game.game.coverImageAssetName)
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    } else {
+                        Image(systemName: "photo.fill")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
                     VStack(alignment: .leading) {
                         Text(game.game.name)
                             .font(.headline)

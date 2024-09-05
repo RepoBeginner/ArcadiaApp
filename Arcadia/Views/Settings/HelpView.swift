@@ -58,7 +58,8 @@ struct HelpView: View {
                 Text("Where to Find Games?")
                     .font(.title2)
                 Text("""
-                Arcadia cannot include games due to legal reasons, but there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.
+                In the featured games section you'll find some game provided by some developers who decided to partner with Arcadia to distribute their games through the app.
+                Aside from those, there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.
                 
                 """)
                 Text("Controls")

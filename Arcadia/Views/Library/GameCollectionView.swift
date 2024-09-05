@@ -85,12 +85,6 @@ struct GameCollectionView: View {
                     })
                     .accessibilityLabel("Recommendation")
                     .accessibilityHint("Get new games reccomendation")
-                    #if os(macOS)
-                    Button(action: { openWindow(id: "featured-games") }, label: {
-                        Image(systemName: "star")
-                    })
-                    .accessibilityLabel("Open featured games window")
-                    #endif
                     Button(action: { showingAddGameView.toggle() }, label: {
                         Image(systemName: "plus")
                     })

@@ -25,7 +25,10 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Help", systemImage: "gear")
                 }
-
+            ContributeView()
+                .tabItem {
+                    Label("Contribute", systemImage: "hands.sparkles")
+                }
             CreditsView()
                 .tabItem {
                     Label("Credits", systemImage: "star")

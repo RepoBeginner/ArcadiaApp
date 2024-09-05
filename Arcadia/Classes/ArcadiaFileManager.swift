@@ -222,7 +222,9 @@ enum ArcadiaCloudSyncStatus {
                     }
                 }
                 //To update the game list
-                getGamesURL(gameSystem: gameType)
+                if needScope {
+                    getGamesURL(gameSystem: gameType)
+                }
             } catch {
                 print("couldn't save file \(error)")
             }
