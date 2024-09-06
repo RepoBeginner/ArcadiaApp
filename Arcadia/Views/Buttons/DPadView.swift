@@ -10,7 +10,7 @@ import ArcadiaCore
 
 struct DPadView: View {
     
-    @AppStorage("useAdvancedDPad") private var useAdvancedDPad = true
+    @AppStorage("useAdvancedDPad") private var useAdvancedDPad = false
     
     var body: some View {
         if useAdvancedDPad {
