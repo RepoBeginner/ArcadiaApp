@@ -1,17 +1,16 @@
-#  iRetro
+# Arcadia
 
-## ToDos
+Arcadia is a frontend to the Libretro API, compatible with iOS and macOS.
+The aim for this project is to make retro gaming available to everyone, so it is designed to be simple and accessible.
+This means that, while I chose to implement the Libretro API, it will probably never support all Libretro Cores (BIOS requirements are a no go for example), or all Libretro functions.
+It is an ongoing project.
 
-- Finish implementing GB-GBC
-- Refine frontend
-- Add a second core (GBA)
-- Try to implement auto game scanning with libretro-db https://github.com/libretro/RetroArch/blob/master/libretro-db/README.md https://github.com/libretro/libretro-database
+## Architecture
 
+The main pillar of Arcadia is the ArcadiaCoreProtocol, which is where I implemented all the Libretro API code, with a default implementation.
+Each core then simply has to adopt the ArcadiaCoreProtocol and provide an implementation for the interface functions (such as retro_run, etc); all the other methods will be executed using the default implementation in ArcadiaCoreProtocol, which will call the core implementation of the interface functions.
+This is a complicated way to say that adopting a new core is very simple, just get it to compile as a framework, adopt the ArcadiaCoreProtocol and you're good to go.
 
-- Per Sync:
-    - Se l'utente attiva la sincronizzazione sul cloud, usare quello come master e triggerare la copia solo al momento dello switch a On
-    - Periodicamente triggerare la sincronizzazione --> la sincronizzazione non fa altro che scaricare i file dal cloud aggiornando il locale se la data di modifica è maggiore
-        - Ogni modifica dei file in locale deve essere mirrorata sul cloud:
-            - carico un gioco --> lo carico anche sul cloud
-            - salvo un gioco --> aggiorno il salvataggio sul cloud
-            - cancello un gioco --> cancello tutto anche dal cloud
+## App
+
+The app is written using SwiftUI and default UI components. The rendering of the frames uses Metal for efficiency.
