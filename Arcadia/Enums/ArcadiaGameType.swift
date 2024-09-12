@@ -96,7 +96,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .nesGame:
             return [UTType(filenameExtension: "nes")!]
         case .snesGame:
-            return [UTType(filenameExtension: "smc")!, UTType(filenameExtension: "sfc")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.snes")]
         case .atari2600Game:
             return [UTType(filenameExtension: "a26")!]
         case .atari7800Game:

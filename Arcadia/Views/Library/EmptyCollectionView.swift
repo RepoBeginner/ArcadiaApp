@@ -22,7 +22,7 @@ struct EmptyCollectionView: View {
             Text("Your game collection is empty, add new games using the plus button at the top")
             Text("With this console you can open games in the following formats:")
             ForEach(gameType.allowedExtensions, id: \.self) { allowedExtension in
-                Text(".\(allowedExtension.preferredFilenameExtension ?? "NIL")")
+                Text("\(allowedExtension.tags[.filenameExtension]?.joined(separator: "\n") ?? "NIL")")
                 
             }
         }
