@@ -13,11 +13,14 @@ struct GameRowView: View {
     @State private var gameTitle: String
     private var gameType: ArcadiaGameType
     private var gameURL: URL
+    @State private var exportedFileURL: URL
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @State private var imageData: Data?
     @State private var showingRenameAlert = false
     @State private var showingChangeImage = false
-    @State private var showingSaveExporter = false
+    @State private var showingExporter = false
+    @State private var exportingSave = false
+    @State private var showingGameExporter = false
     @State private var newGameName: String = ""
     @State private var selectedCustomImage: PhotosPickerItem?
     
@@ -25,9 +28,11 @@ struct GameRowView: View {
         self.gameTitle = gameTitle
         self.gameType = gameType
         self.gameURL = gameURL
+        self.exportedFileURL = gameURL
     }
     
     var body: some View {
+        let saveURL = fileManager.getSaveURL(gameURL: gameURL, gameType: gameType)
         HStack {
             if let image = imageData {
                 #if os(macOS)
@@ -49,7 +54,7 @@ struct GameRowView: View {
             Text(gameTitle)
                 .font(.headline)
             Spacer()
-            Image(systemName: FileManager.default.fileExists(atPath: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType).path) ? "bookmark.circle.fill" : "bookmark.circle")
+            Image(systemName: FileManager.default.fileExists(atPath: saveURL.path) ? "bookmark.circle.fill" : "bookmark.circle")
         }
         .onAppear {
             imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
@@ -103,6 +108,22 @@ struct GameRowView: View {
             } label: {
                 Label("Clear saves and states", systemImage: "clear")
             }
+            if FileManager.default.fileExists(atPath: saveURL.path) {
+                Button {
+                    exportedFileURL = saveURL
+                    exportingSave = true
+                    showingExporter.toggle()
+                } label: {
+                    Label("Export save", systemImage: "square.and.arrow.up")
+                }
+            }
+            Button {
+                exportingSave = false
+                exportedFileURL = gameURL
+                showingExporter.toggle()
+            } label: {
+                Label("Share game", systemImage: "square.and.arrow.up")
+            }
             Button {
                 showingChangeImage.toggle()
             } label: {
@@ -135,11 +156,15 @@ struct GameRowView: View {
             fileManager.loadCustomImage(imageData: loadedImage, gameURL: gameURL, gameType: gameType)
             self.imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
         }
-        /*
-        .fileExporter(isPresented: $showingSaveExporter, document: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType), defaultFilename: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType).lastPathComponent) {
+        .fileExporter(isPresented: $showingExporter, document: ArcadiaExportedFile(fileURL: exportedFileURL), contentType: exportingSave ? UTType(importedAs: "com.davideandreoli.Arcadia.saveFile") : UTType(filenameExtension: gameURL.pathExtension)!, defaultFilename: exportedFileURL.lastPathComponent) {
             result in
+            switch result {
+            case .success(let url):
+                print("Saved to \(url)")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         }
-         */
         
     }
 }

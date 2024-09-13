@@ -136,6 +136,18 @@
 				<string>com.davideandreoli.Arcadia.megaDriveGameFile</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Arcadia Save File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>None</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.davideandreoli.Arcadia.saveFile</string>
+			</array>
+		</dict>
 	</array>
 	<key>GCSupportedGameControllers</key>
 	<array>
@@ -388,6 +400,25 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>md</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcadia Save File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.saveFile</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>srm</string>
 				</array>
 			</dict>
 		</dict>

@@ -407,6 +407,9 @@
         }
       }
     },
+    "Export save" : {
+
+    },
     "F" : {
       "localizations" : {
         "it" : {
@@ -1266,6 +1269,9 @@
           }
         }
       }
+    },
+    "Share game" : {
+
     },
     "Share on social media" : {
       "localizations" : {
