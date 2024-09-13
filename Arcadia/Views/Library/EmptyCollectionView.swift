@@ -19,7 +19,7 @@ struct EmptyCollectionView: View {
     
     var body: some View {
         VStack {
-            Text("Your game collection is empty, add new games using the plus button at the top")
+            Text("Your game collection is empty, add new games using the plus button at the top.")
             Text("With this console you can open games in the following formats:")
             ForEach(gameType.allowedExtensions, id: \.self) { allowedExtension in
                 Text("\(allowedExtension.tags[.filenameExtension]?.joined(separator: "\n") ?? "NIL")")

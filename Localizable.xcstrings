@@ -1480,6 +1480,7 @@
       }
     },
     "Your game collection is empty, add new games using the plus button at the top" : {
+      "extractionState" : "stale",
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -1488,6 +1489,9 @@
           }
         }
       }
+    },
+    "Your game collection is empty, add new games using the plus button at the top." : {
+
     },
     "Z" : {
       "localizations" : {

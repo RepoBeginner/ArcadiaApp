@@ -90,25 +90,25 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     var allowedExtensions: [UTType] {
         switch self {
         case .gameBoyGame:
-            return [UTType(filenameExtension: "gb")!, UTType(filenameExtension: "gbc")!, UTType(filenameExtension: "sgb")!, UTType(filenameExtension: "cgb")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gameBoyGameFile")]
         case .gameBoyAdvanceGame:
-            return [UTType(filenameExtension: "gba")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gameBoyAdvanceGameFile")]
         case .nesGame:
-            return [UTType(filenameExtension: "nes")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.nesGameFile")]
         case .snesGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.snes")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.snesGameFile")]
         case .atari2600Game:
-            return [UTType(filenameExtension: "a26")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.atari2600GameFile")]
         case .atari7800Game:
-            return [UTType(filenameExtension: "a78")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.atari7800GameFile")]
         case .neoGeoPocketGame:
-            return [UTType(filenameExtension: "ngp")!, UTType(filenameExtension: "ngc")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.neoGeoPocketGameFile")]
         case .masterSystemGame:
-            return [UTType(filenameExtension: "sms")!, UTType(filenameExtension: "sg")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.masterSystemGameFile")]
         case .gameGearGame:
-            return [UTType(filenameExtension: "gg")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gameGearGameFile")]
         case .genesisGame:
-            return [UTType(filenameExtension: "gen")!, UTType(filenameExtension: "md")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.genesisGameFile"), UTType(filenameExtension: "md")!]
         }
         
     }
