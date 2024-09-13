@@ -1,3 +1,17 @@
+# 1.4
+
+## Features
+
+- Added the possibility to open game files with Arcadia from the file's share sheet
+
+## Improvements
+
+- Improved the aspect of the empty library view
+- Added the possibility to refresh the empty library view
+
+## Bug fixes
+
+
 # 1.3
 
 ## Features

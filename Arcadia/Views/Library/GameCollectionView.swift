@@ -78,7 +78,6 @@ struct GameCollectionView: View {
                     fileManager.syncDataToiCloud()
                 }
             }
-            .navigationTitle("Game Collection")
                 .toolbar() {
                     Button(action: { showingRecommendationView.toggle() }, label: {
                         Image(systemName: "lightbulb")
@@ -108,9 +107,7 @@ struct GameCollectionView: View {
                 .sheet(isPresented: $showingRecommendationView) {
                     RecommendationView(gameSystem: gameType)
                 }
-        #if os(iOS)
-                .navigationBarTitleDisplayMode(.inline)
-        #endif
+
 
     }
 }

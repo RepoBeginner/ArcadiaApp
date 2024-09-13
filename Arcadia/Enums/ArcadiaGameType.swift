@@ -108,7 +108,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameGearGame:
             return [UTType(importedAs: "com.davideandreoli.Arcadia.gameGearGameFile")]
         case .genesisGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.genesisGameFile"), UTType(filenameExtension: "md")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.genesisGameFile"), UTType(importedAs: "com.davideandreoli.Arcadia.megaDriveGameFile")]
         }
         
     }

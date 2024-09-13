@@ -11,13 +11,12 @@
         }
       }
     },
-    ".%@" : {
-      "extractionState" : "stale",
+    "\t.%@" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ".%@"
+            "value" : "\t.%@"
           }
         }
       }
@@ -124,17 +123,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arcadia e i suoi emulatori ti permettono di salvare i tuoi progressi in due modi:\n\n• Salvataggi: Questo è il modo standard di salvare i progressi di gioco, simile ai file di salvataggio nelle cartucce dei giochi, vengono generati e aggiornati automaticamente dall'app. Ogni gioco può avere un solo file di salvataggio. Questo formato è solitamente compatibile con altre applicazioni simili, li puoi trovare in Arcadia/Saves se desideri cambiare applicazione.\n• Stati: Questo è un modo non standard di salvare i progressi di gioco, abilitato dal processo di emulazione. Consiste nel creare uno snapshot dello stato esatto del gioco quando premi il pulsante di salvataggio. Ogni gioco può avere fino a tre file di stato. Questo formato può non essere compatibile al 100% poiché dipende dall'emulatore, ma li puoi trovare in Arcadia/States."
-          }
-        }
-      }
-    },
-    "Arcadia cannot include games due to legal reasons, but there are many online resources to guide you in dumping game cartridges into ROMs, acquiring ROMs, or finding homebrew games.\n" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Per questioni legali, non possono includere giochi all'interno di Arcadia. Online si possono però trovare diverse risorse che vi guideranno al dumping delle cartucce in ROMs, a trovare ROMs o a trovare giochi homebrew."
           }
         }
       }
@@ -605,6 +593,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Potrei esplorare interfacce personalizzate in futuro, ma non al momento.\n\nArcadia supporta il multiplayer locale per i giochi progettati per più di due giocatori. Nelle impostazioni o dal menu di gioco (accessibile cliccando sul pulsante Arcadia), puoi vedere i giocatori associati al controllo touch e a ciascun controller di gioco, se collegato. Per impostazione predefinita, i controlli touch gestiscono il giocatore uno, il primo controller gestisce il giocatore uno e ogni controller aggiuntivo gestisce il giocatore successivo disponibile."
+          }
+        }
+      }
+    },
+    "If your game does not show up, or if you loaded the game manually, you can pull to refresh this view, or use the button below." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se il tuo gioco non viene visualizzato, o se hai caricato il gioco manualmente, puoi trascinare verso il basso per aggiornare questa vista o utilizzare il pulsante qui sotto."
           }
         }
       }
@@ -1149,6 +1147,16 @@
         }
       }
     },
+    "Refresh game list" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ricarica la lista dei giochi"
+          }
+        }
+      }
+    },
     "Rename" : {
       "localizations" : {
         "it" : {
@@ -1479,8 +1487,7 @@
         }
       }
     },
-    "Your game collection is empty, add new games using the plus button at the top" : {
-      "extractionState" : "stale",
+    "Your game collection is empty, add new games using the plus button at the top." : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -1489,9 +1496,6 @@
           }
         }
       }
-    },
-    "Your game collection is empty, add new games using the plus button at the top." : {
-
     },
     "Z" : {
       "localizations" : {
