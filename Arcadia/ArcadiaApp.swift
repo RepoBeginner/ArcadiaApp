@@ -60,6 +60,7 @@ struct ArcadiaApp: App {
                 
         }
         //.modelContainer(sharedModelContainer)
+        .environment(ArcadiaNavigationState.shared)
         .environment(ArcadiaFileManager.shared)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
@@ -73,6 +74,7 @@ struct ArcadiaApp: App {
         .windowResizability(.contentSize)
         Window("Featured Games", id: "featured-games") {
             DiscoverGameListView()
+                .environment(ArcadiaNavigationState.shared)
                 .environment(ArcadiaFileManager.shared)
         }
         #endif

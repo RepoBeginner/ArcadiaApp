@@ -222,8 +222,10 @@ enum ArcadiaCloudSyncStatus {
                     }
                 }
                 //To update the game list
-                if needScope {
-                    getGamesURL(gameSystem: gameType)
+                if let currentGameSystem = ArcadiaNavigationState.shared.currentGameSystem {
+                    if currentGameSystem == gameType {
+                        getGamesURL(gameSystem: gameType)
+                    }
                 }
             } catch {
                 print("couldn't save file \(error)")

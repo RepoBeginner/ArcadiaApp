@@ -82,6 +82,7 @@
 		95CE66C62C8A18A4005BAF8B /* Keeping SNES Alive.sfc in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C52C8A18A4005BAF8B /* Keeping SNES Alive.sfc */; };
 		95CE66C82C8A1E78005BAF8B /* DMG Deals Damage.gb in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C72C8A1E78005BAF8B /* DMG Deals Damage.gb */; };
 		95CE66CA2C8A1FAC005BAF8B /* Break An Egg.md in Resources */ = {isa = PBXBuildFile; fileRef = 95CE66C92C8A1FAC005BAF8B /* Break An Egg.md */; };
+		95D794FC2C949EB400C2BA8D /* ArcadiaNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D794FB2C949EB400C2BA8D /* ArcadiaNavigationState.swift */; };
 		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
 		95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */; };
 		95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */; };
@@ -218,6 +219,7 @@
 		95CE66C52C8A18A4005BAF8B /* Keeping SNES Alive.sfc */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Keeping SNES Alive.sfc"; sourceTree = "<group>"; };
 		95CE66C72C8A1E78005BAF8B /* DMG Deals Damage.gb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DMG Deals Damage.gb"; sourceTree = "<group>"; };
 		95CE66C92C8A1FAC005BAF8B /* Break An Egg.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Break An Egg.md"; sourceTree = "<group>"; };
+		95D794FB2C949EB400C2BA8D /* ArcadiaNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaNavigationState.swift; sourceTree = "<group>"; };
 		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
 		95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameRowView.swift; sourceTree = "<group>"; };
 		95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameDetailView.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				955CC3722BF7C29E00C930ED /* CurrentBufferAudioPlayer.swift */,
 				9528F77F2BF4B97800E2CEC6 /* CurrentBufferMetalRenderer.swift */,
 				956F84072BEA8B9B0025FC5F /* ArcadiaFileManager.swift */,
+				95D794FB2C949EB400C2BA8D /* ArcadiaNavigationState.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				95CC86D42C47E76E009FB8DD /* EmptyCollectionView.swift in Sources */,
 				95E3C4902C8195B30060AC81 /* ArcadiaFeaturedGame.swift in Sources */,
 				9510FE202C61FE5300F01C88 /* ArcadiaButtonLayout.swift in Sources */,
+				95D794FC2C949EB400C2BA8D /* ArcadiaNavigationState.swift in Sources */,
 				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,
 				9510FE272C62480300F01C88 /* EmptyButtonView.swift in Sources */,
 				956F84082BEA8B9B0025FC5F /* ArcadiaFileManager.swift in Sources */,

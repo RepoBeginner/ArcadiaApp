@@ -27,6 +27,7 @@ struct GameCollectionView: View {
     
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
+    @Environment(ArcadiaNavigationState.self) var navigationState: ArcadiaNavigationState
     @Environment(InputController.self) var inputController: InputController
     @Environment(\.openWindow) var openWindow
     
@@ -68,8 +69,14 @@ struct GameCollectionView: View {
         }
             .onAppear {
                 fileManager.getGamesURL(gameSystem: gameType)
+                navigationState.currentGameSystem = gameType
                 if useiCloudSync {
                     fileManager.syncDataToiCloud()
+                }
+            }
+            .onDisappear {
+                if gameType == navigationState.currentGameSystem {
+                    navigationState.currentGameSystem = nil
                 }
             }
             .refreshable {
@@ -115,6 +122,7 @@ struct GameCollectionView: View {
 
  #Preview {
      GameCollectionView(gameType: ArcadiaGameType.gameBoyGame, path: .constant(NavigationPath()))
+ .environment(ArcadiaNavigationState.shared)
  .environment(ArcadiaFileManager.shared)
  .environment(ArcadiaCoreEmulationState.sharedInstance)
  .environment(InputController.shared)
