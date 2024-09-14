@@ -419,6 +419,7 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>srm</string>
+					<string>ngf</string>
 				</array>
 			</dict>
 		</dict>

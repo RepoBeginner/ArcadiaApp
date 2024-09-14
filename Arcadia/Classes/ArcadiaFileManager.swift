@@ -246,7 +246,7 @@ enum ArcadiaCloudSyncStatus {
     }
     
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
-        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("srm")
+        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[.memorySaveRam] ?? "srm")
     }
     
     
