@@ -155,6 +155,30 @@ enum ArcadiaCloudSyncStatus {
         }
     }
     
+    func importSaveFile(for gameURL: URL, saveURL: URL, gameType: ArcadiaGameType, needScope: Bool = true) {
+        if needScope {
+            if gameURL.startAccessingSecurityScopedResource()  {
+                defer {
+                    gameURL.stopAccessingSecurityScopedResource()
+                }
+                
+                let localSaveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
+                
+                do {
+                    let saveFile = try Data(contentsOf: saveURL)
+                    try saveFile.write(to: localSaveURL, options: .atomic)
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            createCloudCopy(of: localSaveURL)
+                        }
+                    }
+                } catch {
+                    print("couldn't save file \(error)")
+                }
+            }
+        }
+    }
+    
     func saveGame(gameURL: URL, gameType: ArcadiaGameType, needScope: Bool = true) {
         if needScope {
             if gameURL.startAccessingSecurityScopedResource()  {

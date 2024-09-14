@@ -19,6 +19,7 @@ struct GameRowView: View {
     @State private var showingRenameAlert = false
     @State private var showingChangeImage = false
     @State private var showingExporter = false
+    @State private var showingSaveImporter = false
     @State private var exportingSave = false
     @State private var showingGameExporter = false
     @State private var newGameName: String = ""
@@ -156,6 +157,20 @@ struct GameRowView: View {
             fileManager.loadCustomImage(imageData: loadedImage, gameURL: gameURL, gameType: gameType)
             self.imageData = fileManager.getImageData(gameURL: gameURL, gameType: gameType)
         }
+        /*
+        .fileImporter(isPresented: $showingSaveImporter, allowedContentTypes: [UTType.data], onCompletion: { result in
+            DispatchQueue.global(qos: .userInteractive).async {
+                switch result {
+                case .success(let saveURL):
+                    fileManager.importSaveFile(for: gameURL, saveURL: saveURL, gameType: gameType)
+                case .failure(let error):
+                    print("error reading: \(error.localizedDescription)")
+                }
+
+                
+            }
+        })
+         */
         .fileExporter(isPresented: $showingExporter, document: ArcadiaExportedFile(fileURL: exportedFileURL), contentType: exportingSave ? UTType(importedAs: "com.davideandreoli.Arcadia.saveFile") : UTType(filenameExtension: gameURL.pathExtension)!, defaultFilename: exportedFileURL.lastPathComponent) {
             result in
             switch result {
@@ -165,6 +180,7 @@ struct GameRowView: View {
                 print(error.localizedDescription)
             }
         }
+
         
     }
 }
