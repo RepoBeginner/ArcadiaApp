@@ -3,6 +3,7 @@
 ## Features
 
 - Added the possibility to open game files with Arcadia from the file's share sheet
+- Added the possibility to share games and export save files
 
 ## Improvements
 

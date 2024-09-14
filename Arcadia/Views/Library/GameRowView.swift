@@ -18,7 +18,7 @@ struct GameRowView: View {
     @State private var imageData: Data?
     @State private var showingRenameAlert = false
     @State private var showingChangeImage = false
-    @State private var showingExporter = false
+    @State private var showingSaveExporter = false
     @State private var showingSaveImporter = false
     @State private var exportingSave = false
     @State private var showingGameExporter = false
@@ -111,18 +111,12 @@ struct GameRowView: View {
             }
             if FileManager.default.fileExists(atPath: saveURL.path) {
                 Button {
-                    exportedFileURL = saveURL
-                    exportingSave = true
-                    showingExporter.toggle()
+                    showingSaveExporter.toggle()
                 } label: {
                     Label("Export save", systemImage: "square.and.arrow.up")
                 }
             }
-            Button {
-                exportingSave = false
-                exportedFileURL = gameURL
-                showingExporter.toggle()
-            } label: {
+            ShareLink(item: gameURL) {
                 Label("Share game", systemImage: "square.and.arrow.up")
             }
             Button {
@@ -171,7 +165,7 @@ struct GameRowView: View {
             }
         })
          */
-        .fileExporter(isPresented: $showingExporter, document: ArcadiaExportedFile(fileURL: exportedFileURL), contentType: exportingSave ? UTType(importedAs: "com.davideandreoli.Arcadia.saveFile") : UTType(filenameExtension: gameURL.pathExtension)!, defaultFilename: exportedFileURL.lastPathComponent) {
+        .fileExporter(isPresented: $showingSaveExporter, document: ArcadiaSaveFile(fileURL: saveURL), contentType: UTType(importedAs: "com.davideandreoli.Arcadia.saveFile"), defaultFilename: saveURL.lastPathComponent) {
             result in
             switch result {
             case .success(let url):
