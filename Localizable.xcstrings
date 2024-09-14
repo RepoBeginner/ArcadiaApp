@@ -408,7 +408,14 @@
       }
     },
     "Export save" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esporta salvataggio"
+          }
+        }
+      }
     },
     "F" : {
       "localizations" : {
@@ -1271,7 +1278,14 @@
       }
     },
     "Share game" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi gioco"
+          }
+        }
+      }
     },
     "Share on social media" : {
       "localizations" : {
