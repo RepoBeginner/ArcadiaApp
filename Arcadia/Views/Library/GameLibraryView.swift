@@ -27,6 +27,10 @@ struct GameLibraryView: View {
                 NavigationStack(path: $path) {
                     GameCollectionView(gameType: selectedSystem, path: $path)
                         .id(selectedSystem.id)
+                        .navigationTitle("Game Collection")
+                    #if os(iOS)
+                        .navigationBarTitleDisplayMode(.inline)
+                    #endif
                 }
 
             } else {

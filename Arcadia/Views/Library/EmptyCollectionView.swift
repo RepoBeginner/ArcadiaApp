@@ -12,25 +12,66 @@ import ArcadiaCore
 struct EmptyCollectionView: View {
     
     @State private var gameType: ArcadiaGameType
+    @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
+    @Environment(\.colorScheme) var colorScheme
+    
+    @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     
     init(gameType: ArcadiaGameType) {
         self.gameType = gameType
     }
     
     var body: some View {
-        VStack {
-            Text("Your game collection is empty, add new games using the plus button at the top")
-            Text("With this console you can open games in the following formats:")
-            ForEach(gameType.allowedExtensions, id: \.self) { allowedExtension in
-                Text(".\(allowedExtension.preferredFilenameExtension ?? "NIL")")
+        GeometryReader { geometry in
+            ScrollView {
                 
+                VStack(alignment: .center) {
+                    Spacer()
+                    VStack(alignment: .leading) {
+                        Text("Your game collection is empty, add new games using the plus button at the top.")
+                        Text("With this console you can open games in the following formats:")
+                        ForEach(gameType.allowedExtensions, id: \.self) { allowedExtension in
+                            Text("\t.\(allowedExtension.tags[.filenameExtension]?.joined(separator: "\n\t.") ?? "NIL")")
+                        }
+                        Text("If your game does not show up, or if you loaded the game manually, you can pull to refresh this view, or use the button below.")
+                    }
+                    .padding()
+                    .foregroundStyle(.primary)
+                    .background(colorScheme == .dark ? AnyShapeStyle(HierarchicalShapeStyle.quaternary) : AnyShapeStyle(BackgroundStyle.background))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                    Button(action: {
+                        fileManager.getGamesURL(gameSystem: gameType)
+                        if useiCloudSync {
+                            fileManager.syncDataToiCloud()
+                        }
+                    }) {
+                        Text("Refresh game list")
+                    }
+                    .buttonStyle(BorderedButtonStyle())
+                    Spacer()
+                }
+                .padding()
+                .frame(minHeight: geometry.size.height)
+                
+                
+
+            }
+            .background(colorScheme == .dark ? AnyShapeStyle(BackgroundStyle.background) : AnyShapeStyle(HierarchicalShapeStyle.quinary))
+            .scrollIndicators(.never)
+            .refreshable {
+                fileManager.getGamesURL(gameSystem: gameType)
+                if useiCloudSync {
+                    fileManager.syncDataToiCloud()
+                }
             }
         }
-        .padding()
+        
+        
         
     }
 }
 
 #Preview {
     EmptyCollectionView(gameType: .gameBoyGame)
+        .environment(ArcadiaFileManager.shared)
 }

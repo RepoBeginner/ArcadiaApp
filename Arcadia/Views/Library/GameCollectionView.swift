@@ -27,6 +27,7 @@ struct GameCollectionView: View {
     
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
+    @Environment(ArcadiaNavigationState.self) var navigationState: ArcadiaNavigationState
     @Environment(InputController.self) var inputController: InputController
     @Environment(\.openWindow) var openWindow
     
@@ -68,8 +69,14 @@ struct GameCollectionView: View {
         }
             .onAppear {
                 fileManager.getGamesURL(gameSystem: gameType)
+                navigationState.currentGameSystem = gameType
                 if useiCloudSync {
                     fileManager.syncDataToiCloud()
+                }
+            }
+            .onDisappear {
+                if gameType == navigationState.currentGameSystem {
+                    navigationState.currentGameSystem = nil
                 }
             }
             .refreshable {
@@ -78,7 +85,6 @@ struct GameCollectionView: View {
                     fileManager.syncDataToiCloud()
                 }
             }
-            .navigationTitle("Game Collection")
                 .toolbar() {
                     Button(action: { showingRecommendationView.toggle() }, label: {
                         Image(systemName: "lightbulb")
@@ -108,9 +114,7 @@ struct GameCollectionView: View {
                 .sheet(isPresented: $showingRecommendationView) {
                     RecommendationView(gameSystem: gameType)
                 }
-        #if os(iOS)
-                .navigationBarTitleDisplayMode(.inline)
-        #endif
+
 
     }
 }
@@ -118,6 +122,7 @@ struct GameCollectionView: View {
 
  #Preview {
      GameCollectionView(gameType: ArcadiaGameType.gameBoyGame, path: .constant(NavigationPath()))
+ .environment(ArcadiaNavigationState.shared)
  .environment(ArcadiaFileManager.shared)
  .environment(ArcadiaCoreEmulationState.sharedInstance)
  .environment(InputController.shared)
