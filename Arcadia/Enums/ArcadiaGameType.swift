@@ -92,7 +92,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .gameBoyGame:
             return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gb"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gbc"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sgb"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.cgb")]
         case .gameBoyAdvanceGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.gameBoyAdvanceGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gba")]
         case .nesGame:
             return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.nes")]
         case .snesGame:
