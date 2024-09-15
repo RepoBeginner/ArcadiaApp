@@ -90,25 +90,25 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     var allowedExtensions: [UTType] {
         switch self {
         case .gameBoyGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.gameBoyGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gb"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gbc"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sgb"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.cgb")]
         case .gameBoyAdvanceGame:
             return [UTType(importedAs: "com.davideandreoli.Arcadia.gameBoyAdvanceGameFile")]
         case .nesGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.nesGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.nes")]
         case .snesGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.snesGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.smc"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sfc")]
         case .atari2600Game:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.atari2600GameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.a26")]
         case .atari7800Game:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.atari7800GameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.a78")]
         case .neoGeoPocketGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.neoGeoPocketGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.ngp"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.ngc")]
         case .masterSystemGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.masterSystemGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sms"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sg")]
         case .gameGearGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.gameGearGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gg")]
         case .genesisGame:
-            return [UTType(importedAs: "com.davideandreoli.Arcadia.genesisGameFile"), UTType(importedAs: "com.davideandreoli.Arcadia.megaDriveGameFile")]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gen"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.md")]
         }
         
     }
