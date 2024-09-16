@@ -22,52 +22,37 @@ struct EmptyCollectionView: View {
     }
     
     var body: some View {
-        GeometryReader { geometry in
-            ScrollView {
-                
-                VStack(alignment: .center) {
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Text("Your game collection is empty, add new games using the plus button at the top.")
-                        Text("With this console you can open games in the following formats:")
-                        ForEach(gameType.allowedExtensions, id: \.self) { allowedExtension in
-                            Text("\t.\(allowedExtension.tags[.filenameExtension]?.joined(separator: "\n\t.") ?? "NIL")")
-                        }
-                        Text("If your game does not show up, or if you loaded the game manually, you can pull to refresh this view, or use the button below.")
+        Form {
+            VStack(alignment: .center) {
+                VStack(alignment: .leading) {
+                    Text("Your game collection is empty, add new games using the plus button at the top.")
+                    Text("With this console you can open games in the following formats:")
+                    ForEach(gameType.allowedExtensions, id: \.self) { allowedExtension in
+                        Text("\t.\(allowedExtension.tags[.filenameExtension]?.joined(separator: "\n\t.") ?? "NIL")")
                     }
-                    .padding()
-                    .foregroundStyle(.primary)
-                    .background(colorScheme == .dark ? AnyShapeStyle(HierarchicalShapeStyle.quaternary) : AnyShapeStyle(BackgroundStyle.background))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    Button(action: {
-                        fileManager.getGamesURL(gameSystem: gameType)
-                        if useiCloudSync {
-                            fileManager.syncDataToiCloud()
-                        }
-                    }) {
-                        Text("Refresh game list")
-                    }
-                    .buttonStyle(BorderedButtonStyle())
-                    Spacer()
+                    Text("If your game does not show up, or if you loaded the game manually, you can pull to refresh this view, or use the button below.")
                 }
-                .padding()
-                .frame(minHeight: geometry.size.height)
+                Button(action: {
+                    fileManager.getGamesURL(gameSystem: gameType)
+                    if useiCloudSync {
+                        fileManager.syncDataToiCloud()
+                    }
+                }) {
+                    Text("Refresh game list")
+                }
+                .buttonStyle(BorderedButtonStyle())
                 
-                
-
             }
-            .background(colorScheme == .dark ? AnyShapeStyle(BackgroundStyle.background) : AnyShapeStyle(HierarchicalShapeStyle.quinary))
-            .scrollIndicators(.never)
-            .refreshable {
-                fileManager.getGamesURL(gameSystem: gameType)
-                if useiCloudSync {
-                    fileManager.syncDataToiCloud()
-                }
+            
+            
+        }
+        .refreshable {
+            fileManager.getGamesURL(gameSystem: gameType)
+            if useiCloudSync {
+                fileManager.syncDataToiCloud()
             }
         }
-        
-        
-        
+                
     }
 }
 

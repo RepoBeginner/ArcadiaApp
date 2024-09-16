@@ -13,6 +13,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>com.davideandreoli.Arcadia.gamefile.smc</string>
 				<string>com.davideandreoli.Arcadia.snesGameFile</string>
 			</array>
 		</dict>
@@ -25,7 +26,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.nesGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.nes</string>
 			</array>
 		</dict>
 		<dict>
@@ -37,7 +38,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.atari2600GameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.a26</string>
 			</array>
 		</dict>
 		<dict>
@@ -49,7 +50,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.atari7800GameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.a78</string>
 			</array>
 		</dict>
 		<dict>
@@ -61,7 +62,10 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.gameBoyGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.cgb</string>
+				<string>com.davideandreoli.Arcadia.gamefile.sgb</string>
+				<string>com.davideandreoli.Arcadia.gamefile.gb</string>
+				<string>com.davideandreoli.Arcadia.gamefile.gbc</string>
 			</array>
 		</dict>
 		<dict>
@@ -73,7 +77,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.gameBoyAdvanceGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.gba</string>
 			</array>
 		</dict>
 		<dict>
@@ -85,7 +89,8 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.neoGeoPocketGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.ngc</string>
+				<string>com.davideandreoli.Arcadia.gamefile.ngp</string>
 			</array>
 		</dict>
 		<dict>
@@ -97,7 +102,8 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.masterSystemGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.sms</string>
+				<string>com.davideandreoli.Arcadia.gamefile.sg</string>
 			</array>
 		</dict>
 		<dict>
@@ -109,7 +115,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.gameGearGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.gg</string>
 			</array>
 		</dict>
 		<dict>
@@ -121,7 +127,7 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.genesisGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.gen</string>
 			</array>
 		</dict>
 		<dict>
@@ -133,7 +139,7 @@
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>com.davideandreoli.Arcadia.megaDriveGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.md</string>
 			</array>
 		</dict>
 		<dict>
@@ -187,12 +193,31 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.snesGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.smc</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
 					<string>smc</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcadia SNES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.sfc</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
 					<string>sfc</string>
 				</array>
 			</dict>
@@ -208,7 +233,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.nesGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.nes</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -228,7 +253,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.atari2600GameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.a26</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -248,7 +273,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.atari7800GameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.a78</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -268,14 +293,71 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.gameBoyGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.gb</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
 					<string>gb</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcadia GameBoy Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.gbc</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
 					<string>gbc</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcadia GameBoy Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.sgb</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
 					<string>sgb</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcadia GameBoy Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.cgb</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
 					<string>cgb</string>
 				</array>
 			</dict>
@@ -291,7 +373,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.gameBoyAdvanceGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.gba</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -311,12 +393,31 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.neoGeoPocketGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.ngp</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
 					<string>ngp</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcaida Neo Geo Pocket Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.ngc</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
 					<string>ngc</string>
 				</array>
 			</dict>
@@ -332,12 +433,31 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.masterSystemGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.sms</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
 					<string>sms</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Arcadia Master System Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.sg</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
 					<string>sg</string>
 				</array>
 			</dict>
@@ -353,7 +473,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.gameGearGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.gg</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -373,7 +493,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.genesisGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.gen</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -394,7 +514,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.megaDriveGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.md</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
