@@ -473,7 +473,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.gameGearGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.gg</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -493,7 +493,7 @@
 			<key>UTTypeIcons</key>
 			<dict/>
 			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.genesisGameFile</string>
+			<string>com.davideandreoli.Arcadia.gamefile.gen</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>

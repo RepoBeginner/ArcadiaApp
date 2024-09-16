@@ -247,6 +247,16 @@
         }
       }
     },
+    "Close" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chiudi"
+          }
+        }
+      }
+    },
     "Confirm" : {
       "localizations" : {
         "it" : {
@@ -487,6 +497,16 @@
         }
       }
     },
+    "Game console" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Console"
+          }
+        }
+      }
+    },
     "Game Consoles" : {
       "localizations" : {
         "it" : {
@@ -613,6 +633,46 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se il tuo gioco non viene visualizzato, o se hai caricato il gioco manualmente, puoi trascinare verso il basso per aggiornare questa vista o utilizzare il pulsante qui sotto."
+          }
+        }
+      }
+    },
+    "Import" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importa"
+          }
+        }
+      }
+    },
+    "Import game" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importa gioco"
+          }
+        }
+      }
+    },
+    "Importing game" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importando il gioco"
+          }
+        }
+      }
+    },
+    "In some cases, multiple game systems will be compatible with your game file. Please make sure to select the correct one when importing." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "In alcuni casi, diverse console sono compatibili con il tuo gioco. Assicurati di selezionare la console corretta quando importi."
           }
         }
       }
@@ -867,6 +927,16 @@
         }
       }
     },
+    "No selection" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna console selezionata."
+          }
+        }
+      }
+    },
     "Numpad 0" : {
       "localizations" : {
         "it" : {
@@ -1113,6 +1183,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Playing with Arcadia"
+          }
+        }
+      }
+    },
+    "Please pick a game system." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli una console."
           }
         }
       }

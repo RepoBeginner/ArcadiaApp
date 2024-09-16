@@ -179,10 +179,10 @@ enum ArcadiaCloudSyncStatus {
         }
     }
     
-    func saveGame(gameURL: URL, gameType: ArcadiaGameType, needScope: Bool = true) {
-        if needScope {
+    func saveGame(gameURL: URL, gameType: ArcadiaGameType, fromSheet: Bool = false) {
+
             if gameURL.startAccessingSecurityScopedResource()  {
-                
+                print("entering the scoping")
                 defer {
                     gameURL.stopAccessingSecurityScopedResource()
                 }
@@ -218,43 +218,47 @@ enum ArcadiaCloudSyncStatus {
                     print("couldn't save file \(error)")
                 }
             }
-
-        } else if !needScope {
-            do {
-                
-                let romFile = try Data(contentsOf: gameURL)
-                print("Got Content")
-                let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
-                try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
-                try romFile.write(to: savePath, options: .atomic)
-                if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
-                    if iCloudSyncEnabled {
-                        createCloudCopy(of: savePath)
+            else {
+                do {
+                    
+                    let romFile = try Data(contentsOf: gameURL)
+                    print("Got Content")
+                    let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
+                    try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
+                    try romFile.write(to: savePath, options: .atomic)
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            createCloudCopy(of: savePath)
+                        }
                     }
-                }
-                if let boxArtPath = getGameFromURL(gameURL: gameURL) {
-                    guard let boxArtURL = URL(string: boxArtPath) else { return }
-                    print("Got boxULR :\(boxArtURL)")
-                    downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
-                        DispatchQueue.main.async {
-                            if let error = error {
-                                print("Error: \(error.localizedDescription)")
-                            } else {
-                                print("Image saved successfully")
+                    if let boxArtPath = getGameFromURL(gameURL: gameURL) {
+                        guard let boxArtURL = URL(string: boxArtPath) else { return }
+                        print("Got boxULR :\(boxArtURL)")
+                        downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
+                            DispatchQueue.main.async {
+                                if let error = error {
+                                    print("Error: \(error.localizedDescription)")
+                                } else {
+                                    print("Image saved successfully")
+                                }
                             }
                         }
                     }
-                }
-                //To update the game list
-                if let currentGameSystem = ArcadiaNavigationState.shared.currentGameSystem {
-                    if currentGameSystem == gameType {
-                        getGamesURL(gameSystem: gameType)
+                    //To update the game list
+                    if let currentGameSystem = ArcadiaNavigationState.shared.currentGameSystem {
+                        if currentGameSystem == gameType {
+                            getGamesURL(gameSystem: gameType)
+                        }
                     }
+                } catch {
+                    print("couldn't save file \(error)")
                 }
-            } catch {
-                print("couldn't save file \(error)")
             }
+            
+        if fromSheet {
+            self.showAlert = true
         }
+
     }
     
     func importGameFromShare(gameURL : URL) {
@@ -263,7 +267,7 @@ enum ArcadiaCloudSyncStatus {
         
         for gameType in ArcadiaGameType.allCases {
             if gameType.allowedExtensions.contains(UTType(filenameExtension: gameExtension)!) {
-                self.saveGame(gameURL: gameURL, gameType: gameType, needScope: false)
+                self.saveGame(gameURL: gameURL, gameType: gameType)
                 self.showAlert = true
             }
         }

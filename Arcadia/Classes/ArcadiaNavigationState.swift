@@ -10,6 +10,7 @@ import Foundation
 @Observable class ArcadiaNavigationState {
     public static var shared = ArcadiaNavigationState()
     public var currentGameSystem: ArcadiaGameType?
+    public var importedURL: URL?
     
     private init() {
         self.currentGameSystem = nil

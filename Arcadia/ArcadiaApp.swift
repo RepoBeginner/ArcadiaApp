@@ -11,6 +11,9 @@ import ArcadiaCore
 
 @main
 struct ArcadiaApp: App {
+    
+    @State private var showImportSheet: Bool = false
+    
     /*
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -31,7 +34,8 @@ struct ArcadiaApp: App {
             #if os(macOS)
             GameLibraryView()
                 .onOpenURL { url in
-                    ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
+                    ArcadiaNavigationState.shared.importedURL = url
+                    showImportSheet.toggle()
                 }
             #elseif os(iOS)
             TabView {
@@ -48,13 +52,18 @@ struct ArcadiaApp: App {
                                 Label("Settings", systemImage: "gear")
                             }
             }
+            .sheet(isPresented: $showImportSheet) {
+                ImportGameFromSheetView()
+            }
             .alert("Game loaded!", isPresented: $fileManager.showAlert) {
                 Button("Ok", action: {})
             } message: {
                 Text("You will find the game in the console's collection.")
             }
             .onOpenURL { url in
-                ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
+                //Probably need to copy it locally and use the local link?
+                ArcadiaNavigationState.shared.importedURL = url
+                showImportSheet.toggle()
             }
             #endif
                 

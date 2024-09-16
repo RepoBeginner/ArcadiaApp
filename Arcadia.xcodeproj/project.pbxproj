@@ -86,6 +86,7 @@
 		95D794FE2C94A93E00C2BA8D /* ArcadiaSaveFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D794FD2C94A93E00C2BA8D /* ArcadiaSaveFile.swift */; };
 		95D795002C94C07500C2BA8D /* ArcadiaGameFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D794FF2C94C07500C2BA8D /* ArcadiaGameFile.swift */; };
 		95D795022C94D53D00C2BA8D /* ArcadiaExportedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795012C94D53D00C2BA8D /* ArcadiaExportedFile.swift */; };
+		95D795042C98065900C2BA8D /* ImportGameFromSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */; };
 		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
 		95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */; };
 		95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */; };
@@ -226,6 +227,7 @@
 		95D794FD2C94A93E00C2BA8D /* ArcadiaSaveFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaSaveFile.swift; sourceTree = "<group>"; };
 		95D794FF2C94C07500C2BA8D /* ArcadiaGameFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGameFile.swift; sourceTree = "<group>"; };
 		95D795012C94D53D00C2BA8D /* ArcadiaExportedFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaExportedFile.swift; sourceTree = "<group>"; };
+		95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportGameFromSheetView.swift; sourceTree = "<group>"; };
 		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
 		95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameRowView.swift; sourceTree = "<group>"; };
 		95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameDetailView.swift; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				95707CB92C00E67100217B82 /* GameSystemRowView.swift */,
 				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
 				95CC86D32C47E76E009FB8DD /* EmptyCollectionView.swift */,
+				95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
+				95D795042C98065900C2BA8D /* ImportGameFromSheetView.swift in Sources */,
 				95D795022C94D53D00C2BA8D /* ArcadiaExportedFile.swift in Sources */,
 				959F81ED2C1A2BB1009EF53B /* InputSettingsView.swift in Sources */,
 				955CC3822BF7E54E00C930ED /* CircleButtonView.swift in Sources */,
