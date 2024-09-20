@@ -83,7 +83,12 @@ struct RecommendationView: View {
                             }
                             
                         } else {
-                            Text("No recommendation found. Keep in mind that for recommendations to be found your games have to match the internal database, this won't work with homebrew games unfortunately.")
+                            List {
+                                VStack(alignment: .leading) {
+                                    Text("No recommendation found.")
+                                    Text("Keep in mind that for recommendations to be found your games have to match the internal database, this won't work with homebrew games unfortunately.")
+                                }
+                            }
                         }
                     }
                 }

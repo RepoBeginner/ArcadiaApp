@@ -10,7 +10,7 @@ import StoreKit
 
 struct ContributeView: View {
     var body: some View {
-        ScrollView {
+        List {
             VStack {
                 Text("""
                 Arcadia is a labor of love, born from my passion for Apple and my desire to learn new things. As such, it is an imperfect product developed in my free time. If you enjoy the app and would like to contribute to its development, here are some ways you can help:
@@ -22,7 +22,6 @@ struct ContributeView: View {
                 """)
 
             }
-            .padding()
         }
         .navigationTitle("Contribute")
     }

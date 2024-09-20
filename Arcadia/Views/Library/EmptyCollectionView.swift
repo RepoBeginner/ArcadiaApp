@@ -22,7 +22,7 @@ struct EmptyCollectionView: View {
     }
     
     var body: some View {
-        Form {
+        List {
             VStack(alignment: .center) {
                 VStack(alignment: .leading) {
                     Text("Your game collection is empty, add new games using the plus button at the top.")
