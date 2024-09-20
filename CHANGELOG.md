@@ -9,6 +9,8 @@
 
 - Improved the aspect of the empty library view
 - Added the possibility to refresh the empty library view
+- Made the UI more consistent
+- Made the icons compatible with iOS 18
 
 ## Bug fixes
 

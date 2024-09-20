@@ -17,16 +17,15 @@ struct DiscoverDeveloperDetailView: View {
     }
     
     var body: some View {
-        ScrollView {
+        List {
+            HStack {
+                    Image(systemName: "person.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                    Text(developer.name)
+                    .font(.title)
+                }
             VStack(alignment: .leading) {
-                HStack {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .frame(width: 50, height: 50)
-                        Text(developer.name)
-                        .font(.title)
-                    }
-                Divider()
                 Text("Socials")
                     .font(.headline)
                 ScrollView(.horizontal) {
@@ -42,23 +41,22 @@ struct DiscoverDeveloperDetailView: View {
                                 }
                             }
                             .foregroundStyle(.foreground)
+                            Divider()
                         }
                         
                         Spacer()
                     }
                     .padding()
                 }
-                if developer.bio != "" {
-                    Divider()
+            }
+            if developer.bio != "" {
+                VStack(alignment: .leading) {
                     Text("Bio")
                         .font(.headline)
                     Text(developer.bio)
                 }
-                Divider()
-                Text("This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above.")
-                Spacer()
-                }
-            .padding()
+            }
+            Text("This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above.")
             }
         .navigationTitle("Developer")
             

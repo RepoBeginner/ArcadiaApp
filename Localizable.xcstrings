@@ -767,6 +767,16 @@
         }
       }
     },
+    "Keep in mind that for recommendations to be found your games have to match the internal database, this won't work with homebrew games unfortunately." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni presente che affinché vengano trovate raccomandazioni, almeno uno dei tuoi giochi deve corrispondere al database interno; purtroppo, questo non funzionerà con i giochi homebrew."
+          }
+        }
+      }
+    },
     "Keyboard mapping" : {
       "localizations" : {
         "it" : {
@@ -907,12 +917,12 @@
         }
       }
     },
-    "No recommendation found. Keep in mind that for recommendations to be found your games have to match the internal database, this won't work with homebrew games unfortunately." : {
+    "No recommendation found." : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nessuna raccomandazione trovata. Tieni presente che affinché vengano trovate raccomandazioni, almeno uno dei tuoi giochi deve corrispondere al database interno; purtroppo, questo non funzionerà con i giochi homebrew."
+            "value" : "Nessuna raccomandazione trovata."
           }
         }
       }
