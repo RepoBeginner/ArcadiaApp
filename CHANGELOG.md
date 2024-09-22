@@ -16,6 +16,7 @@
 ## Bug fixes
 
 - Added start and select button to Atari 2600 and 7800 cores, to allow to play games that start in preview mode and need to be reset. Sorry about that!
+- Fixed an issue that could cause the app to crash if buttons were pressed very quickly
 
 
 # 1.3
