@@ -11,8 +11,11 @@
 - Added the possibility to refresh the empty library view
 - Made the UI more consistent
 - Made the icons compatible with iOS 18
+- Now the audio will follow the mute switch by default - more advanced audio controls coming the next update
 
 ## Bug fixes
+
+- Added start and select button to Atari 2600 and 7800 cores, to allow to play games that start in preview mode and need to be reset. Sorry about that!
 
 
 # 1.3
