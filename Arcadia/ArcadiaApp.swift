@@ -33,6 +33,10 @@ struct ArcadiaApp: App {
         WindowGroup {
             #if os(macOS)
             GameLibraryView()
+                .handlesExternalEvents(preferring: Set(arrayLiteral: "*"), allowing: Set(arrayLiteral: "*"))
+                .sheet(isPresented: $showImportSheet) {
+                    ImportGameFromSheetView()
+                }
                 .onOpenURL { url in
                     ArcadiaNavigationState.shared.importedURL = url
                     showImportSheet.toggle()
@@ -68,6 +72,12 @@ struct ArcadiaApp: App {
             #endif
                 
         }
+        #if os(macOS)
+        .commands {
+              CommandGroup(replacing: .newItem, addition: { })
+           }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "*"))
+        #endif
         //.modelContainer(sharedModelContainer)
         .environment(ArcadiaNavigationState.shared)
         .environment(ArcadiaFileManager.shared)
