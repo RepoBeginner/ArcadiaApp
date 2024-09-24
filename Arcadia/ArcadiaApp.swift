@@ -9,10 +9,24 @@ import SwiftUI
 import SwiftData
 import ArcadiaCore
 
+#if os(macOS)
+import Foundation
+import AppKit
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+}
+#endif
+
 @main
 struct ArcadiaApp: App {
     
     @State private var showImportSheet: Bool = false
+    #if os(macOS)
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    #endif
     
     /*
     var sharedModelContainer: ModelContainer = {
