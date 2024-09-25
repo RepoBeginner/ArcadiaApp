@@ -1,3 +1,7 @@
+# 1.4.1
+
+Arcadia becomes Altea. Due to some conflicts with other apps naming, Arcadia's name is now Altea.
+
 # 1.4
 
 ## Features
