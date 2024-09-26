@@ -1,3 +1,9 @@
+# 1.4.2
+
+## Bug Fixes
+
+- Fixed a bug that caused the app to crash when switching to cores with different audio sample rates. Sorry about that, it took quite long to catch because it didn't happen in debug builds.
+
 # 1.4.1
 
 Arcadia becomes Altea. Due to some conflicts with other apps naming, Arcadia's name is now Altea.
