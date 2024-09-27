@@ -155,10 +155,34 @@ enum ArcadiaCloudSyncStatus {
         }
     }
     
-    func saveGame(gameURL: URL, gameType: ArcadiaGameType, needScope: Bool = true) {
+    func importSaveFile(for gameURL: URL, saveURL: URL, gameType: ArcadiaGameType, needScope: Bool = true) {
         if needScope {
             if gameURL.startAccessingSecurityScopedResource()  {
+                defer {
+                    gameURL.stopAccessingSecurityScopedResource()
+                }
                 
+                let localSaveURL = getSaveURL(gameURL: gameURL, gameType: gameType)
+                
+                do {
+                    let saveFile = try Data(contentsOf: saveURL)
+                    try saveFile.write(to: localSaveURL, options: .atomic)
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            createCloudCopy(of: localSaveURL)
+                        }
+                    }
+                } catch {
+                    print("couldn't save file \(error)")
+                }
+            }
+        }
+    }
+    
+    func saveGame(gameURL: URL, gameType: ArcadiaGameType, fromSheet: Bool = false) {
+
+            if gameURL.startAccessingSecurityScopedResource()  {
+                print("entering the scoping")
                 defer {
                     gameURL.stopAccessingSecurityScopedResource()
                 }
@@ -194,41 +218,47 @@ enum ArcadiaCloudSyncStatus {
                     print("couldn't save file \(error)")
                 }
             }
-
-        } else if !needScope {
-            do {
-                
-                let romFile = try Data(contentsOf: gameURL)
-                print("Got Content")
-                let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
-                try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
-                try romFile.write(to: savePath, options: .atomic)
-                if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
-                    if iCloudSyncEnabled {
-                        createCloudCopy(of: savePath)
+            else {
+                do {
+                    
+                    let romFile = try Data(contentsOf: gameURL)
+                    print("Got Content")
+                    let savePath = self.gamesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.lastPathComponent)
+                    try FileManager.default.createDirectory(at: self.gamesDirectory.appendingPathComponent(gameType.rawValue), withIntermediateDirectories: true)
+                    try romFile.write(to: savePath, options: .atomic)
+                    if let iCloudSyncEnabled = UserDefaults.standard.object(forKey: "iCloudSyncEnabled") as? Bool {
+                        if iCloudSyncEnabled {
+                            createCloudCopy(of: savePath)
+                        }
                     }
-                }
-                if let boxArtPath = getGameFromURL(gameURL: gameURL) {
-                    guard let boxArtURL = URL(string: boxArtPath) else { return }
-                    print("Got boxULR :\(boxArtURL)")
-                    downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
-                        DispatchQueue.main.async {
-                            if let error = error {
-                                print("Error: \(error.localizedDescription)")
-                            } else {
-                                print("Image saved successfully")
+                    if let boxArtPath = getGameFromURL(gameURL: gameURL) {
+                        guard let boxArtURL = URL(string: boxArtPath) else { return }
+                        print("Got boxULR :\(boxArtURL)")
+                        downloadAndProcessImage(of: gameURL, from: boxArtURL, gameType: gameType) { error in
+                            DispatchQueue.main.async {
+                                if let error = error {
+                                    print("Error: \(error.localizedDescription)")
+                                } else {
+                                    print("Image saved successfully")
+                                }
                             }
                         }
                     }
+                    //To update the game list
+                    if let currentGameSystem = ArcadiaNavigationState.shared.currentGameSystem {
+                        if currentGameSystem == gameType {
+                            getGamesURL(gameSystem: gameType)
+                        }
+                    }
+                } catch {
+                    print("couldn't save file \(error)")
                 }
-                //To update the game list
-                if needScope {
-                    getGamesURL(gameSystem: gameType)
-                }
-            } catch {
-                print("couldn't save file \(error)")
             }
+            
+        if fromSheet {
+            self.showAlert = true
         }
+
     }
     
     func importGameFromShare(gameURL : URL) {
@@ -237,14 +267,14 @@ enum ArcadiaCloudSyncStatus {
         
         for gameType in ArcadiaGameType.allCases {
             if gameType.allowedExtensions.contains(UTType(filenameExtension: gameExtension)!) {
-                self.saveGame(gameURL: gameURL, gameType: gameType, needScope: false)
+                self.saveGame(gameURL: gameURL, gameType: gameType)
                 self.showAlert = true
             }
         }
     }
     
     func getSaveURL(gameURL: URL, gameType: ArcadiaGameType) -> URL {
-        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension("srm")
+        return self.savesDirectory.appendingPathComponent(gameType.rawValue).appendingPathComponent(gameURL.deletingPathExtension().lastPathComponent).appendingPathExtension(gameType.supportedSaveFiles[.memorySaveRam] ?? "srm")
     }
     
     

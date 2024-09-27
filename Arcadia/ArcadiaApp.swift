@@ -9,8 +9,25 @@ import SwiftUI
 import SwiftData
 import ArcadiaCore
 
+#if os(macOS)
+import Foundation
+import AppKit
+
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+}
+#endif
+
 @main
 struct ArcadiaApp: App {
+    
+    @State private var showImportSheet: Bool = false
+    #if os(macOS)
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    #endif
+    
     /*
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
@@ -30,8 +47,13 @@ struct ArcadiaApp: App {
         WindowGroup {
             #if os(macOS)
             GameLibraryView()
+                .handlesExternalEvents(preferring: Set(arrayLiteral: "*"), allowing: Set(arrayLiteral: "*"))
+                .sheet(isPresented: $showImportSheet) {
+                    ImportGameFromSheetView()
+                }
                 .onOpenURL { url in
-                    ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
+                    ArcadiaNavigationState.shared.importedURL = url
+                    showImportSheet.toggle()
                 }
             #elseif os(iOS)
             TabView {
@@ -48,18 +70,30 @@ struct ArcadiaApp: App {
                                 Label("Settings", systemImage: "gear")
                             }
             }
+            .sheet(isPresented: $showImportSheet) {
+                ImportGameFromSheetView()
+            }
             .alert("Game loaded!", isPresented: $fileManager.showAlert) {
                 Button("Ok", action: {})
             } message: {
                 Text("You will find the game in the console's collection.")
             }
             .onOpenURL { url in
-                ArcadiaFileManager.shared.importGameFromShare(gameURL: url)
+                //Probably need to copy it locally and use the local link?
+                ArcadiaNavigationState.shared.importedURL = url
+                showImportSheet.toggle()
             }
             #endif
                 
         }
+        #if os(macOS)
+        .commands {
+              CommandGroup(replacing: .newItem, addition: { })
+           }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "*"))
+        #endif
         //.modelContainer(sharedModelContainer)
+        .environment(ArcadiaNavigationState.shared)
         .environment(ArcadiaFileManager.shared)
         .environment(ArcadiaCoreEmulationState.sharedInstance)
         .environment(InputController.shared)
@@ -73,6 +107,7 @@ struct ArcadiaApp: App {
         .windowResizability(.contentSize)
         Window("Featured Games", id: "featured-games") {
             DiscoverGameListView()
+                .environment(ArcadiaNavigationState.shared)
                 .environment(ArcadiaFileManager.shared)
         }
         #endif

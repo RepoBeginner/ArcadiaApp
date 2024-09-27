@@ -90,25 +90,25 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
     var allowedExtensions: [UTType] {
         switch self {
         case .gameBoyGame:
-            return [UTType(filenameExtension: "gb")!, UTType(filenameExtension: "gbc")!, UTType(filenameExtension: "sgb")!, UTType(filenameExtension: "cgb")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gb"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gbc"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sgb"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.cgb")]
         case .gameBoyAdvanceGame:
-            return [UTType(filenameExtension: "gba")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gba")]
         case .nesGame:
-            return [UTType(filenameExtension: "nes")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.nes")]
         case .snesGame:
-            return [UTType(filenameExtension: "smc")!, UTType(filenameExtension: "sfc")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.smc"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sfc")]
         case .atari2600Game:
-            return [UTType(filenameExtension: "a26")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.a26")]
         case .atari7800Game:
-            return [UTType(filenameExtension: "a78")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.a78")]
         case .neoGeoPocketGame:
-            return [UTType(filenameExtension: "ngp")!, UTType(filenameExtension: "ngc")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.ngp"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.ngc")]
         case .masterSystemGame:
-            return [UTType(filenameExtension: "sms")!, UTType(filenameExtension: "sg")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sms"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.sg")]
         case .gameGearGame:
-            return [UTType(filenameExtension: "gg")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gg")]
         case .genesisGame:
-            return [UTType(filenameExtension: "gen")!, UTType(filenameExtension: "md")!]
+            return [UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.gen"), UTType(importedAs: "com.davideandreoli.Arcadia.gamefile.md")]
         }
         
     }
@@ -246,9 +246,9 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .snesGame:
             return [.dPad, .fourActionButtons, .start, .select, .backButtonsFirstRow]
         case .atari2600Game:
-            return [.dPad, .oneActionButton]
+            return [.dPad, .oneActionButton, .start, .select]
         case .atari7800Game:
-            return [.dPad, .twoActionButtons]
+            return [.dPad, .twoActionButtons, .start, .select]
         case .neoGeoPocketGame:
             return [.dPad, .twoActionButtons, .start]
         case .masterSystemGame:
