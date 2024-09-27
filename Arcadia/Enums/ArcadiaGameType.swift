@@ -246,9 +246,9 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         case .snesGame:
             return [.dPad, .fourActionButtons, .start, .select, .backButtonsFirstRow]
         case .atari2600Game:
-            return [.dPad, .oneActionButton]
+            return [.dPad, .oneActionButton, .start, .select]
         case .atari7800Game:
-            return [.dPad, .twoActionButtons]
+            return [.dPad, .twoActionButtons, .start, .select]
         case .neoGeoPocketGame:
             return [.dPad, .twoActionButtons, .start]
         case .masterSystemGame:

@@ -19,7 +19,7 @@ struct DiscoverGameDetailView: View {
     }
     
     var body: some View {
-        ScrollView {
+        List {
             VStack(alignment: .leading) {
                 HStack {
                     if game.game.coverImageAssetName != "" {
@@ -35,7 +35,7 @@ struct DiscoverGameDetailView: View {
                         Text(game.game.name)
                             .font(.headline)
                         Text(game.game.shortDescription)
-                            .font(.subheadline)
+                            .font(.caption)
                     }
                     Spacer()
                     Button(action: {
@@ -54,84 +54,78 @@ struct DiscoverGameDetailView: View {
                     .foregroundStyle(.white)
                     .clipShape(Capsule())
                 }
-                Divider()
-                ScrollView(.horizontal) {
-                    HStack(spacing: 10) {
-                        NavigationLink(destination: DiscoverDeveloperDetailView(developer: game.author)) {
+            }
+            ScrollView(.horizontal) {
+                HStack(spacing: 10) {
+                    NavigationLink(destination: DiscoverDeveloperDetailView(developer: game.author)) {
+                        VStack {
+                            Text(game.author.name)
+                                .font(.subheadline)
+                            Image(systemName: "person.fill")
+                                .resizable()
+                                .frame(width: 25, height: 25)
+                            
+                        }
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                    Divider()
+                    ForEach(game.author.socials, id: \.self) { social in
+                        Link(destination: social.link!) {
                             VStack {
-                                Text(game.author.name)
+                                Text(social.name)
                                     .font(.subheadline)
-                                Image(systemName: "person.fill")
+                                Image(colorScheme == .dark ? social.whiteLogoAssetName : social.blackLogoAssetName)
                                     .resizable()
                                     .frame(width: 25, height: 25)
-                                
                             }
                         }
-                        .buttonStyle(PlainButtonStyle())
-                        
-                        ForEach(game.author.socials, id: \.self) { social in
-                            Link(destination: social.link!) {
-                                VStack {
-                                    Text(social.name)
-                                        .font(.subheadline)
-                                    Image(colorScheme == .dark ? social.whiteLogoAssetName : social.blackLogoAssetName)
-                                        .resizable()
-                                        .frame(width: 25, height: 25)
-                                }
-                            }
-                            .foregroundStyle(.foreground)
-                        }
-                        
-                        Spacer()
+                        .foregroundStyle(.foreground)
+                        Divider()
                     }
-                    .padding()
+                    
+                    Spacer()
                 }
-                Divider()
-                ScrollView(.horizontal) {
-                    HStack {
-                        if !game.game.screenshotsAssetName.isEmpty {
-                            ForEach(game.game.screenshotsAssetName, id: \.self) { screenshotName in
-                                if screenshotName != "" {
-                                    Image(screenshotName)
-                                        .resizable()
-                                        .frame(width: 200, height: 200)
-                                }
-                            }
-                        } else {
-                            Text("No screenshots available")
-                        }
-                    }
-                }
-                Divider()
-                Text(game.game.longDescription)
-                if let itchURL = game.game.itchURL {
-                    Divider()
-                    Link(destination: itchURL) {
-                        VStack(alignment: .leading) {
-                            Text("Find out more on the game's page")
-                            Image(colorScheme == .dark ? "ItchLogoTextWhite" : "ItchLogoTextBlack")
-                                .resizable()
-                                .frame(width: 100, height: 25)
-                        }
-                    }
-                    .foregroundStyle(.foreground)
-                }
-                if let githubURL = game.game.githubURL {
-                    Divider()
-                    Link(destination: githubURL) {
-                        VStack(alignment: .leading) {
-                            Text("This game is open source, if you're interested you can find the game's code in its repository")
-                            Image(colorScheme == .dark ? "GitHubLogoTextWhite" : "GitHubLogoTextBlack")
-                                .resizable()
-                                .frame(width: 100, height: 25)
-                        }
-                    }
-                    .foregroundStyle(.foreground)
-                }
-                Divider()
-                Text("This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page.")
+                .padding()
             }
-            .padding()
+            ScrollView(.horizontal) {
+                HStack {
+                    if !game.game.screenshotsAssetName.isEmpty {
+                        ForEach(game.game.screenshotsAssetName, id: \.self) { screenshotName in
+                            if screenshotName != "" {
+                                Image(screenshotName)
+                                    .resizable()
+                                    .frame(width: 200, height: 200)
+                            }
+                        }
+                    } else {
+                        Text("No screenshots available")
+                    }
+                }
+            }
+            Text(game.game.longDescription)
+            if let itchURL = game.game.itchURL {
+                Link(destination: itchURL) {
+                    VStack(alignment: .leading) {
+                        Text("Find out more on the game's page")
+                        Image(colorScheme == .dark ? "ItchLogoTextWhite" : "ItchLogoTextBlack")
+                            .resizable()
+                            .frame(width: 100, height: 25)
+                    }
+                }
+                .foregroundStyle(.foreground)
+            }
+            if let githubURL = game.game.githubURL {
+                Link(destination: githubURL) {
+                    VStack(alignment: .leading) {
+                        Text("This game is open source, if you're interested you can find the game's code in its repository")
+                        Image(colorScheme == .dark ? "GitHubLogoTextWhite" : "GitHubLogoTextBlack")
+                            .resizable()
+                            .frame(width: 100, height: 25)
+                    }
+                }
+                .foregroundStyle(.foreground)
+            }
+            Text("This game was provided for free by its author, but if you want to support their work you should consider following them on social media and donating through the links on this page.")
             .alert("Game loaded!", isPresented: $showLoadingSuccess) {
                 Button("Ok", action: {})
             } message: {

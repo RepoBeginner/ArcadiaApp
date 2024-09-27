@@ -1,3 +1,13 @@
+# 1.4.2
+
+## Bug Fixes
+
+- Fixed a bug that caused the app to crash when switching to cores with different audio sample rates. Sorry about that, it took quite long to catch because it didn't happen in debug builds.
+
+# 1.4.1
+
+Arcadia becomes Altea. Due to some conflicts with other apps naming, Arcadia's name is now Altea.
+
 # 1.4
 
 ## Features
@@ -9,8 +19,14 @@
 
 - Improved the aspect of the empty library view
 - Added the possibility to refresh the empty library view
+- Made the UI more consistent
+- Made the icons compatible with iOS 18
+- Now the audio will follow the mute switch by default - more advanced audio controls coming the next update
 
 ## Bug fixes
+
+- Added start and select button to Atari 2600 and 7800 cores, to allow to play games that start in preview mode and need to be reset. Sorry about that!
+- Fixed an issue that could cause the app to crash if buttons were pressed very quickly
 
 
 # 1.3
