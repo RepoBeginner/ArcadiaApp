@@ -21,6 +21,9 @@
         }
       }
     },
+    ".%@" : {
+
+    },
     "%@" : {
       "localizations" : {
         "it" : {
@@ -107,6 +110,9 @@
         }
       }
     },
+    "Allowed extensions" : {
+
+    },
     "Altea and its emulators allow you to save your progress in two ways:\n\n• Saves: This is the standard way of saving your game progress, similar to the save files in game cartridges. These are generated and updated automatically by the app. Each game can have only one save file. This format is usually portable, and you can find these save files in Arcadia/Saves if you want to switch emulator apps.\n• States: This is a non-standard way of saving your game progress, enabled by the emulation process. It creates a snapshot of the game's exact state when you hit the save button. Each game can have up to three state files. This format is usually not portable as it depends on the emulator, but you can find these state files in Arcadia/States." : {
       "localizations" : {
         "it" : {
@@ -176,6 +182,9 @@
           }
         }
       }
+    },
+    "BIOS" : {
+
     },
     "Button Image" : {
       "localizations" : {
@@ -266,6 +275,9 @@
           }
         }
       }
+    },
+    "Console's folders" : {
+
     },
     "Contribute" : {
       "localizations" : {
@@ -1067,6 +1079,21 @@
         }
       }
     },
+    "Open core files directory" : {
+
+    },
+    "Open games directory" : {
+
+    },
+    "Open images directory" : {
+
+    },
+    "Open saves directory" : {
+
+    },
+    "Open states directory" : {
+
+    },
     "Open storage directory" : {
       "localizations" : {
         "it" : {
@@ -1467,6 +1494,12 @@
         }
       }
     },
+    "This console can load files with any of the above extension." : {
+
+    },
+    "This core can optionally use BIOS files. When the BIOS files are used the games will play as in original hardware, which will increase precision but also lock invalid roms." : {
+
+    },
     "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
       "localizations" : {
         "it" : {
@@ -1526,6 +1559,9 @@
           }
         }
       }
+    },
+    "Use these buttons to access the folders wheere this console stores files." : {
+
     },
     "V" : {
       "localizations" : {

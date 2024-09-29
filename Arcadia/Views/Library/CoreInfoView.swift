@@ -10,6 +10,7 @@ import SwiftUI
 struct CoreInfoView: View {
     
     @State private var gameType: ArcadiaGameType
+    @Environment(\.dismiss) var dismiss
     
     init(gameType: ArcadiaGameType) {
         self.gameType = gameType
@@ -80,6 +81,17 @@ struct CoreInfoView: View {
                 }
             }
             .navigationTitle(gameType.name)
+            .frame(minWidth: 300, minHeight: 300)
+            .toolbar() {
+                ToolbarItem(placement: .automatic) {
+                    Button(role: .cancel, action: {
+                        dismiss()
+                    }, label: {
+                        Label("Dismiss", systemImage: "xmark")
+                    })
+                }
+               
+            }
         }
     }
 }
