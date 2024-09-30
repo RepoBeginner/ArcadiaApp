@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -252,10 +252,6 @@
 		95FAC8682C7CDD720071DC12 /* WordEmbedding.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = WordEmbedding.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		95C487572CA9E89900010491 /* Core Info */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Core Info"; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		95456BAF2BE2ACA900113B8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -441,7 +437,6 @@
 		955CC3762BF7E3FF00C930ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				95C487572CA9E89900010491 /* Core Info */,
 				95E3C4802C7F07EF0060AC81 /* Discover */,
 				9510881E2C4F9E9300F01C88 /* Screenshot */,
 				952C02242C088ECD00DF2832 /* Game */,
@@ -582,9 +577,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				95C487572CA9E89900010491 /* Core Info */,
 			);
 			name = Altea;
 			productName = iRetroApp;
