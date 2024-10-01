@@ -285,6 +285,18 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
         }
     }
     
+    @ViewBuilder
+    var coreSpecificInfo: some View {
+        switch self {
+        default:
+            EmptyView()
+        }
+    }
+    
+    var getGameDirectory: URL {
+        return ArcadiaFileManager.shared.getGameDirectory(for: self)
+    }
+    
     var getSaveDirectory: URL {
         return ArcadiaFileManager.shared.getSaveDirectory(for: self)
     }

@@ -49,6 +49,7 @@ struct RunGameView: View {
                 //iPhone portrait
                 VStack {
                     CurrentBufferMetalView()
+                        .frame(minWidth: CGFloat(emulationState.audioVideoInfo?.geometry.base_width ?? 0), minHeight: CGFloat(emulationState.audioVideoInfo?.geometry.base_height ?? 0))
                         .scaledToFit()
                     Spacer()
                     if !hideButtons {
@@ -60,45 +61,26 @@ struct RunGameView: View {
 
                 }
             }
-            else if horizontalSizeClass == .regular && verticalSizeClass == .compact {
-                //iPhone landscape
-                HStack {
-                    if !hideButtons {
-                        ArcadiaButtonLayoutLeft(layoutElements: gameType.buttonLayoutElements)
-                    } else {
-                        ArcadiaButtonOnlyLayout()
-                    }
-                    Spacer()
-                    CurrentBufferMetalView()
-                        .scaledToFit()
-                        .layoutPriority(1)
-                    Spacer()
-                    if !hideButtons {
-                        ArcadiaButtonLayoutRight(layoutElements: gameType.buttonLayoutElements)
-                    } else {
-                        
-                    }
-                }
-            }
             else {
                 ZStack {
                     CurrentBufferMetalView()
-                        .layoutPriority(1)
+                        .frame(minWidth: CGFloat(emulationState.audioVideoInfo?.geometry.base_width ?? 0), minHeight: CGFloat(emulationState.audioVideoInfo?.geometry.base_height ?? 0))
                         .scaledToFit()
+                        //.layoutPriority(1)
                     //Spacer()
-                    VStack {
-                        Spacer()
-                        if !hideButtons {
-                            ArcadiaButtonLayout(layoutElements: gameType.buttonLayoutElements)
-                        } else {
-                            ArcadiaButtonOnlyLayout()
-                        }
-                            
+                    GeometryReader { geometry in
+                        VStack {
+                            Spacer()
+                            if !hideButtons {
+                                ArcadiaButtonLayout(layoutElements: gameType.buttonLayoutElements)
+                            } else {
+                                ArcadiaButtonOnlyLayout()
+                            }
+                        }.frame(width: geometry.size.width, height: geometry.size.height)
                     }
-
-
                 }
-                
+                .ignoresSafeArea(.container, edges: .vertical)
+                .persistentSystemOverlays(.hidden)
             }
         }
         .onAppear(perform: {
