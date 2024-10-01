@@ -183,9 +183,6 @@
         }
       }
     },
-    "BIOS" : {
-
-    },
     "Button Image" : {
       "localizations" : {
         "it" : {
@@ -1495,9 +1492,6 @@
       }
     },
     "This console can load files with any of the above extension." : {
-
-    },
-    "This core can optionally use BIOS files. When the BIOS files are used the games will play as in original hardware, which will increase precision but also lock invalid roms. BIOS files can be placed in the core files folder." : {
 
     },
     "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
