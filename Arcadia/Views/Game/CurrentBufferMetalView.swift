@@ -3,16 +3,6 @@ import ArcadiaCore
 import SwiftUI
 import MetalKit
 
-/*
-#if os(macOS)
-typealias PlatformViewRepresentable = NSViewRepresentable
-import AppKit
-#else
-typealias PlatformViewRepresentable = UIViewRepresentable
-import UIKit
-#endif
-*/
-
 struct CurrentBufferMetalView: PlatformViewRepresentable {
 
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState

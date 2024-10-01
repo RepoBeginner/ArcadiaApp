@@ -62,6 +62,7 @@
 		959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */; };
 		959F81ED2C1A2BB1009EF53B /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */; };
 		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
+		95C487562CA9D1FF00010491 /* CoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C487552CA9D1FF00010491 /* CoreInfoView.swift */; };
 		95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC74AB2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; };
 		95CC74AC2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -209,6 +210,7 @@
 		959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 		959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsView.swift; sourceTree = "<group>"; };
 		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
+		95C487552CA9D1FF00010491 /* CoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfoView.swift; sourceTree = "<group>"; };
 		95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroVBANext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroGearboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Libretrosnes9x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,6 +310,7 @@
 			children = (
 				956F840A2BEBED810025FC5F /* GameRowView.swift */,
 				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
+				95C487552CA9D1FF00010491 /* CoreInfoView.swift */,
 				95707CB92C00E67100217B82 /* GameSystemRowView.swift */,
 				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
 				95CC86D32C47E76E009FB8DD /* EmptyCollectionView.swift */,
@@ -762,6 +765,7 @@
 				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
+				95C487562CA9D1FF00010491 /* CoreInfoView.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
 				95D795042C98065900C2BA8D /* ImportGameFromSheetView.swift in Sources */,
 				95D795022C94D53D00C2BA8D /* ArcadiaExportedFile.swift in Sources */,

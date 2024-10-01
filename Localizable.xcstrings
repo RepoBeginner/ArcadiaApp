@@ -21,6 +21,16 @@
         }
       }
     },
+    ".%@" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".%@"
+          }
+        }
+      }
+    },
     "%@" : {
       "localizations" : {
         "it" : {
@@ -103,6 +113,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "DPad Avanzato"
+          }
+        }
+      }
+    },
+    "Allowed extensions" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estensioni permesse"
           }
         }
       }
@@ -263,6 +283,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conferma"
+          }
+        }
+      }
+    },
+    "Console's folders" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartelle della console"
           }
         }
       }
@@ -1067,6 +1097,56 @@
         }
       }
     },
+    "Open core files directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella dei file di core"
+          }
+        }
+      }
+    },
+    "Open games directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella dei giochi"
+          }
+        }
+      }
+    },
+    "Open images directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella delle immagini"
+          }
+        }
+      }
+    },
+    "Open saves directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella dei salvataggi"
+          }
+        }
+      }
+    },
+    "Open states directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella degli stati"
+          }
+        }
+      }
+    },
     "Open storage directory" : {
       "localizations" : {
         "it" : {
@@ -1467,6 +1547,16 @@
         }
       }
     },
+    "This console can load files with any of the above extension." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa console può aprire file con una di queste estensioni."
+          }
+        }
+      }
+    },
     "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
       "localizations" : {
         "it" : {
@@ -1523,6 +1613,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Freccia Su"
+          }
+        }
+      }
+    },
+    "Use these links to access the folders where this console stores files." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa questi link per accedere alle cartelle dove questa console tiene i file."
           }
         }
       }
