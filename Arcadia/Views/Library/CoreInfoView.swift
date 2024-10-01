@@ -27,7 +27,7 @@ struct CoreInfoView: View {
                     }
                 }
                 
-                Section(header: Text("Console's folders"), footer: Text("Use these buttons to access the folders wheere this console stores files.")) {
+                Section(header: Text("Console's folders"), footer: Text("Use these links to access the folders where this console stores files.")) {
                     Button(action: {
                         #if os(macOS)
                         NSWorkspace.shared.open(gameType.getGameDirectory)
