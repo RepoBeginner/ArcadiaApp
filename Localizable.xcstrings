@@ -177,6 +177,9 @@
         }
       }
     },
+    "Audio" : {
+
+    },
     "B" : {
       "localizations" : {
         "it" : {
@@ -897,6 +900,9 @@
         }
       }
     },
+    "Mute audio" : {
+
+    },
     "N" : {
       "localizations" : {
         "it" : {
@@ -1346,6 +1352,9 @@
           }
         }
       }
+    },
+    "Respect the mute switch" : {
+
     },
     "Right Alt" : {
       "localizations" : {

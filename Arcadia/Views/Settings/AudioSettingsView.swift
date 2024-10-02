@@ -6,21 +6,33 @@
 //
 
 import SwiftUI
+import ArcadiaCore
 
 struct AudioSettingsView: View {
     
-    @AppStorage("shouldRespectMuteSwitch") private var shouldRespectMuteSwitch = true
-    @AppStorage("muteAudio") private var muteAudio = false
+    @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
+    @AppStorage("audioFollowsSilentSwitch") private var audioFollowsSilentSwitch = true
+    @AppStorage("audioIsMuted") private var audioIsMuted = false
     
     var body: some View {
         Form {
             Section {
-                Toggle(isOn: $muteAudio) {
+                Toggle(isOn: $audioIsMuted) {
                     Text("Mute audio")
                 }
-                Toggle(isOn: $shouldRespectMuteSwitch) {
+                .onChange(of: audioIsMuted) { oldValue, newValue in
+                    emulationState.audioPlayer.setMuted(newValue)
+                }
+                
+                #if os(iOS)
+                Toggle(isOn: $audioFollowsSilentSwitch) {
                     Text("Respect the mute switch")
                 }
+                .onChange(of: audioIsMuted) { oldValue, newValue in
+                    emulationState.audioPlayer.setFollowsSilentSwitch(newValue)
+                }
+                #endif
+                
             }
         }
     }
@@ -28,4 +40,5 @@ struct AudioSettingsView: View {
 
 #Preview {
     AudioSettingsView()
+        .environment(ArcadiaCoreEmulationState.sharedInstance)
 }

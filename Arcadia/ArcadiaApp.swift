@@ -103,6 +103,7 @@ struct ArcadiaApp: App {
             SettingsView()
                 .environment(InputController.shared)
                 .environment(ArcadiaFileManager.shared)
+                .environment(ArcadiaCoreEmulationState.sharedInstance)
         }
         .windowResizability(.contentSize)
         Window("Featured Games", id: "featured-games") {
