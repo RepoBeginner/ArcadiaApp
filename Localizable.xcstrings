@@ -177,6 +177,16 @@
         }
       }
     },
+    "Audio" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audio"
+          }
+        }
+      }
+    },
     "B" : {
       "localizations" : {
         "it" : {
@@ -1347,6 +1357,16 @@
         }
       }
     },
+    "Respect the silent switch" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rispetta la modalità silenziosa"
+          }
+        }
+      }
+    },
     "Right Alt" : {
       "localizations" : {
         "it" : {
@@ -1463,6 +1483,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condividi sui social media"
+          }
+        }
+      }
+    },
+    "Silence audio" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silenzia l’audio"
           }
         }
       }
@@ -1643,6 +1673,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W"
+          }
+        }
+      }
+    },
+    "When deactivated, audio will play even if the silent switch is activated. This setting change will take effect only after an app restart." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se disattivato, l’audio verrà riprodotto anche se la modalità silenziosa è attivata. Il cambio di questa impostazione avrà effetto solo dopo un riavvio dell’applicazione."
           }
         }
       }
