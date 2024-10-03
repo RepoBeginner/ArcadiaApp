@@ -62,6 +62,8 @@
 		959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */; };
 		959F81ED2C1A2BB1009EF53B /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */; };
 		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
+		95AB49782CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */; };
+		95AB49792CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95C487562CA9D1FF00010491 /* CoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C487552CA9D1FF00010491 /* CoreInfoView.swift */; };
 		95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC74AB2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; };
@@ -134,6 +136,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				95CC87ED2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Embed Frameworks */,
+				95AB49792CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Embed Frameworks */,
 				95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */,
 				9510FE0B2C57715500F01C88 /* ArcadiaGenesisCore.framework in Embed Frameworks */,
 				951098992C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework in Embed Frameworks */,
@@ -210,6 +213,7 @@
 		959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 		959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsView.swift; sourceTree = "<group>"; };
 		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
+		95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaPokemonMiniCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95C487552CA9D1FF00010491 /* CoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfoView.swift; sourceTree = "<group>"; };
 		95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroVBANext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroGearboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -260,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CC87EC2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Frameworks */,
+				95AB49782CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
 				9510FE0A2C57715500F01C88 /* ArcadiaGenesisCore.framework in Frameworks */,
 				951098982C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework in Frameworks */,
@@ -417,6 +422,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */,
 				9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */,
 				9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */,
 				951098972C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework */,

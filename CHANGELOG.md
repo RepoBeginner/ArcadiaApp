@@ -1,5 +1,9 @@
 # 1.5
 
+## Cores
+
+- Added Pokemom Mini support
+
 ## Features
 
 - Added a console info view to the library, which shows important information about the console you're viewing
@@ -8,6 +12,7 @@
 ## Improvements
 
 - Image aspect ratio will respect the original console aspect ratio
+- Added a new App icon on iOS, that has the same coloring as the houseplant from which this app takes its name
 - Cores support more file types, in addition to the one already supported you'll be able to play with the following files
     - Atari 2600
         - bin

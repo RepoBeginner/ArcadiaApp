@@ -34,7 +34,8 @@ struct AppIconView: View {
         AppIcon(iconName: nil, displayName: "Colored", assetName: "AppIcon_colored_asset", description: "Default colored version"),
         AppIcon(iconName: "AppIcon_dark", displayName: "Dark", assetName: "AppIcon_dark_asset", description: "Default dark version"),
         AppIcon(iconName: "AppIcon_light", displayName: "Light", assetName: "AppIcon_light_asset", description: "Default light version"),
-        AppIcon(iconName: "AppIcon_pink", displayName: "Pink", assetName: "AppIcon_pink_asset", description: "Pink version")
+        AppIcon(iconName: "AppIcon_pink", displayName: "Pink", assetName: "AppIcon_pink_asset", description: "Pink version"),
+        AppIcon(iconName: "AppIcon_green", displayName: "Green", assetName: "AppIcon_greeen_asset", description: "Green version, dedicated to the houseplant from which this app takes its name")
     ]
     
     var body: some View {

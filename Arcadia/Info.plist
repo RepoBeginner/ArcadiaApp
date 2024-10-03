@@ -157,6 +157,18 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeName</key>
+			<string>Altea Pokemon Mini Game File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.davideandreoli.Arcadia.gamefile.min</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
 			<string>Altea Save File</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
@@ -608,6 +620,26 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>sms</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea Pokemon Mini File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.min</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>min</string>
 				</array>
 			</dict>
 		</dict>
