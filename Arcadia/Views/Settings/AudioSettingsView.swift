@@ -18,7 +18,7 @@ struct AudioSettingsView: View {
         Form {
             Section {
                 Toggle(isOn: $audioIsMuted) {
-                    Text("Mute audio")
+                    Text("Silence audio")
                 }
                 .onChange(of: audioIsMuted) { oldValue, newValue in
                     emulationState.audioPlayer.setMuted(newValue)
@@ -26,8 +26,8 @@ struct AudioSettingsView: View {
                 
                 #if os(iOS)
                 Toggle(isOn: $audioFollowsSilentSwitch) {
-                    Text("Respect the mute switch")
-                    Text("When deactivated, audio will play even if the mute switch is activated. This setting change will take effect only after an app restart.")
+                    Text("Respect the silent switch")
+                    Text("When deactivated, audio will play even if the silent switch is activated. This setting change will take effect only after an app restart.")
                 }
                 .onChange(of: audioIsMuted) { oldValue, newValue in
                     emulationState.audioPlayer.setFollowsSilentSwitch(newValue)

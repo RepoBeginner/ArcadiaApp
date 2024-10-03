@@ -907,16 +907,6 @@
         }
       }
     },
-    "Mute audio" : {
-      "localizations" : {
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silenzia l’audio"
-          }
-        }
-      }
-    },
     "N" : {
       "localizations" : {
         "it" : {
@@ -1367,7 +1357,7 @@
         }
       }
     },
-    "Respect the mute switch" : {
+    "Respect the silent switch" : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
@@ -1493,6 +1483,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condividi sui social media"
+          }
+        }
+      }
+    },
+    "Silence audio" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silenzia l’audio"
           }
         }
       }
@@ -1677,7 +1677,7 @@
         }
       }
     },
-    "When deactivated, audio will play even if the mute switch is activated. This setting change will take effect only after an app restart." : {
+    "When deactivated, audio will play even if the silent switch is activated. This setting change will take effect only after an app restart." : {
       "localizations" : {
         "it" : {
           "stringUnit" : {
