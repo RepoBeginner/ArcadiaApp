@@ -178,7 +178,14 @@
       }
     },
     "Audio" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audio"
+          }
+        }
+      }
     },
     "B" : {
       "localizations" : {
@@ -901,7 +908,14 @@
       }
     },
     "Mute audio" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silenzia l’audio"
+          }
+        }
+      }
     },
     "N" : {
       "localizations" : {
@@ -1354,7 +1368,14 @@
       }
     },
     "Respect the mute switch" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rispetta la modalità silenziosa"
+          }
+        }
+      }
     },
     "Right Alt" : {
       "localizations" : {
@@ -1652,6 +1673,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W"
+          }
+        }
+      }
+    },
+    "When deactivated, audio will play even if the mute switch is activated. This setting change will take effect only after an app restart." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se disattivato, l’audio verrà riprodotto anche se la modalità silenziosa è attivata. Il cambio di questa impostazione avrà effetto solo dopo un riavvio dell’applicazione."
           }
         }
       }

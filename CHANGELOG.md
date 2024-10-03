@@ -1,3 +1,10 @@
+# 1.5
+
+## Features
+
+- Added a console info view to the library, which shows important information about the console you're viewing
+- Added audio controls
+
 # 1.4.2
 
 ## Bug Fixes
