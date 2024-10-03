@@ -35,7 +35,7 @@ struct AppIconView: View {
         AppIcon(iconName: "AppIcon_dark", displayName: "Dark", assetName: "AppIcon_dark_asset", description: "Default dark version"),
         AppIcon(iconName: "AppIcon_light", displayName: "Light", assetName: "AppIcon_light_asset", description: "Default light version"),
         AppIcon(iconName: "AppIcon_pink", displayName: "Pink", assetName: "AppIcon_pink_asset", description: "Pink version"),
-        AppIcon(iconName: "AppIcon_green", displayName: "Green", assetName: "AppIcon_greeen_asset", description: "Green version, dedicated to the houseplant from which this app takes its name")
+        AppIcon(iconName: "AppIcon_green", displayName: "Green", assetName: "AppIcon_green_asset", description: "Green version, dedicated to the houseplant from which this app takes its name.")
     ]
     
     var body: some View {
@@ -55,7 +55,12 @@ struct AppIconView: View {
                             .resizable()
                             .frame(maxWidth: 80, maxHeight: 80)
                     }
-                    Text("\(icon.displayName)")
+                    VStack(alignment: .leading) {
+                        Text("\(icon.displayName)")
+                            .font(.headline)
+                        Text("\(icon.description)")
+                            .font(.caption)
+                    }
                 }
             }
         }
