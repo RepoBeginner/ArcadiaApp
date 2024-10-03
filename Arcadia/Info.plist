@@ -14,7 +14,11 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.smc</string>
-				<string>com.davideandreoli.Arcadia.snesGameFile</string>
+				<string>com.davideandreoli.Arcadia.gamefile.sfc</string>
+				<string>com.davideandreoli.Arcadia.gamefile.swc</string>
+				<string>com.davideandreoli.Arcadia.gamefile.fig</string>
+				<string>com.davideandreoli.Arcadia.gamefile.bs</string>
+				<string>com.davideandreoli.Arcadia.gamefile.st</string>
 			</array>
 		</dict>
 		<dict>
@@ -27,6 +31,9 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.nes</string>
+				<string>com.davideandreoli.Arcadia.gamefile.fds</string>
+				<string>com.davideandreoli.Arcadia.gamefile.unf</string>
+				<string>com.davideandreoli.Arcadia.gamefile.unif</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,6 +46,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.a26</string>
+				<string>com.davideandreoli.Arcadia.gamefile.bin</string>
 			</array>
 		</dict>
 		<dict>
@@ -51,6 +59,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.a78</string>
+				<string>com.davideandreoli.Arcadia.gamefile.bin</string>
 			</array>
 		</dict>
 		<dict>
@@ -66,6 +75,7 @@
 				<string>com.davideandreoli.Arcadia.gamefile.sgb</string>
 				<string>com.davideandreoli.Arcadia.gamefile.gb</string>
 				<string>com.davideandreoli.Arcadia.gamefile.gbc</string>
+				<string>com.davideandreoli.Arcadia.gamefile.dmg</string>
 			</array>
 		</dict>
 		<dict>
@@ -104,6 +114,7 @@
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.sms</string>
 				<string>com.davideandreoli.Arcadia.gamefile.sg</string>
+				<string>com.davideandreoli.Arcadia.gamefile.bin</string>
 			</array>
 		</dict>
 		<dict>
@@ -116,6 +127,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.gg</string>
+				<string>com.davideandreoli.Arcadia.gamefile.bin</string>
 			</array>
 		</dict>
 		<dict>
@@ -128,6 +140,7 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.gen</string>
+				<string>com.davideandreoli.Arcadia.gamefile.bin</string>
 			</array>
 		</dict>
 		<dict>
@@ -140,6 +153,18 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.md</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Altea Pokemon Mini Game File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>com.davideandreoli.Arcadia.gamefile.min</string>
 			</array>
 		</dict>
 		<dict>
@@ -225,6 +250,86 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
+			<string>Altea SNES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.swc</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>swc</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea SNES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.fig</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>fig</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea SNES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.bs</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>bs</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea SNES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.st</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>st</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
 			<string>Altea NES Game File</string>
 			<key>UTTypeIcons</key>
 			<dict/>
@@ -235,6 +340,66 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>nes</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea NES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.fds</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>fds</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea NES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.unf</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>unf</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea NES Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.unif</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>unif</string>
 				</array>
 			</dict>
 		</dict>
@@ -365,6 +530,26 @@
 				<string>public.content</string>
 			</array>
 			<key>UTTypeDescription</key>
+			<string>Altea GameBoy Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.dmg</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>dmg</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
 			<string>Altea GameBoy Advance Game File</string>
 			<key>UTTypeIcons</key>
 			<dict/>
@@ -435,6 +620,26 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>sms</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea Pokemon Mini File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.min</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>min</string>
 				</array>
 			</dict>
 		</dict>
@@ -516,6 +721,26 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>md</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.data</string>
+				<string>public.content</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Altea Bin Game File</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.davideandreoli.Arcadia.gamefile.bin</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>bin</string>
 				</array>
 			</dict>
 		</dict>
