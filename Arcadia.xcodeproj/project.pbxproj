@@ -62,6 +62,9 @@
 		959F3BAB2C1188E8009EF53B /* CurrentBufferMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */; };
 		959F81ED2C1A2BB1009EF53B /* InputSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */; };
 		959F81F92C1C684F009EF53B /* PlayerSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */; };
+		95AB49782CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */; };
+		95AB49792CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		95C487562CA9D1FF00010491 /* CoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C487552CA9D1FF00010491 /* CoreInfoView.swift */; };
 		95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 955CC3972BF9668300C930ED /* ArcadiaCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		95CC74AB2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; };
 		95CC74AC2C3BC199009FB8DD /* ArcadiaGBCCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 95CC74AA2C3BC199009FB8DD /* ArcadiaGBCCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -87,6 +90,7 @@
 		95D795002C94C07500C2BA8D /* ArcadiaGameFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D794FF2C94C07500C2BA8D /* ArcadiaGameFile.swift */; };
 		95D795022C94D53D00C2BA8D /* ArcadiaExportedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795012C94D53D00C2BA8D /* ArcadiaExportedFile.swift */; };
 		95D795042C98065900C2BA8D /* ImportGameFromSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */; };
+		95D795062C98A00E00C2BA8D /* AudioSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795052C98A00E00C2BA8D /* AudioSettingsView.swift */; };
 		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
 		95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */; };
 		95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */; };
@@ -132,6 +136,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				95CC87ED2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Embed Frameworks */,
+				95AB49792CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Embed Frameworks */,
 				95CC71F12C3AEAA5009FB8DD /* ArcadiaCore.framework in Embed Frameworks */,
 				9510FE0B2C57715500F01C88 /* ArcadiaGenesisCore.framework in Embed Frameworks */,
 				951098992C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework in Embed Frameworks */,
@@ -208,6 +213,8 @@
 		959F3BAA2C1188E7009EF53B /* CurrentBufferMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBufferMetalView.swift; sourceTree = "<group>"; };
 		959F81EC2C1A2BB1009EF53B /* InputSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputSettingsView.swift; sourceTree = "<group>"; };
 		959F81F82C1C684E009EF53B /* PlayerSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelectionView.swift; sourceTree = "<group>"; };
+		95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ArcadiaPokemonMiniCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C487552CA9D1FF00010491 /* CoreInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInfoView.swift; sourceTree = "<group>"; };
 		95CC71F42C3AED9E009FB8DD /* LibretroVBANext.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroVBANext.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC72052C3AEF4F009FB8DD /* LibretroGearboy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LibretroGearboy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CC72082C3AEF54009FB8DD /* Libretrosnes9x.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Libretrosnes9x.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +235,7 @@
 		95D794FF2C94C07500C2BA8D /* ArcadiaGameFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaGameFile.swift; sourceTree = "<group>"; };
 		95D795012C94D53D00C2BA8D /* ArcadiaExportedFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaExportedFile.swift; sourceTree = "<group>"; };
 		95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportGameFromSheetView.swift; sourceTree = "<group>"; };
+		95D795052C98A00E00C2BA8D /* AudioSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingsView.swift; sourceTree = "<group>"; };
 		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
 		95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameRowView.swift; sourceTree = "<group>"; };
 		95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameDetailView.swift; sourceTree = "<group>"; };
@@ -256,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CC87EC2C48EDCA009FB8DD /* ArcadiaAtari7800Core.framework in Frameworks */,
+				95AB49782CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework in Frameworks */,
 				955CC3982BF9668300C930ED /* ArcadiaCore.framework in Frameworks */,
 				9510FE0A2C57715500F01C88 /* ArcadiaGenesisCore.framework in Frameworks */,
 				951098982C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework in Frameworks */,
@@ -306,6 +315,7 @@
 			children = (
 				956F840A2BEBED810025FC5F /* GameRowView.swift */,
 				956F84012BEA75280025FC5F /* GameCollectionView.swift */,
+				95C487552CA9D1FF00010491 /* CoreInfoView.swift */,
 				95707CB92C00E67100217B82 /* GameSystemRowView.swift */,
 				956F83FA2BEA67370025FC5F /* GameLibraryView.swift */,
 				95CC86D32C47E76E009FB8DD /* EmptyCollectionView.swift */,
@@ -412,6 +422,7 @@
 		95456C372BE2B4C800113B8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95AB49772CAEC56500E3AC13 /* ArcadiaPokemonMiniCore.framework */,
 				9510FE092C57715500F01C88 /* ArcadiaGenesisCore.framework */,
 				9510F1DF2C54F98300F01C88 /* ArcadiaMasterSystemCore.framework */,
 				951098972C540EBF00F01C88 /* ArcadiaNeoGeoPocketCore.framework */,
@@ -521,6 +532,7 @@
 				95F0200A2C24B3F90087DAC2 /* AppIconView.swift */,
 				95F0200C2C24B4260087DAC2 /* ContributeView.swift */,
 				95CC82332C3D4136009FB8DD /* StorageSettingsView.swift */,
+				95D795052C98A00E00C2BA8D /* AudioSettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -751,6 +763,7 @@
 				9510FE142C594C7000F01C88 /* ThreeButtonsView.swift in Sources */,
 				95E3C4922C8195CD0060AC81 /* ArcadiaFeaturedContent.swift in Sources */,
 				955CC3842BF7E63F00C930ED /* CapsuleButtonView.swift in Sources */,
+				95D795062C98A00E00C2BA8D /* AudioSettingsView.swift in Sources */,
 				956F83FB2BEA67380025FC5F /* GameLibraryView.swift in Sources */,
 				956F84272BF4846C0025FC5F /* Shaders.metal in Sources */,
 				95707CB32BFF148B00217B82 /* GCVirtualControllerView.swift in Sources */,
@@ -758,6 +771,7 @@
 				955CC3792BF7E43400C930ED /* DPadButtonView.swift in Sources */,
 				9528F7872BF4E52400E2CEC6 /* InputController.swift in Sources */,
 				95456BB62BE2ACA900113B8A /* ArcadiaApp.swift in Sources */,
+				95C487562CA9D1FF00010491 /* CoreInfoView.swift in Sources */,
 				956F83FD2BEA67590025FC5F /* CurrentFrameView.swift in Sources */,
 				95D795042C98065900C2BA8D /* ImportGameFromSheetView.swift in Sources */,
 				95D795022C94D53D00C2BA8D /* ArcadiaExportedFile.swift in Sources */,
@@ -928,7 +942,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -959,7 +973,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -983,7 +997,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"Arcadia/Preview Content\"";
 				DEVELOPMENT_TEAM = 32DR4Q2NF7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1014,7 +1028,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.4.2;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.davideandreoli.Arcadia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

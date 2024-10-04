@@ -16,6 +16,11 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Input", systemImage: "gamecontroller")
                 }
+            AudioSettingsView()
+                .frame(minWidth: 375, minHeight: 175)
+                .tabItem {
+                    Label("Audio", systemImage: "music.note")
+                }
             StorageSettingsView()
                 .frame(minWidth: 375, minHeight: 175)
                 .tabItem {
@@ -42,6 +47,9 @@ struct SettingsView: View {
                 Section {
                     NavigationLink(destination: InputSettingsView()) {
                         Text("Input")
+                    }
+                    NavigationLink(destination: AudioSettingsView()) {
+                        Text("Audio")
                     }
                     NavigationLink(destination: StorageSettingsView()) {
                         Text("Storage")

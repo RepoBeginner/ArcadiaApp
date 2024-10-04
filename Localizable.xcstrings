@@ -21,6 +21,16 @@
         }
       }
     },
+    ".%@" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ".%@"
+          }
+        }
+      }
+    },
     "%@" : {
       "localizations" : {
         "it" : {
@@ -107,6 +117,16 @@
         }
       }
     },
+    "Allowed extensions" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estensioni permesse"
+          }
+        }
+      }
+    },
     "Altea and its emulators allow you to save your progress in two ways:\n\n• Saves: This is the standard way of saving your game progress, similar to the save files in game cartridges. These are generated and updated automatically by the app. Each game can have only one save file. This format is usually portable, and you can find these save files in Arcadia/Saves if you want to switch emulator apps.\n• States: This is a non-standard way of saving your game progress, enabled by the emulation process. It creates a snapshot of the game's exact state when you hit the save button. Each game can have up to three state files. This format is usually not portable as it depends on the emulator, but you can find these state files in Arcadia/States." : {
       "localizations" : {
         "it" : {
@@ -153,6 +173,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icona dell'app"
+          }
+        }
+      }
+    },
+    "Audio" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audio"
           }
         }
       }
@@ -263,6 +293,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conferma"
+          }
+        }
+      }
+    },
+    "Console's folders" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartelle della console"
           }
         }
       }
@@ -1067,6 +1107,56 @@
         }
       }
     },
+    "Open core files directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella dei file di core"
+          }
+        }
+      }
+    },
+    "Open games directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella dei giochi"
+          }
+        }
+      }
+    },
+    "Open images directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella delle immagini"
+          }
+        }
+      }
+    },
+    "Open saves directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella dei salvataggi"
+          }
+        }
+      }
+    },
+    "Open states directory" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri la cartella degli stati"
+          }
+        }
+      }
+    },
     "Open storage directory" : {
       "localizations" : {
         "it" : {
@@ -1267,6 +1357,16 @@
         }
       }
     },
+    "Respect the silent switch" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rispetta la modalità silenziosa"
+          }
+        }
+      }
+    },
     "Right Alt" : {
       "localizations" : {
         "it" : {
@@ -1387,6 +1487,16 @@
         }
       }
     },
+    "Silence audio" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Silenzia l’audio"
+          }
+        }
+      }
+    },
     "Socials" : {
       "localizations" : {
         "it" : {
@@ -1467,6 +1577,16 @@
         }
       }
     },
+    "This console can load files with any of the above extension." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questa console può aprire file con una di queste estensioni."
+          }
+        }
+      }
+    },
     "This developer has generously made their games available for free, allowing more people to enjoy retro gaming with ease. If you appreciate their work, consider showing your support through the links above." : {
       "localizations" : {
         "it" : {
@@ -1527,6 +1647,16 @@
         }
       }
     },
+    "Use these links to access the folders where this console stores files." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa questi link per accedere alle cartelle dove questa console tiene i file."
+          }
+        }
+      }
+    },
     "V" : {
       "localizations" : {
         "it" : {
@@ -1543,6 +1673,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "W"
+          }
+        }
+      }
+    },
+    "When deactivated, audio will play even if the silent switch is activated. This setting change will take effect only after an app restart." : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se disattivato, l’audio verrà riprodotto anche se la modalità silenziosa è attivata. Il cambio di questa impostazione avrà effetto solo dopo un riavvio dell’applicazione."
           }
         }
       }
