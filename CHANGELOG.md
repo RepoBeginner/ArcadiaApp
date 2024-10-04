@@ -1,3 +1,9 @@
+# 1.5.1
+
+## Bug fixes
+
+- Temporarily removed .fds support from NES as a BIOS file would be required
+
 # 1.5
 
 ## Cores

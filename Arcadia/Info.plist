@@ -31,7 +31,6 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>com.davideandreoli.Arcadia.gamefile.nes</string>
-				<string>com.davideandreoli.Arcadia.gamefile.fds</string>
 				<string>com.davideandreoli.Arcadia.gamefile.unf</string>
 				<string>com.davideandreoli.Arcadia.gamefile.unif</string>
 			</array>
@@ -340,26 +339,6 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>nes</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.data</string>
-				<string>public.content</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Altea NES Game File</string>
-			<key>UTTypeIcons</key>
-			<dict/>
-			<key>UTTypeIdentifier</key>
-			<string>com.davideandreoli.Arcadia.gamefile.fds</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>fds</string>
 				</array>
 			</dict>
 		</dict>
