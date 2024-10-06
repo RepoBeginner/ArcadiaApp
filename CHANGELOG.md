@@ -7,6 +7,7 @@
 ## Bug fixes
 
 - Fixed the top part of the game view being hidden by the menu bar on macOS
+- Fixed the save files sync issues for Pokemon Mini
 
 # 1.5.1
 
