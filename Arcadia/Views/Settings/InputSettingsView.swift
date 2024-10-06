@@ -77,11 +77,9 @@ struct InputSettingsView: View {
                     Text("No keyboard connected")
                 }
             }
-            #if os(iOS)
             Toggle(isOn: $useHapticFeedback) {
                 Text("Haptic Feedback")
             }
-            #endif
         }
         .navigationTitle("Input settings")
     }
