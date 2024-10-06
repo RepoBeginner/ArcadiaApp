@@ -1,3 +1,13 @@
+# 1.6
+
+## Features
+
+- Added rumble support: for the cores and content that support it (PokeMini as of right now), if you have haptic feedback enabled you'll also get haptics based on in game events as if you were playing on the actual console
+
+## Bug fixes
+
+- Fixed the top part of the game view being hidden by the menu bar on macOS
+
 # 1.5.1
 
 ## Bug fixes

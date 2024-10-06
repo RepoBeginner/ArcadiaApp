@@ -11,6 +11,7 @@ import ArcadiaCore
 struct ActionButtonsView: View {
     
     private var numberOfButtons: Int
+    @AppStorage("actionPadButtonScale") private var actionPadButtonScale: Double = 1
     
     init(numberOfButtons: Int) {
         self.numberOfButtons = numberOfButtons
@@ -19,25 +20,25 @@ struct ActionButtonsView: View {
     var body: some View {
         VStack(spacing: 5) {
             if numberOfButtons == 4 {
-                CircleButtonView(arcadiaCoreButton: .joypadX, size:50)
+                CircleButtonView(arcadiaCoreButton: .joypadX, size:50*actionPadButtonScale)
             } else {
-                EmptyButtonView(size: 50)
+                EmptyButtonView(size: 50*actionPadButtonScale)
             }
                     HStack {
                         if numberOfButtons >= 3 {
-                            CircleButtonView(arcadiaCoreButton: .joypadY, size:50)
+                            CircleButtonView(arcadiaCoreButton: .joypadY, size:50*actionPadButtonScale)
                         } else {
-                            EmptyButtonView(size: 50)
+                            EmptyButtonView(size: 50*actionPadButtonScale)
                         }
-                        EmptyButtonView(size: 50)
+                        EmptyButtonView(size: 50*actionPadButtonScale)
                         if numberOfButtons >= 2 {
-                            CircleButtonView(arcadiaCoreButton: .joypadA, size:50)
+                            CircleButtonView(arcadiaCoreButton: .joypadA, size:50*actionPadButtonScale)
                         } else {
-                            EmptyButtonView(size: 50)
+                            EmptyButtonView(size: 50*actionPadButtonScale)
                         }
                         
                     }
-            CircleButtonView(arcadiaCoreButton: .joypadB, size:50)
+            CircleButtonView(arcadiaCoreButton: .joypadB, size:50*actionPadButtonScale)
                 }
     }
 }

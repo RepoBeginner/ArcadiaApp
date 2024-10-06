@@ -77,6 +77,18 @@
         }
       }
     },
+    "0.3" : {
+
+    },
+    "0.5" : {
+
+    },
+    "1" : {
+
+    },
+    "1.5" : {
+
+    },
     "A" : {
       "localizations" : {
         "it" : {
@@ -86,6 +98,9 @@
           }
         }
       }
+    },
+    "Action Pad" : {
+
     },
     "Add new game" : {
       "localizations" : {
@@ -216,6 +231,12 @@
           }
         }
       }
+    },
+    "Button opacity" : {
+
+    },
+    "Button size" : {
+
     },
     "Buttons" : {
       "localizations" : {
@@ -357,6 +378,12 @@
         }
       }
     },
+    "Customization" : {
+
+    },
+    "Customize background color" : {
+
+    },
     "D" : {
       "localizations" : {
         "it" : {
@@ -386,6 +413,9 @@
           }
         }
       }
+    },
+    "Direction Pad" : {
+
     },
     "Dismiss" : {
       "localizations" : {
@@ -576,6 +606,9 @@
           }
         }
       }
+    },
+    "Game view background color" : {
+
     },
     "Games" : {
       "localizations" : {
@@ -1447,6 +1480,9 @@
         }
       }
     },
+    "Scale" : {
+
+    },
     "Select a game console using the sidebar" : {
       "localizations" : {
         "it" : {
@@ -1487,6 +1523,9 @@
         }
       }
     },
+    "Shoulder buttons" : {
+
+    },
     "Silence audio" : {
       "localizations" : {
         "it" : {
@@ -1496,6 +1535,9 @@
           }
         }
       }
+    },
+    "Small buttons" : {
+
     },
     "Socials" : {
       "localizations" : {
@@ -1646,6 +1688,15 @@
           }
         }
       }
+    },
+    "Use the slider to adjust button opacity, double tap the slider to restore its original value. A lower value means that the button will be more transparent." : {
+
+    },
+    "Use the sliders to adjust button scale, double tap a slider to restore its original value" : {
+
+    },
+    "Use the toggle to turn on the customization, and pick a color using the slider. To go back to the default behaviour, simply turn off the toggle." : {
+
     },
     "Use these links to access the folders where this console stores files." : {
       "localizations" : {

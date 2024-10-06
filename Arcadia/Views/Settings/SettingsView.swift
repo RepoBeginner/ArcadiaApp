@@ -54,6 +54,9 @@ struct SettingsView: View {
                     NavigationLink(destination: StorageSettingsView()) {
                         Text("Storage")
                     }
+                    NavigationLink(destination: CustomizeUIView()) {
+                        Text("Customization")
+                    }
                 }
                 #if os(iOS)
                 Section {

@@ -34,6 +34,8 @@ struct RunGameView: View {
     
     @AppStorage("iCloudSyncEnabled") private var useiCloudSync = false
     @AppStorage("hideButtons") private var hideButtons = false
+    @AppStorage("customizeGameViewBackgroundColor") private var customizeGameViewBackgroundColor: Bool = false
+    @AppStorage("gameViewBackgroundColor") var gameViewBackgroundColor: Color = .black
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -47,22 +49,36 @@ struct RunGameView: View {
         Group {
             if horizontalSizeClass == .compact && verticalSizeClass == .regular {
                 //iPhone portrait
-                VStack {
-                    CurrentBufferMetalView()
-                        .frame(minWidth: CGFloat(emulationState.audioVideoInfo?.geometry.base_width ?? 0), minHeight: CGFloat(emulationState.audioVideoInfo?.geometry.base_height ?? 0))
-                        .scaledToFit()
-                    Spacer()
-                    if !hideButtons {
-                        ArcadiaButtonLayout(layoutElements: gameType.buttonLayoutElements)
-                        
-                    } else {
-                        ArcadiaButtonOnlyLayout()
+                ZStack {
+                    if customizeGameViewBackgroundColor {
+                        Rectangle()
+                            .fill(gameViewBackgroundColor)
+                            .ignoresSafeArea()
+    
                     }
+                    VStack {
+                        CurrentBufferMetalView()
+                            .frame(minWidth: CGFloat(emulationState.audioVideoInfo?.geometry.base_width ?? 0), minHeight: CGFloat(emulationState.audioVideoInfo?.geometry.base_height ?? 0))
+                            .scaledToFit()
+                        Spacer()
+                        if !hideButtons {
+                            ArcadiaButtonLayout(layoutElements: gameType.buttonLayoutElements)
+                            
+                        } else {
+                            ArcadiaButtonOnlyLayout()
+                        }
 
+                    }
                 }
             }
             else {
                 ZStack {
+                    if customizeGameViewBackgroundColor {
+                        Rectangle()
+                            .fill(gameViewBackgroundColor)
+                            .ignoresSafeArea()
+    
+                    }
                     CurrentBufferMetalView()
                         .frame(minWidth: CGFloat(emulationState.audioVideoInfo?.geometry.base_width ?? 0), minHeight: CGFloat(emulationState.audioVideoInfo?.geometry.base_height ?? 0))
                         .scaledToFit()
@@ -79,8 +95,10 @@ struct RunGameView: View {
                         }.frame(width: geometry.size.width, height: geometry.size.height)
                     }
                 }
+                #if os(iOS)
                 .ignoresSafeArea(.container, edges: .vertical)
                 .persistentSystemOverlays(.hidden)
+                #endif
             }
         }
         .onAppear(perform: {
