@@ -3,6 +3,7 @@
 ## Features
 
 - Added rumble support: for the cores and content that support it (PokeMini as of right now), if you have haptic feedback enabled you'll also get haptics based on in game events as if you were playing on the actual console
+- Added customization options for button dimension, spacing and opacity
 
 ## Bug fixes
 
