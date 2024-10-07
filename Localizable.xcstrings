@@ -78,19 +78,54 @@
       }
     },
     "0.3" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0.3"
+          }
+        }
+      }
     },
     "0.5" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0.5"
+          }
+        }
+      }
     },
     "1" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1"
+          }
+        }
+      }
     },
     "1.5" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1.5"
+          }
+        }
+      }
     },
     "10" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10"
+          }
+        }
+      }
     },
     "A" : {
       "localizations" : {
@@ -103,7 +138,14 @@
       }
     },
     "Action Pad" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottoni azione"
+          }
+        }
+      }
     },
     "Add new game" : {
       "localizations" : {
@@ -236,13 +278,34 @@
       }
     },
     "Button opacity" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opacità dei bottoni"
+          }
+        }
+      }
     },
     "Button size" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dimensione dei bottoni"
+          }
+        }
+      }
     },
     "Button spacing" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spaziatura dei bottoni"
+          }
+        }
+      }
     },
     "Buttons" : {
       "localizations" : {
@@ -385,10 +448,24 @@
       }
     },
     "Customization" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizzazione"
+          }
+        }
+      }
     },
     "Customize background color" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizza il colore di background"
+          }
+        }
+      }
     },
     "D" : {
       "localizations" : {
@@ -421,7 +498,14 @@
       }
     },
     "Direction Pad" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottoni direzionali"
+          }
+        }
+      }
     },
     "Dismiss" : {
       "localizations" : {
@@ -523,6 +607,16 @@
         }
       }
     },
+    "Final preview" : {
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anteprima finale"
+          }
+        }
+      }
+    },
     "Find out more on the game's page" : {
       "localizations" : {
         "it" : {
@@ -614,7 +708,14 @@
       }
     },
     "Game view background color" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colore di background della vista di gioco"
+          }
+        }
+      }
     },
     "Games" : {
       "localizations" : {
@@ -1147,7 +1248,14 @@
       }
     },
     "Opacity" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opacità"
+          }
+        }
+      }
     },
     "Open core files directory" : {
       "localizations" : {
@@ -1490,7 +1598,14 @@
       }
     },
     "Scale" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scala"
+          }
+        }
+      }
     },
     "Select a game console using the sidebar" : {
       "localizations" : {
@@ -1533,7 +1648,14 @@
       }
     },
     "Shoulder buttons" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottoni retro"
+          }
+        }
+      }
     },
     "Silence audio" : {
       "localizations" : {
@@ -1546,7 +1668,14 @@
       }
     },
     "Small buttons" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bottoni piccoli"
+          }
+        }
+      }
     },
     "Socials" : {
       "localizations" : {
@@ -1559,7 +1688,14 @@
       }
     },
     "Spacing" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spaziatura"
+          }
+        }
+      }
     },
     "Storage" : {
       "localizations" : {
@@ -1702,16 +1838,44 @@
       }
     },
     "Use the slider to adjust button opacity, double tap the slider to restore its original value. A lower value means that the button will be more transparent." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa i cursori per modificare l’opacità dei bottoni, fai un doppio tocco su un cursore per ripristinare il suo valore originale. Un valore più basso significa che il bottone sarà più trasparente."
+          }
+        }
+      }
     },
     "Use the sliders to adjust button scale, double tap a slider to restore its original value" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa i cursori per modificare la scala dei bottoni, fai un doppio tocco su un cursore per ripristinare il suo valore originale."
+          }
+        }
+      }
     },
     "Use the sliders to adjust button spacing, double tap a slider to restore its original value" : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa i cursori per modificare la spaziatura dei bottoni, fai un doppio tocco su un cursore per ripristinare il suo valore originale"
+          }
+        }
+      }
     },
     "Use the toggle to turn on the customization, and pick a color using the slider. To go back to the default behaviour, simply turn off the toggle." : {
-
+      "localizations" : {
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa l’interruttore per attivare la personalizzazione, e scegli un colore usando l’apposito menu. Per tornare al comportamento di default, disattiva la personalizzazione,"
+          }
+        }
+      }
     },
     "Use these links to access the folders where this console stores files." : {
       "localizations" : {

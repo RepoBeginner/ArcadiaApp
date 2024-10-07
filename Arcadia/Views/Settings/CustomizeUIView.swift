@@ -179,6 +179,21 @@ struct CustomizeUIView: View {
                 }
                 ColorPicker("Game view background color", selection: $gameViewBackgroundColor, supportsOpacity: false)
             }
+            
+            Section(header: Text("Final preview")) {
+                ZStack {
+                    if customizeGameViewBackgroundColor {
+                        Rectangle()
+                            .fill(gameViewBackgroundColor)
+                    }
+                    VStack {
+                        Spacer()
+                        ArcadiaButtonLayout(layoutElements: [.dPad, .start, .select, .backButtonsFirstRow, .fourActionButtons])
+                    }
+
+                }
+                .frame(minHeight: 300)
+            }
         }
     }
 }
