@@ -10,7 +10,9 @@ import ArcadiaCore
 
 struct CustomizeUIView: View {
     @AppStorage("directionPadButtonScale") private var directionPadButtonScale: Double = 1
+    @AppStorage("directionPadButtonSpacing") private var directionPadButtonSpacing: Double = 5
     @AppStorage("actionPadButtonScale") private var actionPadButtonScale: Double = 1
+    @AppStorage("actionPadButtonSpacing") private var actionPadButtonSpacing: Double = 5
     @AppStorage("smallButtonScale") private var smallButtonScale: Double = 1
     @AppStorage("shoulderButtonScale") private var shoulderButtonScale: Double = 1
     @AppStorage("buttonOpacity") private var buttonOpacity: Double = 1
@@ -100,6 +102,50 @@ struct CustomizeUIView: View {
                     HStack {
                         Spacer()
                         CircleButtonView(arcadiaCoreButton: .joypadR, height: 40*shoulderButtonScale, width: 70*shoulderButtonScale)
+                            .disabled(true)
+                        Spacer()
+                    }
+                }
+            }
+            Section(header: Text("Button spacing"), footer: Text("Use the sliders to adjust button spacing, double tap a slider to restore its original value")) {
+                VStack(alignment: .leading) {
+                    Text("Direction Pad")
+                        .font(.headline)
+                    Slider(value: $directionPadButtonSpacing, in: 1...10, step: 1.0)
+                    {
+                        Text("Scale")
+                    } minimumValueLabel: {
+                        Text("1")
+                    } maximumValueLabel: {
+                        Text("10")
+                    }
+                    .onTapGesture(count: 2) {
+                        directionPadButtonSpacing = 5
+                    }
+                    HStack {
+                        Spacer()
+                        DPadView()
+                            .disabled(true)
+                        Spacer()
+                    }
+                }
+                VStack(alignment: .leading) {
+                    Text("Action Pad")
+                        .font(.headline)
+                    Slider(value: $actionPadButtonSpacing, in: 1...10, step: 1.0)
+                    {
+                        Text("Scale")
+                    } minimumValueLabel: {
+                        Text("1")
+                    } maximumValueLabel: {
+                        Text("10")
+                    }
+                    .onTapGesture(count: 2) {
+                        actionPadButtonSpacing = 5
+                    }
+                    HStack {
+                        Spacer()
+                        ActionButtonsView(numberOfButtons: 4)
                             .disabled(true)
                         Spacer()
                     }

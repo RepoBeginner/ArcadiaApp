@@ -89,6 +89,9 @@
     "1.5" : {
 
     },
+    "10" : {
+
+    },
     "A" : {
       "localizations" : {
         "it" : {
@@ -236,6 +239,9 @@
 
     },
     "Button size" : {
+
+    },
+    "Button spacing" : {
 
     },
     "Buttons" : {
@@ -1693,6 +1699,9 @@
 
     },
     "Use the sliders to adjust button scale, double tap a slider to restore its original value" : {
+
+    },
+    "Use the sliders to adjust button spacing, double tap a slider to restore its original value" : {
 
     },
     "Use the toggle to turn on the customization, and pick a color using the slider. To go back to the default behaviour, simply turn off the toggle." : {
