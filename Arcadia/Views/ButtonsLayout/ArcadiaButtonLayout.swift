@@ -30,49 +30,53 @@ struct ArcadiaButtonLayout: View {
     }
     
     var body: some View {
-        VStack {
-            HStack {
-                if layoutElements.contains(.backButtonsFirstRow) {
-                    CircleButtonView(arcadiaCoreButton: .joypadL, height: 40*shoulderButtonScale, width: 70*shoulderButtonScale)
-                    Spacer()
-                        .frame(width: 50)
-                }
-                if layoutElements.contains(.select) {
-                    CircleButtonView(arcadiaCoreButton: .joypadSelect, size: 35*smallButtonScale)
-                }
+        GeometryReader { geometry in
+            VStack {
                 Spacer()
-                if layoutElements.contains(.start) {
-                    CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35*smallButtonScale)
-                }
-                if layoutElements.contains(.backButtonsFirstRow) {
+                HStack {
+                    if layoutElements.contains(.backButtonsFirstRow) {
+                        CircleButtonView(arcadiaCoreButton: .joypadL, height: 40*shoulderButtonScale, width: 70*shoulderButtonScale)
+                        Spacer()
+                            .frame(width: 50)
+                    }
+                    if layoutElements.contains(.select) {
+                        CircleButtonView(arcadiaCoreButton: .joypadSelect, size: 35*smallButtonScale)
+                    }
                     Spacer()
-                        .frame(width: 50)
-                    CircleButtonView(arcadiaCoreButton: .joypadR, height: 40*shoulderButtonScale, width: 70*shoulderButtonScale)
+                    if layoutElements.contains(.start) {
+                        CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35*smallButtonScale)
+                    }
+                    if layoutElements.contains(.backButtonsFirstRow) {
+                        Spacer()
+                            .frame(width: 50)
+                        CircleButtonView(arcadiaCoreButton: .joypadR, height: 40*shoulderButtonScale, width: 70*shoulderButtonScale)
+                    }
                 }
-            }
-            .padding()
+                .padding()
 
-            HStack {
-                if layoutElements.contains(.dPad) {
-                    DPadView()
-                }
-                VStack {
+                HStack {
+                    if layoutElements.contains(.dPad) {
+                        DPadView()
+                    }
+                    VStack {
+                        Spacer()
+                            .frame(maxHeight: 100)
+                        CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35*smallButtonScale)
+                    }
                     Spacer()
-                        .frame(maxHeight: 100)
-                    CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 35*smallButtonScale)
+                    if layoutElements.contains(.oneActionButton) {
+                        ActionButtonsView(numberOfButtons: 1)
+                    } else if layoutElements.contains(.twoActionButtons) {
+                        ActionButtonsView(numberOfButtons: 2)
+                    } else if layoutElements.contains(.threeActionButtons) {
+                        ActionButtonsView(numberOfButtons: 3)
+                    } else if layoutElements.contains(.fourActionButtons) {
+                        ActionButtonsView(numberOfButtons: 4)
+                    }
                 }
-                Spacer()
-                if layoutElements.contains(.oneActionButton) {
-                    ActionButtonsView(numberOfButtons: 1)
-                } else if layoutElements.contains(.twoActionButtons) {
-                    ActionButtonsView(numberOfButtons: 2)
-                } else if layoutElements.contains(.threeActionButtons) {
-                    ActionButtonsView(numberOfButtons: 3)
-                } else if layoutElements.contains(.fourActionButtons) {
-                    ActionButtonsView(numberOfButtons: 4)
-                }
+                .padding()
             }
-            .padding()
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
 
     }

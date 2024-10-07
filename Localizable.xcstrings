@@ -1146,6 +1146,9 @@
         }
       }
     },
+    "Opacity" : {
+
+    },
     "Open core files directory" : {
       "localizations" : {
         "it" : {
@@ -1554,6 +1557,9 @@
           }
         }
       }
+    },
+    "Spacing" : {
+
     },
     "Storage" : {
       "localizations" : {

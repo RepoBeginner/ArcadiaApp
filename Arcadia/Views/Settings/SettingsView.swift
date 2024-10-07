@@ -26,6 +26,13 @@ struct SettingsView: View {
                 .tabItem {
                     Label("Synchronization", systemImage: "cloud")
                 }
+            ScrollView {
+                CustomizeUIView()
+                    .padding(30)
+            }
+                .tabItem {
+                    Label("Customization", systemImage: "slider.horizontal.3")
+                }
             HelpView()
                 .tabItem {
                     Label("Help", systemImage: "gear")

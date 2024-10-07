@@ -45,7 +45,7 @@ extension Color: RawRepresentable {
     public var rawValue: String {
         
         do{
-            let data = try NSKeyedArchiver.archivedData(withRootObject: UIColor(self), requiringSecureCoding: false) as Data
+            let data = try NSKeyedArchiver.archivedData(withRootObject: PlatformColor(self), requiringSecureCoding: false) as Data
             return data.base64EncodedString()
             
         }catch{

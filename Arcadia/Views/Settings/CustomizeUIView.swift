@@ -113,7 +113,7 @@ struct CustomizeUIView: View {
                         .font(.headline)
                     Slider(value: $directionPadButtonSpacing, in: 1...10, step: 1.0)
                     {
-                        Text("Scale")
+                        Text("Spacing")
                     } minimumValueLabel: {
                         Text("1")
                     } maximumValueLabel: {
@@ -134,7 +134,7 @@ struct CustomizeUIView: View {
                         .font(.headline)
                     Slider(value: $actionPadButtonSpacing, in: 1...10, step: 1.0)
                     {
-                        Text("Scale")
+                        Text("Spacing")
                     } minimumValueLabel: {
                         Text("1")
                     } maximumValueLabel: {
@@ -155,7 +155,7 @@ struct CustomizeUIView: View {
                 VStack(alignment: .leading) {
                     Slider(value: $buttonOpacity, in: 0.3...1, step: 0.1)
                     {
-                        Text("Scale")
+                        Text("Opacity")
                     } minimumValueLabel: {
                         Text("0.3")
                     } maximumValueLabel: {
@@ -166,7 +166,7 @@ struct CustomizeUIView: View {
                     }
                     HStack {
                         Spacer()
-                        CircleButtonView(arcadiaCoreButton: .arcadiaButton, size: 50*smallButtonScale)
+                        CircleButtonView(arcadiaCoreButton: .joypadA, size: 50*actionPadButtonScale)
                             .disabled(true)
                         Spacer()
                     }

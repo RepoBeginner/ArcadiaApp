@@ -28,6 +28,7 @@ struct RunGameView: View {
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @Environment(\.verticalSizeClass) private var verticalSizeClass
     @Environment(\.dismiss) var dismiss
+    @Environment(\.scenePhase) var scenePhase
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     @Environment(ArcadiaFileManager.self) var fileManager: ArcadiaFileManager
     @Environment(InputController.self) var inputController: InputController
@@ -124,6 +125,23 @@ struct RunGameView: View {
             }
 
         })
+        .onChange(of: scenePhase) { oldValue, newValue in
+            print(newValue)
+            switch newValue {
+            case .active:
+                emulationState.resumeEmulation()
+            case .background:
+                emulationState.pauseEmulation()
+                if useiCloudSync {
+                    for memoryType in gameType.supportedSaveFiles.keys {
+                        fileManager.createCloudCopy(of: fileManager.getSaveURL(gameURL: gameURL, gameType: gameType, memoryType: memoryType))
+                    }
+                }
+                default:
+                return
+            }
+            
+        }
         .onReceive(timer) { _ in
             if useiCloudSync {
                 for memoryType in gameType.supportedSaveFiles.keys {
