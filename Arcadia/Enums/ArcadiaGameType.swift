@@ -220,7 +220,7 @@ enum ArcadiaGameType: String, Codable, CaseIterable, Identifiable, ArcadiaGameTy
             ]
         case .pokemonMiniGame:
             return [
-                .memorySaveRam : "eep"
+                .memorySystemRam : "eep"
             ]
         }
         

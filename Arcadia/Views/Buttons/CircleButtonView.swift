@@ -15,6 +15,7 @@ struct CircleButtonView: View {
     private var width: CGFloat
     private var height: CGFloat
     @AppStorage("hapticFeedback") private var useHapticFeedback = true
+    @AppStorage("buttonOpacity") private var buttonOpacity: Double = 1
     @Environment(ArcadiaCoreEmulationState.self) var emulationState: ArcadiaCoreEmulationState
     @Environment(InputController.self) var inputController: InputController
     
@@ -55,9 +56,10 @@ struct CircleButtonView: View {
             Image(systemName: arcadiaCoreButton.systemImageName)
                 .resizable()
                 .frame(width: width, height: height)
-#if os(iOS)
+            #if os(iOS)
                 .foregroundStyle(color)
             #endif
+                .opacity(buttonOpacity)
         }
         .accessibilityLabel(arcadiaCoreButton.buttonName)
         #if os(iOS)

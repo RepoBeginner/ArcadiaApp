@@ -91,6 +91,8 @@
 		95D795022C94D53D00C2BA8D /* ArcadiaExportedFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795012C94D53D00C2BA8D /* ArcadiaExportedFile.swift */; };
 		95D795042C98065900C2BA8D /* ImportGameFromSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */; };
 		95D795062C98A00E00C2BA8D /* AudioSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D795052C98A00E00C2BA8D /* AudioSettingsView.swift */; };
+		95E005702CB2E67F00C66D56 /* CustomizeUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E0056F2CB2E67F00C66D56 /* CustomizeUIView.swift */; };
+		95E005752CB2F35E00C66D56 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E005742CB2F35E00C66D56 /* Color+Extensions.swift */; };
 		95E3C47F2C7E28C80060AC81 /* DiscoverGameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */; };
 		95E3C4822C7F08D00060AC81 /* DiscoverGameRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */; };
 		95E3C4842C7F18FB0060AC81 /* DiscoverGameDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */; };
@@ -236,6 +238,8 @@
 		95D795012C94D53D00C2BA8D /* ArcadiaExportedFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadiaExportedFile.swift; sourceTree = "<group>"; };
 		95D795032C98065900C2BA8D /* ImportGameFromSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportGameFromSheetView.swift; sourceTree = "<group>"; };
 		95D795052C98A00E00C2BA8D /* AudioSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSettingsView.swift; sourceTree = "<group>"; };
+		95E0056F2CB2E67F00C66D56 /* CustomizeUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizeUIView.swift; sourceTree = "<group>"; };
+		95E005742CB2F35E00C66D56 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		95E3C47E2C7E28C80060AC81 /* DiscoverGameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameListView.swift; sourceTree = "<group>"; };
 		95E3C4812C7F08D00060AC81 /* DiscoverGameRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameRowView.swift; sourceTree = "<group>"; };
 		95E3C4832C7F18FB0060AC81 /* DiscoverGameDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverGameDetailView.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 		95456BB42BE2ACA900113B8A /* Arcadia */ = {
 			isa = PBXGroup;
 			children = (
+				95E005712CB2F2E800C66D56 /* Extensions */,
 				95FAC8672C7CDD4B0071DC12 /* MLModels */,
 				95F0200F2C25EA060087DAC2 /* Info.plist */,
 				952C3A7C2C0BDC5B00DF2832 /* openvgdb.sqlite */,
@@ -533,8 +538,17 @@
 				95F0200C2C24B4260087DAC2 /* ContributeView.swift */,
 				95CC82332C3D4136009FB8DD /* StorageSettingsView.swift */,
 				95D795052C98A00E00C2BA8D /* AudioSettingsView.swift */,
+				95E0056F2CB2E67F00C66D56 /* CustomizeUIView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		95E005712CB2F2E800C66D56 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95E005742CB2F35E00C66D56 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		95E3C4802C7F07EF0060AC81 /* Discover */ = {
@@ -735,6 +749,7 @@
 				95E3C4902C8195B30060AC81 /* ArcadiaFeaturedGame.swift in Sources */,
 				95D794FE2C94A93E00C2BA8D /* ArcadiaSaveFile.swift in Sources */,
 				9510FE202C61FE5300F01C88 /* ArcadiaButtonLayout.swift in Sources */,
+				95E005752CB2F35E00C66D56 /* Color+Extensions.swift in Sources */,
 				95D794FC2C949EB400C2BA8D /* ArcadiaNavigationState.swift in Sources */,
 				951097852C518C8E00F01C88 /* RecommendationView.swift in Sources */,
 				9510FE272C62480300F01C88 /* EmptyButtonView.swift in Sources */,
@@ -759,6 +774,7 @@
 				95D795002C94C07500C2BA8D /* ArcadiaGameFile.swift in Sources */,
 				956F84002BEA70970025FC5F /* ArcadiaGame.swift in Sources */,
 				95707CBF2C01D77400217B82 /* HelpView.swift in Sources */,
+				95E005702CB2E67F00C66D56 /* CustomizeUIView.swift in Sources */,
 				955CC3942BF8EEA100C930ED /* ArcadiaGameType.swift in Sources */,
 				9510FE142C594C7000F01C88 /* ThreeButtonsView.swift in Sources */,
 				95E3C4922C8195CD0060AC81 /* ArcadiaFeaturedContent.swift in Sources */,
