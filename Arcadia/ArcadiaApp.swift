@@ -105,7 +105,7 @@ struct ArcadiaApp: App {
                 .environment(ArcadiaFileManager.shared)
                 .environment(ArcadiaCoreEmulationState.sharedInstance)
         }
-        .windowResizability(.contentSize)
+        .windowResizability(.contentMinSize)
         Window("Featured Games", id: "featured-games") {
             DiscoverGameListView()
                 .environment(ArcadiaNavigationState.shared)

@@ -11,6 +11,8 @@ import ArcadiaCore
 struct ArcadiaButtonLayoutRight: View {
     
     private var layoutElements: [ArcadiaButtonLayoutElements]
+    @AppStorage("smallButtonScale") private var smallButtonScale: Double = 1
+    @AppStorage("shoulderButtonScale") private var shoulderButtonScale: Double = 1
     
     init(layoutElements: [ArcadiaButtonLayoutElements]) {
         self.layoutElements = layoutElements
@@ -21,11 +23,11 @@ struct ArcadiaButtonLayoutRight: View {
             Spacer()
             HStack {
                 if layoutElements.contains(.start) {
-                    CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35)
+                    CircleButtonView(arcadiaCoreButton: .joypadStart, size: 35*smallButtonScale)
                 }
                 if layoutElements.contains(.backButtonsFirstRow) {
                     Spacer()
-                    CircleButtonView(arcadiaCoreButton: .joypadR, height: 40, width: 70)
+                    CircleButtonView(arcadiaCoreButton: .joypadR, height: 40*shoulderButtonScale, width: 70*shoulderButtonScale)
                 }
                 
             }

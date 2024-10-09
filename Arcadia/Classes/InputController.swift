@@ -9,6 +9,8 @@ import Foundation
 import GameController
 import SwiftUI
 import ArcadiaCore
+import Combine
+import CoreHaptics
 
 enum MenuMovementAction {
     case moveUp
@@ -23,7 +25,9 @@ enum MenuMovementAction {
     
     var action: MenuMovementAction?
     
+    var vibrationNotificationSubscription: AnyCancellable?
     var controllers: [GCController: UInt32] = [:]
+    var controllersHapticsEngines: [GCController: CHHapticEngine] = [:]
     var availablePortIDs: [UInt32] = []
     var nextPortID: UInt32 = 0
     var mainInputPortID: UInt32 = 0
@@ -54,6 +58,7 @@ enum MenuMovementAction {
     }
     
     init() {
+        //TODO: Update these to use the same mechanism as vibrationNotificationSubscription
         NotificationCenter.default.addObserver(self, selector: #selector(controllerDidConnect), name: .GCControllerDidConnect, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(controllerDidDisconnect), name: .GCControllerDidDisconnect, object: nil)
         GCController.startWirelessControllerDiscovery(completionHandler: nil)
@@ -61,10 +66,29 @@ enum MenuMovementAction {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidConnect), name: .GCKeyboardDidConnect, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardDidDisconnect), name: .GCKeyboardDidDisconnect, object: nil)
         
+        self.vibrationNotificationSubscription = NotificationCenter.default
+            .publisher(for: .arcadiaVibrationNotification)
+            .map( { ($0.object as! ArcadiaVibrationNotification) } )
+            .sink(receiveCompletion: {
+                completion in
+                print(completion)
+            }, receiveValue: {
+                value in
+                if let hapticFeedbackEnabled = UserDefaults.standard.object(forKey: "hapticFeedback") as? Bool {
+                    if hapticFeedbackEnabled {
+                        self.handleVibration(notification: value)
+                    }
+                }
+            })
+        
         loadGameKeyMappings()
         if let keyboard = GCKeyboard.coalesced?.keyboardInput {
             setupKeyboard(keyboard)
         }
+    }
+    
+    deinit {
+        vibrationNotificationSubscription?.cancel()
     }
     
     @objc private func controllerDidConnect(notification: Notification) {
@@ -87,6 +111,10 @@ enum MenuMovementAction {
                 controllers.removeValue(forKey: disconnectedController)
                 availablePortIDs.append(deviceID)
             }
+            
+            if controllersHapticsEngines[disconnectedController] != nil {
+                controllersHapticsEngines.removeValue(forKey: disconnectedController)
+            }
         }
     }
     
@@ -97,6 +125,67 @@ enum MenuMovementAction {
     }
     
     @objc private func keyboardDidDisconnect(notification: Notification) {
+    }
+    
+    public func handleVibration(notification: ArcadiaVibrationNotification) {
+        #if os(iOS)
+        if notification.port == self.mainInputPortID && !controllers.values.contains(notification.port) {
+            if notification.effect.rawValue == 0 {
+                UIImpactFeedbackGenerator(style: .heavy).impactOccurred()
+            } else {
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
+            }
+        }
+        #endif
+        for controller in controllers.keys {
+            if controllers[controller] == notification.port {
+                if let engine = getOrCreateHapticEngine(for: controller) {
+                    do {
+                        try engine.start()
+
+                        // Create a basic haptic event for vibration
+                        var intensityValue: Float = 0.3
+                        if notification.effect.rawValue == 0 {
+                            intensityValue = 0.8
+                        } else {
+                            intensityValue = 0.3
+                        }
+                        let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue)
+                        let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: 0.5)
+                        let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 0)
+
+                        // Create a pattern from the event
+                        let pattern = try CHHapticPattern(events: [event], parameters: [])
+
+                        // Create a player for the pattern and start it
+                        let player = try engine.makePlayer(with: pattern)
+                        try player.start(atTime: 0)
+                        // Stop the engine after the vibration
+                        engine.notifyWhenPlayersFinished { _ in
+                            engine.stop()
+                            return .stopEngine
+                        }
+                    } catch {
+                        print("Failed to create haptic engine or play pattern: \(error.localizedDescription)")
+                    }
+                }
+            }
+        }
+    }
+    
+    func getOrCreateHapticEngine(for controller: GCController) -> CHHapticEngine? {
+        // Check if the engine already exists for this controller
+        if let engine = controllersHapticsEngines[controller] {
+            return engine
+        }
+        
+        if let haptics = controller.haptics {
+            if let engine = haptics.createEngine(withLocality: .default) {
+                controllersHapticsEngines[controller] = engine
+                return engine
+            }
+        }
+        return nil
     }
     
     public func updateControllerConfiguration(controller: GCController, from originPort: UInt32?, to destinationPort: UInt32?) {
