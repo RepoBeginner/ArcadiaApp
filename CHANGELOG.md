@@ -2,13 +2,13 @@
 
 ## Features
 
-- Added rumble support: for the cores and content that support it (PokeMini as of right now), if you have haptic feedback enabled you'll also get haptics based on in game events as if you were playing on the actual console
+- Added rumble support: for the cores and content that support it (only PokeMini as of right now), if you have haptic feedback enabled you'll also get haptics based on in game events as if you were playing on the actual console
 - Added customization options for button dimension, spacing and opacity
 
 ## Bug fixes
 
 - Fixed the top part of the game view being hidden by the menu bar on macOS
-- Fixed the save files sync issues for Pokemon Mini
+- Fixed save files issues for Pokemon Mini
 
 # 1.5.1
 
